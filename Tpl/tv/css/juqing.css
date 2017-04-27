@@ -1,0 +1,174 @@
+﻿/* 
+name: thematic.css 
+creatTime：2013/8/20
+upDateTime：2013/8/20
+author: wuzhong
+*/
+.fn-clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+body .fn-clear {*zoom:1;*clear:both;}
+body .fn-hide {display:none;}
+.aleft, .aright {display:inline;}
+.aleft {float:left;}
+.aright {float:right;}
+.fn-left, .fn-right {display:inline;}
+.fn-left {float:left;}
+.fn-right {float:right;}
+.h-clear{ height:8px; clear:both;}
+.clear{clear:both;}
+
+.ui-boxx{margin-top: 10px;background-color: #fff;}
+.filter-nav{float: left;width: 122px;overflow: hidden;font-size: 14px;	text-align: center;border:4px solid #f4f4f4;background-color: #fff;}
+.filter-nav h3{font-weight: 700;height: 30px;line-height: 30px;overflow: hidden;color: #AE172E;padding: 5px 16px;background-color: #f3f3f3;}
+.filter-nav ul{ padding-left:8px; padding-right:8px;}
+.filter-nav ul  a{background-color: #f9f9f9;display: block;border-radius: 2px; height: 30px;line-height: 30px;overflow: hidden; margin-bottom:10px}
+.filter-nav ul  a.jj{margin-top: 7px;}	
+.filter-nav ul  a:hover,.filter-nav ul  a.current{text-decoration: none;background-color:#3c8bcc;color:#FFF}
+
+
+.mod_b .th_b { height:28px; line-height:28px; overflow:hidden}
+.mod_b .th_b .sMark { float:left; color:#06c; font-size:20px;}
+.mod_b .th_b a.aMore { float:right; font-family:5B8B4F53}
+.mod_b .pic { text-align:center; font-size:14px; padding:7px 0 20px}
+.mod_b .pic img { margin-bottom:5px; display:block}
+
+.sg-w980 .topList {width:830px; background:#e0ecf7; padding:7px;}
+.topList {width:1030px; background:#e0ecf7; padding:7px;}
+.topList .th_a .iMore { background-position:-83px -54px;}
+.topList .tb_a { border-bottom:0 none}
+.topList .ulPicA { width:1020px; margin:-10px 0 0 -8px}
+.topList .ulPicA li { width:150px; float:left; padding:10px 25px 0 28px; border-right:1px solid #f2f2f2;}
+.topList .ulPicA .iTips { top:10px; left:28px;}
+
+.otherList { background:#fff; overflow:hidden; width:100%; padding:25px 0 30px}
+.otherListCon { width:1020px; margin-left:-8px;}
+.otherList .mod_b { width:180px; float:left; border-right:1px solid #f2f2f2; padding:0 34px;}
+.otherList .ulTxtA { border-top:1px solid #f2f2f2}
+.otherList .ulTxtA li { border-bottom:1px solid #f2f2f2; line-height:28px; height:28px; background-position:-123px -82px}
+
+/*筛选列表*/
+.selectList { width:678px; float:left; border:4px solid #f4f4f4; padding:10px 0; background:#fff; height:100px;}
+.selectList .sMark { float:left; width:38px; height:100px; border-right:1px solid #f4f4f4; text-align:center; font-size:18px; line-height:22px;}
+.selectList dl { float:left; overflow:hidden}
+.selectList dt { color:#999; font-size:12px; line-height:18px; height:20px;}
+.selectList dd { font-size:14px; line-height:28px; margin-left:-15px; height:80px; overflow:hidden}
+.selectList dd a { color:#2371c8; margin-left:15px; white-space:nowrap; display:inline-block}
+.selectList dd a:hover { color:#f30;}
+.selectList .w155 { width:155px; float:left; padding:0 0 0 10px}
+.selectList .w465 { width:465px; float:left}
+
+/*投稿意见*/
+.adviceCon { width:305px; height:128px; overflow:hidden; background:#f1f1f1; float:right; display:none}
+.adviceCon .iPic { background:url(images/thematicIndexMap.png) 0 -54px no-repeat; width:75px; height:75px; float:left; margin:26px 0 0 10px; display:inline}
+.adviceCon .pTxt { float:right; width:200px; padding:12px 10px 0 0}
+.adviceCon .pTxt span { display:block}
+.adviceCon .sMark { font-size:20px; line-height:30px; height:30px;}
+.adviceCon .sDes { font-size:12px; color:#999; line-height:18px; padding:5px 0 7px}
+.adviceCon a.adviceBtn { background:url(images/thematicIndexMap.png) 0 0 no-repeat; text-align:center; display:block; color:#fff; width:132px; height:26px; line-height:26px;}
+.adviceCon a:hover.adviceBtn { color:#fff; text-decoration:none; background-position:0 -27px}
+
+/*遮罩层*/
+.maskLayer { background:#000;opacity:0.5;filter:alpha(opacity=50); width:100%; height:100%; position:absolute; top:0; left:0; z-index:500; display:none; min-width:1000px;}
+
+/*弹窗*/
+.popWin { background:rgba(0, 0, 0, 0.3); filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000'); width:480px; height:380px; padding:10px; position:fixed; _position:absolute; z-index:550; overflow:hidden; display:none}
+.popWinCon { background:#fff; height:340px; padding:20px; width:440px; overflow:hidden; position:relative}
+.popWin a.aClose { background:url(images/thematicIndexMap.png) -76px -106px no-repeat; width:13px; height:11px; position:absolute; top:9px; right:12px; overflow:hidden}
+.popWin a:hover.aClose { background-position:-76px -118px}
+.popWin span { display:block}
+.popWin .sTit { font-size:14px; line-height:32px; height:32px;}
+.popWin .sTips { color:#999; font-size:12px; padding:5px 0 20px}
+.popWin .popTextArea { border:1px solid #cecece; background:#f0f0f0; width:430px; height:107px; padding:4px; line-height:20px; font-size:14px}
+.popWin .popInput { border:1px solid #cecece; background:#f0f0f0; width:430px; height:20px; padding:8px 4px; line-height:20px; font-size:14px;}
+.popWin .pBtn { height:35px; text-align:center; padding:22px 0 0 95px;}
+.popWin .pBtn a { background:url(images/thematicIndexMap.png) 0 0 no-repeat; height:35px; line-height:35px; float:left; margin-right:5px; display:inline; color:#fff; font-weight:700; font-size:14px}
+.popWin .pBtn a:hover { color:#fff; text-decoration:none}
+.popWin .pBtn a.aSubmit { width:132px; background-position:0 -202px;}
+.popWin .pBtn a.aCancel { width:100px; background-position:0 -130px;}
+.popWin .pBtn a:hover.aSubmit { background-position:0 -238px;}
+.popWin .pBtn a:hover.aCancel { background-position:0 -166px;}
+
+/*推荐*/
+.recommendCon { width:305px; height:128px; overflow:hidden; background:url(images/recommendCon.png) 0 0 no-repeat;float:right;}
+.recommendCon a.aTit { text-align:center; font-family:5FAE8F6F96C59ED1,5B8B4F53; font-size:25px; font-weight:700; line-height:34px; height:34px; overflow:hidden; padding:50px 0 12px; display:block; color:#5eadee}
+.recommendCon a:hover.aTit { color:#5eadee; text-decoration:none;}
+.recommendCon .pLinks { height:24px; line-height:24px; padding:4px 0; overflow:hidden; white-space:nowrap; font-family:5B8B4F53; text-align:center}
+.recommendCon .pLinks a { color:#fff; display:inline-block; margin:0 3px;}
+.recommendCon .pLinks a:hover { color:#f7f126}
+
+.sheader { margin-bottom:0;}
+.footerConBg { background:#f4f4f4; margin-top:30px; min-width:1000px;}
+
+.sg-w980 .main { width:980px; margin:0 auto; min-width:980px; padding-top:10px}
+.main { width:1180px; margin:0 auto; min-width:1180px; padding-top:10px}
+.main .sMark { font-family:5FAE8F6F96C59ED1,9ED14F53,5B8B4F53;}
+
+.sg-w980 .ivy980 { width:820px; margin:0 auto}
+.ivy980 { width:980px; margin:0 auto}
+.mt10 { margin-top:10px;}
+.mt17 { margin-top:17px;}
+.mt20 { margin-top:20px}
+.picConA { overflow:hidden; width:100%;}
+
+.mod_a .th_a { height:35px; overflow:hidden; line-height:34px;}
+.mod_a .th_a .sMark { float:left; background:#3c8bcc; color:#fff; padding-right:10px; font-size:20px; height:35px; overflow:hidden;white-space:nowrap}
+.mod_a .th_a .sMark em { background:#333; float:left; padding:0 5px; margin-right:5px; display:inline; height:35px;}
+.mod_a .th_a a.aMore { float:right; height:35px; margin-right:5px; display:inline; font-size:14px; padding-right:29px; position:relative}
+.mod_a .th_a .iMore { background:url(images/thematicIndexMap.png) -108px -54px no-repeat; width:24px; height:24px; position:absolute; right:0; top:5px; cursor:pointer}
+.mod_a .tb_a { background:#fff; padding:15px 0; border-bottom:5px solid #e4e4e4}
+
+.ulTxtA li { background:url(images/thematicIndexMap.png) -123px -84px no-repeat; line-height:24px; line-height:24px; overflow:hidden; padding-left:20px; font-size:14px;}
+
+.ulPicA li { position:relative;}
+.ulPicA li img { display:block;}
+.ulPicA li span { display:block; overflow:hidden; text-align:center; height:20px; line-height:20px}
+.ulPicA li .sTit { font-size:14px; padding:7px 0 0 0}
+.ulPicA li .sDes { font-size:12px; color:#aaa;}
+.ulPicA li .pLabel { padding:7px 3px 0 0; font-size:12px; height:46px; overflow:hidden;}
+.ulPicA li .pLabel a { background:#f3f7fa; display:inline-block; white-space:nowrap; border-top:1px solid #f3f7fa; border-left:1px solid #f3f7fa; border-right:1px solid #dce9f1; border-bottom:1px solid #dce9f1; padding:1px 5px 0 5px; line-height:18px; color:#2371c8; margin:2px 0 0 3px}
+.ulPicA li .pLabel a:hover { background:#308be7; border:1px solid #308be7; color:#fff; text-decoration:none}
+.ulPicA li .emTips { background:url(images/thematicIndexMap.png) 0 -274px no-repeat; width:58px; height:18px; line-height:18px; overflow:hidden; font-size:12px; color:#fff; float:left; display:inline}
+.ulPicA li .iTips { position:absolute; top:0; left:0; z-index:10; margin-left:-6px; color:#fff; background:url(images/thematicIndexMap.png) 0 -293px no-repeat; width:83px; height:27px; font-size:12px; font-family:5B8B4F53; text-align:center; line-height:20px;}
+
+.sg-w980 .hotList {width:825px; background:#f1f1f1; padding:10px}
+.hotList {width:1025px; background:#f1f1f1; padding:10px}
+.hotList .ulPicA { width:1020px; margin:-10px 0 0 -8px}
+.hotList .ulPicA li { width:150px; float:left; padding:10px 25px 0 28px; border-right:1px solid #f2f2f2;}
+/*标签切换*/
+.listTab { height:39px; padding:10px 0 4px}
+.listTab a { width:179px; height:32px; line-height:32px; text-align:center; color:#fff; background:url(images/thematicListMap.png) 0 0 no-repeat; float:left; font-size:14px; margin-right:2px; display:inline}
+.listTab a:hover { color:#fff; text-decoration:none; background-position:0 -33px}
+.listTab a.current,.listTab a:hover.current { background-position:0 -66px; color:#fff; font-weight:700; height:39px}
+
+.listCon { border-top:7px solid #f4f4f4; border-right:8px solid #f4f4f4; border-bottom:7px solid #f4f4f4; border-left:8px solid #f4f4f4; min-height:200px; _height:200px}
+.listCon .ulPicA { width:1010px; padding:0 0 20px 20px;}
+.listCon .ulPicA li { float:left; width:140px; text-align:center; padding:20px 28px 0 0}
+
+/*无结果*/
+.noResult { background:url(images/noResultBg.png) 235px 90px  no-repeat; font-size:14px; padding:85px 40px 85px 330px;}
+.noResult .sMark { font-size:20px; height:38px; line-height:38px; display:block}
+.noResult dl { color:#999;}
+.noResult dl a { color:#0079c5}
+.noResult dl a:hover { color:#f30}
+.noResult dt { height:24px; line-height:24px; position:relative; width:64px;}
+.noResult dd { padding:0 0 0 64px; margin-top:-24px;}
+
+.hotList .ulPicA { margin:-20px 0 0 -8px}
+.hotList .ulPicA li {  padding:20px 25px 0 28px;}
+
+/*翻页*/
+.video_page { text-align:center; line-height:18px; font-size:13px;padding:25px 0 0 0;}
+.video_page em { margin-left:5px; vertical-align:middle; display:inline-block; font-family:5B8B4F53}
+.video_page a { color:#333; border:1px solid #ddd; padding:4px 9px; background:#f5f5f5; margin-left:5px; display:inline-block; line-height:18px;vertical-align:middle;}
+.video_page a:hover { text-decoration:none; color:#0096d9; background:#fff; padding:4px 9px}
+.video_page a.page_selected,.video_page a:hover.page_selected { text-decoration:none; color:#fff; border:0 none;background:#0096d9; padding:5px 10px}
+.video_page a.page_none,.video_page a:hover.page_none { border:1px solid #ddd; color:#ccc; background:#f5f5f5}
+.video_page .goto_page { margin:0 10px; vertical-align:middle;}
+.video_page .input_pageNum { width:33px; border:1px solid #ddd; text-align:center; padding:4px 0; margin:0 5px; display:inline-block;vertical-align:top;}
+.video_page .page_submitBtn { margin:0}
+
+/*2014-5-27 百度热词*/
+.baiduHotWords{padding:9px 10px 4px; border:1px solid #F7DEBD; height:26px; line-height:22px; overflow:hidden; background:#FFF9DD}
+.baiduHotWords span{padding-left:5px;width:66px; height:21px; display:inline-block; margin-right:6px; line-height:21px; font-weight:bold; color:#fff;background:url(images/movie_dbg.png) repeat-x 0 -505px; float:left}
+.baiduHotWords .baiduHotWordsCon { float:right; height:22px; line-height:22px; padding-top:2px; overflow:hidden; width:900px}
+.baiduHotWords a{margin-right:12px; color:#c96128}
+.baiduHotWords a:hover{color:#fd5151;}

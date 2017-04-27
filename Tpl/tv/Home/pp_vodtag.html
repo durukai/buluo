@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}-最新最全影视免费观看</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<include file="Home:list_seo_title" />
+<include file="Home:pp_js" />
+</script>
+<script type="text/javascript">var Root='/';var Sid='';var Cid='';var Id='';</script>
+<link rel="shortcut icon" href="/favicon.ico" charset="utf-8" />
+<include file="Home:pp_js" />
+<link href="{$tpl}css/user.css" rel="stylesheet" type="text/css" />
+<link href="{$tpl}css/header.css" rel="stylesheet" type="text/css" />
+<script src="{$tpl}js/top_js.js" type="text/javascript"></script>
+<script src="{$tpl}js/zhnew.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("");</script>
+<link href="{$tpl}css/index.css" rel="stylesheet" type="text/css" />
+<link href="{$tpl}css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">var ie6Load=false;</script>
+</head>
+<body>
+<php>
+if($_GET[year]) $u_year="-year-".$_GET[year];else $u_year=NULL;if($_GET[area]) $u_area="-area-".$_GET[area];else $u_area=NULL;if($_GET[language]) $u_language="-language-".$_GET[language];else $u_order=NULL;if($_GET[order]) $u_order="-order-".$_GET[order];else $u_order=NULL;
+if($_GET[mcid]) $u_mcid="-mcid-".$_GET['mcid'];else $u_mcid=NULL;if($_GET[letter]) $u_letter="-letter-".$_GET[letter];else $u_letter=NULL;if($_GET[lz]) $u_lz="-lz-".$_GET[lz];else $u_lz=NULL;if($_GET[picm]) $u_picm="-picm-".$_GET[picm];else $u_picm=NULL;
+</php>
+</head>
+<body>
+<!-- header -->
+<include file="Home:pp_header" />
+<div class="eb-headbg"></div>
+<!-- //header -->
+<div class="wz"><span>您当前的位置：</span><a href="{$root}">首页</a> <a class="current">搜索页面</a></ul></div>
+<div class="ad980">{:getadsurl('list980')}</div>
+<php>$vod_list = ff_mysql_vod('tag:'.$tag_name.';wd:'.$search_wd.';actor:'.$search_actor.';year:'.$search_year.';language:'.$search_language.';area:'.$search_area.';letter:'.$search_letter.';limit:8;page:true;order:vod_addtime desc');$page = $vod_list[0]['page'];</php>
+<div class="all p_list">
+<ul class="side_nav aleft" id="catecont">
+<li class="first no_border"><span>分类检索</span></li>
+<a class="curr" href="javascript:;" data="cid-0">全部</a>
+    <php>$array_cid = array($mov_id,$tv_id,$dm_id,$zy_id,$wei_id);</php>
+     <fflist name="array_cid" id="cid">
+     <php>$list_vod = ff_mysql_vod('cid:'.$cid.';wd:'.$search_wd.';limit:1;order:vod_addtime desc');</php>
+     <empty name="list_vod"><else /><a href="javascript:;" data="cid-{$cid}">{:getlistname($cid,'list_name')}</a></empty></fflist>
+</ul>
+<div class="p_vodlist aright">
+<div class="ui-title"><h4 class="wd aleft">搜索<strong style="color:#e12160;">{$tag_name}</strong>共找到的视频<strong style="color:red" id="counts">{$pagecount}</strong></h4>
+    </div>
+<div class="list_nav">
+<ul class="view-mode">
+<a class='curr order' data="order-vod_addtime">最近更新</a>
+<a class='order' data="order-vod_hits">最受欢迎</a>
+<a class='order' data="order-vod_gold">评分最高</a>
+</ul>
+<span>
+<a <?php if($_GET[t]=="2") {echo "class='poster_btn currt'";}else{echo "class='poster_btn'";} ?> data="t-1">海报模式</a></span>
+<span>
+<a <?php if($_GET[t]=="2") echo "class='list_btn currt'"; ?> <?php if($_GET[t]=="") echo "class='list_btn currt'"; ?> data="t-2">列表模式</a></span>
+</div>
+ <ul class="<?php if($_GET[t]=="1") echo "list-mode"; ?><?php if($_GET[t]=="") echo "list-mode"; ?><?php if($_GET[t]=="2") echo "grid-mode"; ?>"id="contents">
+ <neq name="vod_list.0.count" value="0">
+    <volist name="vod_list" id="ppvod">
+   
+
+<li><a class="vod-img" href="{$ppvod.vod_readurl}"title="{$ppvod.list_name}{$ppvod.vod_name}" ><img  class="loadimg" src="{$ppvod.vod_picurl}" data-lazyload-type="auto"/><label class="mask"></label><label class="text">{$ppvod.lastplay_name}</label><label class="score">{$ppvod.vod_gold}</label><if condition="$ppvod.vod_continu neq 0"><notempty name="ppvod.vod_tvcont"><span class="tv"></span><span class="tvtime">{$ppvod.vod_diantai}{$ppvod.vod_tvcont}</span><else/></notempty><else/></if> </a>
+     <div class="play-txt">
+      <h3><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a><span class="stitle">{$ppvod.lastplay_name}</span></h3>
+      <p class="gold"><span class="starbs"><span class="starbb" style="width:<php>echo($ppvod['vod_gold']*10)</php>%;"></span></span>({$ppvod.vod_golder}人评分)</p>
+      <p class="director"><em>导演:</em>{$ppvod.vod_director|ff_search_url}</p>
+      <p class="actor"><em>主演:</em>{$ppvod.vod_actor|ff_search_url}</p>
+      <p class="type"><em>类型：</em>{$ppvod.vod_mcid|ff_mcat_url_new=$ppvod['vod_cid']}<em class="area">地区：{$ppvod.vod_area|ff_search_url}</em></p>
+      <p class="type"><em class="showdata">上映：{$ppvod.vod_year}</em><em class="long">更新时间：{$ppvod.vod_addtime|date='Y-m-d',###}</em></p>
+      <p class="plot"><em>剧情：</em>{$ppvod.vod_content|msubstr=0,100,'utf-8',true}…</p>
+      <p class="more-desc"><a class="ak" target="_blank" href="{$ppvod.vod_readurl}">在线观看</a><a class="as" target="_blank" href="{$ppvod.vod_readurl}#juqing">影片详情</a><a class="av" target="_blank" href="{$ppvod.vod_readurl}#comment">影评</a></p>
+    </div>
+  </li>
+ </volist>
+      </ul>
+          <else/>
+       	 <ul>该分类暂无数据！</ul>
+      </neq> 
+ <div class="uipages ui-vpages" id="long-page">{$page}</div>	
+       </div>
+            </div>
+
+<include file="Home:pp_footer" />
+<script type="text/javascript">
+    var parms = new Array();
+    function parseurl(rr){
+        var url='{$root}index.php?s=vod-search-wd-{$search_wd|urlencode}{$search_director|urlencode}-actor-{$search_actor|urlencode}';
+        for(var c in rr){
+            if(rr[c]!='0'){
+                url=url+"-"+c+"-"+rr[c];
+            }
+        }
+        return url;
+    }
+    function pagegoo(url){
+        $("#contents").html('<li class="kong"><label>数据载入中.....</label>');
+        $.ajax({
+            url:url,
+            success:function (r){
+                if(r.data.ajaxtxt==''){
+                    $("#contents").html('<li class="kong">没有搜索到您想要的结果，请尝试简化您的搜索关键词;或者到留言区求片等待小编为您添加！</li>');
+                }else{
+                    $("#contents").html(r.data.ajaxtxt);
+                }
+                $("#long-page").html(r.data.long_page);
+                $("#short-page").html(r.data.short_page);
+                $("#counts").html(r.data.count);
+                $(".uipages a").click(function (e){
+                    e.preventDefault();
+                    var curdata=$(this).attr('data').split('-');
+                    parms[curdata[0]]=curdata[1];
+                    var url=parseurl(parms);
+                    pagegoo(url);
+                });
+            },dataType:'json',error:function(){
+                $("#contents").html('<br />服务器繁忙，请再试试...');
+            }
+        });
+    }
+    $('.view-mode a').click(function (e){
+                e.preventDefault();
+                $(this).addClass('curr');
+                $(this).siblings().removeClass('curr');
+                var curdata=$(this).attr('data').split('-');
+                parms[curdata[0]]=curdata[1];
+                var url=parseurl(parms);
+                pagegoo(url);
+            }
+    );
+    $(".uipages a").click(function (e){
+        e.preventDefault();
+        var curdata=$(this).attr('data').split('-');
+        parms[curdata[0]]=curdata[1];
+        var url=parseurl(parms);
+        pagegoo(url);
+        return false;
+    });
+    $("#catecont a").click(function (e){
+        $(this).addClass('curr');
+        $(this).siblings().removeClass('curr');
+        var curdata=$(this).attr('data').split('-');
+        parms[curdata[0]]=curdata[1];
+        parms['p'] = 1;
+        var url=parseurl(parms);
+        pagegoo(url);
+    });
+	 $('.list_nav span a').click(function (e){
+                e.preventDefault();
+               var constr='';
+               var curobj=$(this);
+                var url = curobj.attr('href');
+                curobj.parent().siblings().children("a").removeClass('currt');
+                curobj.addClass('currt');
+   var url='';
+		if(parms!=undefined&&parms!=null){
+			var curdata=$(this).attr('data').split('-');
+			parms[curdata[0]]=curdata[1];
+			if(curdata[1]=='1'){
+				$("#contents").removeClass('list-mode');
+				$("#contents").addClass('grid-mode');
+			}else{
+				$("#contents").addClass('list-mode');
+				$("#contents").removeClass('grid-mode');
+		}
+		}
+});
+</script>
+</body>
+</html>

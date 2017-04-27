@@ -1,0 +1,103 @@
+<div class="eb-headnav eb-headnav-xklong">
+	<b class="eb-headnav-bg"></b>
+	 <div class="eb-headnav-top g-clear"> 
+	<a href="{$root}" class="eb-headnav-logo" target="_self"></a>
+	<form class='js-eb-search eb-search eb-search-xklong' id="search" name="search"  method="POST" action="" onSubmit="return qrsearch();">
+     <div class='js-eb-suggest eb-suggest  eb-suggest-xklong g-clear' id='js-eb-suggest'>
+    <input class='eb-suggest-query js-query' type="text" id="wd" name="wd" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};" />
+    <div class='eb-suggest-wrap js-wrap' style='display:none'>
+        <div class='eb-suggest-bg'></div>
+        <ul class='js-list'></ul>
+    </div>
+</div><input type="submit" id="searchbutton"  class="eb-search-btn" value="">
+</form>
+
+<ul class="eb-headnav-ucenter" id="sign" >
+<li  id="loginbarx" class="ucenter-wrap ucenter-my drop-down"><a class="nav-link" id="innermsg" href="/?s=user-center-login.html"><span class="ucenter-item js-my">会员中心</span></a>
+<div class="drop-box" id="nav-signin" style="display:none;">
+   <p class="drop-box-arrow"></p>
+    <form id="loginform" action="/?s=user-center-login.html" method="post" onsubmit="return false;">
+    <div class="ui-form ui-signin">
+      <div class="ui-form-item ui-form-placeholder">
+        <label class="ui-label" for="username">帐号或邮箱</label>
+        <input type="text" id="username" name="username" class="ui-input" value="">
+      </div>
+      <div class="ui-form-item ui-form-placeholder">
+        <label class="ui-label" for="password">密码：</label>
+        <input type="password" id="password" name="password" maxlength="20" class="ui-input" value="" />
+        <a class="ui-icon forgot-psw" title="忘记密码" href="/?s=user-center-forgetpwd.html">忘记密码</a></div>
+        <div class="ui-form-item fn-clear">
+              <label class="ui-label">&nbsp;</label>
+              <label for="agreement" class="ui-label-checkbox">
+                <input type="checkbox" value="" name="cookietime" id="cookietime" checked="checked" value="2592000">
+                <input type="hidden" name="notforward" id="notforward" value="1">
+                <input type="hidden" name="dosubmit" id="dosubmit" value="1">记住我的登录 </label>
+              <input type="submit" id="loginbt" class="ui-button" value="登 录">
+    </div>
+  </div>
+  <!-- // ui-signin end -->
+  <div class="signin-assist fn-clear"><a class="ui-icon qq-login" href="/?s=user-center-qqlogin.html" >用QQ帐号登录</a>
+    <p><a href="/?s=user-center-reg.html" target="_blank" class="reg-btn">还没有账号?</a></p>
+  </div>
+  <!-- // signin-assist end -->
+</form>
+</div>
+		</li>
+	
+             <li id="nav-looked" class="ucenter-wrap ucenter-record drop-down">
+				<a href="javascript:" class="ucenter-item">观看记录</a>
+				<div class="drop-box">
+            <p class="drop-box-arrow"></p>
+            <div class="looked-list">
+              <p><a rel="nofollow" class="close-his" target="_self" href="javascript:;">关闭</a><a class="close-hiss" rel="nofollow" href="javascript:;" id="emptybt" data="1" target="_self">清空播放记录</a></p>
+              <ul class="highlight" id="playhistory"></ul>
+			<div class="his-todo" id="morelog" style="display:none;"></div>
+            
+           
+            
+           <script type="text/javascript">PlayHistoryObj.viewPlayHistory('playhistory');</script>
+            <!-- // looked-list end -->
+          </div>
+        </li>
+			<li class="ucenter-wrap ucenter-app">
+				<a href="/" class="ucenter-item">免费下载</a>
+			</li>
+		</ul>
+	</div>
+	<p class="eb-headnav-line"></p>
+	<div class="eb-headnav-bottom g-clear js-nav">
+	<div class="eb-headnav-nav js-data">
+      <a href="{$root}" target="_self" class="nav-item current">首页</a>    
+       <a class="nav-item " target="_self" href="{:getlistname(2,'list_url')}"><i class="navv dianshiju"></i>电视剧</a>
+	   <a class="nav-item " target="_self" href="{:getlistname(1,'list_url')}"><i class="navv dianying"></i>电影</a>
+	   <a class="nav-item " target="_self" href="{:getlistname(3,'list_url')}"><i class="navv dongman"></i>动漫</a>
+	   <a class="nav-item " target="_self" href="{:getlistname(4,'list_url')}"><i class="navv zongyi"></i>综艺</a>
+	   <a class="nav-item " target="_self" href="{:getlistname(35,'list_url')}"><i class="navv weidianying"></i>微电影</a>
+	   <a class="nav-item " target="_self" href="{:getlistname(42,'list_url')}"><i class="navv live"></i>电视直播</a>
+	     <a class="nav-item " target="_self" href="{:getlistname(43,'list_url')}"><i class="navv live"></i>在线音乐</a> 
+            		</div>
+		<div class="eb-headnav-subnav">  
+                <a href="{:ff_mytpl_url('my_top.html')}" target="_self" class=" nav-item ">热播榜</a>    
+                <a href="{:ff_mytpl_url('my_new.html')}" target="_self" class=" nav-item ">最近更新</a>    
+                 <a href="/style/banzhu/" target="_self" class=" nav-item ">帮助</a> 
+                <a href="{$url_gbshow}" target="_self" class=" nav-item ">留言</a>    
+            	</div>
+	</div>
+</div>
+<script>
+function fav(){
+		var url = window.location.href;					 
+		try{
+			window.external.addFavorite(url,document.title);
+		}catch(err){
+			try{
+				window.sidebar.addPanel(document.title, url,"");
+			}catch(err){
+				alert("请使用Ctrl+D为您的浏览器添加书签！");
+			}
+		}
+}
+	$(document).ready(function(){
+		$("#loginbarx").load("{$root}index.php?s=User-Center-usernav&forward="+encodeURIComponent(location.href)+"&random"+ new Date().getTime());
+	});
+ </script>

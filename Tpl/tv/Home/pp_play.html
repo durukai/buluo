@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>《{$vod_name}》高清在线观看 {$list_name}{$list_name_big}-{$sitename}</title>
+<meta name="keywords" content="{$vod_name}{$vod_title},{$list_name}{$vod_name},{$vod_name}国语,{$vod_name}在线观看,{$vod_name}下载">
+<meta name="description" content="{$vod_name}，免费在线观看由{$sitename}收集于互联网，该{$list_name}{$list_name_big}主要内容为{$vod_content|msubstr=0,60}，《{$vod_name}》是一部{$vod_mcid|ff_mcat_admin=$vod_cid}{$list_name}{$list_name_big}分为普通视频观看、P2P影音高清播放模式，其中普通观看模式需要安装Adobe Flash插件，P2P影音需要安装相应的高清播放器，如果你觉得{$vod_name}不错的话，推荐给你的朋友一起加速观看吧">
+
+<script type="text/javascript">var Root='/';var Sid='';var Cid='';var Id='';</script>
+<link rel="shortcut icon" href="/favicon.ico" charset="utf-8" />
+<include file="Home:pp_js" />
+<link href="{$tpl}css/user.css" rel="stylesheet" type="text/css" />
+<link href="{$tpl}css/header.css" rel="stylesheet" type="text/css" />
+<script src="{$tpl}js/top_js.js" type="text/javascript"></script>
+<script src="{$tpl}js/zhnew.js" type="text/javascript"></script>
+<link rel="stylesheet" href="{$tpl}css/play.css">
+<link href="{$tpl}css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">var ie6Load=false;</script>
+</head>
+<body>
+</head>
+<body>
+
+<!-- header -->
+<include file="Home:pp_header" />
+<div class="eb-headbg"></div>
+<!-- //header -->
+<link href="/style/css/style2.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/style/js/vod.js"></script>
+<?php	
+$yc = array('down');
+foreach($vod_playlist as $kk=>$data){
+	foreach($yc as $pids){
+		if($pids == $data['playname']){
+			unset($vod_playlist[$kk]);
+		}
+	}
+}
+?> 
+<div class="wz"><span>您当前的位置：</span><a href="{$siteurl}">首页</a><if condition="$list_pid eq $mov_id"><a href="{$list_url_big}">{$list_name_big}</a><elseif condition="$list_pid eq $tv_id" /><a href="{$list_url_big}">{$list_name_big}</a><else/></if><a href="{$list_url}">{$list_name}</a>{$vod_mcid|ff_mcat_url=$vod_cid}<a class="current" href="{$vod_readurl}">{$vod_name}{$vod_jiname}</a><div class="wfgk"><a href="/style/banzhu/">无法观看?</a></div>
+</div>
+<div class="pad980">{:getadsurl('top980')}</div>
+<div id="play-focus">
+  <!-- // layout End -->
+  <div  class="w1000">
+<div <if condition="$w gt 695"><else />class="w685"</if> id="players">
+{$vod_player}
+</div>
+    <!-- // player End -->
+    <if condition="$w gt 695"><else />
+<div class="w300" id="mright">{:getadsurl('play_left0')}
+<div class="h10"></div>
+{:getadsurl('bofangqiyou')}
+
+</if>
+    <!-- // player-ad End -->
+  </div>
+    <script>
+if(PlayHistoryObj){
+	var vod_id = "{$vod_id}" ;
+	    var vod_pid = "{$vod_pid}" ;
+	    var vod_sid = "{$vod_sid}" ;
+	  	var url_name = "" ;
+	  	var vod_maxnum = "" ;
+	if(ff_urls){
+		var json = eval("(" + ff_urls + ")");  //整个数组
+		if(json){
+			url_name = json.Data[vod_sid].playurls[(vod_pid - 1)][0] ;  //获取结果集
+			vod_maxnum = json.Data[vod_sid].playurls.length ;
+		}
+	}
+	var json = {
+		'vod_id' : vod_id ,
+		'vod_pid': vod_pid,
+		'vod_sid': vod_sid,
+		'vod_name' : "{$vod_name}",
+		'url_name' : url_name,
+		'vod_maxnum':vod_maxnum
+	} ;
+	PlayHistoryObj.addPlayHistory(json,"{$vod_readurl}",window.location.href);
+}
+</script>
+    <!-- // idt修改 -->  
+  <input type='hidden' name='_void_id' id='_void_id' value='{$vod_id}'/>
+  <div class="p10idt w1000">
+		<div class="p10idt-gold">
+		  <span>{$vod_gold}</span>
+		</div>
+		<div class="loveidbox user-bt">
+        <a rel="nofollow" class="sect-btn" id="wish" href="javascript:void(0);" data="{$root}index.php?s=User-comm-savelove-id-{$vod_id}" style="">收藏</a>
+        <div class="sect-show"><a rel="nofollow" class="cancel" href="javascript:void(0);" val="0" id="cancelbt" data="{$root}index.php?s=User-comm-dellove-id-{$vod_id}" >已收藏</a> </div> </div>
+        <div class="remind user-bt"><a rel="nofollow" class="rss-btn sect-btn" id="dingyue" href="javascript:void(0);" data="{$root}index.php?s=User-Comm-saveremind-id-{$vod_id}">订阅</a>
+          <div class="rss-show sect-show"><a rel="nofollow" class="cancel" href="javascript:void(0);" val="0" data="{$root}index.php?s=User-Comm-delremind-id-{$vod_id}" id="delbt">已订阅</a></div>
+        </div>
+          <div class="updownbtnbox">
+		<a rel="nofollow" href="javascript:void(0)" class="Up" id="Up"><span></span></a><a rel="nofollow" href="javascript:void(0)" class="Down" id="Down"><span></span></a>
+		</div>
+		<div class="playfxbox">
+    <div class="bread-share aright">
+      <div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到微信" class="bshare-weixin"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/button.js#style=-1&uuid=&pophcol=2&lang=zh"></script><a class="bshareDiv" onclick="javascript:return false;"></a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+	</div>
+	</div>
+</div> 
+<!-- // idt修改 -->
+  <!-- // play End -->
+</div>
+<php>$lay=$vod_playname;</php>
+<php>$ji=$vod_pid-1;</php>
+<div class="publicbox w1000" id="detail-list">
+	<div class="vodhottitle">
+    <div class="play_list" >
+            <if condition="$list_pid eq $mov_id">
+            <fflist name="vod_playlist" id="ppvod" offset="0" length='7'>
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">{$ppvod.playname|msubstr=0,3}</fflist></em></a></dd></equal> </fflist> 
+          <elseif condition="$list_pid eq $tv_id"/>
+                     <fflist name="vod_playlist" id="ppvod" offset="0" length='7'> 
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii"><if condition="$vod_continu neq 0">第{$ppvod.playcount}集<else/>{$ppvod.playcount}集全</if></fflist></em></a></dd></equal></fflist>  
+         <elseif condition="$list_id eq $zy_id"/>
+         <fflist name="vod_playlist" id="ppvod" offset="0" length='7'> 
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii"><if condition="$vod_continu neq 0">{$ppvod.playcount}期<else/>{$ppvod.playcount}期全</if></fflist></em></a></dd></equal></fflist>  
+        <elseif condition="$list_id eq $dm_id"/>
+            <fflist name="vod_playlist" id="ppvod" offset="0" length='7'> 
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"><php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii"><if condition="$vod_continu neq 0">第{$ppvod.playcount}集<else/>{$ppvod.playcount}集全</if></fflist></em></a></dd></equal></fflist> 
+            <else />
+            <fflist name="vod_playlist" id="ppvod" offset="0" length='7'>
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">{$ppvod.playname|msubstr=0,3}</fflist></em></a></dd></equal> </fflist> 
+            </if>
+         </div>   
+        <div class="txtt"><a rel="nofollow" href="{$url_gbshow}" target="_blank">播放报错</a></div>
+    </div>
+ <volist name="vod_playlist" id="ppvod" offset="0" length='7'>
+ <notin name="ppvod.playname" value="xunlei">
+	<div class="vodplaybox" id="{$ppvod.playname}-pl-list" <gt name="i" value="1">style="display:none"<else/>style="display:block"</gt>>
+			<div class="wxts" style="margin:0px 20px 10px 20px;">
+				<div class="snvtvb" ><span class="snvd">温馨提示：</span>[DVD：标准清晰版]&nbsp;[BD：高清无水印]&nbsp;[HD：高清版]&nbsp;[TS：抢先非清晰版] - 其中，BD和HD版本不太适合4M以下的宽带的用户和网速过慢的用户观看。</div>
+                <if condition="$ppvod.playname eq bdhd">
+                <div class="snvtvs" ><span class="snvd">[百度影音]：</span>需要安装播放器才能观看<a class="playdown_btn" rel="nofollow" href="http://dl.p2sp.baidu.com/BaiduPlayerContent/OfflineBaiduPlayer_151.exe">点击下载最新版本</a></div>
+                <elseif condition="$ppvod.playname eq qvod"/>
+                <div class="snvtvs" ><span class="snvd">[快播]：</span>需要安装播放器才能观看<a class="playdown_btn" rel="nofollow" href="http://dl.kuaibo.com/QvodSetupPlus5.exe">点击下载最新版本</a></div>
+                <else/>
+             <div class="snvtvs" ><span class="snvd">[FLASH]：</span>需要安装FLASH插件,点击下载最新的<a rel="nofollow" href="http://get.adobe.com/tw/flashplayer/" target="_blank">Adobe Flash Player</a>, 在线观看无须安装播放器。</div>
+                </if>
+        </div>
+        <php>$countjii=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php>
+        <gt name="countjii" value="5"><div class="order">排序：<a rel="nofollow" class="desc" href="javascript:void(0);" data="{$i-1}">降序</a></div> <else/></gt>
+            <p class="player_list">
+         <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php>
+         <volist name="ppvod['son']" id="ppvodson" key="iii">
+         <a <neq name="i" value="1">rel="nofollow"</neq> target="_blank" href="{$ppvodson.playurl}" title="{$ppvodson.playname}">{$ppvodson.playname|msubstr=0,10}<eq name="iii" value="1"><php>$add_time = $vod_addtime;$today = date("Ymd"); if(date("Ymd", $add_time) == $today) {
+echo "<span class='new'></span>";} else {echo "";}</php></eq></a>
+        </volist>
+</p> 
+   </div>  
+</notin>
+</volist>       
+</div>
+  <volist name="vod_playlist" id="ppvod"> 
+<if condition="$ppvod.playname eq xunlei">
+<div class="ad980">
+<volist name="vod_playlist" id="ppvod" key="playerkey"><eq name="ppvod.playname" value="xunlei">
+<div class="ui-box download-focus"><div class="ui-title"><span>迅雷下载观看</span><h2><strong>下载观看</strong></h2></div><ul class="download-group fn-clear downurl"><script type="text/javascript">var GvodUrls1 = "<volist name="ppvod['son']" id="ppvodson" key="k">{$ppvodson.playname}${$ppvodson.playpath}###</volist>";echoDown(GvodUrls1,1);</script></ul><!-- // download-group end --><div class="download-footer"><div class="download-footer-group"><table><tbody><tr><td class="ckb ckall"><input type="checkbox"  name="checkall" onclick="CheckAll(1)" id="allcheck1"/></td><td class="tit"><label id="s1p0" for="allxz">全选</label></td><td class="xlx"><a class="ui-button" href="javascript:;" onclick="zhongxz(1)">迅雷下载选中文件</a></td><td class="sms"><p>迅雷下载和看看播放请先《<a href="http://dl.xunlei.com/" rel="nofollow" target="_blank">安装迅雷</a>》和《<a href="/style/banzhu/index.html" target="_blank">查看使用帮助</a>》</p></td></tr></tbody></table></div></div><!-- // download-footer end --></eq></volist></div>
+
+      </div>
+       <else/>
+</if> 
+</volist>
+</div>
+
+<div class="pad980">{:getadsurl('play960')}</div>
+<div  class="w1000">
+    <div class="ui-titlej">
+      <ul>
+        <li id="latest1" onclick="setTab('latest',1,3);" class="current">除了"<strong>{$vod_name}</strong>"你也可能喜欢以下影片：</li>
+        <li id="latest2" onclick="setTab('latest',2,3);" class="">同主演</li>
+        <li id="latest3" onclick="setTab('latest',3,3);" class="">同导演</li>
+      </ul>
+    </div>
+    <div class="box" id="con_latest_1">
+  <ul class="img-listt">
+       <php>$vod_gold=ff_mysql_vod('cid:'.$list_id.';limit:6;order:rand()');</php>
+     <volist name="vod_gold" id="ppvod">
+      <li><a class="play-img"  href="{$ppvod.vod_readurl}" title="{$ppvod.list_name}{$ppvod.vod_name}" ><img class="loading" width="110" height="150" src="{$ppvod.vod_picurl}" data-lazyload-type="auto" alt="{$ppvod.vod_name}"/>
+        <label class="mask"></label>
+        <label class="text"><if condition="$ppvod.vod_continu neq 0">{$ppvod.lastplay_name}<else/>{$ppvod.vod_title}</if></label>
+        <label class="score"><eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}<else/>{$ppvod.vod_gold}</eq></label>
+        </a>
+        <h3><a target="_blank" href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name|msubstr=0,25}</a></h3>
+      </li>
+  </volist> 
+      </ul>
+      <ul class="txt-list-small">
+      <php>$hot_week = ff_mysql_vod('cid:'.$list_id.';limit:5,20;order:vod_hits_month desc,vod_addtime desc');</php>
+         <volist name="hot_week" id="ppvod">
+      <li><span>{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,25}</a></li>
+</volist> 
+      </ul>
+    </div>
+    <div class="box" id="con_latest_2" style="display:none">
+      <ul class="img-listt">
+		<php>$tab_actor = ff_mysql_vod('actor:'.msubstr($vod_actor,0,3).';num:6;order:vod_hits desc,vod_id desc');
+if(!$tab_actor || count($tab_actor) == 1){
+$tab_actor = ff_mysql_vod('cid:'.$vod_cid.';num:6;order:vod_stars desc,vod_hits desc');
+}</php>
+			<volist name="tab_actor" id="ppvod">
+			<li><a class="play-img"  href="{$ppvod.vod_readurl}" title="{$ppvod.list_name}{$ppvod.vod_name}" ><img class="loading" width="110" height="150" src="{$ppvod.vod_picurl}" data-lazyload-type="auto" alt="{$ppvod.vod_name}"/>
+			<label class="mask"></label>
+			<label class="text"><if condition="$ppvod.vod_continu neq 0">{$ppvod.lastplay_name}<else/>{$ppvod.vod_title}</if></label>
+			<label class="score"><eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}<else/>{$ppvod.vod_gold}</eq></label>
+			</a>
+			<h3><a target="_blank" href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></h3>
+			</li>
+			</volist>
+              </ul>
+    </div>
+    <div class="box" id="con_latest_3" style="display:none">
+      <ul class="img-listt">
+		<php>$tab_director = ff_mysql_vod('director:'.msubstr($vod_director,0,3).';num:6;order:vod_hits desc,vod_id desc');
+if(!$tab_director || count($tab_director) == 1){
+$tab_director = ff_mysql_vod('cid:'.$vod_cid.';num:6;order:vod_stars desc,vod_hits desc');
+}</php>
+			<volist name="tab_director" id="ppvod">
+			<li><a class="play-img"  href="{$ppvod.vod_readurl}" title="{$ppvod.list_name}{$ppvod.vod_name}" ><img class="loading" width="110" height="150" src="{$ppvod.vod_picurl}" data-lazyload-type="auto" alt="{$ppvod.vod_name}"/>
+			<label class="mask"></label>
+			<label class="text"><if condition="$ppvod.vod_continu neq 0">{$ppvod.lastplay_name}<else/>{$ppvod.vod_title}</if></label>
+			<label class="score"><eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}<else/>{$ppvod.vod_gold}</eq></label>
+			</a>
+			<h3><a target="_blank" href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></h3>
+			</li>
+			</volist>
+</ul>
+    </div>
+  </div>
+
+<div class="pad980">{:getadsurl('top960')}</div>
+<include file="Home:pp_footer" />
+
+
+</body>
+</html>

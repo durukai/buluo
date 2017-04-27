@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>订阅设置  - 会员中心 -{&site_name}</title>
+<include file="./Public/user/user_js.html"/>
+<script type="text/javascript">
+		function setupLabel(){
+            if($('.label-checkbox input').length) {
+                $('.label-checkbox').each(function(){
+                    $(this).removeClass('label-checkbox-on');
+                });
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('label-checkbox-on');
+                });
+            };
+            if($('.label-radio input').length) {
+                $('.label-radio').each(function(){
+                    $(this).removeClass('label-radio-on');
+                });
+                $('.label-radio input:checked').each(function(){
+                    $(this).parent('label').addClass('label-radio-on');
+                });
+            };
+        }  
+	</script>
+</head>
+<body>
+<include file="./Public/user/user_header.html"/>
+<!-- // i-header end -->
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          <li ><a href="<?php echo $useurl; ?>User-Center"><span class="icon ct-icon">&nbsp;</span>我的首页</a></li><li ><a href="<?php echo $useurl; ?>User-Center-info"><span class="icon zl-icon">&nbsp;</span>我的资料</a></li><li ><a href="<?php echo $useurl; ?>User-Center-love"><span class="icon sc-icon">&nbsp;</span>我的收藏</a></li><li class="current"><a href="<?php echo $useurl; ?>User-Center-remind"><span class="icon dy-icon">&nbsp;</span>我的订阅</a></li><li ><a href="<?php echo $useurl; ?>User-Center-comm"><span class="icon pl-icon">&nbsp;</span>我的评论</a></li><li ><a href="<?php echo $useurl; ?>User-Center-playlog"><span class="icon bf-icon">&nbsp;</span>我的云播放</a></li><li ><a href="<?php echo $useurl; ?>User-Center-gb"><span class="icon gb-icon">&nbsp;</span>我的留言本</a></li></ul>
+      </div>
+      <!-- // user-nav end -->
+     <!-- <div class="user-visitors" id="user-visitors">
+        <h3>最近访客</h3>
+        <ul class="visitor-list">
+        </ul>
+      </div>-->
+      <!-- // user-visitors end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+      <div id="i-subscribe">
+        <div class="ui-title i-tab-nav-box fn-clear">
+          <ul class="i-tab-nav">
+            <li class="current">订阅设置</li>
+          </ul>
+        </div>
+        <div class="ui-cnt">
+          <form id="remindset" method="">
+          	<input type="hidden"  name="action" value="" />
+          	<input type="hidden"  name="isRemind" value="" />
+            <div class="ui-form">
+              <p class="maopou-notice"> 友情提示：订阅提示有2种提示方式，站内提示和邮件提示。您能可以根据自己的习惯选择，或者一起选择。 </p>
+              <!--<div class="ui-form-item fn-clear">
+                <label class="ui-label w130">订阅提醒：</label>
+                <div class="ui-form-block w300">
+                  <label class="label-checkbox" for="if_email" hidefocus>
+                   <input type="checkbox" name="if_email" value="1" id="if_email"  checked="checked"/>开通订阅提醒功能</label>
+                </div>
+                <p class="ui-message ui-message-clear">订阅有更新时，{&site_name}会同步提示您观看。</p>
+              </div>-->
+              <div class="ui-form-item  fn-clear">
+                <label class="ui-label w130">订阅邮件提醒：</label>
+                  <div class="ui-form-block w300">
+                  <label class="label-checkbox" for="if_inter" hidefocus>
+                    <input type="checkbox" value="1" name="if_inter" id="if_inter" <if condition="$memberinfo[isRemind] eq 1">checked="checked"</if>/>
+                    开通订阅邮件提醒功能</label>
+                </div>
+              </div>
+              <div class="ui-form-item fn-clear">
+                <label class="ui-label w130"></label>
+                <input type="text" class="ui-input w300" value="{$memberinfo[iemail]}" name="iemail"  />
+                <p class="ui-message ui-message-clear">推荐使用QQ邮箱，订阅有更新时，发送至您的指定邮箱。</p>
+              </div>
+              <div class="ui-form-item fn-clear">
+                <label class="ui-label w130"></label>
+                <input type="button" id="remindsetbt" class="ui-button w150" value="提 交" />
+              </div>
+            </div>
+          </form>
+          <!-- // ui-form End -->
+        </div>
+      </div>
+      <!-- // ui-box End -->
+    </div>
+    <!-- // maxBox End -->
+  </div>
+  <script type="text/javascript">
+	$("#remindsetbt").click(function(){
+		if(jQuery("input[name='if_inter']").attr('checked')){
+			jQuery("input[name='isRemind']").val('1');
+		}else{
+			jQuery("input[name='isRemind']").val('0');
+		}
+		jQuery("input[name='action']").val('change');
+		$("#remindset").qiresub({
+			curobj:$("#remindsetbt"),
+			txt:'数据提交中,请稍后...',
+			onsucc:function(result){
+				//$.showfloatdiv({offset:$("#register").offset(),txt:'成功注册'});
+				$.hidediv(result);
+				//alert(result.msg);
+			}
+		}).post({url:'<?php echo $useurl; ?>User-Center-remindset'});
+	});
+	</script>
+  <script type="text/javascript">
+	$(function(){		
+		$('.label-checkbox').click(function(){
+			setupLabel();
+		});
+		setupLabel();
+	});
+	</script>
+</div>
+<!-- // wrap End -->
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

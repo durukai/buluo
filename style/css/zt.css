@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/*  整站共用样式表  */
+body{
+	font: 12px/14px SimSun, '宋体', sans-serif;
+	background:#fff; color:#666666; line-height:20px;
+}
+body, h1, h2, h3, h4, h5, h6, p, pre, blockquote, dl, dt, dd, ul, ol, li, form, fieldset, legend, input, textarea, button, th, td, h1, h2, h3, h4, h5 ,h6 {
+    margin: 0;
+    padding: 0;
+}
+dl, dt, dd, ul, ol, li{ 
+	list-style:none;
+}
+img{ 
+	border:none;
+}
+.img a{ float:left; padding:4px; border:1px solid #dbdbdb;}
+.img a:hover{ float:left; padding:4px; border:1px solid #dc2600;}
+
+.img1 a{ float:left; padding:3px; border:1px solid #dbdbdb;}
+.img1 a:hover{ float:left; padding:3px; border:1px solid #dc2600;}
+
+.img2 a{ float:left; padding:2px; border:1px solid #dbdbdb;}
+.img2 a:hover{ float:left; padding:2px; border:1px solid #dc2600;}
+
+.img3 a{ float:left; border:1px solid #dbdbdb;}
+.img3 a:hover{ float:left; border:1px solid #dc2600;}
+.img4 a{ float:left; padding:1px; border:1px solid #dbdbdb;}
+.img4 a:hover{ float:left; padding:1px; border:1px solid #dc2600;}
+
+
+a{ color:#000000; text-decoration:none; cursor:pointer;}
+a:hover{ color:#dc2600;}
+.red{ color:#dc2600;}
+.orange{ color:#ff9900;}
+.sored{ color:#c00;}
+.wrap{ margin:0 auto; width:980px; clear:both;}
+.clr{
+	clear:both; height:0; line-height:0; 
+}
+.f_left{ float:left;}
+.f_right{
+	float:right;
+}
+.divHide{
+	display:none;
+}
+.movies
+{background:url(../images/zt/22.gif) no-repeat center;}
+.movies .main{height:460px; width:980px; margin:0 auto; position:relative;}
+.movies .main .player{width:642px;height:400px;position:absolute;left: 1px;top: 21px;}
+.movies .intro{width:290px;
+	height:420px;
+	position:absolute;
+	left: 653px;
+	top: 19px;
+}
+.movies .intro h4
+{color:#ffffff; font-size:30px; font-family:"Microsoft YaHei",微软雅黑; font-weight:100; position:relative;}
+.movies .intro h4 a{display:block; position:absolute; width:116px; height:34px; text-align:center; font-size:18px; line-height:34px; color:#FFF; left:140px; top:-5px;*top:3px;_top:0px; background:url();}
+.ad{width:980px; margin:0 auto;}
+.title_01{background:url(http://img.tv189.cn/2014-02-25/100241473.jpg) no-repeat center; height:64px;}
+.title_02{background:url(http://img.tv189.cn/2014-02-25/100241475.jpg) no-repeat center; height:64px;}
+.box_02{background:url(http://img.tv189.cn/2014-02-25/100241479.jpg) no-repeat center; min-height:431px; _height:431px; /* 高清剧照*/}
+.title_04{background:url(http://img.tv189.cn/2014-02-25/100241476.jpg) no-repeat center; height:64px;}
+.box_04{background:url(http://img.tv189.cn/2014-02-25/100241478.jpg) no-repeat center; height:380px;/* 大片推荐*/}
+.word_01{background:url(http://img.tv189.cn/2014-02-25/100241456.jpg) no-repeat center; height:246px; position:relative;}
+.word_01 p{
+	position:absolute;
+	width:400px;
+	left: 560px;
+	top: 70px;}
+.word_02{background:url(http://img.tv189.cn/2014-02-25/100241457.jpg) no-repeat center; height:246px; position:relative;}
+.word_02 p{
+	position:absolute;
+	width:370px;
+	left: 56px;
+	top: 74px;}
+.word_03{background:url(http://img.tv189.cn/2014-02-25/100241458.jpg) no-repeat center; height:245px; position:relative;}
+.word_03 p{
+	position:absolute;
+	width:370px;
+	left: 580px;
+	top: 74px;
+}
+.word_04{background:url(http://img.tv189.cn/2014-02-25/100241459.jpg) no-repeat center; height:243px; position:relative;}
+.word_04 p
+{
+	position:absolute;
+	width:370px;
+	left: 56px;
+	top: 70px;
+}
+.intro_box p,.movie .intro p,.box_03 .left ul li,.box_03 .left p,.box_03 .left a,.box_03 .right a.more{line-height:26px; font-size:14px; color:#E0E0E0;}
+.part_1 b{font-weight:100; color:#E0E0E0;}
+.part_1,.part_2 {padding-top:20px;}
+
+/**********颜色**************/

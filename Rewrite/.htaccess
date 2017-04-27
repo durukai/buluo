@@ -1,0 +1,33 @@
+# 将 RewriteEngine 模式打开
+RewriteEngine On
+# 安装目录路径
+RewriteBase /
+# Rewrite 系统规则请勿修改
+RewriteRule ^vod-(.*).html$ index.php\?s=/Home-vod-$1
+RewriteRule ^User(.*)$ index.php\?s=/User$1
+RewriteRule ^vodlist-(.*).html$ index.php\?s=/Home-vod-show-id-$1
+RewriteRule ^like$ index.php\?s=/Home-vod-show-id-39
+RewriteRule ^like/$ index.php\?s=/Home-vod-show-id-39
+RewriteRule ^like/index.html$ index.php\?s=/Home-vod-show-id-39
+RewriteRule ^live$ index.php\?s=/Home-vod-show-id-38
+RewriteRule ^live/$ index.php\?s=/Home-vod-show-id-38
+RewriteRule ^live/index.html$ index.php\?s=/Home-vod-show-id-38
+RewriteRule ^zhuanti$ index.php\?s=/Special-show$1
+RewriteRule ^zhuanti/$ index.php\?s=/Special-show$1
+RewriteRule ^zhuanti/index.html$ index.php\?s=/Special-show$1
+RewriteRule ^(.*)/(.*)/(.*)-(.*).html$ index.php\?s=/vod-play-id-$2-sid-$3-pid-$4-listname-$1
+RewriteRule ^news-(.*)$ index.php\?s=/Home-news-$1
+RewriteRule ^special-(.*)$ index.php\?s=/Home-special-$1
+RewriteRule ^search-(.*).html$ index.php\?s=/Home-vod-search-$1
+RewriteRule ^top(.*).html$  index.php\?s=/my-show-id-top$1.html
+RewriteRule ^new(.*).html$  index.php\?s=/my-show-id-new.html
+RewriteRule ^404(.*).html$  index.php\?s=/my-show-id-404.html
+RewriteRule ^sitemap(.*).html$  index.php\?s=/my-show-id-sitemap.html
+RewriteRule ^map/(rss|google|baidu|sitemap).xml$ index.php\?s=/map-show-id-$1-limit-500.html
+RewriteRule ^baidu(.*).html$  index.php\?s=/map-show-id-baidu-limit-500.html
+RewriteRule ^tag-(.*)$ index.php\?s=/Home-tag-$1
+RewriteRule ^gb-(.*)$ index.php\?s=/User-gb-$1
+RewriteRule ^cm-(.*)$ index.php\?s=/Home-cm-$1
+RewriteRule ^map-(.*)$ index.php\?s=/Home-map-$1
+RewriteRule ^my-(.*)$ index.php\?s=/Home-my-$1 
+RewriteRule ^Tpl/(.*)/Home/(.*).html$ /404.html permanent;

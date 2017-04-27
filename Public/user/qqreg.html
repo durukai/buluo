@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{&site_name} - 新用户注册</title>
+<meta name="keywords" content="{&site_keywords}">
+<meta name="description" content="{&site_description}">
+<link href="__ROOT__/Public/user/css/base.css" type="text/css" rel="stylesheet">
+<link href="__ROOT__/Public/user/css/qirebox.css" type="text/css" rel="stylesheet">
+<script language="javascript">
+<!-- 
+ window.onerror=function(){return true;} 
+// --></script>
+<script src="__ROOT__/Public/user/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="__ROOT__/Public/user/js/jquery.base.js" type="text/javascript"></script>
+<script src="__ROOT__/Public/user/js/formValidator-4.0.1.js" type="text/javascript"></script>
+</head>
+<?php
+$path=C('site_path');
+if(C('url_rewrite')){
+$useurl= C('site_path');
+}
+else{
+$useurl="$path?s=";
+}
+?>
+<body>
+<div class="layout" id="sign-header">
+  <div id="sign-logo"><a href="{&site_path}"><img src="__ROOT__/Public/user/images/logo.png" alt=""></a></div>
+</div>
+<!-- // sign-header end -->
+<div class="layout" id="sign-content">
+  <div class="ui-box ui-qire sign-focus" id="reg-box">
+    <div class="ui-title fn-clear">
+      <h2>完善资料</h2>
+    </div>
+    <div class="ui-cnt fn-clear">
+      <form id="personRegForm"  method="post">
+        <div class="ui-form" id="sign-primary">
+          <div class="ui-form-item fn-clear">
+            <label class="ui-label w100">&nbsp;</label>
+            <p class="maopou-notice">&nbsp;&nbsp;&nbsp;&nbsp;欢迎来自{$_SESSION['from']}的<b style="color:#7abd54;">{$nickname}</b>，你好。立即设置一个密码，以后就可以直使用QQ登录{&site_name}</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="email" class="ui-label w100"><strong>Email</strong>地址：</label>
+            <input type="text" id="email" name="email" class="ui-input w220" value="">
+            <p class="onError ui-message" id="emailTip" style="">你输入的邮箱长度非法,请确认</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="username" class="ui-label w100">用户名：</label>
+            <input type="text" id="username" name="username" class="ui-input w220" value="">
+            <p class="onError ui-message" id="usernameTip" style="">该用户名不可用，请更换用户名</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="password" class="ui-label w100">设置密码：</label>
+            <input type="password" id="password" name="password" maxlength="20" class="ui-input w220" value="">
+            <p class="onCorrect ui-message" id="passwordTip" style="">密码输入正确</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="verifypass" class="ui-label w100">重复密码：</label>
+            <input type="password" id="verifypass" name="verifypass" maxlength="20" class="ui-input w220" value="">
+            <p class="onShow ui-message" id="verifypassTip" style="">输再次输入密码</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label class="ui-label w100">&nbsp;</label>
+            <input type="submit" id="register" class="ui-button w220" value="立即注册">
+           &nbsp;&nbsp; <a href="<?php echo $useurl; ?>User-Center">以后再说，立即进入会员中心！</a>
+          </div>
+           <div class="ui-form-item ui-form-checkbox fn-clear">
+            <label class="ui-label w100">&nbsp;</label>
+            <div class="ui-form-block w220">
+              <label for="agreement" class="ui-label-checkbox">
+             	《<a href="<?php echo $useurl; ?>User-Center-agreement" target="_blank">使用协议</a>》 </label>
+            </div>
+          </div></div><!-- // ui-form#sign-primary end --></form><div id="sign-app"><div class="sign-app-list"><h5>您已经成功登录：</h5><div class="sign-app-block fn-clear"><a href="#"><img src="__ROOT__/Public/user/images/noavatar_small.gif?rand=1392279459" alt="" /></a><p><span>亲爱的 <strong>{$nickname}</strong></span><br />
+欢迎使用<em>{$_SESSION['from']}</em>登录{&site_name}。</p></div><ul class="sign-app-tips"><li>如果你没有在{&site_name}帐号，请在左边注册，注册成功即可与<em>{$_SESSION['from']}</em>绑定，绑定后可用{$_SESSION['from']}或注册帐号登录。</li><li>如果你已有{&site_name}，请点击<a href="<?php echo $useurl; ?>User-Center-login">登录</a>。</li></ul></div></div><!-- // sign-app end --></div></div>
+        </div>
+        <!-- // ui-form#sign-primary end -->
+      </form>
+      <script type="text/javascript">
+      $.formValidator.initConfig({
+    		formID : "personRegForm",
+    		debug : false,
+    		submitOnce : false,
+    		onSuccess : function() {
+    			$("#personRegForm").qiresub({
+    				curobj : $("#register"),
+    				txt : '数据提交中,请稍后...',
+    				onsucc : function(result) {
+    					$.hidediv(result);
+    				}
+    			}).post({
+    				url : '<?php echo $useurl; ?>User-Center-modlogin'
+    			});
+    			return false;
+    		},
+    		onError : function(msg, obj, errorlist) {
+    			$("#errorlist").empty();
+    			$.map(errorlist, function(msg) {
+    				$("#errorlist").append("<li>" + msg + "</li>")
+    			});
+    		},
+    		submitAfterAjaxPrompt : '有数据正在异步验证，请稍等...'
+    	});
+  $("#username").formValidator({
+	onShow : "请输入4-15位的用户名",
+	onFocus : "用户名至少4个字符,最多15个字符",
+	onCorrect : "该用户名可以注册"
+}).inputValidator({
+	min : 4,
+	max : 15,
+	onError : "你输入的用户名非法,请确认"
+}).regexValidator({
+	regExp : "myusername",
+	dataType : "enum",
+	onError : "用户名格式不正确"
+}).ajaxValidator({
+	dataType : "json",
+	async : true,
+	cache : false,
+	url : "<?php echo $useurl; ?>User-Center-valideusername-username-",
+	success : function(data) {
+		if (parseInt(data.status) > 0) {
+			return true
+		} else {
+			return false;
+		}
+	},
+	onError : "该用户名不可用，请更换用户名",
+	onWait : "正在对用户名进行合法性校验，请稍候..."
+});
+      $("#email").formValidator({onShow : "请输入正确的邮箱地址",onFocus : "邮箱至少6个字符,最多100个字符",onCorrect : "填写正确",defaultValue : ""})
+				 .inputValidator({min : 6,max : 100,onError : "你输入的邮箱长度非法,请确认"})
+				 .regexValidator({
+					regExp : "^([\\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$",
+					onError : "你输入的邮箱格式不正确"})
+				 .ajaxValidator({type : "get",dataType : "json",async : false,url : "<?php echo $useurl; ?>User-Center-validemail-email-",
+					success : function(data) {
+					if (parseInt(data.status) > 0) {
+						return true
+					} else {
+						return false;
+					}
+				},
+			onError : "此email不可用",
+			onWait : "正在对Email进行合法性校验，请稍候..."
+	   });
+      $("#password").formValidator({onShow : "请输入密码",onFocus : "至少6个长度",onCorrect : "密码输入正确",onError : '密码在6-16位'})
+      	  .inputValidator({min : 6,empty : {leftEmpty : false,rightEmpty : false,emptyError : "密码两边不能有空符号"},onError : "密码在6-16位"
+      });
+      $("#verifypass").formValidator({onShow : "输再次输入密码",onFocus : "至少6个长度",onCorrect : "密码一致"})
+      		.inputValidator({min : 6,empty : {leftEmpty : false,rightEmpty : false,emptyError : "重复密码两边不能有空符号"},onError : "重复密码不能为空,请确认"})
+      		.compareValidator({desID : "password",operateor : "=",onError : "2次密码不一致,请确认"
+       });
+      </script>
+    </div>
+  </div>
+  <!-- // sign-box#regbox end -->
+</div>
+<!-- // sign-content end -->
+<!-- // footer end -->
+<script language="javascript" src="__ROOT__/Public/user/js/qireobj.js" type="text/javascript"></script>
+<script type="text/javascript" src="__ROOT__/Public/user/js/focus.js"></script>
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

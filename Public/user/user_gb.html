@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>留言 - 会员中心 -{&site_name}</title>
+<include file="./Public/user/user_js.html"/>
+<script language="javascript">
+var reloadcode = function(){
+
+	$('#safecode').attr('src','__ROOT__index.php?s=Vcode-Index-time='+new Date());
+
+}
+$(document).ready(function(){
+	$('#gb_vcode').focus(function(){
+		$('#gb_vcode_html').html('<a href="javascript:reloadcode()"><img src="__ROOT__index.php?s=Vcode-Index" alt="看不清楚换一张" name="safecode" border="0" align="absbottom" id="safecode"></a>');
+	});
+});
+</script>
+<script type="text/javascript">
+		function setupLabel(){
+            if($('.label-checkbox input').length) {
+                $('.label-checkbox').each(function(){
+                    $(this).removeClass('label-checkbox-on');
+                });
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('label-checkbox-on');
+                });
+            };
+            if($('.label-radio input').length) {
+                $('.label-radio').each(function(){
+                    $(this).removeClass('label-radio-on');
+                });
+                $('.label-radio input:checked').each(function(){
+                    $(this).parent('label').addClass('label-radio-on');
+                });
+            };
+        }  
+		function initLabelEvent(){
+			$(".user-img-list li").hover(function(){
+				$(this).find(".ui-del").show();
+			},function(){
+				$(this).find(".ui-del").hide();
+			});
+
+			$('.label-checkbox').click(function(){
+				setupLabel();
+			});
+
+			setupLabel();
+		}
+	</script>
+</head>
+<body>
+<include file="./Public/user/user_header.html"/>
+<!-- // i-header end -->
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+         <volist name="menus" id="menu">
+         <li <if condition="$menu.a eq $action">class="current"</if>><a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><span class="icon {$menu.data}-icon">&nbsp;</span>{$menu.name}</a></li>	
+          </volist>
+        </ul>
+      </div>
+      <!-- // user-nav end -->
+     <!-- <div class="user-visitors" id="user-visitors">
+        <h3>最近访客</h3>
+        <ul class="visitor-list">
+        </ul>
+      </div>-->
+      <!-- // user-visitors end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+      <div id="i-subscribe">
+        <div class="ui-title i-tab-nav-box fn-clear">
+          <ul class="i-tab-nav" id="pids">
+            <li class="current"><a href="<?php echo $useurl; ?>User-Center-getMyComment-gid-all" hidefocus="">全部</a></li>
+            <li class="line"></li>
+            <li class=""><a href="<?php echo $useurl; ?>User-Center-getMyComment-gid-11" hidefocus="">影片报错</a></li>
+            <li class="line"></li>
+            <li class=""><a href="<?php echo $useurl; ?>User-Center-getMyComment-gid-12" hidefocus="">访问故障</a></li>
+            <li class="line"></li>
+            <li class=""><a href="<?php echo $useurl; ?>User-Center-getMyComment-gid-1" hidefocus="">网站建议</a></li>
+            <li class="line"></li>
+            <li class=""><a href="<?php echo $useurl; ?>User-Center-getMyComment-gid-2" hidefocus="">其他留言</a></li>
+          </ul>
+          <a class="i-button givegb boxopen cboxElement" href="#add-feedback">我要留言</a></div>
+        <div class="ui-cnt">
+          <form id="delcomm" method="post">
+            <ul class="user-txt-list feedback-list fn-clear" id="xlist">
+	            <!-- 
+
+	              <li class="kong">您暂时还没有提什么意见哦！有什么意见和建议告诉我们吧!</li>
+
+	             -->
+             	<volist name="myComment" id="val">
+             		<if condition="$val['gb_intro'] eq null ">
+             			<li>
+	             			<label class="label-checkbox" hidefocus=""><input name="gb[]" value="{$val['gb_id']}" type="checkbox" /></label>
+			     			<div class="user-txt-list-cnt">
+			     				<h5><span class="date-time">{$time}</span><strong>{$val['gb_title']}</strong></h5>
+			     				<p>{$val['gb_content']}</p>
+			     			</div>
+             			</li>
+             		<else />
+             			<li>
+	             			<label class="label-checkbox" hidefocus=""><input name="gb[]" value="{$val['gb_id']}" type="checkbox" /></label>
+			     			<div class="user-txt-list-cnt">
+			     				<h5><span class="date-time">{$time}</span><strong>{$val['gb_title']}</strong></h5>
+			     				<p>{$val['gb_content']}</p>
+			     				<div class="mymsg-list-cnt">
+		     						<strong>管理员回复：</strong>{$val['gb_intro']}
+		     					</div>
+			     			</div>
+             			</li>
+             		</if>
+             	</volist>
+            </ul>
+          </form>
+          <!-- // i-list End -->
+          <div class="user-opera fn-clear">
+            <div class="check-del">
+              <label class="label-checkbox" for="checkall" hidefocus="">
+                <input type="checkbox" id="checkall" class="delcheckall"> 全选</label>
+                  <form action="" method="post" id="delremindform">
+                  <input type="hidden" value="" id="delids" name="lid">
+                <a class="ui-edit ui-edit-short cleanup" href="javascript:;" data="<?php echo $useurl; ?>User-Center-xxx">删除</a>
+              </form>
+            </div>
+            <div id="xpage" class="fav-pic-page"></div>
+          </div>
+          <!-- // i-do End -->
+        </div>
+      </div>
+      <!-- // ui-box End -->
+    </div>
+    <!-- // i-cnt End -->
+    <!-- bigbox-->
+    <div style="display:none">
+      <div id="add-feedback">
+        <div class="ui-dialog-cnt">
+          <div class="ui-dialog-width ui-gb-dialog">
+            <form action="<?php echo $useurl; ?>User-Center-gb#" method="post" id="bform">
+              <div class="ui-form">
+                <div class="ui-form-title">
+                  <h3>我要留言</h3>
+                </div>
+                <div class="ui-dialog-tab">
+                  <ul id="gb_types">
+                    <li val="11" class="current">影片报错<span>&nbsp;</span></li>
+                    <li val="12">访问故障<span>&nbsp;</span></li>
+                    <li val="1">网站建议<span>&nbsp;</span></li>
+                    <li val="2">其他留言<span>&nbsp;</span></li>
+                  </ul>
+                  <input type="hidden" name="gb_cid" id="gb_type" value="11">
+                  <input type="hidden" name="action"  value="ajax">
+                  <script type="text/javascript">
+								$("#gb_types li:first").addClass('current');
+								$("#gb_type").val($("#gb_types li:first").attr('val'));
+								$("#gb_types li").bind('click',function(e){									
+									$("#gb_types li").each(function(){
+										$(this).removeClass('current');
+
+									});
+									$(this).addClass('current');
+									$("#gb_type").val($(this).attr('val'));
+								});
+							</script>
+                </div>
+                <div class="ui-form-item fn-clear">
+                  <input type="text" name="gb_title" id="title" class="ui-input w465" maxlength="30">
+                </div>
+                <div class="ui-form-item fn-clear">
+                  <textarea id="txt" name="gb_content" class="ui-input ui-textarea w455" rows="5" cols="60"></textarea>
+                </div>
+                 <if condition="C('user_check') eq 0"><input type="hidden" name="gb_status"  value="1"></if>
+                 <if condition="C('user_vcode') eq 1"><div class="vcodde"><div class="vcode">验证码：</div>
+                 <input name="gb_code" type="text" class="ui-code" id="gb_vcode"/>&nbsp;<span id="gb_vcode_html"></span></div></if>
+                <div class="ui-form-item fn-clear">
+                  <input type="button" id="bigboxbt" class="ui-button w150" value="提 交">
+                </div>
+              </div>
+              <!-- // ui-form End -->
+            </form>
+          </div>
+          <!-- // ui-gb-dialog End -->
+        </div>
+      </div>
+      <!-- // Dialog End -->
+    </div>
+    <!-- bigbox end-->
+   <script type="text/javascript">		
+   	   $(".boxopen").click(function(e){	
+			$(this).colorbox({
+				inline:true, 
+				width: "542px"
+			});
+			$("#add-feedback #title").val('');
+			$("#add-feedback #txt").val('');
+			$("#add-feedback #bigboxbt").unbind();
+			$("#add-feedback #bigboxbt").click(function(e){
+				$("#add-feedback #bform").qiresub({
+					curobj:$("#add-feedback #bigboxbt"),
+					txt:'数据提交中,请稍后...',
+					onsucc:function(result){
+						if(parseInt(result.rcode)==1){
+							//pagegoo(window.location.href+"-ajax");
+							pagegoo("<?php echo $useurl; ?>User-Center-getMyComment-gid-all");
+							$.colorbox.close();
+							$("#pids li:first").addClass('current');
+							$("#pids li:gt(1)").removeClass('current');
+						}
+						$.hidediv(result);
+					}
+				}).post({url:'<?php echo $useurl; ?>User-Center-addGuestbook'});
+			});
+		});
+		function pagegoo(url){
+			if(navigator.userAgent.indexOf('MSIE 6.0')>0||navigator.userAgent.indexOf('MSIE 9.0')>0){
+				url=url+"-"+Math.random();
+		    }
+			$.ajax({ url: url,  success: function(data){
+				if(data.ajaxtxt!=''){
+					$("#xlist").html(data.ajaxtxt);
+					initLabelEvent();
+					$("#xpage a").click(function (e){
+						pagegoo(e.target);
+						return false;
+					});
+					$(".delcheckall").click(function(){
+						checkAll('');
+					});
+					$(".delcheckall").attr('checked',false);
+					$(".fav-cancel").click(function(event){
+						$.showfloatdiv({
+							wantclose:2,
+							succdo:function(r){
+								if(parseInt(r.rcode)==1){
+									pagegoo(window.location.href+"-ajax");
+									$("#pids").html(r.dhtxt);
+								}
+							},txt:'确认删除?'
+						});
+					});
+				}else{
+				   $("#xlist").html('<li class="kong">您暂时还没有提什么意见哦！有什么意见和建议告诉我们吧!</li>');
+				   $(".i-do").hide();
+				}
+			},dataType:'json'});
+			return false;				
+		}
+		pagegoo('<?php echo $useurl; ?>User-Center-getMyComment-gid-all');
+		$(".cleanup").click(function(e){
+			$.showfloatdiv({
+				wantclose:2,
+				ispost:1,
+				formid:'delcomm',
+				url:'<?php echo $useurl; ?>User-Center-delMyMessage',
+				succdo:function(r){
+					if(parseInt(r.rcode)==1){
+						pagegoo('<?php echo $useurl; ?>User-Center-getMyComment-gid-all');	
+					}
+				},txt:'确认删除?'
+			});
+		});
+
+		$("#pids a").click(function (e){
+			$(this).parent('li').nextAll().removeClass('current');
+			$(this).parent('li').prevAll().removeClass('current');
+			$(this).parent('li').addClass('current');
+			pagegoo($(this).attr('href'));
+			return false;
+		});
+
+		$(".gb-list li").click(function (){
+			$(this).find("h5 strong").removeClass('read');
+		});
+		</script>
+  </div>
+  <!-- // maxBox End -->
+</div>
+<!-- // wrap End -->
+<!-- // footer end -->
+<div data-type="4" data-plugin="aroundbox" data-plugin-aroundbox-x="left" data-plugin-aroundbox-y="bottom" data-plugin-aroundbox-iconsize="60x60" data-plugin-aroundbox-fixed="1" data-plugin-aroundbox-offsetx="10"></div>
+<div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" style="display: none;">
+  <div id="cboxWrapper">
+    <div>
+      <div id="cboxTopLeft" style="float: left;"></div>
+      <div id="cboxTopCenter" style="float: left;"></div>
+      <div id="cboxTopRight" style="float: left;"></div>
+    </div>
+    <div style="clear: left;">
+      <div id="cboxMiddleLeft" style="float: left;"></div>
+      <div id="cboxContent" style="float: left;">
+        <div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
+        <div id="cboxLoadingOverlay" style="float: left;"></div>
+        <div id="cboxLoadingGraphic" style="float: left;"></div>
+        <div id="cboxTitle" style="float: left;"></div>
+        <div id="cboxCurrent" style="float: left;"></div>
+        <div id="cboxNext" style="float: left;"></div>
+        <div id="cboxPrevious" style="float: left;"></div>
+        <div id="cboxSlideshow" style="float: left;"></div>
+        <div id="cboxClose" style="float: left;"></div>
+      </div>
+      <div id="cboxMiddleRight" style="float: left;"></div>
+    </div>
+    <div style="clear: left;">
+      <div id="cboxBottomLeft" style="float: left;"></div>
+      <div id="cboxBottomCenter" style="float: left;"></div>
+      <div id="cboxBottomRight" style="float: left;"></div>
+    </div>
+  </div>
+  <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

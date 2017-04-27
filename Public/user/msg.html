@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0038)http://www.qire123.com/user-Center-msg -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>我的短消息 - 会员中心 -飞飞CMS影视系统</title>
+
+<link href="style/css/base.css" type="text/css" rel="stylesheet">
+<link href="style/css/i.css" type="text/css" rel="stylesheet">
+<script src="style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="style/js/jquery.base.js" type="text/javascript"></script>
+<link href="style/css/qirebox.css" type="text/css" rel="stylesheet">
+
+<script type="text/javascript">
+		function setupLabel(){
+            if($('.label-checkbox input').length) {
+                $('.label-checkbox').each(function(){
+                    $(this).removeClass('label-checkbox-on');
+                });
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('label-checkbox-on');
+                });
+            };
+            if($('.label-radio input').length) {
+                $('.label-radio').each(function(){
+                    $(this).removeClass('label-radio-on');
+                });
+                $('.label-radio input:checked').each(function(){
+                    $(this).parent('label').addClass('label-radio-on');
+                });
+            };
+        }  
+	</script>
+</head>
+<body>
+<div id="i-header">
+  <div class="layout fn-clear">
+    <div id="i-logo"><a href="http://www.qire123.com/"><img width="157" height="42" src="style/images/ilogo.gif" alt=""></a></div>
+    <ul id="i-nav">
+      <li class="i-nav-item"><a class="nav-link" target="_blank" href="http://www.qire123.com/">返回首页</a></li>
+      <li class="i-nav-item"><a class="nav-link" target="_blank" href="http://i.qire123.com/300451">预览我的个人主页</a></li>
+      <li class="i-nav-item drop-down" id="ubox"><a class="nav-link drop-title nav-avatar" href="http://www.qire123.com/user-Center"><img src="" alt="tlb06"><span>tlb06</span></a>
+        <div class="drop-box" id="nav-signed">
+          <ul class="ui-signed">
+            
+             <li><a href="index.php?s=User-Index"><i class="ui-icon user-qire"></i>我的影视</a></li>
+            <li><a href="index.php?s=User-Index-info"><i class="ui-icon user-edit"></i>我的资料</a></li>
+            <li><a href="index.php?s=User-Index-love"><i class="ui-icon user-fav"></i>我的收藏</a></li>
+            <li><a href="index.php?s=User-Index-remind"><i class="ui-icon user-rss"></i>我的订阅</a></li>
+            <li><a href="index.php?s=User-Index-comm"><i class="ui-icon user-cmt"></i>我的评论</a></li>
+            <li><a href="index.php?s=User-Index-playlog"><i class="ui-icon user-log"></i>我的云播放</a></li>
+            <li><a href="index.php?s=User-Index-gb"><i class="ui-icon user-gb"></i>我的留言本</a></li>
+            
+            <li class="logout"><a class="logoutbt" data="/user-Center-logout" href="javascript:;" target="_self">
+            	<i class="ui-icon user-logout"></i>退出</a>
+            </li>
+            
+          </ul>
+        </div>
+      </li>
+      <li class="i-nav-item" id="i-logout"><a class="nav-link logoutbt" data="/user-Center-logout" href="javascript:;" target="_self">退出</a></li>
+    </ul>
+  </div>
+</div>
+<!-- // i-header end -->
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          
+           <li ><a href="index.php?s=User-Index"><span class="icon ct-icon">&nbsp;</span>我的首页</a></li>
+          <li><a href="index.php?s=User-Index-info"><span class="icon zl-icon">&nbsp;</span>我的资料</a></li>
+          <li class="current"><a href="index.php?s=User-Index-msg"><span class="icon dx-icon">&nbsp;</span>我的私信</a></li>
+          <li><a href="index.php?s=User-Index-love"><span class="icon sc-icon">&nbsp;</span>我的收藏</a></li>
+          <li><a href="index.php?s=User-Index-remind"><span class="icon dy-icon">&nbsp;</span>我的订阅</a></li>
+          <li><a href="index.php?s=User-Index-comm"><span class="icon pl-icon">&nbsp;</span>我的评论</a></li>
+          <li><a href="index.php?s=User-Index-playlog"><span class="icon bf-icon">&nbsp;</span>我的云播放</a></li>
+          <li><a href="index.php?s=User-Index-gb"><span class="icon fd-icon">&nbsp;</span>我的留言本</a></li>
+          
+          
+        </ul>
+      </div>
+      <!-- // user-nav end -->
+      <div class="user-visitors" id="user-visitors">
+        <h3>最近访客</h3>
+        <ul class="visitor-list">
+        </ul>
+      </div>
+      <!-- // user-visitors end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+      <div id="i-subscribe">
+        <div class="ui-title i-tab-nav-box fn-clear">
+          <ul class="i-tab-nav">
+            <li class="current"><a href="http://www.qire123.com/user-Center-msg#" hidefocus="">我的私信</a></li>
+            <!--<li class="line"></li>-->
+            <!--<li><a href="#" hidefocus>我的发件箱</a></li>-->
+          </ul>
+        </div>
+        <div class="ui-cnt">
+          <form id="delcomm" method="post">
+            <ul class="user-txt-list mymsg-list fn-clear" id="xlist">
+              <li class="kong">您当前没有私信，朋友之间要多联系哦!</li>
+            </ul>
+          </form>
+          <!-- // i-list End -->
+          <div class="user-opera fn-clear">
+            <div class="check-del">
+              <div class="check-del">
+                <label class="label-checkbox" for="del-comment" hidefocus="">
+                  <input type="checkbox" id="del-comment" class="delcheckall">
+                  全选</label>
+                <a class="ui-edit ui-edit-short cleanup" href="javascript:void(0);" data="/user-Center-xxx">删除</a></div>
+            </div>
+            <div id="xpage" class="fav-pic-page"></div>
+          </div>
+        </div>
+      </div>
+      <!-- // ui-box End -->
+    </div>
+    <!-- // i-cnt End -->
+    <!-- bigbox-->
+    <div style="display:none">
+      <div id="add-feedback">
+        <div class="ui-dialog-cnt">
+          <div class="ui-dialog-width ui-gb-dialog">
+            <form action="http://www.qire123.com/user-Center-msg#" method="post" id="bform">
+              <div class="ui-form">
+                <div class="ui-form-title">
+                  <h3>我要留言</h3>
+                </div>
+                <div class="ui-dialog-tab">
+                  <ul id="gb_types">
+                  </ul>
+                  <input type="hidden" name="gb_type" id="gb_type" value="">
+                  <script type="text/javascript">
+								$("#gb_types li:first").addClass('current');
+								$("#gb_type").val($("#gb_types li:first").attr('val'));
+								
+								$("#gb_types li").bind('click',function(e){									
+									$("#gb_types li").each(function(){
+										$(this).removeClass('current');
+									});
+									$(this).addClass('current');
+									$("#gb_type").val($(this).attr('val'));
+								});
+							</script>
+                </div>
+                <div class="ui-form-item fn-clear">
+                  <input type="text" name="title" id="title" class="ui-input w465" maxlength="30">
+                </div>
+                <div class="ui-form-item fn-clear">
+                  <textarea id="txt" name="txt" class="ui-input ui-textarea w455" rows="5" cols="60"></textarea>
+                </div>
+                <div class="ui-form-item fn-clear">
+                  <input type="button" id="bigboxbt" class="ui-button w150" value="提 交">
+                </div>
+              </div>
+              <!-- // ui-form End -->
+            </form>
+          </div>
+          <!-- // ui-gb-dialog End -->
+        </div>
+      </div>
+      <!-- // Dialog End -->
+    </div>
+    <!-- bigbox end-->
+    <script language="javascript" src="style/js/jquery.colorbox.js" type="text/javascript"></script>
+    <link href="style/css/colorbox.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">		function pagegoo(url){
+			//$("#xlist").html('<img src="/static/images/loading.gif"/>');
+			$.ajax({ url: url,  success: function(data){
+		      if('' != data.ajaxtxt)
+			  {
+				$("#xlist").html(data.ajaxtxt);
+				$(".i-message-tt h5 a").click(function(){
+					var $con = $(this).parent().parent().next(".i-message-cnt");	
+					if($con.is(":visible")){		
+						$con.hide();
+					}else{
+					var dmsg=$(this).attr('data');
+						$con.show();
+					   if(0 == parseInt(dmsg[0]))
+					   {
+					    var ddmsg=dmsg.split('-');
+						var	 dddmsg='1-'+ddmsg[1];
+					    $(this).attr('data',dddmsg);
+                         $.ajax({url: "user-Center-umsgupt",
+						   data:{msg: ddmsg[1]},
+						   type:"POST",
+						   dataType:'json',
+						   success: function(data){
+						  	  return false;
+						  }});
+					 }
+					}	
+				});
+				$("#xpage").html(data.pages).addClass("ui-list-page");
+				$("#xpage a").click(function (e){
+					pagegoo(e.target);
+					return false;
+				});
+				$(".delcheckall").click(function(){
+					checkAll('');
+				});
+				$(".delcheckall").attr('checked',false);
+				$(".fav-cancel").click(function(event){
+					$.showfloatdiv({
+						wantclose:2,
+						succdo:function(r){
+							if(parseInt(r.rcode)==1){
+								pagegoo(window.location.href+"-ajax");
+							}
+						},txt:'确认删除?'
+					});
+				});
+		     	}
+			 else
+			 {
+			   $("#xlist").html('<li class="kong">您当前没有私信，朋友之间要多联系哦!</li>');
+			   $('.i-do').hide();
+			 }
+			},dataType:'json'});
+			return false;				
+		}
+		
+		pagegoo(window.location.href+"-ajax");
+		
+		$(".cleanup").click(function(e){
+			$.showfloatdiv({
+				wantclose:2,
+				ispost:1,
+				formid:'delcomm',
+				url:'/user-Center-delmsg',
+				succdo:function(r){
+					if(parseInt(r.rcode)==1){
+					pagegoo(window.location.href+"-ajax");	
+					}
+				},txt:'确认删除?'
+			});
+		});
+		</script>
+  </div>
+  <!-- // maxBox End -->
+</div>
+<!-- // wrap End -->
+
+<!-- // footer end -->
+<script language="javascript" src="style/js/qireobj.js" type="text/javascript"></script>
+<script type="text/javascript" src="style/js/login.js"></script>
+<div data-type="4" data-plugin="aroundbox" data-plugin-aroundbox-x="left" data-plugin-aroundbox-y="bottom" data-plugin-aroundbox-iconsize="60x60" data-plugin-aroundbox-fixed="1" data-plugin-aroundbox-offsetx="10"></div>
+<script type="text/javascript" src="style/js/focus.js"></script>
+</body>
+</html>

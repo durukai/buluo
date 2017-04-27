@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}-最新最全影视免费观看</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<include file="Home:list_seo_title" />
+<include file="Home:pp_js" />
+</script>
+<script type="text/javascript">var Root='/';var Sid='';var Cid='';var Id='';</script>
+<link rel="shortcut icon" href="/favicon.ico" charset="utf-8" />
+<include file="Home:pp_js" />
+<link href="{$tpl}css/user.css" rel="stylesheet" type="text/css" />
+<link href="{$tpl}css/header.css" rel="stylesheet" type="text/css" />
+<script src="{$tpl}js/top_js.js" type="text/javascript"></script>
+<script src="{$tpl}js/zhnew.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("");</script>
+<link href="{$tpl}css/index.css" rel="stylesheet" type="text/css" />
+<link href="{$tpl}css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">var ie6Load=false;</script>
+</head>
+<body>
+<php>
+if($_GET[year]) $u_year="-year-".$_GET[year];else $u_year=NULL;if($_GET[area]) $u_area="-area-".$_GET[area];else $u_area=NULL;if($_GET[language]) $u_language="-language-".$_GET[language];else $u_order=NULL;if($_GET[order]) $u_order="-order-".$_GET[order];else $u_order=NULL;
+if($_GET[mcid]) $u_mcid="-mcid-".$_GET['mcid'];else $u_mcid=NULL;if($_GET[letter]) $u_letter="-letter-".$_GET[letter];else $u_letter=NULL;if($_GET[lz]) $u_lz="-lz-".$_GET[lz];else $u_lz=NULL;if($_GET[picm]) $u_picm="-picm-".$_GET[picm];else $u_picm=NULL;
+</php>
+</head>
+<body>
+<!-- header -->
+<include file="Home:pp_header" />
+<div class="eb-headbg"></div>
+<!-- //header -->
+<div class="wz"><span>您当前的位置：</span><a href="{$root}">首页</a><if condition="$list_pid eq 1"><a href="{:getlistname(1,'list_url')}">电影</a><elseif condition="$list_pid eq 2" /><a href="{:getlistname(2,'list_url')}">电视剧</a><else/></if><a class="current" href="{$list_id|getlisturl}">{$list_id|getlistname}</a></ul></div>
+<div class="ad980">{:getadsurl('list980')}</div>
+<div class="all p_list">
+<ul class="side_nav aleft">
+<li class="first no_border"><span>分类检索</span></li>
+<volist name="list_menu" id="ppvod" offset="0" length='5'><eq name="ppvod.list_pid" value="0">
+<li <eq name="ppvod.list_id" value="$list_id">class="curr"</eq><eq name="ppvod.list_id" value="$list_pid">class="curr"</eq>><a target="_self" href="{$ppvod.list_url}">{$ppvod.list_name}</a></li></eq></volist>
+</ul>
+<div class="p_vodlist aright">
+<div class="ui-title"><h4 class="name aleft">{$list_id|getlistname}</h4>
+      <a class="word aright" href="{$list_id|getlisturl}" target="_blank"></a>
+      <span><a href="{$root}{$vodlist}-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_picm}.html"  class="conreset">重置条件</a></span>
+      <p class="conbread"></p>
+    </div>
+ <div class="select_area" id="movtxtboxs">
+ <if condition="$list_id eq $dm_id"> 
+<elseif condition="$list_id eq $zy_id"/>
+<elseif condition="$list_id eq $wei_id"/>
+<else />
+<div class="clearfix">
+   <h5>分类：</h5>
+  <ul>
+<empty name="list_pid" value="">
+ <php>$array_listid = getlistarr($list_id);</php>
+<li><a  <eq name="list_pid" value="0">class="current"</eq>  target="_self" href="{$root}{$vodlist}-{$list_pid}{$u_mcid}{$u_area}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_picm}.html" data="id-{$list_pid}">全部</a></li>
+<volist name="array_listid" id="ff_listid" offset="0" length='7'><li><a <eq name="list_id" value="$ff_listid">class="current"</eq> href="{:getlistname($ff_listid,'list_url')}" data="id-{$ff_listid}">{:getlistname($ff_listid)}</a></li> </volist>
+<else />
+ <li><a  <eq name="list_lid" value="0">class="current"</eq>  target="_self" href="{$root}{$vodlist}-{$list_pid}{$u_mcid}{$u_area}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_picm}.html" data="id-{$list_pid}">全部</a></li>
+ <php>$array_listid = getlistarr($list_pid);</php><volist name="array_listid" id="ff_listid" offset="0" length='7'><li><a <eq name="list_id" value="$ff_listid">class="current"</eq> href="{:getlistname($ff_listid,'list_url')}" data="id-{$ff_listid}">{:getlistname($ff_listid)}</a></li></volist>
+ </empty>
+</ul></div>
+ </if>
+ <div class="clearfix" style="position:relative;">
+  <h5>类型：</h5>
+   <ul id="yyboxs">
+<li><a <php>if (!isset($_GET['mcid'])){</php> class="current"<php>}</php>  href="{$root}{$vodlist}-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_picm}.html" data="mcid-0">全部</a></li>
+<volist name="mcat" id="cat_menu" offset="0" length='31'>
+<li><a  <eq name="cat_menu.m_cid" value="$_GET['mcid']"> class="current"</eq>  href="{$root}{$vodlist}-{$list_id}-mcid-{$cat_menu.m_cid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_picm}.html" data='mcid-{$cat_menu.m_cid}'>{$cat_menu.m_name}</a></li>
+</volist>
+</ul><a rel="nofollow" href="#" id="yymoerbtns" class="yymoerbtns">更多</a></div>
+<if condition="$list_id eq $wei_id">
+<elseif condition="$list_id eq $mov_id"/>
+<else />
+<div class="clearfix">
+     <h5>状态：</h5>
+          <ul>
+       <li><a<php>if (!isset($_GET['lz'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_picm}.html" data="lz-0">全部</a></li>
+<?php echo "<li><a href='".$root.$vodlist."-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_picm; ?>-lz-1.html' <?php if($_GET[lz]=="1") echo "class='current'"; ?> data="lz-1">连载中</a></li>
+ <?php echo "<li><a href='".$root.$vodlist."-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_picm; ?>-lz-2.html' <?php if($_GET[lz]=="2") echo "class='current'"; ?> data="lz-2">已完结</a></li>     
+ </ul>          
+        </div></if>   
+        <div class="clearfix">
+        <h5>地区：</h5>
+          <ul>
+       <li><a <php>if (!isset($_GET['area'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_picm}.html" data="area-0">全部</a></li> 
+<?php  $out=0; foreach($s_area as $yid=>$avalue){ if($_GET[area]==$avalue) $class=" class='current'";else $class=NULL;echo "<li ><a $class href='".$root.$vodlist."-".$list_id.$u_mcid.$u_lz.$u_year."-area-".urlencode($avalue).$u_language.$u_order.$u_picm.".html' data='area-".urlencode($avalue)."'>".$avalue."</a></li>";if($out>12) break;else $out++;}?></ul></div>
+        <div class="clearfix">
+        <h5>年代：</h5>
+          <ul>
+        <li><a <php>if (!isset($_GET['year'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_language|urlencode}{$u_letter}{$u_order}{$u_picm}.html" data="year-0">全部</a></li>
+<?php $out=0; foreach($s_year as $yid=>$yvalue){ if($_GET[year]==$yvalue) $class=" class='current'";else $class=NULL;echo "<li><a $class href='".$root.$vodlist."-".$list_id.$u_mcid.$u_lz.urlencode($u_area)."-year-".$yvalue.$u_language.$u_letter.$u_order.$u_picm.".html' data='year-".$yvalue."'>".$yvalue."</a></li>";if($out>12) break;else $out++;}?></ul> </div>
+        <div class="clearfix">
+        <h5>字母：</h5>
+          <ul>
+        <li><a <php>if (!isset($_GET['letter'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_order}{$u_picm}.html"   data="letter-0">全部</a></li>
+          <?php foreach($s_letter as $yid=>$vvalue){ if($_GET[letter]==$vvalue) $class=" class='current'";else $class=NULL;echo "<li><a $class href='".$root.$vodlist."-".$list_id.$u_mcid.$u_lz.urlencode($u_area).$u_year.$u_language."-letter-".$vvalue.$u_order.$u_picm.".html' data='letter-".$vvalue."'>".$vvalue."</a></li>";} ?></ul>
+    </div>
+    <!-- // filter-item end -->
+</div>
+<script type="text/javascript">
+window.onerror=function(){
+	return true;
+}
+var windowurl='';
+var windowuall='';
+if(window.location.href.indexOf('show')>0){
+  windowurl=window.location.href;
+}
+var parms='<?php echo $_GET[p]; ?>';
+var pid='{$list_pid}';
+$('.clearfix ul li a').click(function (e){
+if($(this).attr('data').indexOf('mcid')==0){
+$("#curlist").html("&raquo;"+$(this).html());
+}
+	var constr='';
+	var curobj=$(this);
+	if(parms!=undefined&&parms!=null)
+     {
+		var curdata=$(this).attr('data').split('-');
+		parms[curdata[0]]=curdata[1];
+		url=parseurl(parms);
+		curobj.parent().siblings().children("a").removeClass('current');
+		curobj.addClass('current');
+	    pagegooo(url);
+	   $('.clearfix ul li a').each(function(e){
+	     if( $(this).attr('class')=='current')
+		  {
+	       if($(this).html() == '全部')
+	       constr+=' ';
+	       else
+	     constr +='<em>'+$(this).html()+'</em>';
+	     }
+    	});//index  bread
+	if(constr !='')
+	$('.conbread').html(constr);
+   }
+return false;
+});
+function pagegooo(url){ 
+url=url+".html";
+   if(($('#contents li').length > 3)) $("html,body").animate({scrollTop:$("#contents").offset().top - 93},500);
+	$("#contents").html('<li class="kong"><label>努力加载中……</label></li>');
+	$.get(url, function(data,status) {
+	 var value=jQuery('#contents', data).html();
+      if(value=='') {
+	  value=  '<li class="kong">抱歉，没有找到相关内容！</li>';
+	  }  
+	 $("#contents").html(value);
+	 $("#short-page").html(jQuery('#short-page', data).html())
+	 $("#long-page").html(jQuery('#long-page', data).html())
+     $(".uipages a").click(function (e){
+                        e.preventDefault();
+                        var curdata=$(this).attr('data').split('-');
+                        parms[curdata[0]]=curdata[1];
+                        var url=parseurl(parms);
+                        pagegooo(url);
+                        return false;
+                    });
+	});
+}
+$(function(){
+parms=eval("({'id':'<?php echo $list_id; ?>','mcid':'<?php echo $_GET[mcid]; ?>','lz':'<?php echo $_GET[lz]; ?>','area':'<?php echo $_GET[area]; ?>','year':'<?php echo $_GET[year]; ?>','letter':'<?php echo $_GET[letter]; ?>','order':'addtime','picm':'1','p':'1'})");
+$('.conreset').click(function(e){
+parms=eval("({'id':'<empty name="list_pid" value=""><?php echo $list_id; ?><else /><?php echo $list_pid; ?></empty>','order':'addtime','picm':'1','p':'1','mcid':'0','lz':'0','year':'0','area':'0','letter':'0'})");
+var hrf =Root + 'index.php?s=vod-show-id-<empty name="list_pid" value="">{$list_id}<else />{$list_pid}</empty>-picm-1.html';
+hrf = hrf.substring(0,hrf.indexOf(".html"));
+pagegooo(hrf);
+$(".uipages a").click(
+	function (e){
+	pagegooo($(this).attr('href'));
+	return false;
+	}
+	);
+   var constrf='';
+    $('.clearfix ul li a').each(function(e){
+        if($(this).html() != '全部' && $(this).attr('class')=='current' ){
+            constrf +='<em>'+$(this).html()+'</em>';
+        }
+    });
+if(constrf !=''){
+        $('.conbread').html(constrf);
+    }
+    $('.clearfix ul li a').each(function(e){
+	$(this).removeClass('current');
+	 if($(this).html() == '全部'){
+	  $(this).attr('class','current');
+	  $('#curlist').html("全部");
+	  $('.conbread').html('');
+	   }
+	});
+	return false;
+ });
+});
+function parseurl(rr){
+  var url=Root + 'index.php?s=vod-show';
+  for(var c in rr){
+     if(rr[c]!='0'){
+    url=url+"-"+c+"-"+rr[c];
+	}
+  }
+  return url;
+}
+$(function(){
+    $('.uipages a').click(function (e){
+                e.preventDefault();
+                $(this).addClass('curr');
+                $(this).siblings().removeClass('curr');
+                var curdata=$(this).attr('data').split('-');
+                parms[curdata[0]]=curdata[1];
+                var url=parseurl(parms);
+                pagegooo(url);
+            }
+);
+	    $('.view a').click(function (e){
+                e.preventDefault();
+                $(this).addClass('curr');
+                $(this).siblings().removeClass('curr');
+                var curdata=$(this).attr('data').split('-');
+                parms[curdata[0]]=curdata[1];
+                var url=parseurl(parms);
+                pagegooo(url);
+            }
+);
+	 $('.list_nav span a').click(function (e){
+               e.preventDefault();
+               var constr='';
+               var curobj=$(this);
+               var url = curobj.attr('href');
+                curobj.parent().siblings().children("a").removeClass('currt');
+                curobj.addClass('currt');
+   var url='';
+		if(parms!=undefined&&parms!=null){
+			var curdata=$(this).attr('data').split('-');
+			parms[curdata[0]]=curdata[1];
+			if(curdata[1]=='1'){
+				$("#contents").removeClass('list-mode');
+				$("#contents").addClass('grid-mode');
+			}else{
+				$("#contents").addClass('list-mode');
+				$("#contents").removeClass('grid-mode');
+		}
+		}
+}
+);
+});
+conbread();
+function  conbread(){
+	var atag = $('.clearfix ul li a');
+	var constr="";
+$.each(atag, function(i,val){      
+       var data = val.data;
+	   if(windowurl.indexOf(data)!=-1){
+	   	     constr +='<em>'+val.innerHTML+'</em>';
+			  $(this).attr('class','current');
+	   }
+  }); 
+  $('.conbread').html(constr);
+}
+</script>
+	<php>    
+	if($_GET[order])
+    $s_order=$_GET[order]." DESC";
+    else
+    $s_order="addtime desc";  
+$vod_list=ff_mysql_vod('mcid:'.$_GET['mcid'].';cid:'.$list_id.';year:'.$_GET[year].';lz:'.$_GET[lz].';letter:'.$_GET[letter].';area:'.$_GET[area].';language:'.$_GET[language].';limit:20;page:true;order:vod_'.$s_order.';');$page = $vod_list[0]['page'];$pagetop = $vod_list[0]['pagetop'];$pagetops = $vod_list[0]['pagetops'];$pagetopt = $vod_list[0]['pagetopt'];$pags = $vod_list[0]['pags'];
+	</php>
+<div class="list_nav">
+<ul class="view view-mode">
+<?php echo "<a href='".$root.$vodlist."-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-addtime.html' <?php if($_GET[order]=="addtime") echo "class='curr order'"; ?><?php if($_GET[order]=="") echo "class='curr order'"; ?> data="order-addtime">最近更新</a>
+<?php echo "<a href='".$root.$vodlist."-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-hits.html' <?php if($_GET[order]=="hits") {echo "class='curr order'";}else{echo "class='order'";} ?> data="order-hits">最受欢迎</a>
+<?php echo "<a href='".$root.$vodlist."-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-gold.html' <?php if($_GET[order]=="gold") {echo "class='curr order'";}else{echo "class='order'";} ?> data="order-gold">评分最高</a>
+</ul>
+<span><?php echo "<a href='".$root.$vodlist."-".$list_id.$u_mcid.$u_lz.urlencode($u_area).$u_year.$u_language.$u_letter.$u_order.$u_picm; ?>.html' <?php if($_GET[picm]=="1") echo "class='poster_btn currt'"; ?> <?php if($_GET[picm]=="2") echo "class='poster_btn'"; ?> <?php if($_GET[picm]=="") echo "class='poster_btn currt'"; ?> data="picm-1">海报模式</a></span>
+<span><?php echo "<a href='".$root.$vodlist."-".$list_id.$u_mcid.$u_lz.urlencode($u_area).$u_year.$u_language.$u_letter.$u_order.$u_picm; ?>.html' <?php if($_GET[picm]=="2") {echo "class='list_btn currt'";}else{echo "class='list_btn'";} ?> data="picm-2">列表模式</a></span>
+</div>
+ <ul class="<?php if($_GET[picm]=="1") echo "grid-mode"; ?><?php if($_GET[picm]=="") echo "grid-mode"; ?><?php if($_GET[picm]=="2") echo "list-mode"; ?>"  id="contents">
+ <neq name="vod_list.0.count" value="0">
+    <volist name="vod_list" id="ppvod">
+   
+<li><a class="vod-img" href="{$ppvod.vod_readurl}"title="{$ppvod.list_name}{$ppvod.vod_name}"><img  class="loadimg"  src="{$ppvod.vod_picurl}" data-lazyload-type="auto"  /><label class="mask"></label><label class="text"><if condition="$ppvod.vod_continu neq 0">{$ppvod.lastplay_name}<else/>{$ppvod.vod_title}</if></label><label class="score">{$ppvod.vod_gold}</label><if condition="$ppvod.vod_continu neq 0"><notempty name="ppvod.vod_tvcont"><span class="tv"></span><span class="tvtime">{$ppvod.vod_diantai}{$ppvod.vod_tvcont}</span><else/></notempty><else/></if>
+   </a>
+     <div class="play-txt">
+      <h3><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a><span class="stitle">{$ppvod.lastplay_name}</span></h3>
+      <p class="gold"><span class="starbs"><span class="starbb" style="width:<php>echo($ppvod['vod_gold']*10)</php>%;"></span></span>({$ppvod.vod_golder}人评分)</p>
+      <p class="director"><em>导演:</em>{$ppvod.vod_director|ff_search_url}</p>
+      <p class="actor"><em>主演:</em>{$ppvod.vod_actor|ff_search_url}</p>
+      <p class="type"><em>类型：</em>{$ppvod.vod_mcid|ff_mcat_url=$list_id|}<em class="area">地区：{$ppvod.vod_area|ff_search_url}</em></p>
+      <p class="type"><em class="showdata">上映：{$ppvod.vod_year}</em><em class="long">更新时间：{$ppvod.vod_addtime|date='Y-m-d',###}</em></p>
+      <p class="plot"><em>剧情：</em>{$ppvod.vod_content|msubstr=0,150,'utf-8',true}…</p>
+      <p class="more-desc"><a class="ak" target="_blank" href="{$ppvod.vod_readurl}">在线观看</a><a class="as" target="_blank" href="{$ppvod.vod_readurl}#juqing">影片详情</a><a class="av" target="_blank" href="{$ppvod.vod_readurl}#comment">影评</a></p>
+    </div>
+  </li>
+ </volist>
+      </ul>
+          <else/>
+       	 <ul>该分类暂无数据！</ul>
+      </neq> 
+ <div class="uipages ui-vpages" id="long-page">{$page}</div>	
+	<div class="l_guide" id="l_guide"  style="display:none;">
+		<div class="bg"></div>
+		<div class="pag_bar">
+			<ul class="view fl">
+				<span>排序：</span>
+                <?php echo "<a href=".$root.$vodlist."-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-addtime.html <?php if($_GET[order]=="addtime") echo "class='curr order'"; ?><?php if($_GET[order]=="") echo "class='curr order'"; ?> data="order-addtime">最近更新</a><?php echo "<a href=".$root.$vodlist."-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-hits.html <?php if($_GET[order]=="hits") {echo "class='curr order'";}else{echo "class='order'";} ?> data="order-hits">最受欢迎</a><?php echo "<a href=".$root.$vodlist."-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-gold.html <?php if($_GET[order]=="gold") {echo "class='curr order'";}else{echo "class='order'";} ?> data="order-gold">评分最高</a><?php echo "<a href=".$root.$vodlist."-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-gold.html <?php if($_GET[order]=="id") {echo "class='curr order'";}else{echo "class='order'";} ?> data="order-id">最新上映</a></ul>
+			<div class="toTop_w"><a class="toTop" title="回到顶部" href="javascript:;" onClick="window.scroll(0,0)"></a></div>
+			<div class="uipages pagem" id="short-page">{$pagetop}</div>
+		</div>
+	</div>
+    <script>
+	jQuery(function(){
+		var obj=document.getElementById("l_guide");
+        function getScrollTop(){
+                return document.documentElement.scrollTop;
+            }
+        function setScrollTop(value){
+                document.documentElement.scrollTop=value;
+            }    
+        window.onscroll=function(){
+			getScrollTop()>610?obj.style.display="":obj.style.display="none";
+		}
+	})
+</script>
+       </div>
+<div class="ad980">{:getadsurl('top960')}</div>
+            </div>
+ <include file="Home:pp_footer" />
+    </div>
+  </div>
+<script type="text/javascript" src="{$tpl}js/IE6Top.js"></script>
+<div class="back-to-top" id="back-to-top"><a href="javascript:window.scrollTo(0, 0);" target="_self">Back to Top</a></div>
+<script src="{$tpl}js/foot_js.js" type="text/javascript"></script>
+</body>
+</html>

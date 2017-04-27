@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+	<script language="javascript">
+		$(document).ready(function() {
+			$feifeicms.show.table();
+		});
+	</script>
+</head>
+<body class="body">
+
+	<table border="0" cellpadding="0" cellspacing="0" class="table">
+		<form action="__ROOT__/index.php?s=User-Member-nav" method="post" name="myform" id="myform">
+			<thead>
+				<tr>
+					<th class="r">
+						<span style="float: left">菜单管理</span>
+					</th>
+				</tr>
+			</thead>
+			<tr>
+				<td class="tr" style="height: 40px">
+					<select name="q_islock" id="q_islock">
+						<option value="">状态</option>
+						<option value="1" <eq name="q_islock" value="1">selected</eq>>锁定</option>
+						<option value="2" <eq name="q_islock" value="2">selected</eq>>正常</option>
+					</select> 
+					&nbsp;&nbsp;		
+					<select name="q_selectType" id="q_selectType">
+						<option value="username" <eq name="selectType" value="username">selected</eq>>用户名</option>
+   					    <option value='userid' <eq name="selectType" value="userid">selected</eq>>用户ID</option>
+						<option value='email' <eq name="selectType" value="email">selected</eq>>邮箱</option>
+					</select> 
+					
+					<input type="text" name="wd" id="wd" maxlength="20" value="{$wd}" style="color:#666666">
+					&nbsp;&nbsp;
+					<input type="button" value="搜索" class="submit" onClick="post('__ROOT__/index.php?s=User-Member-nav');">						
+				</td>
+			</tr>
+	</table>
+
+	<table border="0" cellpadding="0" cellspacing="0" class="table">
+		<thead>
+			<tr class="ct">
+				<th class="l" width="40"></th>
+				<th class="l" width="60">ID</th>
+				<th class="l">导航名称</th>
+				<th class="l" width="150">前台或后台</th>
+				<th class="l" width="150">模型</th>
+				<th class="l" width="150">路径</th>
+				<th class="r" width="90">连接</th>
+			</tr>
+		</thead>
+		
+		
+		<form action="__ROOT__/index.php?s=User-nav-Delall" method="post" name="myform" id="myform">
+			<volist name="list" id="nav">
+			<tbody>
+				<tr>
+					<td class="l">
+						<input name='ids[]' type='checkbox' value='{$nav.id}' class="noborder">
+						<if condition="$nav.islock eq 1">
+							<img title="锁定" src="__PUBLIC__/user/images/lock.gif"> 
+						</if>
+					</td>
+					<td class="l pd">{$member.id}</td>
+					<td class="l pd">{$member.name}</td>
+					<td class="l ct">{$member.parentid}</td>
+					<td class="l ct">{$member.m}</td>
+					<td class="l ct">{$member.c }</td>
+					<td class="r ct">
+						<a  href="__ROOT__/index.php?s=User-Member-edit-id-{$member.userid}" title="编辑用户资料">编辑</a>
+					</td>
+				</tr>
+			</tbody>
+			</volist>
+			<tfoot>
+				<tr>
+					<td colspan="7" class="r">
+						<input type="button" value="全选" class="submit" onClick="checkall('all');"> 
+						<input name=""  type="button" value="反选" class="submit" onClick="checkall();">
+						<input type="button" value="删除" class="submit" onClick="post('__ROOT__/index.php?s=User-Member-delete');"> 
+						<input type="button" value="锁定" class="submit" onClick="post('__ROOT__/index.php?s=User-Member-lock-status-1');"> 
+						<input type="button" value="解锁" class="submit" onClick="post('__ROOT__/index.php?s=User-Member-lock-status-0');"> 
+						<input  type="button" class="submit" value="添加" onClick="window.location='__ROOT__/index.php?s=User-Member-Add';">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="7" class="r pages">{$pages}</td>
+				</tr>
+			</tfoot>
+		</form>
+	</table>
+	<include file="./Public/system/footer.html" />
+</body>
+</html>

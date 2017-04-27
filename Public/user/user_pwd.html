@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>密码设置 - 会员中心 -{&site_name}</title>
+<include file="./Public/user/user_js.html"/>
+<script src="{$root}Public/user/js/formValidator-4.0.1.js" type="text/javascript"></script>
+</head>
+<body>
+<include file="./Public/user/user_header.html"/>
+<!-- // i-header end -->
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          <volist name="menus" id="menu">
+          	<li <if condition="$menu.a eq $action">class="current"</if>><a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><span class="icon {$menu.data}-icon">&nbsp;</span>{$menu.name}</a></li>	
+          </volist>
+        </ul>
+      </div>
+      <!-- // user-nav end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+      <form id="myform" name="myform" action="" method="post">
+        <div id="i-password">
+          <div class="ui-title i-tab-nav-box">
+            <ul class="i-tab-nav fn-clear">
+              <li><a href="<?php echo $useurl; ?>User-Center-info" hidefocus="">基本资料</a></li>
+              <li class="line"></li>
+              
+              <li class="line"></li>
+              <li class="current"><a href="<?php echo $useurl; ?>User-Center-pwd" hidefocus="">密码设置</a></li>
+            </ul>
+          </div>
+          <div class="ui-form">
+            <div class="ui-form-item fn-clear">
+              <label for="password" class="ui-label w130">原密码：</label>
+              <input type="password" id="password" name="info[password]" maxlength="20" class="ui-input w250" value="">
+              <p class="onShow ui-message" id="passwordTip" style="">请输入密码</p>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label for="newpass" class="ui-label w130">新密码：</label>
+              <input type="password" id="newpass" name="info[newpass]" maxlength="20" class="ui-input w250" value="">
+              <p class="onShow ui-message" id="newpassTip" style="">请输入密码</p>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label for="verifypass" class="ui-label w130">重复密码：</label>
+              <input type="password" id="verifypass" name="info[verifypass]" maxlength="20" class="ui-input w250" value="">
+              <p class="onShow ui-message" id="verifypassTip" style="">输再次输入密码</p>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label class="ui-label w130"></label>
+              <input type="submit" name="dosubmit" class="ui-button w150" value="保 存">
+              <a href="<?php echo $useurl; ?>User-Center-forgetpwd">忘记密码了？</a></div>
+          </div>
+          <!-- // ui-form End -->
+        </div>
+      </form>
+    </div>
+    <!-- // i-cnt End -->
+    <script type="text/javascript">
+			$.formValidator.initConfig({
+				formID : "myform",
+				debug : false,
+				submitOnce : false,
+				onSuccess : function() {
+					return $("#myform").submit();
+				}
+			});
+			$("#password").formValidator({
+				onShow:"请输入密码",
+				onFocus:"至少6个长度",
+				onCorrect:"密码输入正确",
+				onError:'密码不能为空'
+			})
+			.inputValidator({
+				min:6,
+				empty:{
+					leftEmpty:false,
+					rightEmpty:false,
+					emptyError:"密码两边不能有空符号"
+				},onError:"密码在6-16位"
+			});
+			$("#newpass").formValidator({
+				onShow:"请输入密码",
+				onFocus:"至少6个长度",
+				onCorrect:"密码合法"
+			})
+			.inputValidator({
+				min:6,
+				empty:{
+					leftEmpty:false,
+					rightEmpty:false,
+					emptyError:"密码不能为空"
+				},
+				onError:"密码在6-16位"
+			});
+			$("#verifypass").formValidator({
+				onShow:"输再次输入密码",
+				onFocus:"至少6个长度",
+				onCorrect:"密码一致"
+			})
+			.inputValidator({
+				min:6,
+				empty:{
+					leftEmpty:false,
+					rightEmpty:false,
+					emptyError:"重复密码必须和新密码一致"
+				},onError:"重复密码必须和新密码一致"
+			})
+			.compareValidator({
+				desID:"newpass",
+				operateor:"=",
+				onError:"2次密码不一致,请确认"
+			});
+		</script>
+  </div>
+  <!-- // maxBox End -->
+</div>
+<!-- // wrap End -->
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

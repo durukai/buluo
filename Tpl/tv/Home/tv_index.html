@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}-最新最全影视免费观看</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<script language="javascript">
+<!-- 
+ window.onerror=function(){return true;} 
+// -->
+</script>
+<script type="text/javascript">var Root='/';var Sid='1';var Cid='1';var Id='';</script>
+<link rel="shortcut icon" href="/favicon.ico" charset="utf-8" />
+<link href="{$tpl}css/style.css" rel="stylesheet" type="text/css" />
+<link href="{$tpl}css/user.css" rel="stylesheet" type="text/css" />
+<link href="{$tpl}css/header.css" rel="stylesheet" type="text/css" />
+<script src="{$tpl}js/top_js.js" type="text/javascript"></script>
+<script src="{$tpl}js/zhnew.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("");</script>
+</head>
+<body>
+
+<!-- header -->
+<include file="Home:pp_header" />
+<div class="eb-headbg"></div>
+<!-- //header -->
+<div id="container">
+<!-- banner -->
+<script type="text/javascript">
+var currentIndex = 0; 
+var scrollDuration = 400;
+var hot_timer = null; 
+</script>
+<div class="banner_focus">
+  <div class="focus_inner">
+   <ul class="finner">
+   <fflist name="list_slide" id="ppvod">
+<a uigs="in_teleplay_toppic_{$ppvod.slide_name}" href="{$ppvod.slide_url}" class="focus_img" style="display: block; background-image: url({$ppvod.slide_pic}); background-color: rgb(14, 11, 4);" title="{$ppvod.slide_name}" target="_blank"></a>
+  </fflist>
+  </ul>
+    <div class="focus_control">
+	<fflist name="list_slide" id="ppvod">
+<h2 class="focus_title" title="{$ppvod.slide_name}" style="display: block;">
+        <div>{$ppvod.slide_name}</div>
+        <p>{$ppvod.slide_content}</p>
+      </h2>
+	  </fflist>
+      <div class="focus_thumbnails">
+        <a href="javascript:void(0)" class="btn_thumbnails_list_next next" title="下一组">下一组</a>
+        <a href="javascript:void(0)" class="btn_thumbnails_list_prev prev" title="上一组">上一组</a>
+        <div class="focus_thumbnails_inner">
+          <ul class="focus_thumbnails_list cf">
+		  <fflist name="list_slide" id="ppvod">
+         <li class="on"><a href="{$ppvod.slide_url}" class="link_thumbnails" title="{$ppvod.slide_name}"><img src="{$ppvod.slide_pic}" height="57" width="74" title="{$ppvod.slide_name}" alt="{$ppvod.slide_name}"></a></li>
+		 </fflist>
+		 </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+		jQuery(".banner_focus").slide({ titCell:".focus_thumbnails_list li", mainCell:".finner", targetCell:".focus_control h2", autoPlay:true,delayTime:100,startFun:function(i){
+				
+                    }
+		});
+	function moveBtn(){
+				var prev=jQuery(".banner_focus .btn_thumbnails_list_prev prev");
+				var next=jQuery(".banner_focus .btn_thumbnails_list_next next");
+
+				var body_w = document.body.clientWidth;
+				var side_w = (body_w - 1000) / 2 -50;
+
+				if(body_w < 1180)
+				{
+					prev.animate({"left":30, "opacity":0.5});
+					next.animate({"right":30, "opacity":0.5});
+				}
+				else
+				{
+					prev.animate({"left":side_w, "opacity":0.5});
+					next.animate({"right":side_w, "opacity":0.5});
+				}
+	}
+	moveBtn();
+	jQuery(window).resize(function(){moveBtn();});
+	</script>
+<!-- //banner -->
+<!--zly--> 
+		<!-- section_container -->
+	    <div class="section_container">
+<!-- mod_filter -->
+
+<!-- //mod_filter -->
+<!--zly--> 
+	    	<!-- first section -->
+	        <div class="section">
+	      	  <div class="column_rgt">
+	      		
+
+
+<script type="text/javascript">
+var firstRightTimer = null;
+</script>
+<div class="section_aside">
+	<div class="section_aside_tit">
+	<h3>即将上映提醒</h3>
+	</div>
+	<div class="section_aside_bx">
+		<ul class="section_aside_lst section_aside_lst_date">
+		<php>$vod_wdy_mx =ff_mysql_vod('cid:15,16,23,24;limit:8;order:vod_hits desc');</php>
+          <fflist name="vod_wdy_mx" id="ppvod">
+				<li><a uigs="in_home_movie_right_box" href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}" class="section_aside_lst_tab"> <span class="section_aside_lst_tab_rgt"><em class="stress">{$ppvod.vod_gold}</em>
+				</span> <span class="section_aside_lst_tab_lft"><gt name="i" value="3" ><span
+						class="section_aside_lst_num">{$i}</span><else/><span
+						class="section_aside_lst_num section_aside_lst_topnum">{$i}</span></gt><span
+						class="section_aside_lst_txt">{$ppvod.vod_name}</span>
+				</span> </a></li>
+				</fflist>
+   		</ul>
+	</div>
+<div class="section_aside_bx">
+	<div class="section_ad_aside2">
+			<a uigs="adv_movie_first_right" href="/" target="_blank" title="澳门风云2"><img src="http://img02.sogoucdn.com/app/a/07/48167f6c8b13d864f707d6791d83711e" height="103"
+				width="265" alt="澳门风云2" title="澳门风云2">
+			</a>
+		</div><div class="section_ad_aside">
+			<a uigs="adv_movie_first_right" href="/" target="_blank" title="木星上行"><img src="http://img01.sogoucdn.com/app/a/07/0fed244d070bc6f049d81566004adf6c" height="154"
+				width="265" alt="木星上行" title="木星上行">
+			</a>
+		</div>
+	</div>
+</div>
+<!--zly--> 
+	      	  </div>
+	      	  <div class="column_lft">
+	      		
+
+
+<!-- sort_nav -->
+<div class="sort_nav clearfix">
+  <h3 class="sort_nav_tit"><a uigs="in_movie_first_left_more" href="/?s=vod-type-id-1-picm-1.html" target="_blank"><i class="ico_sort_nav_movie"></i>热播推荐</a></h3>
+  <div class="sort_nav_bx">
+    <div class="sort_nav_txt">正在热播<span>{:getcount('.$list_id.')}</span>部</div>
+    <div class="sort_nav_bar2">|</div>
+    <a uigs="in_movie_first_left_more" href="/?s=vod-type-id-1-picm-1.html" target="_blank" class="sort_nav_more"><i></i>更多</a>
+  </div>
+</div>
+<!-- //sort_nav -->
+<!-- sort_lst -->
+<div class="sort_lst_bx" id="movie_content_div">
+  <ul class="sort_lst">
+<php>$vod_movie_hot_pic =ff_mysql_vod('cid:2;limit:10;order:vod_hits desc');</php>
+          <fflist name="vod_movie_hot_pic" id="ppvod">	 
+<li onmouseover="$(this).addClass('cur')" onmouseout="$(this).removeClass('cur')">
+      <a href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}" class="sort_lst_thumb">
+        <img src="{$ppvod.vod_picurl}" style="margin-left:-0px;margin-top:-0px;width:175px;height:233px" title="{$ppvod.vod_name}" alt="{$ppvod.vod_name}">
+        <div class="sort_lst_thumb_hv"></div>
+        <div class="play_hv2"></div>
+        <div class="sort_lst_thumb_txt_bg"></div>
+        <div class="sort_lst_thumb_txt_rgt"><em class="stress">{$ppvod.vod_gold}</em></div>
+        <div class="sort_lst_thumb_txt_lft"><i class="ico_play_time"></i>{$ppvod.vod_hits}次</div>
+      </a>
+      <div class="sort_lst_tit"><a href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></div>
+      <p class="sort_lst_txt">{$ppvod.vod_actor}</p>
+    </li>
+	</fflist></ul>
+</div>
+<!-- //sort_lst -->
+<!--zly--> 
+	      	  </div>
+		    </div>
+		    <!-- second section -->
+	        <div class="section">
+	      	  <div class="column_rgt">
+	      		
+
+
+<div class="section_aside">
+	<div class="section_aside_tit">
+		<h3>好评榜</h3>
+	</div>
+	<div class="section_aside_bx">
+		<ul class="section_aside_lst section_aside_lst_date">
+		<php>$vod_wdy_mx =ff_mysql_vod('cid:15,16;limit:8;order:vod_hits desc');</php>
+          <fflist name="vod_wdy_mx" id="ppvod">
+				<li><a uigs="in_home_movie_right_box" href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}" class="section_aside_lst_tab"> <span class="section_aside_lst_tab_rgt"><em class="stress">{$ppvod.vod_gold}</em>
+				</span> <span class="section_aside_lst_tab_lft"><gt name="i" value="3" ><span
+						class="section_aside_lst_num">{$i}</span><else/><span
+						class="section_aside_lst_num section_aside_lst_topnum">{$i}</span></gt><span
+						class="section_aside_lst_txt">{$ppvod.vod_name}</span>
+				</span> </a></li>
+				</fflist>
+   		</ul>
+	</div>
+<div class="section_aside_bx">
+	<div class="section_ad_aside2">
+			<a uigs="adv_movie_first_right" href="/" target="_blank" title="澳门风云2"><img src="http://img02.sogoucdn.com/app/a/07/48167f6c8b13d864f707d6791d83711e" height="103"
+				width="265" alt="澳门风云2" title="澳门风云2">
+			</a>
+		</div><div class="section_ad_aside">
+			<a uigs="adv_movie_first_right" href="/" target="_blank" title="木星上行"><img src="http://img01.sogoucdn.com/app/a/07/0fed244d070bc6f049d81566004adf6c" height="154"
+				width="265" alt="木星上行" title="木星上行">
+			</a>
+		</div>
+	</div>
+</div>
+<!--zly--> 
+	      	  </div>
+	      	  <div class="column_lft">
+	      		
+
+
+<!-- sort_nav -->
+<div class="sort_nav clearfix">
+  <h3 class="sort_nav_tit"><a uigs="in_movie_second_left_more" href="/?s=vod-type-id-1-picm-1.html" target="_blank"><i class="ico_sort_nav_movie"></i>全球追剧</a></h3>
+  <div class="sort_nav_bx">
+    <div class="sort_nav_txt"><span></span></div>
+    <!--<div class="sort_nav_bar2">|</div>-->
+   <!-- <a uigs="in_movie_second_left_more" href="/?s=vod-type-id-1-picm-1.html" target="_blank" class="sort_nav_more"><i></i>更多</a>-->
+  </div>
+</div>
+<!-- //sort_nav -->
+<!-- sort_lst -->
+<div class="sort_lst_bx" id="movie_content_div">
+  <ul class="sort_lst">
+<php>$vod_movie_hot_pic =ff_mysql_vod('cid:15,16,23,24;limit:10;order:vod_hits desc');</php>
+          <fflist name="vod_movie_hot_pic" id="ppvod">	 
+<li onmouseover="$(this).addClass('cur')" onmouseout="$(this).removeClass('cur')">
+      <a href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}" class="sort_lst_thumb">
+        <img src="{$ppvod.vod_picurl}" style="margin-left:-0px;margin-top:-0px;width:175px;height:233px" title="{$ppvod.vod_name}" alt="{$ppvod.vod_name}">
+        <div class="sort_lst_thumb_hv"></div>
+        <div class="play_hv2"></div>
+        <div class="sort_lst_thumb_txt_bg"></div>
+        <div class="sort_lst_thumb_txt_rgt"><em class="stress">{$ppvod.vod_gold}</em></div>
+        <div class="sort_lst_thumb_txt_lft"><i class="ico_play_time"></i>{$ppvod.vod_hits}次</div>
+      </a>
+      <div class="sort_lst_tit"><a href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></div>
+      <p class="sort_lst_txt">{$ppvod.vod_actor}</p>
+    </li>
+	</fflist></ul>
+</div>
+<!-- //sort_lst -->
+<!--zly--> 
+	      	  </div>
+		    </div>
+		    <!-- third section -->
+	        <div class="section">
+	      	  <div class="column_rgt">
+	      		
+
+
+<script type="text/javascript">
+var thirdRightTimer = null;
+</script>
+<div class="section_aside">
+	<div class="section_aside_tit">
+	
+		<h3>好评榜</h3>
+	</div>
+	<div class="section_aside_bx">
+		<ul class="section_aside_lst section_aside_lst_date">
+		<php>$vod_wdy_mx =ff_mysql_vod('cid:13,17,25,19;limit:8;order:vod_hits desc');</php>
+          <fflist name="vod_wdy_mx" id="ppvod">
+				<li><a uigs="in_home_movie_right_box" href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}" class="section_aside_lst_tab"> <span class="section_aside_lst_tab_rgt"><em class="stress">{$ppvod.vod_gold}</em>
+				</span> <span class="section_aside_lst_tab_lft"><gt name="i" value="3" ><span
+						class="section_aside_lst_num">{$i}</span><else/><span
+						class="section_aside_lst_num section_aside_lst_topnum">{$i}</span></gt><span
+						class="section_aside_lst_txt">{$ppvod.vod_name}</span>
+				</span> </a></li>
+				</fflist>
+   		</ul>
+	</div>
+<div class="section_aside_bx">
+	<div class="section_ad_aside2">
+			<a uigs="adv_movie_first_right" href="/" target="_blank" title="澳门风云2"><img src="http://img02.sogoucdn.com/app/a/07/48167f6c8b13d864f707d6791d83711e" height="103"
+				width="265" alt="澳门风云2" title="澳门风云2">
+			</a>
+		</div><div class="section_ad_aside">
+			<a uigs="adv_movie_first_right" href="/" target="_blank" title="木星上行"><img src="http://img01.sogoucdn.com/app/a/07/0fed244d070bc6f049d81566004adf6c" height="154"
+				width="265" alt="木星上行" title="木星上行">
+			</a>
+		</div>
+	</div>
+</div>
+<!--zly--> 
+	      	  </div>
+	      	  <div class="column_lft">
+	      		
+
+
+<!-- sort_nav -->
+<script type="text/javascript">
+var thirdLeftTimer = null;
+</script>
+<div class="sort_nav clearfix">
+  <h3 class="sort_nav_tit"><a uigs="in_movie_third_left_more" href="/?s=vod-type-id-1-mcid-9-picm-1.html" target="_blank"><i class="ico_sort_nav_movie"></i>轻松剧场</a></h3>
+  <div class="sort_nav_bx">
+    
+    
+</div>
+<!-- //sort_nav -->
+<!-- sort_lst -->
+<div class="sort_lst_bx" id="movie_content_div">
+  <ul class="sort_lst">
+<php>$vod_movie_hot_pic =ff_mysql_vod('cid:25,24,23;limit:10;order:vod_hits desc');</php>
+          <fflist name="vod_movie_hot_pic" id="ppvod">	 
+<li onmouseover="$(this).addClass('cur')" onmouseout="$(this).removeClass('cur')">
+      <a href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}" class="sort_lst_thumb">
+        <img src="{$ppvod.vod_picurl}" style="margin-left:-0px;margin-top:-0px;width:175px;height:233px" title="{$ppvod.vod_name}" alt="{$ppvod.vod_name}">
+        <div class="sort_lst_thumb_hv"></div>
+        <div class="play_hv2"></div>
+        <div class="sort_lst_thumb_txt_bg"></div>
+        <div class="sort_lst_thumb_txt_rgt"><em class="stress">{$ppvod.vod_gold}</em></div>
+        <div class="sort_lst_thumb_txt_lft"><i class="ico_play_time"></i>{$ppvod.vod_hits}次</div>
+      </a>
+      <div class="sort_lst_tit"><a href="{$ppvod.vod_readurl}" target="_blank" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></div>
+      <p class="sort_lst_txt">{$ppvod.vod_actor}</p>
+    </li>
+	</fflist></ul>
+</div>
+<!-- //sort_lst -->
+<!--zly--> 
+	      	  </div>
+		    </div>
+		    <!-- forth section -->
+	        <div class="section">
+	      	  <div class="column_rgt">
+	      		
+
+
+<!-- //sort_lst -->
+<!--zly--> 
+	      	  </div>
+		    </div>
+	    </div>
+	</div>
+</div>
+<include file="Home:pp_footer" />
+<script type="text/javascript" src="{$tpl}js/IE6Top.js"></script>
+<div class="back-to-top" id="back-to-top"><a href="javascript:window.scrollTo(0, 0);" target="_self">Back to Top</a></div>
+<script language='JavaScript'>
+var uigs_para={"uigs_productid":"video","pagetype":"dongmanhome"};
+var changeWidth = 1251;
+var change980Width = 1024;
+</script>
+<script type="text/javascript" src="{$tpl}js/s102466.js"></script>
+<script src="{$tpl}js/foot_js.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+ <div class="index_mcid">
+
+ <ul class="aleft t rxx">
+
+  <h3><a href="{:getlistname($tv_id,'list_url')}">{:getlistname($tv_id,'list_name')}</a></h3>
+
+<php>$catlist = D('Mcat')->list_cat($tv_id);</php><volist name="catlist" id="vo" offset="0" length='21'>
+
+<a href="{$root}{$vodlist}-{$tv_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></volist>
+
+</ul>
+
+<ul class="aleft m rxx">
+
+<h3><a href="{:getlistname($mov_id,'list_url')}">{:getlistname($mov_id,'list_name')}</a></h3>
+
+<php>$catlist = D('Mcat')->list_cat($mov_id);</php><volist name="catlist" id="vo" offset="0" length='21'><a href="{$root}{$vodlist}-{$mov_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></volist> </ul>
+
+<ul class="aleft w rxx"> <h3><a href="{:getlistname($wei_id,'list_url')}"style="color:#000;">{:getlistname($wei_id,'list_name')}</a></h3>
+
+<php>$catlist = D('Mcat')->list_cat($wei_id);</php><volist name="catlist" id="vo" offset="0" length='9'>
+
+<a href="{$root}{$vodlist}-{$wei_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}"style="color:#000;">{$vo.m_name}</a></volist> 
+
+</ul>
+
+<ul class="aleft d rxx">
+
+<h3><a href="{:getlistname($dm_id,'list_url')}">{:getlistname($dm_id,'list_name')}</a></h3>
+
+<php>$catlist = D('Mcat')->list_cat($dm_id);</php><volist name="catlist" id="vo" offset="0" length='15'>
+
+<a href="{$root}{$vodlist}-{$dm_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></volist>
+
+</ul>
+
+<ul class="aleft z">
+
+<h3><a href="{:getlistname($zy_id,'list_url')}">{:getlistname($zy_id,'list_name')}</a></h3>
+
+<php>$catlist = D('Mcat')->list_cat($zy_id);</php><volist name="catlist" id="vo" offset="0" length='11'>
+
+<a href="{$root}{$vodlist}-{$zy_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></volist>
+
+</ul>
+
+ </div>

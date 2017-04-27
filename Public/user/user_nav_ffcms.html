@@ -1,0 +1,49 @@
+<?php
+$path=C('site_path');
+if(C('url_rewrite')){
+$useurl= C('site_path');
+}
+else{
+$useurl="$path?s=";
+}
+?>
+<if condition="empty($username)">
+	<a class="nav-link drop-title" id="innermsg" href="<?php echo $useurl; ?>User-Center-login"><i class="navv sign-nav"></i></a>
+    <div class="drop-box" id="nav-signin">
+    <form id="loginformmm" action="<?php echo $useurl; ?>User-center-login" method="post" onsubmit="return false;">
+    <div class="ui-form ui-signin">
+      <div class="ui-form-item ui-form-placeholder">
+        <label class="ui-label" for="username">帐号或邮箱</label>
+        <input type="text" id="username2" name="username" class="ui-input" value="">
+      </div>
+      <div class="ui-form-item ui-form-placeholder">
+        <label class="ui-label" for="password">密码：</label>
+        <input type="password" id="password2" name="password" maxlength="20" class="ui-input" value="" />
+        <a class="ui-icon forgot-psw" title="忘记密码" href="<?php echo $useurl; ?>User-Center-forgetpwd">忘记密码</a></div>
+        <div class="ui-form-item fn-clear">
+              <label class="ui-label">&nbsp;</label>
+              <label for="agreement2" class="ui-label-checkbox">
+                <input type="checkbox" value="" name="cookietime" id="cookietime" checked="checked" value="2592000">
+                <input type="hidden" name="notforward" id="notforward" value="1">
+                <input type="hidden" name="dosubmit" id="dosubmit" value="1">记住我的登录 </label>
+              <input type="submit" id="loginbt2" class="ui-button" value="登 录">
+    </div>
+  </div>
+  <!-- // ui-signin end -->
+  <div class="signin-assist fn-clear"><a class="ui-icon qq-login" href="<?php echo $useurl; ?>User-Center-qqlogin" >用QQ帐号登录</a>
+    <p><a href="<?php echo $useurl; ?>User-Center-reg" target="_blank" class="reg-btn">还没有账号?</a></p>
+  </div>
+  <!-- // signin-assist end -->
+</form>
+</div>
+<else/>
+<a class="nav-link drop-title nav-avatar" href="<?php echo $useurl; ?>User-Center"><img src="{$avatar}?rand=<?php echo time();?>" title="{$nickname}" onerror="this.src='__ROOT__Public/user/images/noavatar_small.gif'"> <span>{$nickname}</span></a>
+      <div class="drop-box" id="nav-signed" style="display: none;"><ul class="ui-signed">
+			<volist name="menus" id="menu">
+				<li>
+					<a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><i class="ui-icon user-{$menu.data}"></i>{$menu.name}</a>
+				</li>
+			</volist>
+		</ul>
+	</div>
+</if>

@@ -1,0 +1,1 @@
+document.write("<a uigs=\"adv_home_movie_bottom_left\" href=\"www.jiutoushe.cn\" target=\"_blank\" title=\"小图片广告\">\n   <img width=\"265\" height=\"90\" alt=\"广告位1\"  src=\"http://www.jiutoushe.cn/Tpl/tv/ad/4.png\">\n</a>");

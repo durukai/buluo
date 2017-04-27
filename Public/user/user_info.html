@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>基本资料 - 会员中心 -{&site_name}</title>
+<include file="./Public/user/user_js.html"/>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="{$root}Public/user/js/city.js"></script>
+<style>
+.select {margin-bottom:5px;margin-top:5px;border:1px solid #ddd;height:20px;line-height:20px;color:#333;font-size:14px;width:150px;}
+.date {border:1px solid #A7A6AA;height:18px;margin:0 5px 0 0;padding:2px 0 2px 5px;background: #fff url({$root}/Public/user/images/input_date.png) no-repeat right 3px}
+</style>
+</head>
+<body>
+<include file="./Public/user/user_header.html"/>
+<!-- // i-header end -->
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          <volist name="menus" id="menu">
+          	<li <if condition="$menu.a eq $action">class="current"</if>>
+             <a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><span class="icon {$menu.data}-icon">&nbsp;</span>{$menu.name}</a>
+          	</li>	
+          </volist>
+        </ul>
+      </div>
+      <!-- // user-nav end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+     <form  action="<?php echo $useurl; ?>User-Center-info" method="post">
+        <div id="i-profile">
+          <div class="ui-title i-tab-nav-box">
+            <ul class="i-tab-nav fn-clear">
+              <li class="current"><a href="<?php echo $useurl; ?>User-Center-info" hidefocus="">基本资料</a></li>
+              <li class="line"></li>
+              
+              <li class="line"></li>
+              <li><a href="<?php echo $useurl; ?>User-Center-pwd" hidefocus="">密码设置</a></li>
+            </ul>
+          </div>
+          <div class="ui-form">
+	          <notempty name="memberinfo.email">
+	          	<div class="ui-form-item fn-clear">
+	              <label class="ui-label w130">您的<strong>Email</strong>地址：</label>
+	              <input type="text" class="ui-input w300" value="{$memberinfo.email}" readonly="readonly" name="email">
+	              <p class="ui-message ui-message-clear">Email地址不能更改 <span style="color:#999">邮箱已验证</span></p>
+	            </div>
+	          </notempty> 
+            <div class="ui-form-item fn-clear">
+              <label for="nickname" class="ui-label w130">昵称：</label>
+              <input type="text" id="nickname" name="info[nickname]" class="ui-input w300" value="{$memberinfo.nickname}">
+              <p class="ui-message ui-message-clear">支持汉字、英文、数字</p>
+            </div>
+            <div class="ui-form-item ui-form-checkbox fn-clear">
+              <label class="ui-label w130">性<eq name="$memberinfo.sex" value="2">checked</eq>别：</label>
+              <div class="ui-form-block w300">
+                <label for="male" class="ui-label-checkbox">
+                <input  type="radio" name="info[sex]" value="1"  <if condition="$memberinfo.sex eq 1">checked</if>>男</label>
+                <label for="female" class="ui-label-checkbox">
+                <input  type="radio" name="info[sex]" value="2"  <if condition="$memberinfo.sex eq 2">checked</if>>女</label>
+              </div>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label class="ui-label w130">出生年月日：</label>
+               	<link rel="stylesheet" type="text/css" href="__ROOT__/Public/user/js/calendar/jscal2.css"/>
+				<link rel="stylesheet" type="text/css" href="__ROOT__/Public/user/js/calendar/border-radius.css"/>
+				<link rel="stylesheet" type="text/css" href="__ROOT__/Public/user/js/calendar/win2k.css"/>
+				<script type="text/javascript" src="__ROOT__/Public/user/js/calendar/calendar.js"></script>
+				<script type="text/javascript" src="__ROOT__/Public/user/js/calendar/lang/en.js"></script>	
+				<input type="text" name="info[birthday]" id="birthday" style="width:100px;"value="{$memberinfo.birthday}" size="10" class=" date select" readonly>&nbsp;	
+				<script type="text/javascript">
+						Calendar.setup({
+							weekNumbers: false,
+				    		inputField : "birthday",
+				    		trigger    : "birthday",
+				    		dateFormat: "%Y-%m-%d",
+				    		showTime: false,
+				    		minuteStep: 1,
+				    		onSelect   : function() {this.hide();}
+					});
+		        </script>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label class="ui-label w130">居住地：</label>
+              <div id="birthcitybox">
+                <div class="ui-select">
+                  <select name="info[prov_id]" id="prov_id"  class="select"></select>
+                </div>
+                <div class="ui-select">
+                   <select name="info[city_id]" id="city_id" class="select" ></select>
+                </div>
+               	<input type="hidden" value="{$memberinfo.city_id}" id="curcity"/>
+               	 <script type="text/javascript">
+			    	<!--
+						showprovince('prov_id', 'city_id', '{$memberinfo.prov_id}', 'birthcitybox');
+					    setcity('prov_id', 'city_id');
+					//-->
+
+				</script>
+              </div>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label class="ui-label w130">学历：</label>
+              <div class="ui-select">
+               <select name="info[edu]" id="edu" class="select">
+                  <option value=""></option>
+                  <option value="1" <if condition="$memberinfo.edu eq 1">selected</if>>小学</option>
+                  <option value="2" <if condition="$memberinfo.edu eq 2">selected</if>>初中</option>
+                  <option value="3" <if condition="$memberinfo.edu eq 3">selected</if>>高中/中专</option>
+                  <option value="4" <if condition="$memberinfo.edu eq 4">selected</if>>大专</option>
+                  <option value="5" <if condition="$memberinfo.edu eq 5">selected</if>>本科</option>
+                  <option value="6" <if condition="$memberinfo.edu eq 6">selected</if>>硕士及以上</option>
+                </select>
+              </div>
+            </div>
+<!--            <div class="ui-form-item ui-form-checkbox fn-clear"><label class="ui-label w130">同步：</label><div class="ui-form-block w400"><label for="yes" class="ui-label-checkbox"><input id="yes" type="radio" name="qqbind" value="1"  echo ' checked="checked" '; />评论同步到QQ空间</label><label for="no" class="ui-label-checkbox"><input id="no" type="radio" name="qqbind" value="0"     />评论不同步到QQ空间</label></div></div>-->
+            <div class="ui-form-item fn-clear">
+              <label class="ui-label w130">行业：</label>
+              <div class="ui-select">
+               <select name="info[industry]" id="industry" class="select">
+                  <option value=""></option>
+                  <option value="1"  <if condition="$memberinfo.industry eq 1">selected</if> >教育/学生</option>
+                  <option value="2"  <if condition="$memberinfo.industry eq 2">selected</if>>计算机/互联网</option>
+                  <option value="3"  <if condition="$memberinfo.industry eq 3">selected</if>>建筑</option>
+                  <option value="4"  <if condition="$memberinfo.industry eq 4">selected</if>>金融/房产</option>
+                  <option value="5"  <if condition="$memberinfo.industry eq 5">selected</if>>政府/公共服务</option>
+                  <option value="6"  <if condition="$memberinfo.industry eq 6">selected</if>>电信/网络</option>
+                  <option value="7"  <if condition="$memberinfo.industry eq 7">selected</if>>服务</option>
+                  <option value="8"  <if condition="$memberinfo.industry eq 8">selected</if>>传媒/娱乐</option>
+                  <option value="9"  <if condition="$memberinfo.industry eq 9">selected</if>>农林/化工</option>
+                  <option value="10" <if condition="$memberinfo.industry eq 10">selected</if>>旅游/交通</option>
+                  <option value="11" <if condition="$memberinfo.industry eq 11">selected</if>>其他</option>
+                </select>
+              </div>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label class="ui-label w130">个性签名：</label>
+              <textarea class="ui-input ui-textarea w400" name="info[signature]" id="signature">{$memberinfo.signature}</textarea>
+            </div>
+            <div class="ui-form-item fn-clear">
+              <label class="ui-label w130"></label>
+              <input type="submit" name="dosubmit" class="ui-button w150" value="保 存">
+            </div>
+          </div>
+          <!-- // ui-form End -->
+        </div>
+        <!-- // ui-box End -->
+      </form>
+    </div>
+    <!-- // i-cnt End -->
+  </div>
+  <!-- // maxBox End -->
+</div>
+<!-- // wrap End -->
+<!-- // footer end -->
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

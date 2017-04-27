@@ -1,0 +1,63 @@
+ <html>
+<head>
+<title>{&admin_name} 管理面版 v{&admin_var}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="{&admin_keywords}">
+<meta name="description" content="{&admin_description}">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin.css'>
+<style type="text/css">.dingshi{display:none;}.dingshi input{ border:none}</style>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/jss/admin.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/jss/jquery.js"></script>
+<script type="text/javascript">
+function collecttab(no,n){
+	for(var i=1;i<=n;i++){
+		$('#collect'+i).hide();
+		$('#collect'+i+'str').hide();
+	}
+	if(no==1){
+	    $('#collect1').show();
+		$('#collect2str').show();
+	}else if(no==2){
+	    $('#collect2').show();
+		$('#collect2str').show();
+	    $('#collectpagename').html("批量生成列表页");
+	}else if(no==3){
+	    $('#collect2').show();
+	    $('#collectpagename').html("批量生成内容页");
+	}else if(no==4){
+	    $('#collect1').show();
+	    $('#collectpagename').html("手工生成内容页");
+	}	
+}
+function CheckDingshi(str){
+	if(str=='index.php?s=Admin-Collect-Dingshi'){
+		$('#dingshi').show();
+	}else{
+		$('#dingshi').hide();
+	}
+} 
+</script> 
+</head>
+<div class="right">
+  <div class="right_main">
+ <table width="98%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
+    <tr class="tb_head" ><td><h2>定时采集任务执行中,请不要关闭浏览器,1小时后执行下一次采集任务！</h2></td></tr>
+    <tr ><td colspan="3" id='loading'></td></tr>
+    </table>
+    <notempty name="gid"><script>var cisu=1;
+	function loading(){
+		if( cisu=1||cisu%3==0 ){
+			$('#loading').html('<iframe marginwidth=0 marginheight=0 frameborder=0 width=100% height=500 src={$gid}></iframe>');
+		}else{
+			$('#loading').html('<iframe marginwidth=0 marginheight=0 frameborder=0 width=100% height=500 src="index.php?s=Admin-Index-Main"></iframe>');
+		}
+		cisu=cisu+1;
+	}
+	loading();
+	setInterval("loading()", 1000*1200);
+    </script></notempty>
+    </div>
+</div>
+<include file="footer" />
+</body>
+</html>

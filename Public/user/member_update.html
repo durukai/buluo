@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+		
+
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/user/js//city.js"></script>
+	
+	<style>
+		.select {
+			margin-bottom:5px;
+			margin-top:5px;
+			border:1px solid #ddd;
+			height:20px;line-height:20px;
+			color:#333;
+			font-size:14px;
+			width:150px;
+		}
+		
+		.date {
+			border:1px solid #A7A6AA;
+			height:18px;
+			margin:0 5px 0 0;
+			padding:2px 0 2px 5px;
+			background: #fff url(__PUBLIC__/user/images/input_date.png) no-repeat right 3px
+		}
+	</style>
+	
+	<script language="javascript">
+$(document).ready(function(){
+	$("#myform").submit(function(){
+		
+		var nickname = $("#nickname") ;
+		var nicknameValue = nickname.val();
+		if(nicknameValue == ""){
+			errorMsg = "* 昵称不能为空!" ;  
+			showError(nickname,errorMsg);
+			return false ;
+		}
+		hideError(nickname);
+		
+		
+		//验证密码
+		var pass = $("#password");
+		var password = pass.val();
+		
+		var passconfirm = $("#pwdconfirm");
+		var pwdconfirm = passconfirm.val();
+		
+		if(pwdconfirm == "" && password ==""){
+			return true ;
+		}
+		
+		if(password == ""){
+			errorMsg = "* 密码不能为空!" ;  
+			showError(pass,errorMsg);
+			return false ;
+		}
+		
+		if(password.length < 6){
+			errorMsg = "* 用户密码至少6个字符!" ;  
+			showError(pass,errorMsg);
+			return false ;
+		}
+		hideError(pass);
+		
+		//确认密码
+		
+		if(password != pwdconfirm){
+			errorMsg = "* 密码输入不一致!" ;  
+			showError(passconfirm,errorMsg);
+			return false ;
+		}
+		hideError(passconfirm);
+		
+		return true ;
+	});
+});
+
+function hideError(obj){
+	$(obj).css("border-color","#CCC");
+	$("#"+obj.attr("id")+"_error").html("*");
+}
+function showError(obj,msg){
+	$(obj).focus();
+	$(obj).css("border-color","#FF0000");
+	$("#"+obj.attr("id")+"_error").html(msg);
+}
+</script>
+</head>
+<body class="body">
+
+<div class="title">
+    <div class="right"><a href="__ROOT__/index.php?s=User-Member-manage">返回会员管理</a></div>
+</div>
+
+<form action="__ROOT__/index.php?s=User-Member-saveupdata" method="post" name="myform" id="myform">
+	<input type="hidden" name="info[userid]"  id="username" value="{$userid}" maxlength="12" readonly="readonly"/>&nbsp;
+<div class="add"> 
+	
+     <ul>
+     	<li class="left">用户名：</li>
+    	<li class="right">
+    		<input type="text" name="info[username]"  id="username" value="{$username|htmlspecialchars|remove_xss}" maxlength="12" readonly="readonly"/>&nbsp;	
+    	</li>	
+    </ul>
+    
+    
+    
+    <ul>
+     	<li class="left">邮箱：</li>
+    	<li class="right">
+    		<input type="text" name="info[email]" value="{$email|htmlspecialchars|remove_xss}"  id="email" size="30" readonly="readonly">&nbsp;
+    	</li>	
+    </ul>
+    
+    
+    <ul>
+     	<li class="left">昵称：</li>
+    	<li class="right">
+    		<input type="text" name="info[nickname]"  id="nickname" value="{$nickname|htmlspecialchars|remove_xss}" maxlength="12"/>&nbsp;	
+    		<span id="nickname_error">*</span>
+    	</li>	
+    </ul>
+    
+    <ul>
+     	<li class="left">密码:</li>
+    	<li class="right">
+    		<input type="password" name="info[password]"  id="password" value="" maxlength="12" />
+			<span id="password_error">不修改密码请留空。</span>
+    	</li>	
+    </ul>
+    
+    <ul>
+     	<li class="left">确认密码:</li>
+    	<li class="right">
+    		<input type="password" name="info[pwdconfirm]"  id="pwdconfirm" value="" maxlength="12" />
+			<span id="pwdconfirm_error">不修改密码请留空。</span>
+    	</li>	
+    </ul>
+    
+    
+    
+    <ul>
+     	<li class="left">性别：</li>
+    	<li class="right" style="vertical-align: baseline;">
+    		<input type="radio" name="info[sex]" value="1" <eq name="sex" value="1">checked</eq>
+    			   style="border:0px;width:15px;vertical-align: middle;"/>男
+    		&nbsp;&nbsp;
+    		<input type="radio" name="info[sex]" <eq name="sex" value="0">checked</eq>
+    		       value="0" style="border:0px;width:15px;vertical-align: middle;"/>女
+    	</li>	
+    </ul>
+    
+    <ul>
+     	<li class="left" >出生年月日：</li>
+    	<li class="right" style="vertical-align: baseline;">
+    		
+            
+            <link rel="stylesheet" type="text/css" href="__PUBLIC__/user/js/calendar/jscal2.css"/>
+			<link rel="stylesheet" type="text/css" href="__PUBLIC__/user/js/calendar/border-radius.css"/>
+			<link rel="stylesheet" type="text/css" href="__PUBLIC__/user/js/calendar/win2k.css"/>
+			<script type="text/javascript" src="__PUBLIC__/user/js/calendar/calendar.js"></script>
+			<script type="text/javascript" src="__PUBLIC__/user/js/calendar/lang/en.js"></script>
+			
+			
+			<input type="text" name="info[birthday]" id="birthday" style="width:100px;"
+				value="{$birthday}" size="10" class=" date select" readonly>&nbsp;
+			<script type="text/javascript">
+				Calendar.setup({
+					weekNumbers: false,
+		    		inputField : "birthday",
+		    		trigger    : "birthday",
+		    		dateFormat: "%Y-%m-%d",
+		    		showTime: false,
+		    		minuteStep: 1,
+		    		onSelect   : function() {this.hide();}
+			});
+        </script>
+    	</li>	
+    </ul>
+    
+    
+     <ul>
+     	<li class="left" >居主地：</li>
+    	<li class="right" style="vertical-align: baseline;" id="birthcitybox">
+    		<select name="info[prov_id]" id="prov_id"  class="select"></select>
+            
+            <select name="info[city_id]" id="city_id" class="select" ></select>
+            
+            <input type="hidden" value="{$city_id}" id="curcity"/>
+    	</li>	
+    </ul>
+    
+    <script type="text/javascript">
+    	<!--
+			showprovince('prov_id', 'city_id', '{$prov_id}', 'birthcitybox');
+		    setcity('prov_id', 'city_id');
+		//-->
+	</script>
+    
+    
+    <ul>
+     	<li class="left" >学历：</li>
+    	<li class="right" style="vertical-align: baseline;">
+    		
+            
+           <select name="info[edu]" id="edu" class="select">
+                  <option value=""></option>
+                  <option value="1" <eq name="edu" value="1">selected</eq>>小学</option>
+                  <option value="2" <eq name="edu" value="2">selected</eq>>初中</option>
+                  <option value="3" <eq name="edu" value="3">selected</eq>>高中/中专</option>
+                  <option value="4" <eq name="edu" value="4">selected</eq>>大专</option>
+                  <option value="5" <eq name="edu" value="5">selected</eq>>本科</option>
+                  <option value="6" <eq name="edu" value="6">selected</eq>>硕士及以上</option>
+                </select>
+    	</li>	
+    </ul>
+    
+    <ul>
+     	<li class="left" >行业：</li>
+    	<li class="right" style="vertical-align: baseline;" >
+    		
+          	<select name="info[industry]" id="industry" class="select">
+                  <option value=""></option>
+                  <option value="1"  <eq name="industry" value="1">selected</eq> >教育/学生</option>
+                  <option value="2"  <eq name="industry" value="2">selected</eq>>计算机/互联网</option>
+                  <option value="3"  <eq name="industry" value="3">selected</eq>>建筑</option>
+                  <option value="4"  <eq name="industry" value="4">selected</eq>>金融/房产</option>
+                  <option value="5"  <eq name="industry" value="5">selected</eq>>政府/公共服务</option>
+                  <option value="6"  <eq name="industry" value="6">selected</eq>>电信/网络</option>
+                  <option value="7"  <eq name="industry" value="7">selected</eq>>服务</option>
+                  <option value="8"  <eq name="industry" value="8">selected</eq>>传媒/娱乐</option>
+                  <option value="9"  <eq name="industry" value="9">selected</eq>>农林/化工</option>
+                  <option value="10" <eq name="industry" value="10">selected</eq>>旅游/交通</option>
+                  <option value="11" <eq name="industry" value="11">selected</eq>>其他</option>
+                </select>  
+                
+    	</li>	
+    </ul>
+    
+    <ul>
+     	<li class="left" >个人签名：</li>
+    	<li class="right" style="vertical-align: baseline;" >
+    			<textarea class="ui-input ui-textarea w400" name="info[signature]" id="signature">{$signature}</textarea>
+    	</li>	
+    </ul>
+    
+	
+	<ul class="footer">
+		<input type="submit" name="submit" value="提交">
+		 <input type="reset" name="reset" value="重置"> 
+	</ul>
+</div>
+</form>
+
+	<include file="./Public/system/footer.html" />
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿<?php
+$path=C('site_path');
+if(C('url_rewrite')){
+$useurl= C('site_path');
+}
+else{
+$useurl="$path?s=";
+}
+$root= C('site_path');
+?>
+<link href="{$root}Public/user/css/base.css" type="text/css" rel="stylesheet">
+<link href="{$root}Public/user/css/i.css" type="text/css" rel="stylesheet">
+<link href="{$root}Public/user/css/qirebox.css" type="text/css" rel="stylesheet">
+<script language="javascript">
+
+<!-- 
+
+ window.onerror=function(){return true;} 
+
+// --></script>
+
+<script src="{$root}Public/user/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+

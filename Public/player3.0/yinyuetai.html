@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ckplayer</title>
+</head>
+<body>
+<div id="a1"></div>
+<script type="text/javascript" src="/ckplayer6.6/ckplayer/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+var a = parent.Player.Url;
+var h = window.parent.frames.Player.Height;
+var flashvars={
+f:'http://www.jiutoushe.cn/yinyuetai.php?v=[$pat]',        //视频地址
+a:'a',      //视频地址后面的变量音悦台的全址
+s:1,          //播放模式
+c:0           //是否读取文本配置,0不是，1是
+};
+var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+CKobject.embedSWF('/ckplayer6.6/ckplayer/ckplayer.swf','a1','ckplayer_a1','100%',h,flashvars,params);
+var video=[url+'->video/mp4'];
+var support=['iPad','iPhone','ios','android+false','msie10+false'];
+CKobject.embedHTML5('a1','ckplayer_a1','100%',h,video,flashvars,support);
+</script>
+</script>
+</body>
+</html>

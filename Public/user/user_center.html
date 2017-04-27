@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>我的首页 - 会员中心 -{&site_name}</title>
+<include file="./Public/user/user_js.html"/>
+</head>
+<body>
+<include file="./Public/user/user_header.html"/>
+<!-- // i-header end -->
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          <volist name="menus" id="menu">
+          	<li <if condition="$menu.a eq $action">class="current"</if>><a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><span class="icon {$menu.data}-icon">&nbsp;</span>{$menu.name}</a></li>	
+          </volist>
+        </ul>
+      </div>
+      <!-- // user-nav end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt">
+      <div id="i-usershow" class="fn-clear">
+<!--      <p class="maopou-notice" id="i-notice"><a class="close" href="javascript:v;" data="25">关闭</a>你还没有绑定QQ帐号，<a href="<?php echo $useurl; ?>User-Center-qqlogin">点这里绑定</a></p>-->
+        <div class="user-info"><a href="<?php echo $useurl; ?>User-Center-avatar">
+        	<img src="{$avatarlist[200]}" alt="修改图片" id="userlogo"onerror="this.src='{$root}Public/user/images/noavatar_middle.gif'"><label class="text"></label></a></div>
+        <!-- // user-info End -->
+        <div class="user-cnt">
+          <div id="i-intro">
+            <p class="user-author">
+            	<strong>{$memberinfo.nickname}</strong>
+            	<span><notempty name="memberinfo.email">({$memberinfo.email})</notempty></span>
+            	<a href="<?php echo $useurl; ?>User-Center-info">编辑资料</a>
+            </p>
+            <ul class="user-sign fn-clear">
+              <li class="regtime"><label>注册时间：</label>{$memberinfo.regdate|date='Y-m-d H:i:s',###} </li>
+              <li class="lastlogin"><label>最后登录：</label>{$memberinfo.lastdate|date='Y-m-d H:i:s',###}</li>
+            </ul>
+          </div>
+        </div>
+        <!-- // user-cnt End -->
+      </div>
+      <!-- // i-usershow end -->
+<div class="maopou-notice" id="i-notice"><a class="close" href="javascript:void(0);" data="25">关闭</a>
+  <p><b>欢迎您来到“<span style="color:#009900;">{&site_name}</span>”。如果觉得{&site_name}还不错的话，请牢记我们的域名<a target="_blank" href="{&site_url}"><span style="color:#009900;">{&site_url}</span></a>分享给你身边的朋友吧。</b><b><span></span>.</b></p>
+</div>
+<div class="maopou-notice" id="i-notice">{:getadsurl('hy775')}</div>
+<!-- // i-notice end -->
+<div id="i-indexcnt" class="fn-clear">
+  <div id="i-news">
+    <div class="i-tab-nav-box">
+      <ul class="i-tab-nav fn-clear">
+        <li class="current"><a href="javascript:;" data="<?php echo $useurl; ?>User-Center-getinfocomm" hidefocus>全部动态</a></li>
+<!--        <li class="line"></li>
+        <li><a href="javascript:;"  data="?s=user-center-dynamic-my-2" hidefocus>关注的人</a></li>
+        <li class="line"></li>
+        <li><a href="javascript:;" data="?s=user-center-dynamic-my-1" hidefocus>我的动态</a></li>-->
+      </ul>
+    </div>
+    <div class="ui-cnt" id="pbl">
+      <ul id="list">
+      </ul>
+     <div id="bbl" class="loading" data="<?php echo $useurl; ?>User-Center-getinfocomm"></div>
+    </div>
+  </div>
+  <!-- // i-news end -->
+</div>
+<!-- // i-indexcnt end -->
+</div>
+</div>
+<!-- // i-box end -->
+</div>
+<!-- // content end -->
+<script type="text/javascript"> 
+	var iswait=0;
+	var isstop=0;
+	$("#signbt").click(function(){
+		$("#addsign").qiresub({
+			curobj:$("#signbt"),
+			txt:'数据提交中,请稍后...',
+			onsucc:function(result){
+				$.hidediv(result);
+				if(parseInt(result['rcode'])>0){
+				$("#comm_txt").val('');
+				}
+			}
+		}).post({url:'<?php echo $useurl; ?>User-Center-getinfocomm'});
+	});
+	window.onload=function(){
+		showinfo();
+        window.onscroll=function(){
+			var h=toTop(document.getElementById('bbl'));
+            var clientH=document.documentElement.clientHeight;
+            var scrollH=document.documentElement.scrollTop||document.body.scrollTop;
+			if(h<(clientH+scrollH)&&iswait==0&&$("#bbl").attr('data')!=''){
+				showinfo();
+			} 
+        }
+	}
+	function showinfo(){
+		$.ajax({url:$("#bbl").attr('data'),success:function(r){
+			var rcode=parseInt(r['rcode']);
+				if(rcode>0){
+				  $("#list").append(r.txt);
+				  iswait=0;
+				  if(r['nextpage']!=null&&r['nextpage']!=undefined){
+				  $("#bbl").attr('data',r['nextpage']);}else{
+				  $("#bbl").attr('data','').html('');
+				  }
+				}else{
+				$("#bbl").attr('data','').html('');
+				}
+			},dataType:'json',beforeSend:function(){
+				iswait=1;
+				$("#bbl").html('<li class="loading"><img src="{$root}Public/user/images/loading.gif"/>正在努力为您加载中... </li>');
+			}
+		});
+	}
+	function toTop(obj){
+		var top=0;
+		while(obj){
+			top +=obj.offsetTop;
+			obj=obj.offsetParent        
+		}
+		return top;
+    }
+	$(".i-tab-nav a").click(function (e){
+		$(this).parent().parent().children('li').removeClass('current');
+		$(this).parent().addClass('current');
+		$("#bbl").attr('data',$(this).attr('data'));
+		$("#list").html('');
+		showinfo();
+	});		
+	$("#i-notice .close").click(function(){
+		$(this).parent("#i-notice").fadeOut(400, 0, function(){
+			$(this).parent("#i-notice").slideUp(400);
+			var date = new Date();  
+			date.setTime(date.getTime()+600*10000000);  
+			document.cookie="acclasttime="+$("#i-notice .close").attr('data')+"; expires=" + date.toGMTString()+";path=/;domain="; 
+		});
+		return false;
+	});	
+</script>
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

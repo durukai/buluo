@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0031)http://www.qire123.com/user-reg -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{&site_name} - 新用户注册</title>
+<meta name="keywords" content="{&site_keywords}">
+<meta name="description" content="{&site_description}">
+
+
+<link href="./style/css/base.css" type="text/css" rel="stylesheet">
+<link href="./style/css/qirebox.css" type="text/css" rel="stylesheet">
+<script src="./style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="./style/js/jquery.base.js" type="text/javascript"></script>
+<script src="./style/js/formValidator-4.0.1.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="layout" id="sign-header">
+  <div id="sign-logo"><a href="{&site_path}"><img src="./style/images/logo.png" alt=""></a></div>
+</div>
+<!-- // sign-header end -->
+<div class="layout" id="sign-content">
+  <if condition="empty($t)">
+  <div class="ui-box ui-qire sign-focus" id="reg-box">
+    <div class="ui-title fn-clear">
+      <h2>注册会员</h2>
+    </div>
+    <div class="ui-cnt fn-clear">
+      <form id="regform" action="?s=member-index-register" method="post">
+      	<input type="hidden" name="t" id="t"/>
+        <div class="ui-form" id="sign-primary">
+          <div class="ui-form-item fn-clear">
+            <label class="ui-label w100">&nbsp;</label>
+            <p class="qire-notice">友情提示：注册成功后，您的Email和用户名都可以登录哦！</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="email" class="ui-label w100"><strong>Email</strong>地址：</label>
+            <input type="text" id="email" name="email" class="ui-input w220" value="">
+            <p class="onError ui-message" id="emailTip" style="">你输入的邮箱长度非法,请确认</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="username" class="ui-label w100">用户名：</label>
+            <input type="text" id="username" name="username" class="ui-input w220" value="">
+            <p class="onError ui-message" id="usernameTip" style="">该用户名不可用，请更换用户名</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="password" class="ui-label w100">设置密码：</label>
+            <input type="password" id="password" name="password" maxlength="20" class="ui-input w220" value="">
+            <p class="onCorrect ui-message" id="passwordTip" style="">密码输入正确</p>
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label for="verifypass" class="ui-label w100">重复密码：</label>
+            <input type="password" id="verifypass" name="verifypass" maxlength="20" class="ui-input w220" value="">
+            <p class="onShow ui-message" id="verifypassTip" style="">输再次输入密码</p>
+          </div>
+          <div class="ui-form-item fn-clear" id="validate-code">
+            <label for="validate" class="ui-label w100">验证码：</label>
+            <div class="ui-form-block w120">
+              <input type="text" id="validate" name="validate" maxlength="10" class="ui-input w110" value="">
+              <p class="validate-code-btn">看不清? <a href="javascript:void()" id="verimgbut">换一张</a></p>
+            </div>
+            <img src="?s=Member-CheckCode" id="verimg" alt="点击图片更换验证码" title="点击图片更换验证码">
+            <p class="onShow ui-message" id="validateTip" style="">输入上图字母</p>
+          </div>
+          <div class="ui-form-item ui-form-checkbox fn-clear">
+            <label class="ui-label w100">&nbsp;</label>
+            <div class="ui-form-block w220">
+              <label for="agreement" class="ui-label-checkbox">
+                <input type="checkbox" value="" name="agreement" id="agreement" >
+                我已阅读并接受《<a href="index.php?s=member-index-public_agreement" target="_blank">使用协议</a>》 </label>
+            </div>
+             <p class="onShow ui-message" id="agreementTip" style="">输再次输入密码</p>
+            
+          </div>
+          <div class="ui-form-item fn-clear">
+            <label class="ui-label w100">&nbsp;</label>
+            <input type="hidden" name="dosubmit"/>
+            <input type="submit" id="register" class="ui-button w220" value="注册会员">
+          </div>
+        </div>
+        <!-- // ui-form#sign-primary end -->
+      </form>
+    </div>
+  </div>
+  
+  <!-- // sign-box#regbox end -->
+  <elseif condition="$t eq 2"/>
+  <div class="ui-box ui-qire sign-focus" id="login-box">
+    <div class="ui-title fn-clear">
+      <h2>邮箱认证</h2>
+    </div>
+    <div class="ui-cnt fn-clear">
+      <form method="post" action="?s=member-index-email_validation" id="repostmail">
+        <input type="hidden" name="username" value="{$username}">
+        <input type="hidden" name="email" value="{$email}">
+        <input type="hidden" name="d" value="">
+        <div class="signup_div">
+          <div class="activation">
+            <h3>认证已发送</h3>
+            
+            <p>激活链接已发送至：{$email}</p>
+            <?php
+            	$emailurl = $email ? str_replace('@', '',strstr($email, '@')) : '';
+            ?>
+            <div class="btn"><a target="_blank" href="http://mail.{$emailurl}/" class="link_1">打开邮箱激活</a></div>
+            <div class="faq"><a id="no-email" class="link_3" href="javascript:;">还没有收到确认邮件？</a></div>
+          </div>
+          <div id="email-again" class="bio">
+            <h5>如果还没有收到确认邮件，可能由以下原因造成：</h5>
+            <ul>
+              <li>1：到你邮箱的广告邮件、垃圾邮件目录中找找看；</li>
+              <li>2：如果在<span class="ms" style="color:red">48</span>秒后未收到邮件，您可以
+              <a style="color:#c00;text-decoration:underline;" onclick="resend_email()" 
+              	  title="重新发送认证邮件" href="javascript:void(0)" class="link_2">重新发送认证邮件</a>
+              	 </li>
+              <li>3：或选择更换邮箱地址注册：</li>
+            </ul>
+            <div class="ui-form-item fn-clear">
+              <label for="new_email" class="ui-label">新邮箱地址：</label>
+              <input type="text" autocomplete="off" size="20" value="" id="new_email" name="new_email" class="ui-input w150" tabindex="11">
+              <label for="password" class="ui-label">登录密码：</label>
+              <input type="password" size="15" value="" id="password" name="password" class="ui-input w150" tabindex="12">
+              <label for="validate" class="ui-label">验证码：</label>
+              <div class="ui-form-block w190">
+                <p class="ui-message">(请输入下图6个字母)&nbsp;&nbsp;<a id="verimgbut" href="javascript:void()">换一张</a></p>
+                <input type="text" size="20" value="" id="validate" name="validate" class="ui-input w180" tabindex="13">
+                <img title="点击图片更换验证码" alt="点击图片更换验证码" id="verimg" 
+                			src="?s=member-checkcode&code_len=6&font_size=14&width=182&height=30"></div>
+              	<input type="submit" class="ui-button" value="发送">
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- // ui-form End -->
+    </div>
+  </div>
+  </if>
+  
+  <script language="javascript" src="./style/js/regvaild.js" type="text/javascript"></script>
+</div>
+<!-- // sign-content end -->
+
+	<include file="./Public/member/footer.html" />
+	<!-- // footer end -->
+
+	<script language="javascript" src="./style/js/qireobj.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./style/js/focus.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>第三方通行证设置</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script language="javascript">
+
+
+$(document).ready(function(){
+	$("#myform").submit(function(){
+				
+	});
+});
+
+function test_mail(){
+    $.post(
+    	'__ROOT__/index.php?s=User-Member-testmail',
+    		{ 
+    		  mail_to : $('#mail_to').val(),
+    		  mail_server:$('#mail_server').val(),
+    		  mail_port:$('#mail_port').val(),
+    		  mail_user:$('#mail_user').val(),
+    		  mail_password:$('#mail_password').val(),
+    		  mail_from:$('#mail_from').val()
+    		},function(data){
+				alert(data);
+	});
+}
+
+</script>
+</head>
+<body class="body">
+	<include file="./Public/system/header.html" />
+	<div class="title">
+		<div class="left">第三方通行证设置</div>
+	</div>
+	
+	<form action="__ROOT__/index.php?s=User-Member-connect_save" method="post" name="myform" id="myform">
+	
+	<div class="add">
+		<ul>
+			<li class="left">新浪微博：</li>
+			<li class="right">
+				Appkey:&nbsp;<input type="text" name="setconfig[sina_akey]" id="sina_akey" size="10" value="{$sina_akey}"/>&nbsp;
+    			App secret key:<input type="text" name="setconfig[sina_skey]" id="sina_skey" size="20" value="{$sina_skey}"/>&nbsp;
+    			<a href="http://open.weibo.com/connect" target="_blank">点击注册</a>
+    		</li>
+		</ul>
+		
+		<ul>
+			<li class="left">腾讯微博：</li>
+			<li class="right">
+				Appkey:&nbsp;<input type="text" name="setconfig[qq_akey]" id="qq_akey" size="10" value="{$qq_akey}"/>&nbsp;
+    			App secret key:<input type="text" name="setconfig[qq_skey]" id="qq_skey" size="20" value="{$qq_skey}"/>&nbsp;
+    			<a href="http://open.t.qq.com/" target="_blank">点击注册</a>
+			</li>
+		</ul>
+		
+		
+		
+		<ul>
+			<li class="left">QQ号码登录：</li>
+    		<li class="right">
+    			App&nbsp;&nbsp;ID:&nbsp;<input type="text" name="setconfig[qq_appid]" id="qq_appid" size="10" 
+    				value="{$qq_appid}"/>&nbsp;
+    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App key:<input type="text" 
+    			name="setconfig[qq_appkey]" id="qq_appkey" size="20" value="{$qq_appkey}"/>&nbsp;
+    			 回调地址:<input type="text" name="setconfig[qq_callback]" id="qq_callback" size="20" value="{$qq_callback}"/>&nbsp;
+    			<a href="http://connect.qq.com" target="_blank">点击注册</a>
+    		</li>
+    	</ul>
+	</div>
+	
+	<div class="add">
+		<ul class="footer">
+			<input type="submit" name="submit" value="保存"> 
+		</ul>
+	</div>
+</form>
+	
+	<include file="./Public/system/footer.html" />
+</body>
+</html>

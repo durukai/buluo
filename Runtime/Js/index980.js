@@ -1,0 +1,1 @@
+document.write("<img src=\"/style/guanggao/ff2.gif\" />");

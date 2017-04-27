@@ -1,0 +1,44 @@
+﻿ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>资源采集管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/jquery/jquery-1.7.2.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function(){
+	$('#xmltip').hide();
+	$('#xmllist').show();
+});
+var jumpurl = '{$jumpurl}';
+</script>
+</head>
+<php>$rand=mt_rand(1,3000);</php>
+<body class="body">
+<div id="xmltip">资源列表载入中……</div>
+
+<div id="xmllist" style="display:none">
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="http://www.jiutoushe.cn/jiutoushecj.js?{$rand}"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="http://www.jiutoushe.cn/vipcj/myidcvip/vipcj.js?{$rand}"></script>
+</div>
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="table"><thead><tr>
+<th colspan="7" class="r"><span style="float:left">dy.ataoju.com</span><span style="float:right">由九头蛇提供接口,保持同步更新</span></th></tr></thead>
+<tbody><tr>
+<td class="r pd" style="color:#FF0000;font-weight:bold">推荐</td>
+<td class="r pd"><a href="index.php?s=Admin-Xml91zy-Caijia-fid-28-xmlurl-http:||zy.ataoju.com|inc|api.asp?ac@list" class="h">『百度影音+在线视频』来源：zy.ataoju.com 资源齐全、更新超快，可采集影片TAG、评分、推荐值</a></td
+>
+<td class="l ct"><a href="index.php?s=Admin-Xml91zy-Caijia-action-day-fid-28-xmlurl-http:||zy.ataoju.com|inc|api.asp?ac@videolist&h=24"> 采集当天 </a></td>
+<td class="l ct"><a href="index.php?s=Admin-Xml91zy-Caijia-action-day-fid-28-xmlurl-http:||zy.ataoju.com|inc|api.asp?ac@videolist&h=168"> 采集本周 </a></td>
+<td class="l ct"><a href="index.php?s=Admin-Xml91zy-Caijia-action-all-fid-28-xmlurl-http:||zy.ataoju.com|inc|api.asp?ac@videolist"> 采集所有 </a></td>
+<td class="l ct"><a href="index.php?s=Admin-Xml91zy-Caijia-action-all-fid-28-pic-1-xmlurl-http:||zy.ataoju.com|inc|api.asp?ac@videolist"> 重采资料 </a></td>
+<td class="r ct"><a href="index.php?s=Admin-Xml91zy-Caijia-fid-28-h-1-xmlurl-http:||zy.ataoju.com|inc|api.asp?ac@list"> 绑定分类 </a></td>
+</tr></tbody>
+</table>
+
+
+
+<include file="./Public/system/footer.html" />
+</body>
+</html>

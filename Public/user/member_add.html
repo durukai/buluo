@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+	<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/user/js/formvalidatorregex.js"></script>
+	<script language="javascript">
+$(document).ready(function(){
+	$("#myform").submit(function(){
+
+		//验证用户名
+		var user = $("#username");
+		var username = user.val();
+		if(username == ""){
+			errorMsg = "* 用户名不能为空!" ;  //长度为4-15个字符!
+			showError(user,errorMsg);
+			return false ;
+		}
+		if(username.length < 4 || username.length > 15){
+			errorMsg = "* 用户名长度为4-15个字符!" ;  //长度为4-15个字符!
+			showError(user,errorMsg);
+			return false ;
+		}
+
+		var isValid = (new RegExp(regexEnum.username, "g")).test(username);
+	    if(!isValid){
+			errorMsg = "* 用户名非法,请确认!" ;  //长度为4-15个字符!
+			showError(user,errorMsg);
+			return false ;
+		}
+	   var result =  $.ajax({	
+   			type : "get", 
+   			url : "?s=User-Center-valideusername-username-"+username, 
+   			async :false, 
+   			dataType : "json", 
+   			success : function(data){}
+       });
+	   if(result && result.responseText){
+		   var data = eval("("+result.responseText+")") ;
+		   if(parseInt(data.status) != 1) {
+				errorMsg = "* 用户名已存在,请确认!" ;
+				showError(user,errorMsg);
+				return false ;
+
+			}
+
+	   }
+     
+        var nickname = $("#nickname");
+		var nicknameValue = nickname.val();
+		if(nicknameValue == ""){
+			errorMsg = "* 昵称不能为空!" ;  
+			showError(nickname,errorMsg);
+			return false ;
+		}
+		hideError(nickname);
+
+
+		//验证密码
+		var pass = $("#password");
+		var password = pass.val();
+		if(password == ""){
+			errorMsg = "* 密码不能为空!" ;  
+			showError(pass,errorMsg);
+			return false ;
+		}
+
+		if(password.length < 6){
+			errorMsg = "* 用户密码至少6个字符!" ;  
+			showError(pass,errorMsg);
+			return false ;
+		}
+		hideError(pass);
+
+		
+
+		//确认密码
+		var passconfirm = $("#pwdconfirm");
+		var pwdconfirm = passconfirm.val();
+		if(password != pwdconfirm){
+			errorMsg = "* 密码输入不一致!" ;  
+			showError(passconfirm,errorMsg);
+			return false ;
+		}
+		hideError(passconfirm);
+
+		//邮箱验证
+
+		var email = $("#email");
+		var emailValue = email.val();
+		if(emailValue == ""){
+			errorMsg = "* 邮箱不能为空!" ;  
+			showError(email,errorMsg);
+			return false ;
+		}
+
+		if(emailValue.length < 6){
+			errorMsg = "* 邮箱至少6个字符!" ;  
+			showError(email,errorMsg);
+			return false ;
+		}
+
+		
+
+		isValid = (new RegExp(regexEnum.email, "g")).test(emailValue);
+	    if(!isValid){
+			errorMsg = "* 邮箱不是合法地址,请确认!" ;  
+			showError(email,errorMsg);
+			return false ;
+		}
+
+	    
+
+	    var result =  $.ajax({	
+   			type : "get", 
+   			url : "?s=User-Center-validemail-email-"+emailValue, 
+   			async :false, 
+   			dataType : "json", 
+   			success : function(data){}
+
+       });
+
+	   if(result && result.responseText){
+		   var data = eval("("+result.responseText+")") ;
+		   if(parseInt(data.status) != 1) {
+				errorMsg = "* 邮箱已存在,请确认!" ;
+				showError(email,errorMsg);
+				return false ;
+			}
+	   }
+
+	    hideError(email);
+		return true ;
+
+	});
+
+});
+
+function hideError(obj){
+	$(obj).css("border-color","#CCC");
+	$("#"+obj.attr("id")+"_error").html("*");
+}
+
+function showError(obj,msg){
+	$(obj).focus();
+	$(obj).css("border-color","#FF0000");
+	$("#"+obj.attr("id")+"_error").html(msg);
+}
+</script>
+
+</head>
+
+<body class="body">
+<div class="title">
+    <div class="right"><a href="?s=User-Member-manage">返回会员管理</a></div>
+
+</div>
+<form action="?s=User-Member-insert" method="post" name="myform" id="myform">
+<div class="add"> 
+     <ul>
+     	<li class="left">用户名：</li>
+    	<li class="right">
+    		<input type="text" name="info[username]"  id="username" value="" maxlength="12"/>&nbsp;	
+    		<span id="username_error">*</span>
+    	</li>	
+    </ul>
+
+    <ul>
+     	<li class="left">昵称：</li>
+    	<li class="right">
+    		<input type="text" name="info[nickname]"  id="nickname" value="" maxlength="12"/>&nbsp;	
+    		<span id="nickname_error">*</span>
+    	</li>	
+    </ul>
+
+    <ul>
+     	<li class="left">密码:</li>
+    	<li class="right">
+    		<input type="password" name="info[password]"  id="password" value="" maxlength="12" />
+			<span id="password_error">*</span>&nbsp;
+    	</li>	
+    </ul>
+
+    <ul>
+     	<li class="left">确认密码:</li>
+    	<li class="right">
+    		<input type="password" name="info[pwdconfirm]"  id="pwdconfirm" value="" maxlength="12" />
+			<span id="pwdconfirm_error">*</span>&nbsp;
+    	</li>	
+    </ul>
+
+    
+
+    <ul>
+     	<li class="left">邮箱：</li>
+    	<li class="right">
+    		<input type="text" name="info[email]" value=""  id="email" size="30" >
+    	<span id="email_error">*</span>&nbsp;
+    	</li>	
+    </ul>
+
+<ul class="footer">
+	<input type="submit" name="submit" value="提交"> <input type="reset" name="reset" value="重置"> 
+</ul>
+</div>
+</form>
+<include file="./Public/system/footer.html" />
+</body>
+</html>

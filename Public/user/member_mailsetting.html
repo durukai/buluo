@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>邮箱配置</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin-style.css' />
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="__PUBLIC__/js/admin.js"></script>
+<script language="javascript">
+
+
+$(document).ready(function(){
+	$("#myform").submit(function(){
+				
+	});
+});
+
+function test_mail(){
+    $.post(
+    	'__ROOT__/index.php?s=User-Member-testmail',
+    		{ 
+    		  mail_to : $('#mail_to').val(),
+    		  mail_server:$('#mail_server').val(),
+    		  mail_port:$('#mail_port').val(),
+    		  mail_user:$('#mail_user').val(),
+    		  mail_password:$('#mail_password').val(),
+    		  mail_from:$('#mail_from').val()
+    		},function(data){
+				alert(data);
+	});
+}
+
+</script>
+</head>
+<body class="body">
+	<include file="./Public/system/header.html" />
+	<div class="title">
+		<div class="left">邮箱配置</div>
+	</div>
+	
+	<form action="__ROOT__/index.php?s=User-Member-mailSettingSave" method="post" name="myform" id="myform">
+	
+	<div class="add">
+		
+		<ul>
+			<li class="left">邮件服务器：</li>
+    		<li class="right">
+    			<input type="text" name="config[mail_server]" id="mail_server"  value="{$mail_server}"
+    				maxlength="50" />&nbsp;
+    		</li>
+    	</ul>
+		
+		<ul>
+			<li class="left">邮件发送端口：</li>
+			<li class="right">
+				<input type="text" name="config[mail_port]" id="mail_port" value="{$mail_port}"/>&nbsp;
+			</li>
+		</ul>
+		
+		<ul>
+			<li class="left">发件人地址：</li>
+			<li class="right">
+				<input type="text" name="config[mail_from]" id="mail_from" value="{$mail_from}"/>&nbsp;
+			</li>
+		</ul>
+		
+		<ul>
+			<li class="left">验证用户名：</li>
+			<li class="right">
+				<input type="text" name="config[mail_user]" id="mail_user"  value="{$mail_user}"/>&nbsp;
+			</li>
+		</ul>
+		
+		<ul>
+			<li class="left">验证密码：</li>
+			<li class="right">
+				<input type="password" name="config[mail_password]" id="mail_password"  value="{$mail_password}"/>&nbsp;
+			</li>
+		</ul>
+		
+		<ul>
+			<li class="left">邮件设置测试：</li>
+			<li class="right">
+				<input type="text" name="mail_to" id="mail_to"/>&nbsp;
+			</li>
+		</ul>
+		
+	</div>
+	
+	<div class="add">
+		<ul class="footer">
+			<input type="submit" name="submit" value="保存"> 
+			<input type="button" name="button" value="测试发送" onClick="javascript:test_mail();">
+		</ul>
+	</div>
+</form>
+	
+	<include file="./Public/system/footer.html" />
+</body>
+</html>

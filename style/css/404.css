@@ -1,0 +1,58 @@
+/* 404页面 */
+.ui-maopou {border-top:3px solid #ccc;background-color:#fcfcfc;}
+.directory-list li {float:left;overflow:hidden;}
+.directory-list dl {width:218px;margin:12px 0 15px 0;overflow:hidden;padding:0 10px 0 20px;border-right:1px solid #eee;}
+.directory-list dl.movie {width:192px;}
+.directory-list dl.cartoon {width:144px;}
+.directory-list dl.fun {width:184px;}
+.directory-list dl.wei {width:110px;}
+.directory-list dt {height:30px;line-height:30px;overflow:hidden;font-size:14px;font-weight:700;}
+.directory-list dd {line-height:22px;margin-right:12px;float:left;}
+.directory-list dd a {white-space:nowrap;float:left;}
+#directory-focus {overflow:hidden;border-color:#18c2c8;border-width:1px;}
+#directory-focus .directory-item {border:0;margin:0;border-bottom:1px solid #eee;}
+.directory-search {width:980px;height:34px;overflow:hidden;padding:9px;}
+.directory-search .ui-search {float:left;}
+.directory-search .hotkeys {width:495px;padding-top:2px;overflow:hidden;float:right;}
+#tv-directory .directory-list dl {width:285px;}
+#tv-directory .directory-list dl dd, #movie-directory .directory-list dl dd, #fun-directory .directory-list dl dd, #cartoon-directory .directory-list dl dd {font-size:14px;line-height:24px;}
+#tv-directory .directory-list dl.area {width:123px;}
+#tv-directory .directory-list dl.year {width:135px;}
+#tv-directory .directory-list dl.star {width:332px;}
+#movie-directory .directory-list dl {width:220px;}
+#movie-directory .directory-list dl.area {width:205px;}
+#movie-directory .directory-list dl.year {width:138px;}
+#movie-directory .directory-list dl.star {width:310px;}
+#fun-directory .directory-list dl {width:310px;}
+#fun-directory .directory-list dl.area {width:160px;}
+#fun-directory .directory-list dl.year {width:135px;}
+#fun-directory .directory-list dl.program {width:280px;}
+#cartoon-directory .directory-list dl {width:200px;}
+#cartoon-directory .directory-list dl.area {width:160px;}
+#cartoon-directory .directory-list dl.year {width:175px;}
+#cartoon-directory .directory-list dl.program {width:350px;}
+#star-collection {border-top:1px solid #ddd;}
+#page-error{width: 776px;overflow: hidden;margin-top: 20px;margin-right: auto;margin-left: auto;padding-bottom: 10px;}
+#page-error-img{width: 289px;height: 363px;overflow: hidden;text-align: center;float: left;}
+#page-error-img h1{width: 246px;height: 160px;margin: 30px auto;overflow: hidden;text-indent: -999px;background: url(../images/404.png) 0 0 no-repeat;}
+#page-error-img p{line-height: 26px;overflow: hidden;}
+#page-error-img p a{ color: #e12160; margin: 0 5px;}
+#page-error-txt{width: 770px;overflow: hidden;clear: both;}
+#page-error-search{width: 496px;margin-top: 8px;margin-right: auto;margin-bottom: 0;margin-left: auto;}
+#page-error-search .search{width: 494px;height: 32px;overflow: hidden;border: 1px solid #C41C1B;}
+#page-error-search .search .input-txt{width: 364px;height: 31px;line-height: 31px;border: 0;padding: 0 0 0 30px;float: left;color: #666;border-left: 1px solid #e6e6e6;border-top: 1px solid #e6e6e6;background: url(../images/sico.gif) 9px 9px no-repeat #fff;}
+#page-error-search .search .input-btn{width: 98px;height: 32px;overflow: hidden;float: right;border: 0;cursor: pointer;background: url(../images/sbtn.gif) -1px -35px no-repeat;}
+#page-error-search .search .input-btn-active{background-position: -1px -1px;}
+#page-error-list{width: 760px;margin-top: 15px;overflow: hidden;border-top-width: 1px;border-right-width: 1px;border-left-width: 1px;border-top-style: solid;border-right-style: solid;border-left-style: solid;border-top-color: #eee;border-right-color: #eee;border-left-color: #eee;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #eee;}
+#page-error-list .txt-list{width: 720px;}
+#error-directory{width: 429px;margin: 0 auto;overflow: hidden;border-color: #ccc;border-width: 1px;float: right;}
+#error-directory .ui-search{width: 407px;}
+#error-directory .search-input{width: 371px;}
+#error-directory .directory-item{width: 429px;border: 0;margin: 0;}
+#error-directory .directory-list{width: 429px;}
+#error-directory .directory-list dl{width: 419px;margin: 0;border: 0;padding: 10px;border-top: 1px solid #f0f0f0;}
+#error-directory .directory-list dt{float: left;width: 80px;height: 24px;line-height: 24px;margin-right: 10px;padding: 9px 5px;text-align: center;background-color: #eee;}
+#error-directory .directory-list dd{margin-right: 15px;}
+#error-directory .directory-list dl.wei dt{ padding: 2px 5px;}
+#error-directory .directory-list dl.wei dd{ line-height: 28px;}
+/* 404页面 */

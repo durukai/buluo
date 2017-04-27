@@ -1,0 +1,48 @@
+﻿<?php
+
+$path=C('site_path');
+
+if(C('url_rewrite')){
+
+$useurl= C('site_path');
+
+}
+
+else{
+
+$useurl="$path?s=";
+
+}
+
+?>
+
+<if condition="empty($username)">
+<ul class="eb-headnav-ucenter" id="sign" >
+<li  id="loginbarx" class="ucenter-wrap ucenter-my drop-down"><a class="nav-link" id="innermsg" href="/?s=user-center-login.html"><span class="ucenter-item js-my">会员中心</span></a>
+
+    
+
+ 
+
+
+<else/>
+
+<a class="nav-link drop-title nav-avatar" href="<?php echo $useurl; ?>User-Center"><img src="{$avatar}?rand=<?php echo time();?>" title="{$nickname}" onerror="this.src='__ROOT__Public/user/images/noavatar_small.gif'"> <span>{$nickname}</span></a>
+
+      <div class="drop-box" id="nav-signed" style="display: none;"><ul class="ui-signed">
+
+			<volist name="menus" id="menu">
+
+				<li>
+
+					<a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><i class="ui-icon user-{$menu.data}"></i>{$menu.name}</a>
+
+				</li>
+
+			</volist>
+
+		</ul>
+
+	</div>
+
+</if>

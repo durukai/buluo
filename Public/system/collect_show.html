@@ -1,0 +1,75 @@
+ <html>
+<head>
+<title>{&admin_name} 管理面版 v{&admin_var}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="{&admin_keywords}">
+<meta name="description" content="{&admin_description}">
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/admin.css'>
+<style type="text/css">.dingshi{display:none;}.dingshi input{ border:none}</style>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/jss/admin.js"></script>
+<script language="JavaScript" charset="utf-8" type="text/javascript" src="__PUBLIC__/jss/jquery.js"></script>
+<script type="text/javascript">
+function collecttab(no,n){
+	for(var i=1;i<=n;i++){
+		$('#collect'+i).hide();
+		$('#collect'+i+'str').hide();
+	}
+	if(no==1){
+	    $('#collect1').show();
+		$('#collect2str').show();
+	}else if(no==2){
+	    $('#collect2').show();
+		$('#collect2str').show();
+	    $('#collectpagename').html("批量生成列表页");
+	}else if(no==3){
+	    $('#collect2').show();
+	    $('#collectpagename').html("批量生成内容页");
+	}else if(no==4){
+	    $('#collect1').show();
+	    $('#collectpagename').html("手工生成内容页");
+	}	
+}
+function CheckDingshi(str){
+	if(str=='index.php?s=Admin-Collect-Dingshi'){
+		$('#dingshi').show();
+	}else{
+		$('#dingshi').hide();
+	}
+} 
+</script> 
+</head>
+<div class="right">
+  <div class="right_main">
+  <table width="100%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
+  <tr class="tb_head" ><td><h2>操作导航：</h2></td></tr>
+  <tr class="firstalt"><td><ul class="do_nav"><li><a href="index.php?s=Admin-Collect-Show">采集节点列表</a></li><li><a href="index.php?s=Admin-Collect-Add">添加采集节点</a></li></ul></td></tr>
+  </table>  
+    <form action="index.php?s=Admin-Collect-Ing" method="post" name="myform">
+    <table width="100%" border="0" cellpadding="4" cellspacing="1" class="tableoutline">
+      <tr align="center" class="tb_title">
+        <td width="50">ID</td>
+        <td >采集节点名称</td>
+        <td width="200">操作</td>
+      </tr>
+      <volist name="list" id="ppvod">
+      <tr class="firstalt">
+        <td><input name='collect_id[]' type='checkbox' value='{$ppvod.collect_id}' style='border:none' checked>{$ppvod.collect_id}</td>
+        <td>{$ppvod.collect_title}</td>
+        <td align="center"><a href="index.php?s=Admin-Collect-Ing-collect_id-{$ppvod.collect_id}">采集</a>｜<a href="index.php?s=Admin-Collect-Add-collect_id-{$ppvod.collect_id}">修改</a>｜<a href="index.php?s=Admin-Collect-Cop-collect_id-{$ppvod.collect_id}" onClick="return confirm('确定复制?')">复制</a>｜<a href="index.php?s=Admin-Collect-Del-collect_id-{$ppvod.collect_id}" onClick="return confirm('确定删除?')">删除</a>｜<a href="index.php?s=Admin-Collect-Ing-collect_id-{$ppvod.collect_id}-tid-1">测试</a></td>        
+      </tr>
+      </volist>
+      <tbody id="dingshi" class="dingshi">
+      <tr class="firstalt">
+      <td colspan="3">采集周期设置:&nbsp;<input type="checkbox" name="collect_week[]" value="1" checked>星期一&nbsp;<input type="checkbox" name="collect_week[]" value="2" checked>星期二&nbsp;<input type="checkbox" name="collect_week[]" value="3" checked>星期三&nbsp;<input type="checkbox" name="collect_week[]" value="4" checked>星期四&nbsp;<input type="checkbox" name="collect_week[]" value="5" checked>星期五&nbsp;<input type="checkbox" name="collect_week[]" value="6" checked>星期六&nbsp;<input type="checkbox" name="collect_week[]" value="0" checked>星期日<br>采集时间设置:&nbsp;<input type="checkbox" name="collect_hour[]" value="00" checked>00&nbsp;<input type="checkbox" name="collect_hour[]" value="01" checked>01&nbsp;<input type="checkbox" name="collect_hour[]" value="02" checked>02&nbsp;<input type="checkbox" name="collect_hour[]" value="03" checked>03&nbsp;<input type="checkbox" name="collect_hour[]" value="04" checked>04&nbsp;<input type="checkbox" name="collect_hour[]" value="05" checked>05&nbsp;<input type="checkbox" name="collect_hour[]" value="06" checked>06&nbsp;<input type="checkbox" name="collect_hour[]" value="07" checked>07&nbsp;<input type="checkbox" name="collect_hour[]" value="08" checked>08&nbsp;<input type="checkbox" name="collect_hour[]" value="09" checked>09&nbsp;<input type="checkbox" name="collect_hour[]" value="10" checked>10&nbsp;<input type="checkbox" name="collect_hour[]" value="11" checked>11&nbsp;<input type="checkbox" name="collect_hour[]" value="12" checked>12&nbsp;<input type="checkbox" name="collect_hour[]" value="13" checked>13&nbsp;<input type="checkbox" name="collect_hour[]" value="14" checked>14&nbsp;<input type="checkbox" name="collect_hour[]" value="15" checked>15&nbsp;<input type="checkbox" name="collect_hour[]" value="16" checked>16&nbsp;<input type="checkbox" name="collect_hour[]" value="17" checked>17&nbsp;<input type="checkbox" name="collect_hour[]" value="18" checked>18&nbsp;<input type="checkbox" name="collect_hour[]" value="19" checked>19&nbsp;<input type="checkbox" name="collect_hour[]" value="20" checked>20&nbsp;<input type="checkbox" name="collect_hour[]" value="21" checked>21&nbsp;<input type="checkbox" name="collect_hour[]" value="22" checked>22&nbsp;<input type="checkbox" name="collect_hour[]" value="23" checked>23</td>
+      </tr>
+      </tbody>
+      <tr class="firstalt">
+      <td colspan="3"><input type="button" class='mininput' value="全/反选" onClick="CheckAll(this.form)" /> <select name="list_type" id="list_type" onChange="ChangeAction(this.value);CheckDingshi(this.value)"><option value="index.php?s=Admin-Collect-Ing" >批量采集</option><option value="index.php?s=Admin-Collect-Dingshi">定时采集</option><option value="index.php?s=Admin-Collect-Delall">批量删除</option></select> <input class="mininput" type="submit" value="提交操作"></td>
+     </tr>           
+    </table>
+    </form> 
+    </div>
+</div>
+<include file="footer" />
+</body>
+</html>

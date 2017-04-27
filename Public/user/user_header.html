@@ -1,0 +1,19 @@
+<div id="i-header">
+	<div class="layout fn-clear">
+		<div id="i-logo">
+			<a href="__ROOT__"><img width="157" height="42" src="{$root}Public/user/images/ilogo.gif" alt=""></a>
+		</div>
+		<ul id="i-nav">
+			<li class="i-nav-item">
+				<a class="nav-link" target="_self" href="{&site_path}">返回首页</a>
+			</li>
+			<li class="i-nav-item drop-down" id="ubox">
+				<a class="nav-link drop-title nav-avatar" href="javascript:void(0);">
+					<img src="<?php echo getAvatarBySize() ?>?rand=<?php echo time();?>" onerror="this.src='{$root}Public/user/images/noavatar_small.gif'" title="{$memberinfo.nickname}">
+					<span>{$memberinfo.nickname}</span>
+				</a>
+			</li>
+		<li class="i-nav-item" id="i-logout"><a class="nav-link logoutbt" data="{$useurl}User-Center-logout" href="{$useurl}User-Center-logout" target="_self">退出</a></li>
+		</ul>
+	</div>
+</div>

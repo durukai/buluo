@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>我的收藏 - 会员中心 -{&site_name}</title>
+<include file="./Public/user/user_js.html"/>
+<script type="text/javascript">
+		function setupLabel(){
+            if($('.label-checkbox input').length) {
+                $('.label-checkbox').each(function(){
+                    $(this).removeClass('label-checkbox-on');
+                });
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('label-checkbox-on');
+                });
+            };
+            if($('.label-radio input').length) {
+                $('.label-radio').each(function(){
+                    $(this).removeClass('label-radio-on');
+                });
+                $('.label-radio input:checked').each(function(){
+                    $(this).parent('label').addClass('label-radio-on');
+                });
+            };
+        }  
+
+		function initLabelEvent(){
+			$(".user-img-list li").hover(function(){
+				$(this).find(".ui-del").show();
+			},function(){
+				$(this).find(".ui-del").hide();
+			});
+			$('.label-checkbox').click(function(){
+				setupLabel();
+			});
+			setupLabel();
+		}
+	</script>
+
+</head>
+<body>
+<include file="./Public/user/user_header.html"/>
+<!-- // i-header end -->
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+     <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          <volist name="menus" id="menu">
+          	<li <if condition="$menu.a eq $action">class="current"</if>><a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><span class="icon {$menu.data}-icon">&nbsp;</span>{$menu.name}</a></li>	
+          </volist>
+        </ul>
+      </div>
+      <!-- // user-nav end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+      <div id="i-favourite">
+        <div class="ui-title i-tab-nav-box">
+          <ul class="i-tab-nav" id="pids">
+            <li class="current"><a href="<?php echo $useurl; ?>User-Center-love-op-1" hidefocus="">全部</a></li>
+            <volist name="catalogs" id="catalog">
+            	<li class="line"></li>
+            	<li><a href="<?php echo $useurl; ?>User-Center-love-op-1-pid-{$catalog.id}" hidefocus="">{$catalog.name}<span>{$catalog.count}</span></a></li>
+            </volist>
+          </ul>
+        </div>
+        <div class="ui-cnt">
+          <ol class="user-img-list" id="xlist">
+            <li class="loading"><img src="{$root}Public/user/images/loading.gif"/>正在努力为您加载中... </li>
+          </ol>
+          <!-- // pic-list End -->
+          <div class="user-opera fn-clear" style="margin: 15px 0px 20px; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(245, 245, 245);" id="i-do">
+            <div class="check-del fn-left">
+              <label class="label-checkbox" for="checkall" hidefocus="">
+                <input type="checkbox" id="checkall">全选</label>
+              <form action="" method="post" id="delremindform">
+                <input type="hidden" value="" id="delids" name="delids">
+                <a class="ui-edit ui-edit-short cleanup" href="javascript:;" data="1" id="delchecked">删除</a>
+              </form>
+            </div>
+            <div id="xpage" class="fav-pic-page"></div>
+          </div>
+        </div>
+      </div>
+      <!-- // ui-box End -->
+      <div id="i-hot-fav">
+        <div class="ui-title i-tab-nav-box">
+          <ul class="i-tab-nav">
+            <li class="current">热门收藏</li>
+          </ul>
+        </div>
+        <div class="ui-cnt">
+          <ol class="user-img-list" id="hotremind">
+          <li class="loading"><img src="{$root}Public/user/images/loading.gif"/>正在努力为您加载中... </li>
+          </ol>
+          <!-- // pic-list End -->
+        </div>
+      </div>
+      <!-- // ui-box End -->
+    </div>
+  </div>
+  <!-- // i-cnt End -->
+  <script type="text/javascript">
+		function pagegoo(url){
+			$.ajax({ url: url,  success: function(data){
+			    if(data.ajaxtxt!=''){
+					$("#xlist").html(data.ajaxtxt);
+					initLabelEvent();
+					$("#i-do").show();
+					$("#checkall").click(function(e){
+						if ($(this).is(":checked")) {
+							$("#xlist [name = loveids]:checkbox").each(function () {
+								$(this).attr('checked',true);
+							});							 
+						}else{
+							$("#xlist [name = loveids]:checkbox").each(function () {
+								$(this).attr('checked',false);
+							});		
+						}
+					});
+				}else{
+					$("#xlist").html('<li class="kong">当前没有收藏，您可以点击下面的收藏</li>');
+					$("#i-do").hide();
+				}
+				$("#xpage").html(data.pages);
+				$("#xpage a").click(function (e){
+					pagegoo(e.target);
+					return false;
+				});
+				$(".fav-cancel").click(function(event){
+					$.showfloatdiv({
+						wantclose:2,
+						succdo:function(r){
+							if(parseInt(r.rcode)==1){
+								pagegoo("<?php echo $useurl; ?>User-Center-love-op-1");
+								$("#pids").html(r.dhtxt);
+								$("#pids a").unbind();
+								$("#pids a").click(
+									function (e){
+										$(this).parent('li').nextAll().removeClass('current');
+										$(this).parent('li').prevAll().removeClass('current');
+										$(this).parent('li').addClass('current');
+										pagegoo($(this).attr('href'));
+										return false;
+									}
+								);
+							}
+						},txt:'确认删除?'
+					});
+				});
+			},dataType:'json'});
+			return false;				
+		}
+		pagegoo("<?php echo $useurl; ?>User-Center-love-op-1");
+
+		function gethot(url){
+			$.ajax({ 
+				url: url,  
+				success: function(data){
+					$("#hotremind").html(data);
+					$('.fav-add').unbind();
+					$('.fav-add').click(function (e){
+						$.showfloatdiv({cssname:'loading'});
+			    		var turl=$(this).attr('href');
+						  $.get(
+							turl,'',
+							function(data){
+								$.hidediv(data);
+								if(parseInt(data.rcode)>0){
+									gethot('<?php echo $useurl; ?>User-Center-getlove');
+									pagegoo("<?php echo $useurl; ?>User-Center-love-op-1");
+									$("#pids").html(data.dhtxt);
+									$("#pids a").click(
+										function (e){
+											$(this).parent('li').nextAll().removeClass('current');
+											$(this).parent('li').prevAll().removeClass('current');
+											$(this).parent('li').addClass('current');
+											pagegoo($(this).attr('href'));
+											return false;
+										}
+									);
+								}
+							},
+							'json'
+						);
+						return false;
+					});
+
+			},dataType:'html'});
+
+		}
+
+		gethot('<?php echo $useurl; ?>User-Center-getlove');
+
+		$("#pids a").click(function (e){
+			$(this).parent('li').nextAll().removeClass('current');
+			$(this).parent('li').prevAll().removeClass('current');
+			$(this).parent('li').addClass('current');
+			pagegoo($(this).attr('href'));
+			return false;
+		});
+
+		function delcheck(){
+			$("#delchecked").unbind();
+			$("#delchecked").click(
+				function (e){
+					var result = new Array();
+					$("#xlist [name = loveids]:checkbox").each(function () {
+						if ($(this).is(":checked")){
+							result.push($(this).attr("value"));
+						}
+					});							 
+						
+
+					$.showfloatdiv({
+						txt:'确定删除？',
+						wantclose:2,
+						suredo:function(e){	
+							$("#delids").attr('value',result);
+							$("#delremindform").qiresub({
+								curobj:$("#delchecked"),
+								txt:'数据提交中,请稍后...',
+								onsucc:function(result){
+									$.hidediv(result);
+									if(parseInt(result['rcode'])>0){
+										pagegoo(window.location.href+"-op-1");
+										$("#pids").html(result.dhtxt);
+										$("#pids a").unbind();
+										$("#pids a").click(function (e){
+											$(this).parent('li').nextAll().removeClass('current');
+											$(this).parent('li').prevAll().removeClass('current');
+											$(this).parent('li').addClass('current');
+											pagegoo($(this).attr('href'));
+											return false;
+										});
+
+										$("#checkall").attr('checked',false);
+									}
+							}
+							}).post({url:'<?php echo $useurl; ?>User-Center-dellove'});
+							$.closefloatdiv();
+							return false;
+						}
+					});
+			});
+		}
+		delcheck();
+	</script>
+
+</div>
+<!-- // maxBox End -->
+<!-- // wrap End -->
+<!-- // footer end -->
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

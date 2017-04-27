@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>我的评论 - 会员中心 -{&site_name}</title>
+<include file="./Public/user/user_js.html"/>
+<script type="text/javascript">
+		function setupLabel(){
+            if($('.label-checkbox input').length) {
+                $('.label-checkbox').each(function(){
+                    $(this).removeClass('label-checkbox-on');
+                });
+
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('label-checkbox-on');
+                });
+
+            };
+
+            if($('.label-radio input').length) {
+                $('.label-radio').each(function(){
+                    $(this).removeClass('label-radio-on');
+                });
+                $('.label-radio input:checked').each(function(){
+                    $(this).parent('label').addClass('label-radio-on');
+                });
+            };
+        }  
+	</script>
+
+<style type="text/css">
+#xpage .current{color:red;}
+</style>
+</head>
+<body>
+<include file="./Public/user/user_header.html"/>
+<div id="content" class="layout">
+  <div class="ui-box ui-qire fn-clear" id="i-box">
+    <div id="i-bar">
+      <h3>{&site_name}会员控制面板</h3>
+      <div id="user-nav">
+        <ul class="user-nav-list fn-clear">
+          <volist name="menus" id="menu">
+          	<li <if condition="$menu.a eq $action">class="current"</if>><a href="<?php echo $useurl; ?>{$menu.m}-{$menu.c}<notempty name='menu.a'>-{$menu.a}</notempty>"><span class="icon {$menu.data}-icon">&nbsp;</span>{$menu.name}</a></li>	
+          </volist>
+        </ul>
+      </div>
+      <!-- // user-nav end -->
+    </div>
+    <!-- // i-bar end -->
+    <div class="i-box-cnt" id="i-cnt">
+      <div id="i-comment">
+        <div class="ui-title i-tab-nav-box fn-clear">
+          <ul class="i-tab-nav">
+            <li class="current">我的评论</li>
+          </ul>
+        </div>
+        <div class="ui-cnt">
+          <form id="delcomm" method="post">
+            <ul class="user-txt-list mycmt-list fn-clear" id="xlist">
+            <li class="loading"><img src="{$root}Public/user/images/loading.gif"/>正在努力为您加载中... </li>
+            </ul>
+          </form>
+          <!-- // i-list End -->
+          <div class="user-opera fn-clear">
+            <div class="check-del">
+              <label class="label-checkbox" for="checkall" hidefocus="">
+                <input type="checkbox" id="checkall" class="delcheckall">全选</label>
+              <a class="ui-edit ui-edit-short cleanup" href="javascript:;" data="<?php echo $useurl; ?>User-index-delcomm">删除</a></div>
+          </div>
+          <!-- // user-opera end -->
+          <div class="ui-page fn-clear" id="xpage"></div>
+          <!-- // list-page End -->
+        </div>
+      </div>
+      <!-- // ui-box End -->
+    </div>
+    <!-- // i-cnt End -->
+    <script type="text/javascript">		
+	    function initLabelEvent(){
+	    	$('.label-checkbox').click(function(){
+	    		setupLabel();
+	    	});
+	    	setupLabel();
+		}
+
+    	function pagegoo(url){
+			$.ajax({ 
+				url: url,  
+				success: function(data){
+					if('' != data.ajaxtxt){
+						$("#xlist").html(data.ajaxtxt);
+						$("#xpage").html(data.pages);
+						initLabelEvent();
+						$("#xpage a").click(function (e){
+							pagegoo(e.target);
+							return false;
+						});
+
+						$(".mdel").click(function(){
+							var parents=$(this).parents('li');
+							$.showfloatdiv({
+								wantclose:2,
+								succdo:function(r){
+									parents.remove();
+								},txt:'确认删除?'
+							});
+						});
+
+						$(".delcheckall").click(function(){
+							checkAll('');
+						});
+				}else{
+				  $("#xlist").html('<li class="kong">您当前没有评论! </li>');
+			      $('.i-do').hide();
+				}
+
+			},dataType:'json'});
+
+			return false;				
+		}
+
+		$(".cleanup").click(function(e){
+			$.showfloatdiv({
+				wantclose:2,
+				ispost:1,
+				formid:'delcomm',
+				url:'<?php echo $useurl; ?>User-Center-delcomm',
+				succdo:function(r){
+					pagegoo('<?php echo $useurl; ?>User-Center-getcomms');
+				},txt:'确认删除?'
+			});
+		});
+
+		pagegoo('<?php echo $useurl; ?>User-Center-getcomms');
+
+	</script>
+  </div>
+  <!-- // maxBox End -->
+</div>
+<!-- // footer end -->
+<include file="./Public/user/user_footer.html"/>
+</body>
+</html>

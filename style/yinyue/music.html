@@ -1,0 +1,52 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><base target="_blank" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />       
+<title>播客音乐盒</title>     
+<link  href="/style/yinyue/css/music.css" rel="Stylesheet" />
+<style>/*tempt ,remove later*/ .erji-link li{ width:85px;}</style></head><body>    
+<div class='m-box1 l-w music-provider'>        <div class='m-box1-hd'></div>        <div class='m-box1-bd'>              <div class='music-pdetail' id='music-pdetail'>               <div class="music-side" id='music-side'>                   <p class='music-hint'>不喜欢？换一家试试</p>                                     <ul class="m-mlist" id='recommend'>                                       </ul>                </div>                <iframe  class="music-iframe" id='music-iframe'  scrolling="no" src='' frameborder="0"></iframe>                             </div>             <div class='music-plist' id='music-plist' >                <ul class='m-mlist' id="index-list">                                  </ul>                <div class="music-plist-control">                       </div>             </div>        </div><script type="text/javascript">var pageId = "hao123-newmusic";</script>
+<script type="text/javascript">
+    var fmProvider = [
+      { recommend: 15, imgName: 'youdao.png', playerURL: 'youdao.html', title: '有道音乐', description: '好歌听不断 尽在有道音乐！', id: 'xiami_fm'},
+      { recommend: 13, imgName: 'green-64.png', playerURL: 'yyt.html', title: 'bokezhanMTV', description: '高清MV电台', id: 'yinyuetai_fm'},
+      { recommend: 14, imgName: 'ik123.png', playerURL: 'dt.html', title: '酷博电台', description: '让音乐绽放', id: 'kugou_fm' },
+      { recommend: 12, imgName: 'douban.png', playerURL: 'dbfm.html', title: '豆瓣FM', description: '根据你的喜好播放想听的歌', id: 'douban_fm' },
+      { recommend: 11, imgName: 'beva.png', playerURL: 'bwdt.html', title: '贝瓦电台', description: '宝宝自己的 儿童电台', id: 'beva_fm' },
+      { recommend: 5, imgName: 'sougou.png', playerURL: 'sougou.html', title: '搜狗音乐盒', description: '高音质正版<br>音乐电台', id: 'kuwo_fm' },
+      { recommend: 7, imgName: 'tingicon.png', playerURL: 'tingfm.html', title: 'ting!电台', description: '打开<br/>就有好音乐', id: 'ting_fm' }
+
+
+    ];
+    var mbProvider = [
+      { recommend: 4, imgName: 'xiami.png', playerURL: 'xiami.html', title: '虾米音乐', description: '经典老歌与<br>各色榜单', id: 'xiami_mb', minRandom: 1, maxRandom: 25 },
+      { recommend: 8, imgName: 'kugou-mb.png', playerURL: 'kugou.html', title: '酷狗音乐', description: ' 超大屏幕<br>展示歌词', id: 'kugou_mb', minRandom: 26, maxRandom: 50 },
+      { recommend: 3, imgName: '1ting.png', playerURL: '1ting.html', title: '一听音乐', description: '高音质老牌 音乐播放器', id: '1ting_mb', minRandom: 51, maxRandom: 75 },
+      { recommend: 2, imgName: 'kuwomb.png', playerURL: 'kuwo.html', title: '酷我音乐', description: '百万歌曲<br> 一点即播', id: 'kuwo_mb' , minRandom: 76, maxRandom: 100 },
+      { recommend: 10, imgName: 'baidu.png', playerURL: 'baidu.html', title: '百度音乐', description: '可以找到自己喜欢的音乐', id: 'baidu_mb' },
+      { recommend: 1, imgName: 'duomi.png', playerURL: 'duomi.html', title: '多米音乐', description: '让音乐跟我走', id: 'duomi_mb' },
+      { recommend: 9, imgName: 'jiuku.png', playerURL: 'jiuku.html', title: '九酷听听', description: '听好歌，<br>上九酷！', id: 'jiuku_mb' }
+    ];
+  
+</script>
+
+<script type="text/javascript" src="/style/yinyue/js/subpage21.js"></script>
+<!--[if lte IE 6]><script type="text/javascript">(function () {        var rec = document.getElementById('recommend'),            lis = rec.getElementsByTagName('li'),            imgs = rec.getElementsByTagName('img');        Hao.Hover(lis, 'li-hover');        for (var i = 0; i < imgs.length; i++) {            imgs[i].src = imgs[i].src.replace('png', 'jpg');        }    })(); </script><![endif]-->
+
+<script type="text/javascript" src="/style/yinyue/js/music21.js"></script>
+<script src="/style/yinyue/js/monitor.js"></script>
+<script language="JavaScript"> 
+if(top==self)top.location="http://localhost/";
+document.oncontextmenu=new Function("event.returnValue=false;"); 
+document.onselectstart=new Function("event.returnValue=false;");
+function killErrors() {
+return true;
+}
+window.onerror = killErrors; 
+</script>
+<div style="display:none">
+<script src="http://s19.cnzz.com/stat.php?id=3513243&web_id=3513243&online=2" language="JavaScript"></script>
+</div>
+</body></html>
