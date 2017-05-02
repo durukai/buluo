@@ -1,1 +1,0 @@
-document.writeln("  <IFRAME src=\"/style/yinyue/music.html\" name=\"main\" width=\"970\" height=\"475\" frameborder=\"0\" scrolling=\"NO\" marginheight=\"0\" marginwidth=\"0\"></IFRAME>");
