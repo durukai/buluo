@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+    <title>{maccms:name}</title>
+    <meta name="keywords" content="{maccms:keywords}" />
+    <meta name="description" content="{maccms:description}" />
+{maccms:include}
+<link href="{maccms:path_tpl}css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{maccms:head}
+{maccms:load focus.html}
+    <div class="site_container">
+        <div class="container_inner">
+            <div class="wrapper">
+                <div class="mod_row">
+                    <div class="mod_hd">
+                        <div class="mod_title">
+                            <h2 class="title"><span class="text_sprite text_hot"><a>看最新热播</a></span></h2>
+                            <div class="title_sub">
+							{maccms:matrix type=1,2,3,4 table=vod}
+							<a href="[matrix:link]" target="_blank" title="">[matrix:name]</a><i class="divide">/</i>
+							{/maccms:matrix}
+                                </div>
+                        </div>
+                    </div>
+                    <div class="mod_bd">
+					{maccms:vod num=9 order=desc by=dayhits type=all}
+					{if-A:[vod:num] = 1 }
+                        <div class="left_370">
+                            <a href="[vod:link]" target="_blank">
+                                <div class="img">
+                                    <img src="[vod:pic]" alt="[vod:name]" />
+                                </div>
+                                <div class="figure_sign"><i class="ico"></i>
+                                </div>
+                                <div class="sign">	<strong class="figure_title">[vod:name]</strong>
+                                    <p class="figure_desc">[vod:remarks]</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="left_565 mt10 fl">
+                            <ul>
+							{else-A}
+                                <li class="l_h150">
+                                    <a href="[vod:link]" target="_blank" class="figure">
+                                        <div class="img">
+                                            <img class="lazy yj l_h100" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" />
+                                        </div> <span class="figure_mask yj"><em class="mask_txt">[vod:remarks]</em></span>
+                                    </a> <strong class="figure_title"><a href="[vod:link]" target="_blank"title="[vod:name]">[vod:colorname]</a></strong>
+                                    <div class="figure_info">	<span href="##" class="figure_info_play">
+                                        	<i class="ico_play"></i>
+                                            <span class="info_inner">[vod:hits]</span>
+                                        </span>
+                                    </div>
+                                </li>
+								{endif-A}
+								{/maccms:vod}
+                                </ul>
+								{maccms:matrix table=vod type=1,2,3,4}
+								<ul>
+								{maccms:vod num=8 type=[matrix:id] order=desc by=dayhits}
+                                <li class="l_h150">
+                                    <a href="[vod:link]" target="_blank" class="figure">
+                                        <div class="img">
+                                            <img class="lazy yj l_h100" src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]">
+                                        </div> <span class="figure_mask yj"><em class="mask_txt">[vod:remarks]</em></span>
+                                    </a> <strong class="figure_title"><a href="[vod:link]" target="_blank"title="[vod:name]">[vod:colorname]</a></strong>
+                                    <div class="figure_info">	<span href="##" class="figure_info_play">
+                                        	<i class="ico_play"></i>
+                                            <span class="info_inner">[vod:hits]</span>
+                                        </span>
+                                    </div>
+                                </li>
+								{/maccms:vod}
+								</ul>
+								{/maccms:matrix}
+                        </div>
+                    </div>
+                </div>
+				<script type="text/javascript">jQuery(".mod_row").slide({titCell:".mod_title a",mainCell:".left_565",switchLoad: "_src",easing:"easeInQuint"});</script>
+                <div class="mod_box mt10">
+                    <div class="mod_hd">
+                        <div class="mod_title">
+                            <h2 class="title">
+                            	<span class="text_medium">看今日更新</span>
+                            </h2>
+                            <div class="new_txt red">[{maccms:count_vod_day}]</div>
+                        </div>
+                    </div>
+                    <div class="mod_hd">
+					{maccms:vod num=17 order=desc by=time type=all}
+					{if-A:[vod:num] = 1 }
+                        <a href="[vod:link]" target="_blank" class="figure">
+                            <img class="lazy" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" />
+                            <div class="figure_sign"><i class="num num_[vod:num]">[vod:num]</i>
+                            </div>
+                            <div class="figure_caption ftno"><strong>[vod:name]</strong>
+                            </div>
+                        </a>
+                        <ul>
+						{else-A}
+                            <li>
+                                <a href="[vod:link]" target="_blank" class="top_title" title="[vod:time style=m-d]更新"><i class="num num_[vod:num]">[vod:num]</i><span class="title_inner">[vod:name]</span>
+                                </a>
+                            </li>
+							{endif-A}
+							{/maccms:vod}
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="mod_row">
+                    <div class="figures_list">
+                        <h4 class="figures_title"><span class="title_txt bk white">看精彩推荐</span></h4>
+                        <div class="mod_figures">
+                            <ul>
+							{maccms:vod num=11 type=all order=desc by=hits}
+                                <li class="fl">
+                                    <a target="_blank" _hot="index.movie.pre.small_img1" href="[vod:link]" title="[vod:name]">
+										<img class="yj5" src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]" />
+                                    </a>
+                                    <p class="figure_desc">[vod:name len=10]</p>
+                                </li>
+								{/maccms:vod}
+                                </ul>
+								<a class="prev" _hot="cover3.1.playlist.new.prev" data-role="prev" href="javascript:;" hidefocus="true">
+				<span class="btn_inner">上一页</span></a>
+				<a class="next disabled" _hot="cover3.1.playlist.new.next" data-role="next" href="javascript:;" hidefocus="true">
+				<span class="btn_inner">下一页</span></a>
+                        </div><script type="text/javascript">jQuery(".mod_figures").slide({ mainCell:"ul", effect:"leftLoop", vis:6, scroll:6, autoPage:true, switchLoad:"_src",easing:"easeInQuint"});</script>
+                    </div>
+                </div>
+                <div class="mod_box mt10">
+                    <div class="figures_list">
+                        <h4 class="figures_title"><span class="title_txt bk white">推广？</span></h4>
+                        <div id="mod_figures_pic" class="mod_figures_pic">
+                            <div class="hd">
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                </ul>
+                            </div>
+                            <div class="bd">
+                                <ul>
+								{maccms:vod num=4 type=all order=desc by=time}
+                                    <li>
+                                        <a href="[vod:link]" target="_blank" class="figure" title="[vod:name]">
+                                            <img class="lazy yj" src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]">
+                                        </a>
+                                    </li>
+									{/maccms:vod}
+                                    </ul>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            jQuery(".mod_figures_pic").slide({
+                                mainCell: ".bd ul",
+                                switchLoad: "_src"
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+			{maccms:matrix table=vod type=1,2,3,4}
+            <div class="wrapper mt10">
+                <div class="mod_row">
+                    <div class="mod_hd">
+                        <div class="mod_title">
+                            <h2 class="title"><span class="text_sprite text_hot">看个[matrix:name]</span></h2>
+                            <div class="title_sub">
+							{maccms:menu table=vod type=child parent=[matrix:id]}
+							<a href="[menu:link]" target="_blank">[menu:name]</a><i class="divide">/</i>
+							{/maccms:menu}
+                                </div>
+                        </div>
+                    </div>
+                    <div class="mod_bd">
+                        <div class="left_565 mt10" style=" width:auto;">
+                            <ul style=" width:975px;">
+							{maccms:vod num=10 type=[matrix:id] order=desc by=time}
+                                <li>
+                                    <a href="[vod:link]" target="_blank" class="figure">
+                                        <img class="lazy yj5" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" /> <span class="figure_mask yj"><em class="mask_txt  ftno">[vod:remarks]</em></span>
+                                    </a> <strong class="figure_title mt10"><a href="[vod:link]" target="_blank"title="[vod:name]">[vod:name]</a></strong>
+									<div class="figure_info">	<span href="##" class="figure_info_play">
+                                        	<i class="ico_play"></i>
+                                            <span class="info_inner">[vod:hits]</span>
+                                        </span>
+                                    </div>
+                                </li>
+								{/maccms:vod}
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod_box mt10">
+                    <div class="mod_hd">
+                        <div class="mod_title">
+                            <h2 class="title">
+                            	<span class="text_medium">看[matrix:name]排行</span>
+                                <i class="ico_text_top"></i>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="mod_hd">
+					{maccms:vod num=27 type=[matrix:id] order=desc by=hits}
+					{if-A:[vod:num] = 1 }
+                        <a href="[vod:link]" target="_blank" class="figure">
+                            <img class="lazy" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" style="visibility: visible; " />
+                            <div class="figure_sign"><i class="num num_[vod:num]">[vod:num]</i>
+                            </div>
+                            <div class="figure_caption ftno"><strong>[vod:name]</strong>
+                            </div>
+                        </a>
+                        <ul>
+						{else-A}
+                            <li>
+                                <a href="[vod:link]" class="top_title" target="_blank" title="[vod:name]">	<i class="num num_[vod:num]">[vod:num]</i><span class="title_inner">[vod:name]</span>
+                                </a>
+                            </li>
+							{endif-A}
+							{/maccms:vod}
+                            </ul>
+                        </div>
+                </div>
+            </div>
+			{/maccms:matrix}
+            <div class="wrapper">
+                <div class="mod_row" style="width:100%;margin-bottom: 10px;">
+                    <div class="mod_hd">
+                        <div class="mod_title">
+                            <h2 class="title"><span class="text_sprite text_hot">看个微电影</span></h2>
+                            <div class="title_sub">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mod_hd">
+                        <div class="topic yj5">
+						{maccms:vod num=5 type=5 order=desc by=time}
+						{if-A:[vod:num] = 1 }
+                            <a href="[vod:link]" target="_blank" class="figure" title="[vod:name]">
+                                <img width="220" height="160" class="lazy yj" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" title="[vod:name]" />
+                            </a> <strong class="title">
+                                <a href="[vod:link]" target="_blank"title="[vod:name]">[vod:name]</a>
+                            </strong>
+                            <p class="desc">[vod:contenttext]</p></div>
+                        <div class="tolist">
+                            <ul>
+							{else-A}
+                                <li>
+                                    <a href="[vod:link]" target="_blank" class="figure" title="[vod:name]">
+                                        <img class="lazy yj" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" title="[vod:name]" />
+                                    </a> <strong class="title">
+                                        <a href="[vod:link]" target="_blank"title="[vod:name]">[vod:name]</a>
+                                    </strong>
+                                    <p class="desc">[vod:contenttext]</p>
+                                </li>
+								{endif-A}
+							    {/maccms:vod}
+                               </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="wrapper">
+                <div class="mod_row" style="width:100%;margin-bottom: 10px;">
+                    <div class="mod_hd">
+                        <div class="mod_title">
+                            <h2 class="title"><span class="text_sprite text_hot">明星专题</span></h2>
+                            <div class="title_sub">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mod_hd">
+                        <div class="topic yj5">
+						{maccms:topic id=all order=desc by=time num=5}
+						{if-A:[topic:num] = 1 }
+                            <a href="[topic:link]" target="_blank" class="figure" title="[topic:name]">
+                                <img width="220" height="160" class="lazy yj" data-original="[topic:pic]" src="/images/blank.png" alt="[topic:name]" title="[topic:name]" />
+                            </a> <strong class="title">
+                                <a href="[topic:link]" target="_blank"title="[topic:name]">[topic:name]</a>
+                            </strong>
+                            <p class="desc">[topic:content]</p></div>
+                        <div class="tolist">
+                            <ul>
+							{else-A}
+                                <li>
+                                    <a href="[topic:link]" target="_blank" class="figure" title="[topic:name]">
+                                        <img class="lazy yj" data-original="[topic:pic]" src="/images/blank.png" alt="[topic:name]" title="[topic:name]" />
+                                    </a> <strong class="title">
+                                        <a href="[topic:link]" target="_blank"title="[topic:name]">[topic:name]</a>
+                                    </strong>
+                                    <p class="desc">[topic:name]</p>
+                                </li>
+								{endif-A}
+								{/maccms:topic}
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+	﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+        <div class="mod_footer_partners">
+		{if-A:{maccms:siteaid} = 10 }
+		<span class="partner_title">合作伙伴</span>
+            <div class="partner_links">
+			{maccms:link type=font num=100}
+			<a href="[link:link]" target="_blank" title="[link:name]">[link:name]</a>|
+			{/maccms:link}
+			</div>
+        </div>
+		{endif-A}
+		{maccms:foot}
+</body>
+</html>

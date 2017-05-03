@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>{page:name}_{maccms:name}</title>
+<meta name="keywords" content="{page:name}第{page:now}页{page:key}" />
+<meta name="description" content="{page:name}第{page:now}页{page:des}" />
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+{maccms:include}
+</head>
+<body oncontextmenu="window.event.returnValue=false">
+{maccms:head}
+
+<div class="container">
+<div class="container-inner">
+
+<div class="starx-pic">
+    <div class="all-filtrate">
+      <div class="all-filtrate-content">
+        <div class="afc1-wrap"> <span class="afc1-span">分类：</span>
+          <ul class="afc1">
+            <li {if-A:{maccms:curarttypeid}=} class="active-style2" {endif-A}><a href="/?m=art-type-id-1.html" >全部</a></li>
+            {maccms:menu order=asc table=art parent=1}
+            <li {if-A:{maccms:curarttypeid}=[menu:id]} class="active-style2" {endif-A}><a href="[menu:link]" target="_self">[menu:name]</a></li>
+              {/maccms:menu}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="conx star-bot">
+    <div class="art_left"> 
+    
+    <div class="splendid-header">
+         <div class="fl"><span>{page:name}</span></div>
+      </div>
+      
+        <div class="newsbox">
+        {maccms:art pagesize=10 order=desc by=time}
+          <li>
+          <h2><a href="[art:link]">[art:colorname]</a></h2>
+          <p>[art:contenttext len=200]……[<a href="[art:link]">浏览全文</a>]</p>
+          </li>
+          {/maccms:art}
+        </div>
+<div class="ui-pages" id="aapages">
+		{maccms:pages len=6}			
+	  </div>
+      <div class="clearfix" style="width:100%;"></div>
+     </div>
+</div>
+
+
+<div class="details-right fr">
+    <div class="test-300"> 
+ <img width="300px" height="250px" src="{maccms:path_tpl}ad/300x250.jpg" alt="广告位放置" />    </div>
+    <div class="recommend-header mt10">
+      <div class="fl"><span>影片</span>人气榜</div>
+      <a href="#" class="teleplay-more">更多&gt;</a> </div>
+    <div class="teleplay-content">
+      <ul class="teleplay-con-list telclist4 tcl1">
+        {maccms:vod type=current num=20 order=desc by=hits}
+        {if-A:[vod:num]=1}
+        <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+          <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+            <p class="top-desc">[vod:contenttext len=24]......</p>
+            <p class="pview">播放指数:[vod:hits]℃</p>
+            <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+        </li>
+        {endif-A}
+        {if-A:[vod:num]=2}
+        <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+          <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+            <p class="top-desc">[vod:contenttext len=24]......</p>
+            <p class="pview">播放指数:[vod:hits]℃</p>
+            <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+        </li>
+        {endif-A}
+        {if-A:[vod:num]=3}
+        <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+          <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+            <p class="top-desc">[vod:contenttext len=24]......</p>
+            <p class="pview">播放指数:[vod:hits]℃</p>
+            <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+        </li>
+        {endif-A}
+        {if-A:[vod:num]=4}
+        <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+          <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+            <p class="top-desc">[vod:contenttext len=24]......</p>
+            <p class="pview">播放指数:[vod:hits]℃</p>
+            <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+        </li>
+        {endif-A}
+        {if-A:[vod:num]=5}
+        <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+          <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+            <p class="top-desc">[vod:contenttext len=24]......</p>
+            <p class="pview">播放指数:[vod:hits]℃</p>
+            <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+        </li>
+        {endif-A}
+        
+        {if-A:[vod:num]>5}
+        <li><i>[vod:num]</i><span class="views">[vod:hits]℃</span><a href="[vod:link]" target="_blank">[vod:name]</a></li>
+        {endif-A}
+        {/maccms:vod}
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<div class="clearfix" style="width:100%;"></div>
+
+<div class="zt-footer" id="zt-footer">
+{maccms:foot}
+</div>
+
+</div><!--movie-wrap-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.mod_search_filter{position: relative;height: auto;margin: 0 auto;font-family: tahoma,arial;overflow: hidden;zoom: 1;width:1240px;background: none repeat scroll 0% 0% #F2F2F2;}
+.mod_search_filter ul{position: relative;zoom: 1;padding-left: 15px;}
+.mod_search_filter li{position: relative;height: 22px;line-height: 22px;padding: 8px 0 8px 40px;zoom: 1;border-bottom: 1px dotted #DBDBDB;}
+.mod_search_filter label{position: absolute;top: 8px;left: 0;color: #999;}
+.mod_filter_list dd,.mod_filter_list dd a{display: inline-block;zoom: 1;height: 22px;line-height: 20px;line-height: 22px 9;padding: 0 5px;border-radius: 2px;}
+.mod_filter_list dd{float:left;}
+.mod_filter_list dd a:hover{background: #c2c2c2;color:#000;}
+.mod_filter_list dd.current a,.mod_filter_list dd.current a:hover{background: #FF7E0B;color:#FFF;}
+.mod_key { text-align:center; font-size:16px;} 
+.mod_list{width: 1240px;margin: 0 auto;zoom: 1;overflow: hidden;clear: left; margin-top:20px;}
+.mod_list ul{ width:1230px; float:left; padding-left:13px;}
+.mod_list ul li{width: 180px;margin-right: 25px;float:left; margin-bottom:20px;}
+.mod_list ul li a{position: relative;}
+.mod_list ul li .figure_mask{display: block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size: 12px;position: absolute;bottom: 0;left: 0;width: 100%;height: 18px;padding-top: 16px; background: transparent url(../images/figure_mask.png) 0 0 repeat-x;cursor: pointer; color:#FFF;font-style:normal;}
+.mod_list ul li h6{position: relative;width: 100%;overflow: hidden;margin: 6px 0 4px;_margin: 6px 0 4px;white-space: nowrap;text-overflow: ellipsis;}
+.mod_list ul li p{width: 100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.mod_list ul li img{width: 180px;height: 220px;}
+.mod_list .top_big {width:100%;}
+.mod_list .top_big img { width:180; height:240px;border-radius:6px;}
+.mod_list .top_big li{ width:100%;overflow: hidden;text-overflow: ellipsis;	border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #CCCCCC;}
+.mod_list .top_big li dl{ width:1000px;}
+.mod_list .top_big li dl h6 { width:600px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 25px;color: #2D2D2D;font-weight: normal;}
+.mod_list .top_big li dl h6 em {font-size: 18px;color: #CCC;font-style: normal;}
+.mod_list .top_big li dl dd { width:500px;float: left;}
+.mod_list .top_big .mod_play{clear: both;margin: 10px 0 10px;zoom: 1;position: relative;padding-top: 10px; }
+.btn_play_rem,.btn_follow{display: inline-block;vertical-align: middle; width: 120px;height: 38px;line-height: 38px;overflow: hidden;background-color: #FF7800;text-align:center;font-size:16px;}
+.btn_play_rem span,.btn_follow span{ color:#FFFFFF;}
+.btn_play_rem:hover,.btn_follow:hover{background: none repeat scroll 0% 0% #F66800;}
+.btn_follow i {	display: inline-block;width: 20px;height: 20px;background: url(../images/sprite_ico_collect.png) no-repeat scroll -20px -60px transparent;vertical-align: top;margin-top: 9px;margin-right: 8px;}

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>[vod:name]在线播放-[vod:name]-{maccms:name}</title>
+<meta name="keywords" content="[vod:name]免费在线观看,[vod:name]剧情介绍,[vod:name]电影海报" />
+<meta name="description" content="[vod:name]剧情:[vod:contenttext len=50]" />
+{maccms:load inc.html}
+[vod:history]
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+    <div class="h2">[vod:textlink]</div>
+    <div class="content mb clearfix">
+	  <div class="pic"><img src="[vod:pic]" alt="[vod:name]" /></div>
+	  <div class="info">
+	  	<dl>
+	  	<dt class="name">[vod:name]<span style="display:none">[vod:hits]</span>
+	  	</dt>
+      <dd><b>状态：{if-A:[play:urlcount]<1}[vod:remarks]{elseif-A:[play:urlcount]<1000 and [play:urlcount]>0}第[play:urlcount]集{elseif-A:[play:urlcount]>1000}[play:urlcount]期{elseif-A:[play:urlcount]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</b></dd>
+	    <dd>
+			<b>类型：</b><a href="[vod:typelink]">[vod:typename]</a>
+		  </dd>
+		  <dd><b>导演：</b>[vod:directed]</dd>
+		  <dd><b>地区：</b>[vod:area]</dd>
+		  <dd><b>年代：</b>[vod:year]</dd>
+		  <dd><b>主演：</b>[vod:starring]</dd>
+      <dt class="desd">
+        <div class="alldes sdes">
+          <div class="des1 desmb"><b>剧情：</b>[vod:contenttext len=20]<b class="aa">展开</b><i class="ico sjbgs png"></i></div>
+          <div class="des1"><b>剧情：</b>[vod:contenttext len=80]<b class="aa">展开</b><i class="ico sjbgs png"></i></div>
+          <div class="des2"><b>剧情：</b>[vod:contenttext]<b class="aa">收起</b><i class="ico sjbgx png"></i></div>
+        </div>
+      </dt>
+		</dl>
+	  </div>
+	  <div class="c-r"><script type="text/javascript" language="javascript" src="{maccms:path}js/{maccms:adfolder}/cr.js"></script></div>
+    </div>
+    <div class="taba-down mb clearfix">
+    <div class="pfrom tab1 clearfix">
+	<ul>
+    {maccms:play}<li id="tab1[play:num]" class="{if-A:[play:num]==1}on{endif-A}" onclick="setTab('tab1','stab1',[play:num],[play:sort])">[play:show]</li><li class="g"></li>
+	{/maccms:play}
+    </ul>
+    </div>
+    {maccms:play}
+    <div id="stab1[play:num]" class="plist clearfix" {if-A:[play:num]<>1} style="display:none" {endif-A}>
+	<div class="info clearfix">[play:tip]</div>
+	<div class="url tab_[play:num]_7 clearfix">
+		<!--{if-A:[play:urlcount]<>0}
+		<ul class="coll clearfix"{if-B:[play:urlcount]<31} style="display:none;"{endif-B}{if-B:[vod:typepid]==1} style="display:none;"{endif-B}>
+        {if-B:[play:urlcount]>0 && [play:urlcount]<31}
+        <li id="tab_[play:num]_71" class="on" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',1,1)">1-[play:urlcount]</li>
+        {endif-B}
+        {if-B:[play:urlcount]>30 && [play:urlcount]<61}
+        <li id="tab_[play:num]_71" class="on" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',1,2)">1-30</li>
+        <li id="tab_[play:num]_72" class="" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',2,2)">31-[play:urlcount]</li>
+        {endif-B}
+        {if-B:[play:urlcount]>60 && [play:urlcount]<91}
+        <li id="tab_[play:num]_71" class="on" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',1,3)">1-30</li>
+        <li id="tab_[play:num]_72" class="" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',2,3)">31-60</li>
+        <li id="tab_[play:num]_73" class="" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',3,3)">61-[play:urlcount]</li>
+        {endif-B}
+      </ul>
+      {else-A}
+      <ul class="coll clearfix"{if-B:[play:urlcount]<31} style="display:none;"{endif-B}{if-B:[vod:typepid]==1} style="display:none;"{endif-B}>
+        {if-B:[play:urlcount]>0 && [play:urlcount]<31}
+        <li id="tab_[play:num]_71" class="on" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',1,1)">1-[play:urlcount]</li>
+        {endif-B}
+        {if-B:[play:urlcount]>30 && [play:urlcount]<61}
+        <li id="tab_[play:num]_71" class="on" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',1,2)">1-30</li>
+        <li id="tab_[play:num]_72" class="" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',2,2)">31-[play:urlcount]</li>
+        {endif-B}
+        {if-B:[play:urlcount]>60 && [play:urlcount]<91}
+        <li id="tab_[play:num]_71" class="on" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',1,3)">1-30</li>
+        <li id="tab_[play:num]_72" class="" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',2,3)">31-60</li>
+        <li id="tab_[play:num]_73" class="" onclick="setTab('tab_[play:num]_7','stab_[play:num]_7',3,3)">61-[play:urlcount]</li>
+        {endif-B}
+      </ul>
+	 {endif-A}-->
+		<ul class="urlli">{maccms:url order=asc}
+			<div id="stab_[play:num]_71" ><ul><li><a title='[url:name]' href='[url:link]' target="_self">[url:name]</a></li></ul></div>
+			{/maccms:url}
+		</ul>
+	</div>
+    </div>
+    {/maccms:play}
+    </div>
+    <div class="pfrom ncu mb clearfix"><ul>
+    <li class="on">同主演</li><li class="g"></li>
+    </ul>
+    </div>
+    <div class="index-tj cxg clearfix">
+    <ul>
+      {maccms:vod num=6 similar=starring}
+      <li class="mb{if-A:[vod:num]%3==0} m3{elseif:[vod:num]%5==0} m5{endif-A}{if-A:[vod:num]==10} n10{endif-A}{if-A:[vod:num]==6} c6{endif-A}">
+        <a class="li-hv" href="[vod:link]" title="[vod:name]">
+        <div class="img">
+          <img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/load.gif" alt="[vod:name]">
+          <b class="bg1"></b>
+          <b class="play-hv"></b>
+          <b class="sjbg2 png"></b>
+          <p class="bz">{if-A:[play:urlcount]<1}[vod:remarks]{elseif-A:[play:urlcount]<1000 and [play:urlcount]>0}第[play:urlcount]集{elseif-A:[play:urlcount]>1000}[play:urlcount]期{elseif-A:[play:urlcount]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</p>
+        </div>
+        <div class="text">
+          <p class="name">[vod:name]</p>
+          <p class="zy">[vod:directed]</p>
+        </div>
+      </a>
+      </li>
+      {/maccms:vod}
+    </ul>
+  </div>
+<!-- m1938评论框 start --> <div class="ds-thread" data-thread-key="[vod:id]" data-title="[vod:name]" data-url="http://{maccms:url}[vod:link]"></div> <!-- M1938评论框 end -->
+<!-- m1938公共JS代码 start (一个网页只需插入一次) --> <script type="text/javascript"> var duoshuoQuery = {short_name:"m1938"}; (function() { var ds = document.createElement('script'); ds.type = 'text/javascript';ds.async = true; ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js'; ds.charset = 'UTF-8'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds); })(); </script> <!-- M1938JS代码 end --> 
+</div>
+{maccms:foot}
+</body>
+</html>

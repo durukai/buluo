@@ -1,0 +1,32 @@
+.container{width: 1240px;margin: 0 auto;}
+.container .nvc{_display: inline;float: left;overflow: hidden;width:1240px;}
+.container .nvc dl{position: relative;overflow: hidden;margin: 20px 0;padding: 4px 0 9px 120px;zoom: 1;border: solid 1px #DEDEDE;height: 26px;}
+.container .nvc dl dt{position: absolute;top: 0;left: 0;width: 120px;color: #484848;}
+.container .nvc dl dt span{display: block;width: 99px;height: 39px;_height: 40px;line-height: 39px;line-height: 41px 9;_line-height: 39px;overflow: hidden;text-align: center;font-weight: bold;font-size: 14px;border-right: #DEDEDE solid 1px;background: #F6F7F6;color: #484848;}
+.container .nvc dt .arrow{position: absolute;top: 50%;right: 20px;margin: -8px 0 0 0;font-size: 1em;font-style: normal;font-weight: 500;}
+.container .nvc dt .arrow .a_outer{position: absolute;z-index: 3;width: 0;height: 0;line-height: 0;border-top: 9px dashed transparent;border-bottom: 9px dashed transparent;border-right: none;border-left-width: 9px;border-left-style: solid;font-size: 0;color: #DEDEDE;font-style: normal;font-weight: 500;}
+.container .nvc dt .arrow .a_inner{left: -1px;z-index: 4;color: #F6F7F6;position: absolute;width: 0;height: 0;line-height: 0;border-top: 9px dashed transparent;border-bottom: 9px dashed transparent;border-right: none;border-left-width: 9px;border-left-style: solid;font-size: 0;font-style: normal;font-weight: 500;}
+.container .nvc dl dd{float: left;height: 21px;line-height: 21px;line-height: 24px 9;_line-height: 24px;overflow: hidden;margin: 5px 3px 0 0;padding: 0 6px;white-space: nowrap;}
+.w{width:1240px;height: auto;margin: 0 auto;zoom: 1; }
+.w-content{ float:left; width:1238px; height:auto;border:1px solid #CCC; overflow:hidden; margin-bottom:15px;}
+.w-content ul{ float:left; width:308px; border-right:1px solid #CCC;}
+.w-content ul dd{height:30px; line-height:30px; background-color:whiteSmoke;padding: 0 10px;}
+.w-content ul dd .title{color: #F60;float: left;font-size: 16px;font-weight: 700;}
+.w-content ul dd h5{font-size: 12px;font-weight: bold;float: right; line-height:30px;}
+.w-content ul li{ border-bottom:1px dashed #CCC; height:28px; line-height:28px;}
+.w-content ul li .num,.w-content ul li .tit,.w-content ul li.score{display: block;float: left;height: 28px;overflow: hidden;cursor: pointer;}
+.w-content ul li .num{text-align: center;width: 40px;}
+.w-content ul li .tit{font-size: 12px; width:220px; overflow:hidden;text-overflow:ellipsis;}
+.w-content ul li .score{float: right;text-align: right;padding-right: 12px;color: #F60;}
+.n-content{ float:left; width:1238px; height:auto;border:1px solid #CCC; overflow:hidden; margin-bottom:15px;}
+.n-content ul{ float:left; width:100%; border-right:1px solid #CCC;}
+.n-content ul dd{height:30px; line-height:30px; background-color:whiteSmoke;padding: 0 10px;}
+.n-content ul dd .title{color: #F60;float: left;font-weight: 700;}
+.n-content ul dd h5{font-size: 12px;font-weight: bold;float: right; line-height:30px;}
+.n-content ul li{ border-bottom:1px dashed #CCC; height:28px; line-height:28px;}
+.n-content ul li .num,.n-content ul li .tit,.n-content ul li.score{display: block;float: left;height: 28px;overflow: hidden;cursor: pointer;}
+.n-content ul li .num{text-align: center;width: 40px;font-size: 10px}
+.n-content ul li .tit{font-size: 12px; width:220px; overflow:hidden;text-overflow:ellipsis;}
+.n-content ul li .time{float: right;text-align: right;padding-right: 12px;color: #F60;}
+.n-content ul li .state{font-size: 12px; padding-right: 12px;}
+.n-content ul li .type{font-size: 12px; padding-right: 12px;}

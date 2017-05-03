@@ -1,0 +1,50 @@
+            <div class="mod_footer_l fl">
+            <div class="footermenu">	<a href="#" rel="nofollow" target="_blank">关于我们</a> |	<a href="{maccms:link_map_baidu}" rel="nofollow" target="_blank">百度地图</a> 	<a href="{maccms:link_gbook}" rel="nofollow" target="_blank">留言求片</a> |	<a href="{maccms:link_map_google}" rel="nofollow"
+                target="_blank">谷歌地图</a> 	<a href="{maccms:link_gbook}" rel="nofollow" target="_blank">客服中心</a> |	<a href="{maccms:link_gbook}" rel="nofollow" target="_blank">客服中心</a>
+				<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260811733'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260811733' type='text/javascript'%3E%3C/script%3E"));</script>
+				</div>
+        </div>
+        <div class="mod_footer_r">
+            <div class="copyrightzh">本网站所有资源均系互联网收集，本网站只提供web页面服务，并不提供影片资源存储，也不参与录制、上传
+                <br />若本站收录的内容无意侵犯了贵司版权，请给{maccms:email}邮箱地址来信或<a href="{maccms:link_gbook}">留言</a>，我们将在第一时间处理与回复,谢谢</div>
+            <div class="copyrighten">Copyright © <span>2016</span> All Rights Reserved<a> {maccms:url}  版权所有</a> 
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 100) {
+                $("#side-bar .gotop").fadeIn();
+            } else {
+                $("#side-bar .gotop").hide();
+            }
+        });
+        $("#side-bar .gotop").click(function() {
+            $('html,body').animate({
+                'scrollTop': 0
+            }, 500);
+        });
+    });
+</script>
+<ul id="side-bar" class="side-pannel side-bar">
+    <a class="gotop" href="javascript:;" style="display:none;"> <s class="g-icon-top"></s>
+    </a>
+    <a class="survey" href="javascript:;"> <s class="g-icon-survey1"></s>
+        <so>
+            <form class="search_form" action="/index.php?m=vod-search" method="post">
+                <div class="search_inner"> <i class="ico_search"></i>
+                    <input type="text" class="search_ipt" id="wd" name="wd" onBlur="if(this.value==''){this.value='提醒您请输入您要搜索的关键字';this.style.color='#aaa'};" onFocus="if(this.value=='提醒您请输入您要搜索的关键字'){this.value='';this.style.color='#aaa'};" value="提醒您请输入您要搜索的关键字"
+                    style="color: rgb(170, 170, 170);" />
+                    <button type="submit" class="search_btn"><span class="hidden">搜索</span>
+                    </button>
+                </div>
+            </form>
+        </so>
+    </a>
+    <a class="liuyan" href="{maccms:link_gbook}" target="_blank"> <s class="g-icon-liuyan1"></s>
+    </a>
+    <a class="weibo" href="#" target="_blank"> <s class="g-icon-weibo1"></s>
+    </a>
+</ul>

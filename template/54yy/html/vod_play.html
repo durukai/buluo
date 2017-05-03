@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>正在播放:《[vod:name]》-[vod:name][vod:playname] - {maccms:name}</title>
+<meta name="keywords" content="[vod:name],[vod:name]迅雷下载[vod:name]手机在线看,[vod:name]在线播放,[vod:name]种子下载,[vod:name]磁力链下载"/>
+<meta name="description" content="[vod:name]剧情:[vod:contenttext len=60]"/>
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+
+<div class="wrap">
+	<div class="title1">
+		<h1>[vod:textlink][vod:playname]</h1>
+		<p>
+			如片源无法播放，请刷新重试！手机用户建议UC浏览器
+		</p>
+	</div>
+	<div class="title1">
+	</div>
+	<div class="con">
+		<div class="row clearfix">
+			<div class="row-l">
+				<div class="player">
+					[vod:playerinfo][vod:player]
+				</div>
+			</div>
+			<div class="row-r mb-r">
+				<div class="prlist">
+					<ul class="ul-r clearfix">
+					{maccms:vod type=current num=8 order=desc by=time}
+						<li><a class="link" href="[vod:link]" title="[vod:name]">
+						<p class="name">
+							[vod:name]
+							<i class="ico sjxx2"></i>
+						</p>
+						<p class="actor">
+							主演：[vod:starring]
+						</p>
+						</a></li>
+						{/maccms:vod}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="con">
+		<div class="row clearfix">
+			<div class="row-l">
+					  {maccms:play}
+				<div class="playlist">
+					<div class="stit clearfix">
+						<div class="intro">
+							无需安装任何插件，即可快速播放
+						</div>
+						<div class="from">
+							<h2>[play:show]</h2>
+							<i class="ico sjxx"></i>
+						</div>
+					</div>
+					<ul class="ulli clearfix">
+						<div id="stab_11" class="stab_list">
+							<ul>
+                   {maccms:url order=asc}
+								<li>
+								<a title='[url:name]' href='[url:link]' target="_self">[url:name]</a></li>
+					  {/maccms:url}
+							</ul>
+						</div>
+					</ul>
+				</div>
+			{/maccms:play}
+			</div>
+		</div>
+	</div>
+</div>
+{maccms:foot}
+</body>
+</html>

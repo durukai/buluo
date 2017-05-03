@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>[art:name] [art:subname] - {maccms:name}</title>
+<meta name="keywords" content="[art:name],{maccms:name}" />
+<meta name="description" content="[art:name],{maccms:name}" />
+{maccms:include}
+<link href="{maccms:path_tpl}css/v280_detail_pic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{maccms:head}
+	<div class="container" style="padding-top: 125px;">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd>[art:textlink]</dd>
+			</dl>
+		</div>
+	</div>
+
+<div class="imgContainer">
+    <div class="art_pic_mod">
+        <span id="prev" class="btn prev"></span>
+        <span id="next" class="btn next"></span>
+        <span id="prevTop" class="btn prev"></span>
+        <span id="nextTop" class="btn next"></span>
+        <div id="picBox" class="picBox">
+            <ul class="cf">
+                [art:content]
+            </ul>
+        </div>
+        
+        <div id="listBox" class="listBox">
+            <ul class="cf">
+                [art:content]
+            </ul>
+        </div>
+        
+    </div>
+    <div class="rightPart">
+    	<div class="digg">[art:digg]</div>
+    	<div class="pagelink">[art:prelink]</div>
+    	<div class="pagelink">[art:nextlink]</div>
+    	<div class="pagelink">总人气：[art:hits]</div>
+    	<div class="pagelink" style="text-align:right">[art:fav]&nbsp;&nbsp;&nbsp;&nbsp;[art:share]</div>
+    	<h2 class="sub_title">标签视频</h2>
+        <div class="tagRP">
+        	[art:taglink]
+        </div>
+    	<h2 class="sub_title">相关图片</h2>
+        <div class="thumbRP">
+{maccms:art num=25 order=desc by=time type=current} 
+        	{if-A:"[art:pic]" != "/"}<div class="thumb-item"><a href="[art:link]" title="[art:name]"><img src="[art:pic]" /></a></div>{endif-A}
+{/maccms:art}
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{maccms:path_tpl}js/v280_Artpic.js"></script>
+{maccms:foot}
+</body>
+</html>

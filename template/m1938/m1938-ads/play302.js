@@ -1,0 +1,1 @@
+﻿document.writeln("<a href=\"http:\/\/www.m1938.com\" target=\"_blank\"><img alt=\"1938??\" src=\"http:\/\/www.m1938.com\/\/ggm1938\/300x250.gif\" width=\"300\" height=\"250\" \/><\/a>")

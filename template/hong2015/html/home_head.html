@@ -1,0 +1,121 @@
+<div class="movie-wrap">
+<div class="zt-top" id="zt-top"><div class=zt-top-inner id=zt-top-inner><div class="zt-top-left zt-fl"><ul class=zt-top-classify-ul><li>小俊工作室：<span class="STYLE1">本站所有资源均采集第三方资源，一切关于影视版权类问题与本站无关！</span>
+</ul></div><div class="zt-top-right zt-fr"><ul class=zt-top-collect-ul><li class=zt-top-home-position>
+<a href=# onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://xiaog.cc');event.returnValue=false;"><i class=zt-top-home></i>设为首页</a><li><a href="Javascript:window.external.addFavorite(document.location.href,document.title)">加入收藏</a><li>
+<a href="{maccms:path}index.php?m=gbook-show.html">意见反馈</a><li><a href="{maccms:path}index.php?m=label-help.html">用户帮助</a></ul></div></div></div>
+<!--头部开始-->
+<div class="movie-header">
+<div class="movie-header-search">
+<div class="mhs-inner">
+<div class="logo fl"><a href="http://{maccms:url}" title="{maccms:name}">{maccms:name}</a></div>
+<!--导航-->
+<div class="header-nav">
+        <div class="nav-btn bgray">
+          <span>分类导航</span>
+        </div><!--nav-btn-->
+        <div class="nav-content bgray">
+            <div class="nav-c-share clearfix">
+                {maccms:menu type=1 table=vod}
+                <a href="[menu:link]" class="ncs-line fl">[menu:name]</a>
+                {/maccms:menu}
+                {maccms:menu type=2 table=vod}
+                <a href="[menu:link]" class="ncs-line fl">[menu:name]</a>
+                {/maccms:menu}
+            </div><!--nav-c-share-->
+            <div class="nav-c-share clearfix">
+                {maccms:menu type=18 table=vod}
+                <a href="[menu:link]" class="ncs-line fl">[menu:name]</a>
+                {/maccms:menu}
+                {maccms:menu type=3 table=vod}
+                <a href="[menu:link]" class="ncs-line fl">[menu:name]</a>
+                {/maccms:menu}
+            </div><!--nav-c-share-->
+            <div class="nav-c-share clearfix">
+                {maccms:menu type=4 table=vod}
+                <a href="[menu:link]" class="ncs-line fl">[menu:name]</a>
+                {/maccms:menu}
+                 {maccms:menu type=1 table=art}
+                <a href="[menu:link]" class="ncs-line fl">[menu:name]</a>
+                {/maccms:menu}
+ </div><!--nav-c-share-->
+<div class="nav-c-share mb0"></div>
+        </div><!--nav-content-->
+</div><!--header-nav-->
+<!--导航结束-->
+
+
+
+<div class="search home-search fl">
+   <div class="search-inner">
+       <form action="{maccms:link_search_vod}" method="post">
+          <input type="text" x-webkit-speech="" autocomplete="off" name="wd" id="wd" class="search-text search-text1" onblur="if(this.value==''){ this.value='精彩恐影任你搜索';this.style.color='#cfcdcd';}" onfocus="if(this.value=='精彩恐影任你搜索'){this.value='';this.style.color='';}" value="精彩恐影任你搜索">
+          <input type="hidden" name="submit" value="search">
+          <input type="submit" class="search-btn" value="搜索">
+       </form>
+       
+      
+    <div class="search-list">
+      <div class="search-list-left fl">
+        <ul class="search-list-ul" id="search-list-ul">
+
+        </ul>
+      </div>
+      
+      <div class="search-list-right fr">
+        <div class="slr-inner" id="slr-inner">
+        </div>
+      </div>
+    <div class="search-list-right"></div>
+    </div><!--search-list-->
+   </div><!--search-inner-->
+</div><!--search-->
+
+
+
+<div class="watch-wrap fr">
+  
+    <div class="watch-record fr">
+       <div class="watch-box" id="history"> <div class="watch-icon"></div> 观看记录 <div class="watch-icon2"></div> </div>
+       
+ 
+  </div><!--watch-record-->
+</div><!--watch-wrap-->
+
+
+
+ </div><!--mhs-inner-->
+</div>
+
+<div class="movie-header-menu" style="height:50px;">
+   <div class="mhm-inner mhm-share">
+        <div class="mhm-menu">
+             <ul class="nhm-menu-ul" style="font-weight:bold"> 
+               <li {if-A:{maccms:siteaid}=10} class="active-style5"{endif-A}><a href="{maccms:path}" title="首页">首页</a></li>
+{maccms:menu type=parent}
+<li {if-A:[menu:id]={maccms:curvodtypeid}} class="active-style5"{endif-A}><a href="[menu:link]" title="[menu:name]">[menu:name]</a></li> {/maccms:menu}
+
+{maccms:menu type=1 table=art}
+<li {if-A:{maccms:curarttypeid}=[menu:id]}class="active-style5"{endif-A}><a href="[menu:link]" title="[menu:name]">[menu:name]</a></li>
+{/maccms:menu}
+<li><a href="{maccms:link_topic_vod}" title="专题">专题</a></li>
+               
+             </ul>
+
+            <ul class="nhm-menu-ul nmu2 fr mem">
+            {if-A:"{maccms:userid}"=""}
+               <li style="font-weight:bold"><a href="{maccms:path}index.php?m=user-reg-ref-qqlogin.html"><img src="{maccms:path_tpl}images/qq.jpg" alt=用QQ登录""  style="vertical-align:middle;"/></a></li>
+               <li style="font-weight:bold"><a href="{maccms:path}index.php?m=user-login.html">登录</a></li>
+               <li style="font-weight:bold"><a href="{maccms:path}index.php?m=user-reg.html">注册</a></li>
+            {else-A}
+               <li style="font-weight:bold">Hi~{maccms:username}！</li>
+               <li style="font-weight:bold"><a href="{maccms:path}index.php?m=user-index.html" target="_blank">会员中心</a></li>
+               <li style="font-weight:bold"><a href="{maccms:path}index.php?m=user-logout-flag-main.html">退出</a></li>
+            {endif-A}
+            </ul>
+
+          <div class="active-style"></div>
+        </div>
+   </div><!--mhs-inner-->
+  <div class="mhm-inner-bottom mhm-share"></div>
+</div>
+</div><!--movie-header-->

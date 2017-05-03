@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+    <title>明星合集,第{page:now}页,视频专辑,精彩专题,电影全集_{maccms:name}</title>
+    <meta name="keywords" content="明星合集,视频专辑,精彩专题,电影全集" />
+    <meta name="description" content="{maccms:description}" />
+{maccms:include}
+<link href="{maccms:path_tpl}css/topic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{maccms:head}
+<div class="container" style="padding-top: 130px;">
+  <div class="toppic_mod">
+    <div class="Box">
+      <div class="listBox">
+        <h4><strong>近期热门专题</strong></h4>
+        <ul>
+		{maccms:topic num=3 order=desc by=monthhits}
+          <li class="fl bk mb10"><a href="[topic:link]" class="l"><img src="[topic:pic]" alt="[topic:name]" /></a><div class="htr r"><h3><a href="[topic:link]">[topic:name]</a><span>共[topic:count]部</span></h3><p><a href="[topic:link]">[详细]</a></p></div></li> 
+          {/maccms:topic}
+		  </ul>
+      </div>
+    </div>
+  </div>
+</div>
+﻿<div class="footer" id="footer">
+<div class="footer_inner">
+{maccms:foot}
+</body>
+</html>

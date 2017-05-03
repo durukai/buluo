@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{page:name}</title>
+<meta name="Keywords" content="{page:name}{maccms:keywords}"/>
+<meta name="description" content="{maccms:description}"/>
+<link href="{maccms:path_tpl}css/style.css" rel="stylesheet">
+<script src="{maccms:path_tpl}js/1.7.2.min.js"></script>
+<script src="{maccms:path_tpl}js/jq.js"></script>
+<script src="{maccms:path_tpl}js/common.js"></script>
+<script src="{maccms:path_tpl}js/function.js"></script>
+<script src="{maccms:path_tpl}js/jquery.lazyload.js"></script>
+<script src="{maccms:path_tpl}js/touchslider.js"></script>
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<!--[if lt IE 9]>
+<script src="{maccms:path_tpl}js/html5shiv.min.js"></script>
+<script src="{maccms:path_tpl}js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+	<div class="con">
+		<div class="row clearfix">
+			<div class="channelname">
+				{page:textlink}
+			</div>
+			<div class="row-r chr">
+				<div class="chtit clearfix">
+					<span class="typetext">
+					<a href='/'>首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;
+					<a href='/dianying/index.html'>电影</a></span>
+				</div>
+				<span class="slide">
+				<i class="zk">＋展开</i>
+				<i class="sq">－收起</i></span>
+				<div class="select">
+					<div class="selectlist clearfix">
+						<div class="l">
+							栏目
+							<i class="ico sjxx"></i>
+						</div>
+						<div class="r">
+							<ul class="ul-s clearfix">
+                            {maccms:menu type=all}
+								<li class="s">
+								<a href="[menu:link]" {if-a:"{page:id}"="[menu:id]"}class="on"{endif-A}>
+								<em>[menu:name]</em></a>
+								</li>
+								{/maccms:menu}
+							</ul>
+						</div>
+					</div>
+					<div class="selectlist clearfix">
+						<div class="l">
+							剧情
+							<i class="ico sjxx"></i>
+						</div>
+						<div class="r">
+							<ul class="ul-s clearfix">
+                            {maccms:class type=auto}
+								<li class="s">
+								<a href="[class:link]" {if-A:"{page:class}"="[class:id]"}class="on"{endif-A}>
+								<em>[class:name]</em></a>
+								</li>
+							{/maccms:class}
+							</ul>
+						</div>
+					</div>
+					<div class="selectlist clearfix">
+						<div class="l">
+							地区
+							<i class="ico sjxx"></i>
+						</div>
+						<div class="r">
+							<ul class="ul-s clearfix">
+							{maccms:area type=auto order=asc}
+								<li class="s">
+								<a href="[area:link]" {if-a:"{page:area}"="[area:name]"}class="on"{endif-A}>
+								<em>[area:name]</em></a>
+								</li>
+							{/maccms:area}
+							</ul>
+						</div>
+					</div>
+					<div class="selectlist clearfix">
+						<div class="l">
+							年代
+							<i class="ico sjxx"></i>
+						</div>
+						<div class="r">
+							<ul class="ul-s clearfix">
+							{maccms:year type=auto start=2002 end=2016 order=desc}
+								<li class="s">
+								<a href="[year:link]" {if-a:"{page:year}"="[year:name]"}class="on"{endif-A}>
+								<em>[year:name]</em></a>
+								</li>
+							{/maccms:year}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="crlist">
+					<ul class="ul clearfix">
+						{maccms:vod num=14 type=current by=time order=desc}
+						<li>
+						<a class="jqr" href="/[vod:link]" title="[vod:name]">
+						<i class="bz">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i>
+						<i class="ico num">[vod:numfill]</i>[vod:name]
+						
+						</a>
+						</li>
+						{/maccms:vod}
+					</ul>
+				</div>
+			</div>
+			<div class="row-l">
+				<div class="channelall">
+					<div class="channeltab clearfix">
+						<div class="px">
+							<a class="on" href="{page:linkbytime}">最新
+							<i class="ico sjxx"></i></a>
+							<a href="{page:linkbyhits}">最热</a>
+							<a href="{page:linkbyscore}">好评</a>
+						</div>
+					</div>
+				</div>
+				<div class="channel">
+					<ul class="ul clearfix">
+                    {maccms:vod pagesize=20 order=desc by=time}
+						<li>
+						<a class="link" href="[vod:link]" title="[vod:name]">
+						<div class="img">
+							<img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/lazyload.gif" alt="[vod:name]">
+							<span class="bgb">
+							<i class="bgbbg"></i>
+							<p class="name">
+								{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}
+							</p>
+							<p class="other">
+								主演：[vod:starring]
+							</p>
+							<p class="other">
+								地区/年代：[vod:area]/[vod:year]
+							</p>
+							</span>
+							<i class="bg0"></i>
+						</div>
+						<div class="text">
+							<h2 class="name">[vod:name]</h2>
+							<p class="jq">
+								主演：[vod:starring]
+							</p>
+							<div class="textdown">
+								<p class="name">
+									[vod:name]
+								</p>
+								<p class="jq">
+									主演：[vod:starring]
+								</p>
+							</div>
+						</div>
+						</a>
+						</li>
+						{/maccms:vod}
+					</ul>
+				</div>
+				<div class="page clearfix">
+					{maccms:pages len=6}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{maccms:foot}
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+    <title>{page:title}</title>
+    <meta name="keywords" content="{page:key}" />
+    <meta name="description" content="{page:des}" />
+{maccms:include}
+<link href="{maccms:path_tpl}css/list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{maccms:head}
+    <div class="container" style="padding-top: 125px;">
+        <div class="nvc">
+            <dl class="bks blyj bryj mb10">	<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+                <dd>{page:textlink}</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="container">
+        <div class="l">
+            <div class="mod_indexs mod_index_l">
+                <div class="mod_cont">
+                    <div class="h3">按类型看</div>
+                    <ul>
+                        <li {if-A:"{page:pid}"="0"} class="current" {endif-A}><a href="{page:linktype}" title="全部">全部</a>
+                        </li>
+						{maccms:menu type=auto order=asc table=vod}
+                        <li {if-A:"{page:id}"="[menu:id]"} class="current" {endif-A}><a href="[menu:link]" title="[menu:name]">[menu:name]</a>
+                        </li>
+						{/maccms:menu}
+                        </ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按年代看</div>
+                    <ul>
+                        <li {if-A:"{page:year}"=""} class="current" {endif-A}><a href="{page:linkyear}" title="全部">全部</a>
+                        </li>
+						{maccms:year type=auto start=2002 end=2017 order=desc}
+                        <li {if-A:"{page:year}"="[year:name]"} class="current" {endif-A}><a href="[year:link]" title="[year:name]年">[year:name]</a>
+                        </li>
+						{/maccms:year}
+                        </ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按地区看</div>
+                    <ul>
+                        <li{if-A:"{page:area}"=""} class="current" {endif-A}><a href="{page:linkarea}" title="全部">全部</a>
+                            </li>
+							{maccms:area type=auto}
+                            <li{if-A:"{page:area}"="[area:name]"} class="current" {endif-A}><a href="[area:link]" title="[area:name]">[area:name]</a>
+                            </li>
+							{/maccms:area}
+                            </ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按剧情看</div>
+                    <ul>
+                        <li{if-A:"{page:class}"=""} class="current" {endif-A}><a href="{page:linkclass}" title="全部">全部</a>
+                            </li>
+							{maccms:class type=auto}
+                            <li{if-A:"{page:class}"="[class:id]"} class="current" {endif-A}><a href="[class:link]" title="[class:name]">[class:name]</a>
+                            </li>
+							{/maccms:class}
+                            </ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按字母看</div>
+                    <ul>
+                        <li{if-A:"{page:letter}"=""} class="current" {endif-A}><a href="{page:linkletter}" title="全部">全部</a>
+                            </li>
+							{maccms:letter type=auto letter=all}
+                            <li{if-A:"{page:letter}"="[letter:name]"} class="current" {endif-A}><a href="[letter:link]" title="[letter:name]">[letter:name]</a>
+                            </li>
+							{/maccms:letter}
+                            </ul>
+                </div>
+            </div>
+            <div class="mod_gg"></div>
+        </div>
+        <div class="r">
+            <div class="mod_toolbar">
+                <ul>
+                    <li{if-A:"{page:by}"="time"} class="current" {endif-A}><a href="{page:linkbytime}">看最新更新</a></li>
+                    <li{if-A:"{page:by}"="hits"} class="current" {endif-A}><a href="{page:linkbyhits}">看最近热播</a></li>
+                    <li{if-A:"{page:by}"="score"} class="current" {endif-A}><a href="{page:linkbyscore}">看最受好评</a></li>
+                </ul>
+            </div>
+            <div class="mod_video_list">
+                <ul>
+				{maccms:vod pagesize=40 order=desc by=time}
+                    <li>
+                        <a href="[vod:link]" class="mod_poster_170">
+                            <img class="lazy yj5" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]"><sup class="mark">[vod:remarks]</sup> </a>
+                        <h6 class="scores f14">
+							<a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a>
+							<strong>[vod:score]</strong>						</h6>
+                        <p>主演：[vod:starringlink]</p>
+                    </li>
+					{/maccms:vod}
+                    </ul>
+                <div class="page" id="pager">{maccms:pages len=10}</div>
+            </div>
+        </div>
+    </div>﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+	{maccms:foot}
+   </body>
+</html>

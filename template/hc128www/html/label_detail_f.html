@@ -1,0 +1,127 @@
+<div class="container" style="width:100%;padding-top: 63px;">
+        <div class="mod_page_banner">
+            <div class="banner_pic">
+                <a style="background-color:#3F0706;background-image:url([vod:picslide])" title="[vod:name]" href="[vod:playlink]" class="banner_link">	<i class="ico_play_s125"></i>
+                </a>
+            </div>	<span class="bg_banner_mask"></span>
+            <div class="banner_info">
+                <div class="mod_action fl">
+                    <div class="action_item">
+                        <h1><em class="c_txt5">[vod:name]</em><em class="cc">[vod:state]</em></h1>
+                    </div>
+                </div>
+                <div class="mod_episodes_info episodes_info white" content_type="template">
+				<span class="episodes_played fr">评分：<i class="dived"style=" padding-left: 10px;font: 700 28px/30px Georgia; color: #FF6A00; margin-right: 5px; ">[vod:score]</i></span>	
+                </div>
+            </div>
+        </div>
+    </div>
+	    <div class="container">
+		<div class="l fl mt5 mb10">
+		        <div class="showbox bk" id="dizhi">
+            <div class="box_tt box_tt_tab">
+			{maccms:play}
+                <h2 id="nav_[play:from]" rel="play_tag" data="[play:from]" class="nav_[play:num]">[play:show]<span>[play:urlcount]</span></h2>
+				{/maccms:play}
+                </div>
+			{maccms:play}
+            <div class="box_con box_[play:num]" id="box_[play:from]" style="display:none">
+                <div class="playtips">
+                    <p>[play:show]在线观看地址</p>
+                    <div class="option_down"><a href="#" target="_blank">温馨提醒您：[play:tip]</a>
+                    </div>
+                </div>
+				{if-B:"[play:urlcount]">"36"}
+				<div class="control">
+                    <div class="videolist">	<span id="tab_[play:from]"></span>
+                    </div>
+            </div>
+			{endif-B}
+            <ul class="showplayul" id="list_[play:from]" rel="symax_player" data="[play:from]" order="desc" limit="54">
+			{maccms:url order=asc}
+                <li><a href="[url:link]" title="[url:name]" target="_blank"  class="bk" id="[play:from]_[url:num]">[url:name]</a>
+              </li>
+			  {/maccms:url}
+              </ul>
+			  {if-C:"[play:urlcount]">"54"}
+			  <div class="playtips playtips_bottom">
+                    <p></p>
+                    <div class="turnlist" id="turn_[play:from]"></div>
+                </div>
+				{endif-C}
+        </div>
+		{/maccms:play}
+		</div>
+{if-D:"[down:count]">"1"}
+<link href="{maccms:path_tpl}css/down.css" rel="stylesheet" type="text/css" />
+<script src="{maccms:path_tpl}js/down.js"></script>
+<script src="http://s.miwifi.com/d2r/js/base64.js"></script>
+<script>
+    function d2r(elem) {
+        var href = elem.getAttribute("href")
+        href = "http://d.miwifi.com/d2r/?url=" + Base64.encodeURI(href) + "&src=demo"
+        elem.setAttribute("href", href)
+    }
+    $(document).ready(function() {
+        $('.xm').each(function(index,element){d2r(element);})
+    })
+</script>
+{maccms:down}
+<down name="vod_playlist" id="kan" key="playerkey">
+    <eq name="[vod:name]" value="down">
+        <div class="ui-box ui-box-big play-list-box" id="pl-list-[vod:name]">
+            <div class="ui-title fn-clear">
+                <h2 title="[vod:name]下载">[vod:name]下载</h2>
+                <span> <a href="http://xlfans.com/" target="_blank">获取迅雷VIP账号</a> </span> 
+            </div>
+            <div class="ui-cnt down_list">
+                <ul id="downul">
+				{maccms:url order=asc}
+                		<li><input type="checkbox" name="down_url_list_0" class="down_url" value="[url:path]" file_name="777" />
+                        <p><strong class="down_part_name">[url:name]</strong>
+                            <input type="text" class="thunder_url" title="鼠标左键单击可全选后手动复制该条迅雷地址进行分享或其它操作" onClick="this.select()" />
+                        </p><span>
+<label class="yun"><a href="[url:path]" target="_blank">云播</a></label><label class="kk">看看</label><label class="thunder_down">迅雷</label><label class="lixian"><a href="http://lixian.vip.xunlei.com/lixian_login.html?referfrom=union&amp;ucid={maccms:name}.{maccms:url}&amp;furl=[url:path]" target="_blank">离线</a></label><label class="qqdl">旋风</label><label class="xiaomi"><a href="[url:path]" class="xm" name="第1集" target="_blank">小米</a></label></span>
+                        </li>
+						{/maccms:url}
+                		</volist>
+                </ul> <div class="downtools">
+                    <input id="allcheck1" onClick="CheckAll(1)" type="checkbox" name="checkall"><em>全选</em><a href="javascript:void(0);" target="_self" class="thunder_down_all">迅雷批量下载</a><a href="javascript:void(0);" target="_self" class="xf_down_all">旋风批量下载</a>
+            </div></div>
+        </div>
+    </eq>
+</down>
+{/maccms:down}
+{endif-D}
+        <div class="mod_show_box mt15">
+        <div class="mod_title">
+            <h2 class="title f16">[vod:name]</h2>
+        </div>
+        <div class="mod_txt">
+            <div class="fl"></div>
+            <ul class="details_list fl mt10">
+                <li><span class="detail_title">标签：</span>
+                    <div class="detail_subfield">[vod:taglink]</div>
+                </li> 
+                <li><span class="detail_title">主演：</span>
+                    <div class="detail_content">[vod:starringlink]</div>
+                </li> 
+                <li><span class="detail_title">导演：</span>
+                    <div class="detail_content">[vod:directedlink]</div>
+                </li> 
+                <li><span class="detail_title">更新：</span>
+                    <div class="detail_content">[vod:time style=y-m-d]</div>
+                </li>
+				<li><span class="detail_title">点播：</span>
+                    <div class="detail_content">[vod:hits]</div>
+                </li>
+                <li><span class="detail_subfield">类型：<a href="[vod:typelink]">[vod:typepname]</a></span> </li></ul>
+        </div>
+        <div style=" float:left; clear:none; height:170px; width:280px;">		
+      <div class="bdsharebuttonbox"><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_qq" data-cmd="qq" title="分享到QQ收藏"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_baidu" data-cmd="baidu" title="分享到百度搜藏"></a><a href="#" class="bds_taobao" data-cmd="taobao" title="分享到我的淘宝"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a title="分享到开心网" href="#" class="bds_kaixin001" data-cmd="kaixin001"></a><a title="分享到百度新首页" href="#" class="bds_bdhome" data-cmd="bdhome"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到百度个人中心" href="#" class="bds_ibaidu" data-cmd="ibaidu"></a><a title="分享到百度云收藏" href="#" class="bds_bdysc" data-cmd="bdysc"></a><a title="分享到百度贴吧" href="#" class="bds_tieba" data-cmd="tieba"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a><a href="#" class="bds_more" data-cmd="more"></a></div><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		</div>
+        <div class="mod_desc">
+		<h2>[vod:name]简介:</h2>
+            <div class="c9 mt5 ftno">[vod:contenttext]</div>
+        </div>
+    </div>

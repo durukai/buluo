@@ -1,0 +1,52 @@
+<div class="ui-box" id="cmt_anchor">
+  <div class="ui-title">
+    <h3>网友评论</h3>
+  </div>
+  <div class="ui-cnt">
+    <form class="cmt_form clearfix" action="{maccms:path}index.php?m=comment-save" method="post">
+    <input type="hidden" id="c_rid" name="c_rid" value="">
+      <div class="ui-form" id="cmt-input-bd">
+        <div class="ui-form-item">
+          <textarea cols="60" rows="5" class="ui-input ui-textarea ui-input-focus" id="c_content" name="c_content" onKeyup="MAC.Remaining(this,200,'c_remaining')" onfocus="if(this.value=='请在这里发表您的个人看法，最多200个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多200个字。';};"	>请在这里发表您的个人看法，最多200个字。</textarea>
+           {if-A:"{maccms:userid}"=""}<input name="c_name" type="text" class="cmt_text" id="c_name" value="游客" readonly="readonly" style="display:none;">{else-A}<input name="c_name" type="text" class="cmt_text" id="c_name" value="{maccms:username} " readonly="readonly" style="display:none;">{endif-A}
+        </div>
+        <div class="ui-form-info fn-clear"><a href="javascript:void(0);" onclick="MAC.Comment.Post();" class="ui-button fn-right" id="subcomm">提交</a>
+          <p class="fn-right">请勿提交非法信息和广告，违反者查封ID，甚至永久删除！谢谢合作~</p>
+          <span>{if-A:"{maccms:userid}"=""}游客{else-A}{maccms:username}{endif-A}</span>
+        </div>
+      </div>
+    </form>
+    
+      
+       {if-A:{page:datacount}==0}
+		<div style="line-height:268px; height:268px; background-image:url({maccms:path_tpl}/images/bg_none.jpg); background-repeat:no-repeat; background-position:center center;"></div>
+		{else-A}
+    <div class="comment-focus">
+      <ul class="ui-comment" id="commbox">
+      
+        {maccms:comment pagesize=10 vid=current order=desc by=time}
+        <li class="comment-item fn-clear">
+          <div class="comment-time">
+            <p class="date-time" style="padding-left: 0; width:52px;"><strong style="width:40px; line-height: 24px; text-align:right;">[comment:time]</strong></p>
+          </div>
+          <div class="comment-post">
+            <div class="comment-post-arrow"></div>
+            <div class="comment-post-cnt">
+              <div class="comment-avatar"><img class="face" src="{maccms:path_tpl}images/duface.png"></div>
+              <div class="comment-body">
+                <div class="comment-text"><span class="user">[comment:name]</span>：<em><em>[comment:content]</em></em></div>
+              </div>
+            </div>
+            <div class="fn-clear"></div>
+          </div>
+        </li>
+        {/maccms:comment}
+        
+      </ul>
+    </div>
+    <div class="ui-bar">
+      <div class="ui-pages commpage" id="aapages">{maccms:pages len=6}</div>
+    </div>
+    {endif-A}
+   </div>
+ </div>

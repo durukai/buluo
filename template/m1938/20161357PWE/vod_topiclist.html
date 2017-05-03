@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{page:name}_第{page:now}页_{maccms:name}</title>
+<meta name="keywords" content="{page:name}" />
+<meta name="description" content="{page:name},{page:content}" />
+{maccms:load inc.html} 
+</head>
+{maccms:head}
+<div class="wrap">
+	<div class="h2"><a href="{maccms:url}">首页</a> > <a href="{maccms:link_topic_vod}">专题首页</a> > {page:name}</div>
+  <div class="ztlist mb clearfix">
+    <div class="img"><img src="{page:pic}">
+    <b class="bg png"></b>
+    <div class="name"><p>{page:name}</p></div>
+    </div>
+    <div class="text">{page:content}</div>
+  </div>
+	<div class="index-tj mb clearfix">
+    <ul>
+      {maccms:vod pagesize=20 topic=current order=desc by=time}
+      <li class="mb{if-A:[vod:num]%3==0} m3{endif-A}{if-A:[vod:num]%5==0} m5{endif-A}">
+        <a class="li-hv" href="[vod:link]" title="[vod:name]">
+        <div class="img">
+          <img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/load.gif" alt="[vod:name]">
+          <b class="bg1"></b>
+          <b class="play-hv"></b>
+          <b class="sjbg2 png"></b>
+          <p class="bz">{if-A:[play:urlcount]<1}[vod:remarks]{elseif-A:[play:urlcount]<1000 and [play:urlcount]>0}第[play:urlcount]集{elseif-A:[play:urlcount]>1000}[play:urlcount]期{elseif-A:[play:urlcount]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</p>
+        </div>
+        <div class="text">
+          <p class="name">[vod:name]</p>
+          <p class="zy">[vod:starring]</p>
+        </div>
+      </a>
+      </li>
+      {/maccms:vod}
+    </ul>
+  </div>
+	<div class="page mb clearfix">
+{maccms:pages len=6}
+</div>   
+</div>
+{maccms:foot}
+</body>
+</html>

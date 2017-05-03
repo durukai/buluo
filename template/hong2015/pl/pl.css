@@ -1,0 +1,223 @@
+/* video container */
+vedio { cursor:pointer;}
+.videoContainer{
+	background:#000;
+	cursor:pointer;
+	height:590px;
+	position:relative;
+}
+.videoContainer, .caption, .control, .progress, .loading, #init{
+	width:1170px; 
+}
+@media screen and (max-width: 1218px){
+.videoContainer, .caption, .control, .progress, .loading, #init{
+	width:970px; 
+}
+}
+
+
+/* video caption css */
+.caption{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	padding:10px 0;
+	color:#FFF;
+	font-size:12px;
+	background: #1F1F1F; 
+}
+
+/*** VIDEO CONTROLS CSS ***/
+/* control holder */
+.control{
+	background:#181818;
+	color:#6B6B6B;
+	position:absolute;
+	bottom:0;
+	left:0;
+	z-index:5;
+	display:none;
+}
+/* control top part */
+.topControl{
+	height:11px;
+	padding:0;
+	background:#1F1F1F; /* fallback */
+}
+/* control bottom part */
+.btmControl{
+	clear:both;
+	background: #1F1F1F; /* fallback */
+	background:-moz-linear-gradient(top,#242424 50%,#1F1F1F 50%,#171717 100%);
+	background:-webkit-linear-gradient(top,#242424 50%,#1F1F1F 50%,#171717 100%);
+	background:-o-linear-gradient(top,#242424 50%,#1F1F1F 50%,#171717 100%);
+}
+.control div.btn {
+	float:left;
+	width:34px;
+	height:34px;
+	padding:0 0 0 5px;
+	cursor:pointer;
+}
+.control div.kbbtn {
+	float:left;
+	width:97px;
+	height:36px;
+	padding:0 0 0 5px;
+	cursor:pointer;
+	background:url(kbfans.png) no-repeat 3px 2px;
+	float:right;
+}
+.control div.text{
+	font-size:12px;
+	line-height:30px;
+	text-align:center;
+	font-family:verdana;
+	width:30px;
+	border:none;
+	color:#777;
+}
+.control div.btnPlay{
+	background:url(control.png) no-repeat 0 2px;
+}
+.control div.btnPlay:hover{
+	background:url(control2.png) no-repeat 0 2px;
+}
+.control div.paused{
+	background:url(control.png) no-repeat 0 -30px;
+}
+.control div.paused:hover{
+	background:url(control2.png) no-repeat 0 -30px;
+}
+.control div.btnStop{
+	background:url(control.png) no-repeat 0 -60px;
+}
+.control div.btnStop:hover{
+	background:url(control2.png) no-repeat 0 -60px;
+}
+.control div.spdText{
+	border:none;
+	font-size:12px;
+	line-height:30px;
+	font-style: normal;
+	padding-top:2px;
+}
+.control div.spdText span{
+	background-color:#313131; padding:5px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+.control div.selected{
+	font-size:12px;
+	color:#ccc;
+}
+.control div.sound{
+	background:url(control.png) no-repeat -88px -30px;
+	border:none;
+	float:right;
+}
+.control div.sound:hover{
+	background:url(control2.png) no-repeat -88px -30px;
+}
+.control div.sound2{
+	background:url(control.png) no-repeat -88px -60px !important;
+}
+.control div.sound2:hover{
+	background:url(control2.png) no-repeat -88px -60px !important;
+}
+.control div.muted{
+	background:url(control.png) no-repeat -88px 0 !important;
+}
+.control div.muted:hover{
+	background:url(control2.png) no-repeat -88px 0 !important;
+}
+.control div.btnFS{
+	background:url(control.png) no-repeat -44px 3px;
+	float:right;
+}
+.control div.btnFS:hover{
+	background:url(control2.png) no-repeat -44px 3px;
+	float:right;
+}
+
+/* PROGRESS BAR CSS */
+/* Progress bar */
+.progress {
+	height:10px;
+	position:relative;
+	float:left;
+	cursor:pointer;
+	background: #333; /* fallback */
+}
+.progress span {
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+}
+.timeBar{
+	z-index:10;
+	width:0;
+	background: #fa3a77; /* fallback */
+}
+.bufferBar{
+	z-index:5;
+	width:0;
+	background: #333;
+}
+/* time and duration */
+.time{
+	width:15%;
+	float:left;
+	text-align:center;
+	font-size:11px;
+	line-height:30px !important;
+	height:30px;
+	font-family:Verdana;
+	line-height:12px;
+}
+.time .current{
+	color:#c7c7c7;
+}
+
+/* VOLUME BAR CSS */
+/* volume bar */
+.volume{
+	position:relative;
+	cursor:pointer;
+	width:70px;
+	height:6px;
+	float:right;
+	margin-top:14px;
+}
+.volumeBar{
+	display:block;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:#fa3a77;
+	z-index:10;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+/* OTHERS CSS */
+/* video screen cover */
+.loading, #init{
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	background:url(loading.gif) no-repeat 50% 50%;
+	z-index:2;
+	display:none;
+}
+#init{
+	background:url(bigplay.png) no-repeat 50% 50% !important;
+	cursor:pointer;
+}

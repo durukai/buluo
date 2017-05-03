@@ -1,0 +1,28 @@
+.ui-box .ui-title { height: 40px; line-height: 40px; padding: 0px 12px; border-bottom: 1px solid #E5E5E5; box-shadow: 0px 1px 0px #F7F7F7; }
+.ui-box { margin: 12px auto 0px; box-shadow: 0px 1px 0px #F7F7F7 inset; border: 1px solid #E5E5E5; background-color: #F7F7F7; }
+.div.ui-box.ui-box-big.play-list-box div.ui-title.fn-clear h2 { background: #F7F7F7 url("../images/playerbtn.png") no-repeat scroll 0% 0%; width: 102px; height: 42px; margin-top: -1px; }
+.ui-box .ui-title h2 { font-size: 16px; }
+.ui-box .ui-title h2, .ui-box .ui-title h3 { font-size: 14px; font-weight: 700; text-shadow: 0px 1px 0px #FFF; color: #333; float: left; overflow: hidden; }
+.ui-box .ui-title span { float: right; font-size: 12px; }
+.ui-box .ui-title { line-height: 40px; }
+.down_list ul { overflow: hidden; zoom: 1; display: block; overflow-y: scroll; overflow-x: hidden; height: 250px;  }
+.down_list ul li { height: 24px; padding: 8px 0; border-bottom: 1px solid #eee; overflow: hidden; vertical-align: middle; }
+.down_url { float: left; display: inline; margin: 7px 8px 0 10px; margin: 0 8px 0 10px9; }
+.down_list ul li p { float: left; display: inline; overflow: hidden; line-height: 24px; }
+.down_part_name {/*font-size:14px; */ color: #bc2931; font-weight: 400; padding-right: 10px; float: left; display: inline; }
+.thunder_url { border: solid 1px #e4e4e4; background-color: #f9f9f9; color: #444; height: 22px; line-height: 22px; padding: 0 5px; overflow: hidden; text-overflow: ellipsis; }
+.down_list ul li span { float: right; display: inline; overflow: hidden; }
+.down_list ul li span label { float: left; display: inline; margin-right: 10px; padding: 6px 8px; color: #fff; line-height: 1; cursor: pointer; }
+.down_list ul li span label a { color: #fff; }
+.yun { background-color: #4C9493; }
+.thunder_down { background-color: #249ff1; }
+.qqdl { background-color: #ff6c00; }
+.kk { background-color: #36c345; }
+.xiaomi { background-color: #C3C; }
+.lixian { background-color: #666666; }
+.downtools { padding: 15px 10px; overflow: hidden; zoom: 1; }
+.downtools input { margin: 5px 0 0; *margin:0;padding: 0; float: left; display: inline; }
+.downtools em { padding: 0 7px; float: left; font-style: normal; }
+.downtools a { display: inline-block; margin-left: 10px; width: 133px; height: 26px; line-height: 26px; overflow: hidden; border: #ccc solid 1px; border-radius: 3px; text-align: center; }
+.down_list .pan { display: inline; float: left; position: relative; z-index: 1; height: 40px; margin: 0px 0px 10px 5px; }
+.down_list .pan a { display: inline-block; height: 38px; text-align: center; line-height: 38px; background: #FFF none repeat scroll 0% 0%; border: 1px solid #CCC; color: #333; font-family: "tahoma"; white-space: nowrap; overflow: hidden; }

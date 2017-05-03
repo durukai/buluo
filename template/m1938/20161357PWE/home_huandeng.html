@@ -1,0 +1,100 @@
+<div class="site_focus" style="padding-top: 100px;" id="mod_txv_focus">
+{maccms:vod num=20 type=all start=1 order=desc by=time level=1}
+{if-A:[vod:num] = 1}
+    	<div class="focus_inner">
+        	<a href="[vod:link]" target="_blank" class="focus_img" style="background-image: url([vod:picslide]); background-color: rgb(1, 22, 103);"></a>
+            <div class="focus_control">
+            	<h2 class="focus_title" title="《[vod:name]》 [vod:subname]" id="mod_txv_focus_title">《[vod:name]》[vod:subname]</h2>
+                <div class="focus_thumbnails">
+                    <div class="focus_thumbnails_inner" id="mod_txv_focus_nav">
+                        <ul class="focus_thumbnails_list cf">
+                            <li style="display: list-item;" title="《[vod:name]》 [vod:subname]" img="[vod:picslide]" class="current" num="[vod:num]">
+{else-A}
+                            <li style="display: list-item;" title="《[vod:name]》 [vod:subname]" img="[vod:picslide]" num="[vod:num]">
+{endif-A}
+                                <a href="[vod:link]" class="link_thumbnails" target="_blank">
+                                    <img src="[vod:picthumb]"></a>
+                            </li>
+{/maccms:vod}
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn_prev" id="focus_smaillPic_prev" title="上一组" hidefocus="true"><i class="ico_prev"></i><span class="btn_inner">上一组</span></a>
+                   <a href="javascript:;" class="btn_next" id="focus_smaillPic_next" title="下一组" hidefocus="true"><span class="btn_inner">下一组</span><i class="ico_next"></i></a>
+               </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        (function() {
+            var v280 = {};
+            v280.Focus = {
+                focusNum: $("#mod_txv_focus_nav li").length,
+                currentNum: 0,
+                setFocus: function() {
+                    var imgObj = $(".focus_img");
+                    var liObj = $("#mod_txv_focus_nav li").get(this.currentNum);
+                    imgObj.animate({ opacity: '0.4' }, 500, function() {
+                        $("#mod_txv_focus_title").html($(liObj).attr("title"));
+                        imgObj.css({ "background-image": "url(" + $(liObj).attr('img') + ")" });
+                        imgObj.animate({ opacity: '1' }, 500);
+                    });
+                    //$("#mod_txv_focus_nav li").removeClass("current");
+                    //$(liObj).addClass("current");
+					this.show();
+                },
+				show:function(){
+					var liObj = $("#mod_txv_focus_nav li").get(this.currentNum);
+                    $("#mod_txv_focus_nav li").removeClass("current");
+                    $(liObj).addClass("current");
+					
+					var start = 0,end = this.focusNum;
+					//总列表数小于七条时退出
+					if(this.focusNum <= 7) return;
+					
+					if(this.currentNum >= 7){
+						if(this.currentNum % 7 == 0)
+							start = this.currentNum;
+						else
+							start = parseInt(this.currentNum / 7) * 7;
+					}
+						
+					if(start + 7 > end)
+						start = end - 7;
+					else
+						end = start + 7;
+					
+					$("#mod_txv_focus_nav li").css("display","none");
+					for(var i = start; i < end ; i++)
+					{
+						liObj = $("#mod_txv_focus_nav li").get(i);
+						$(liObj).css("display","list-item");
+					}
+				},
+                Prev: function() {
+                    this.currentNum--;
+                    if (this.currentNum < 0)
+                        this.currentNum = this.focusNum - 1;
+                    this.setFocus();
+
+                },
+                Next: function() {
+                    this.currentNum++;
+                    if (this.currentNum >= this.focusNum)
+                        this.currentNum = 0;
+                    this.setFocus();
+                },
+                Auto: function() {
+                    window.setInterval(function() { v280.Focus.Next(); }, 5000);
+                }
+            };
+            v280.Focus.Auto();
+            $("#focus_smaillPic_prev").click(function() { v280.Focus.Prev() });
+            $("#focus_smaillPic_next").click(function() { v280.Focus.Next() });
+			$("#mod_txv_focus_nav li").mouseover(function(){
+				v280.Focus.currentNum = parseInt($(this).attr("num")) - 1;
+				v280.Focus.setFocus();
+			});
+        })();
+    </script>

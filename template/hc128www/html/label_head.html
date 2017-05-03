@@ -1,0 +1,96 @@
+<div class="site_head">
+    <div class="head_inner">
+        <div class="site_logo"> <a href="http://{maccms:url}" title="{maccms:name}" class="link_logo"><strong class="hidden">{maccms:name}</strong></a>
+        </div>
+        <div class="mod_ad_head">
+            <div class="site_navigation">
+                <div class="navigation_main">
+                    <div class="navigation_inner">
+                        <ul class="navigation_area">
+						{maccms:matrix table=vod type=1,2,3,4}
+                            <li class="list_item f16"> <a href="[matrix:link]" class="link_nav ft"><span class="link_inner">[matrix:name]</span></a>
+                            </li>
+                            {/maccms:matrix}
+                            <li class="list_item f16 ft"> <a class="link_nav"><span class="link_inner">导航</span></a>
+                                <div class="navigation_sub">
+                                    <ul>
+                                        <div class="sub_l fl ml10 mt10">
+										{maccms:matrix table=vod type=1,2,3,4}
+                                            <li> <a href="[matrix:link]" class="f14">[matrix:name]</a>
+                                            </li>
+											{/maccms:matrix}
+                                            </div>
+                                        <div class="sub_r fl mt10 ">
+                                            <li>
+											{maccms:matrix table=vod type=child parent=1 order=asc num=9}
+                                                <lo><a href="[matrix:link]">[matrix:name]</a>
+                                                </lo>
+												{/maccms:matrix}
+                                                </li>
+                                            <li>
+											{maccms:matrix table=vod type=child parent=2 order=asc num=9}
+                                                <lo><a href="[matrix:link]">[matrix:name]</a>
+                                                </lo>
+												{/maccms:matrix}
+												</li>
+                                            <li>
+                                                <lo><a href="{maccms:getlink tv.html}">电视直播</a>
+                                                </lo>
+                                                <lo><a href="{maccms:getlink new.html}">今天更新</a>
+                                                </lo>
+                                                <lo><a href="{maccms:link_map_vod}">分类排行</a>
+                                                </lo>
+                                                <li>
+                                            <li><lo class="f12 cc">本站总{maccms:count_vod_all}部,今日更新{maccms:count_vod_day}部.会员{maccms:count_user_all}位，今日新增{maccms:count_user_day}位.</lo></li>
+                                            <li>
+                                        </div>
+                                    </ul>
+                                </div>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod_search">
+            <form id="search_form" name="search_form" method="post" action="">
+                <div class="search_inner"> <i class="ico_search"></i>
+                    <label>
+                        <input class="search_ipt" name="key" type="text" id="key" onBlur="if(this.value==''){this.value='请输入关键词';this.style.color='#aaa'};" onFocus="if(this.value=='请输入关键词'){this.value='';this.style.color='#aaa'};" value="请输入关键词"
+                        style="color: rgb(170, 170, 170);" />
+                    </label>
+                    <label>
+                        <select name="seachid" id="seachid" class="myselect f14">
+						    <option value="kan">站内</option>
+                            <option value="baidu">百度</option>
+                            <option value="haosou">好搜</option>
+                        </select>
+                    </label>
+                    <label>
+                        <input class="search_btn" type="button" name="button" id="button" value="" onClick="subs();" /><span class="hidden">搜索</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="mod_quick">
+            <div class="quick_item">
+                <a class="quick_history" href="#" id="history"> <i class="ico_history_26"></i>  <span class="quick_txt">看过</span>  <i class="divide"></i> 
+                </a>
+            </div>
+            <div class="quick_item">
+                <a class="quick_attention" href="javascript:MAC.Fav(MAC.Url,MAC.Title)"> <i class="ico_collect_26"></i>  <span class="quick_txt">关注</span>  <i class="divide"></i> 
+                </a>
+            </div>
+            <div class="quick_item">
+                <a class="quick_attention" href="{maccms:link_gbook}"> <i class="ico_upload_26"></i>  <span class="quick_txt">留言</span>  <i class="divide"></i> 
+                </a>
+            </div>
+            <div class="quick_item">
+                <a class="quick_attention" href="javascript:void(0)" id="login">
+                    <img class="yj" src="http://imgcache.qq.com/tencentvideo_v1/vstyle/web/v3/style/images/default_avatar.png" alt="登陆" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="navigation_top"></div>
+</div>

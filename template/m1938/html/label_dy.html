@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>热门电影排行榜 2015热播电影排行榜 - 果趣电影</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta content="{maccms:name}提供热播电影排行榜。热播电影排行榜推荐热播动作、喜剧、爱情、搞笑等热播电影排行，大陆、日本、韩国、欧美大片尽在{maccms:name}。" name="Description">
+<meta content="最新电影排行榜,最新电影排行,{maccms:name}" name="Keywords">
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="{maccms:name}" name="apple-mobile-web-app-title">
+{maccms:include}
+<link href="{maccms:path_tpl}/css/rank.v2.css" rel="stylesheet" type="text/css">
+<link href="{maccms:path_tpl}/css/list.v2.css" rel="stylesheet" type="text/css">
+<script>
+function nofind(e){ 
+	return e.src='{maccms:path_tpl}/images/focusDefault.jpg';
+}
+</script>
+</head><body>
+{maccms:load head.html}
+
+<ul id="index_menu_box" class="navMenu clearfix" style="display:none;">
+  <li><a{if-A:{maccms:siteaid}=10} class="cur"{endif-A} href="/" onclick="_dct_('dh_m_index2');" target="_self"><img src="{maccms:path_tpl}images/rankIcon.png"><span>首页</span></a></li>
+  <li><a href="{maccms:getlink dy.html}" onclick="_dct_('dh_m_phb2');"><img src="{maccms:path_tpl}images/rankIcon.png"><span>排行榜</span></a></li>
+  <li><a href="{maccms:getlink dy.html}" class="cur">电影</a></li>
+  <li><a href="{maccms:getlink dsj.html}" >电视剧</a></li>
+  <li><a href="{maccms:getlink dm.html}" >动漫</a></li>
+  <li><a href="{maccms:getlink zy.html}" >综艺</a></li>
+</ul>
+
+  <div class="globalPadding">
+    <ul id="resize_list" class="picTxt picTxtA clearfix">
+      {maccms:vod num=39 by=hits type=1 order=desc}
+      <li>
+        <div class="con"> <a href="[vod:link]" title="[vod:name]"  onclick="_dct_('dy_m_top_[vod:num]');" rel="nofollow" target="_self"> <img height="250" data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" onerror="nofind(this);" alt=""> <i class="iRankNum"><em>[vod:num]</em></i>
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+          {elseif-A:[vod:state]>0}
+          {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+          {else-B} <span class="sNum">[连载[vod:state]]集
+          {endif-B}
+          {else-A}
+          {endif-A}
+          {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> <span class="sTit">[vod:name]</span> </a> </div>
+      </li>
+      {/maccms:vod}
+    </ul>
+  </div>
+</section>
+{maccms:foot}
+<script>
+$('#data_list img').lazyload({data_attribute:'src',threshold:30});
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>{page:name},{page:name}最新电影电视剧在线观看 -  第{page:now}页 -  {maccms:name}</title>
+<meta name="keywords" content="{page:name},{page:name}最新电影,{page:name}最新电视剧" />
+<meta name="description" content="{maccms:des}" />
+<meta name="Resource-type" content="{maccms:name}" />
+{maccms:include}
+</head>
+<body oncontextmenu="window.event.returnValue=false">
+{maccms:head}
+<!--内容开始-->
+<div class="container">
+<div class="container-inner">
+<div class="crumbs-all" style="margin-bottom:20px;">当前位置:<a href="{maccms:path}">首页</a> >>  <a href="{maccms:link_topic_vod}">专题</a> >> {page:name}</div>
+<ul class="topic_head">
+<img src="{page:pic}" alt="{page:name}" />
+<h3>{page:name}</h3>
+<span>相关影片共{page:datacount}部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本专题人气：{page:hits} </span>
+<p>{page:content}</p>
+</ul>
+<!--con3-->
+
+<!--电影开始-->
+<div class="con2 margin-bottom-share">
+<div class="teleplay">
+
+   <div class="teleplayx-left fl">
+
+      <div class="splendid-header">
+         <div class="fl"><span>{page:name}</span>专题</div>
+           <!--splendid-tab-->
+      </div><!--splendid-header-->
+
+      <div class="teleplay-content">
+
+         <div class="teleplayx-content-inner" style="display:block;">
+             <ul class="teleplayx-content-list">
+               {maccms:vod pagesize=20 topic=current order=desc by=time}
+               <li>
+               <div class="showPlay">
+                  <a href="[vod:link]" class="tcl-pic" target="_blank">
+                    {if-A:"{maccms:date}"="[vod:time]"}<i></i>{endif-A}
+                      <div class="tcl-pic1"><img class="scrollLoading" data-url="[vod:pic]" width="200" height="270" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]"></div>
+                      <div class="tcl-pic2"></div>
+                  </a>
+                  </div>
+                  <div class="tcl-title">
+                     <div class="movie-headline1"><a href="[vod:link]" target="_blank">[vod:name]</a></div>
+                     <p>主演：[vod:starring]</p>
+                  </div>
+               </li>
+			   {/maccms:vod}
+                </ul>
+         </div><!--teleplay-content-inner-->
+      </div><!--teleplay-content-->
+
+   </div><!--teleplay-left-->
+
+
+</div><!--teleplay-->
+</div><!--con2-->
+<!--分页开始-->
+<div class="ui-pages" id="aapages">
+		{maccms:pages len=6}			
+	  </div>
+<!--分页结束-->
+</div><!--container-inner-->
+</div><!--container-->
+
+<div class="zt-footer" id="zt-footer">
+{maccms:foot}
+</div>

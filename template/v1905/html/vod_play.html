@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>正在播放 [vod:name] [vod:playname]</title>
+
+<meta name="Keywords" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+
+<meta name="description" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+
+{maccms:include}
+
+<link href="{maccms:path_tpl}css/play_mode2.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+{maccms:head}
+
+   <link type="text/css" rel="stylesheet" href="http://static.m1905.cn/hao/css/min_details.css">
+
+<link type="text/css" rel="stylesheet" href="http://static.m1905.cn/hao/css/gossip.css?20150116">
+
+<div class="gossip_box" id="content" data-yslog ="open" data-channel="5">
+
+
+
+  <div class="head_film_name">[vod:name]</div>
+
+  <div id="vodPlayer" class="video-hd-wrap run">
+
+    <div class="video-hd-body   run ">
+
+    
+
+       [vod:playerinfo][vod:player]
+
+      
+
+      
+
+    </div>
+
+  </div>
+
+  <div class="video_message clearfix">
+
+  	<div class="left_cont_txt fl">
+
+    	<h4>[vod:name]</h4>
+
+        <p class="up_time">更新时间：[vod:time style=yy-mm-dd]</p>
+
+        <p class="film_intro">[vod:contenttext]</p>
+
+    </div>
+
+    <div class="rig_cont_txt fr">
+
+    	<div class="uploader_user"><i></i><span>视频主</span></div>
+
+        <div class="uploader_user_msg clearfix">     	
+
+            <a href="#" class="fl mr_20 img_href"><img src="/images/upzhu.jpg"></a>
+
+            <div class="fl uploader_user_per">
+
+                <p><a href="#">白兔窝弹幕网</a></p>
+
+                <ul class="clearfix">
+
+                    <li><span>关注</span><em>1</em></li>
+
+                    <li><span>粉丝</span><em>3351</em></li>
+
+                    <li><span>视频</span><em>{maccms:count_vod_all}</em></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
+
+
+ 	    <div class="play_vod">
+
+<div class="hot_video" id="hot_video">
+
+            <div class="head clearfix"><h3>评论</h3><a href="javascript:;"></a></div>
+
+            <div class="hot_video_list">
+
+        <!--高速版-->
+
+<div id="SOHUCS" sid="play[vod:id]"></div>
+
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+
+<script type="text/javascript">
+
+    window.changyan.api.config({
+
+        appid: 'cyrR4CX9h',
+
+        conf: 'prod_86b72c329d20f0be20a138b7ca056186'
+
+    });
+
+</script>               
+
+            </div>
+
+        </div>
+
+        <div class="hot_video" id="hot_video">
+
+            <div class="head clearfix"><h3>热门视频</h3><a href="javascript:;" class="tab_click" id="hot_click"></a></div>
+
+            <div class="hot_video_list">
+
+                <ul class="clearfix">
+
+ {maccms:vod num=5 order=desc type={maccms:curvodtypeid} by=dayhits}
+
+                	<li{if-A:[vod:num]=5} class="marg_rig_none" {endif-A}>
+
+                		<a target="_blank" href="[vod:link]">
+
+                		<span class="img"><span><img src="[vod:pic]"></span>
+
+                			<em 这是为何？="" title="[vod:name]" class="bg"></em>
+
+                		</span>           
+
+                		<span class="content_p"><b>[vod:name]</b></span>       
+
+                		</a>   
+
+                	</li>{/maccms:vod}   
+
+                </ul>          
+
+            </div>
+
+        </div>
+
+        <div class="hot_video" id="same_video">
+
+            <div class="head clearfix"><h3>大家都在看</h3><a href="javascript:;" class="tab_click" id="same_click"></a></div>
+
+            <div class="hot_video_list">
+
+                <ul class="clearfix">
+
+ {maccms:vod num=5 order=desc type={maccms:curvodtypeid} by=time}
+
+                	<li{if-A:[vod:num]=5} class="marg_rig_none" {endif-A}>
+
+                		<a target="_blank" href="[vod:link]">
+
+                		<span class="img"><span><img src="[vod:pic]"></span>
+
+                			<em 这是为何？="" title="[vod:name]" class="bg"></em>
+
+                		</span>           
+
+                		<span class="content_p"><b>[vod:name]</b></span>       
+
+                		</a>   
+
+                	</li>{/maccms:vod}   
+
+                     </ul>
+
+            </div>
+
+        </div>
+
+    </div>    <div class="pos_link">
+
+{maccms:menu type=16 order=asc table=vod}
+
+    	<a href="[menu:link]" target="_blank" class="link1"><span></span></a>
+
+{/maccms:menu}
+
+{maccms:menu type=1 order=asc table=vod}
+
+        <a href="[menu:link]" target="_blank" class="link2"><span></span></a>
+
+{/maccms:menu}
+
+{maccms:menu type=2 order=asc table=vod}
+
+        <a href="[menu:link]" target="_blank" class="link3"><span></span></a>
+
+{/maccms:menu}
+
+{maccms:menu type=3 order=asc table=vod}
+
+        <a href="[menu:link]" target="_blank" class="link4"><span></span></a>
+
+{/maccms:menu}
+
+{maccms:menu type=4 order=asc table=vod}
+
+        <a href="[menu:link]" target="_blank" class="link5"><span></span></a>       
+
+{/maccms:menu}	
+
+    </div>
+
+</div>
+
+
+
+<script src="http://js.static.m1905.cn/core/jquery-edge.min.js"></script> 
+
+
+
+<script type="text/javascript" src="{maccms:path_tpl}js/fan.js"></script> 
+
+{maccms:foot}
+
+<!--/Footer-->
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{page:key}-{maccms:name}</title>
+<meta name="keywords" content="{page:key},{maccms:name}" />
+<meta name="description" content="{page:key},{maccms:name}" />
+{maccms:load inc.html}
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+  <div class="sy-all clearfix">
+  <div class="sy-title clearfix">
+    <div class="text">
+  	与<b class="key">{page:key}</b>相关共<b class="key">{page:datacount}</b>条
+  	</div>
+    <div class="more sbtn">
+      <b class="more1"><i class="name">展开</i><i class="ico sybg1 png"></i></b>
+      <b class="more2"><i class="name">收起</i><i class="ico sybg2 png"></i></b>
+    </div>
+  </div>
+  <div class="sy scon clearfix">
+          <dl class="clearfix"><dt>按分类：</dt>
+              <dd>{maccms:menu type=auto}
+		  <a {if-A:"{page:typeid}"="[menu:id]"} class="on" {endif-A} href="[menu:link]">[menu:name]</a>
+		  {/maccms:menu}</dd>
+          </dl>
+          <dl class="clearfix"><dt>按剧情：</dt>
+              <dd>{maccms:class order=asc}
+          <a href="[class:link]" {if-A:"{page:classid}"="[class:id]"} class="on" {endif-A}>[class:name]</a>
+          {/maccms:class}</dd>
+          </dl>
+          <dl class="clearfix"><dt>按年代：</dt>
+              <dd>{maccms:year type=auto start=2000 end=2020 order=desc}
+		  <a {if-A:"{page:year}"="[year:name]"} class="on" {endif-A} href="[year:link]">[year:name]</a>
+		  {/maccms:year}</dd>
+          </dl>
+          <dl class="area clearfix"><dt>按地区：</dt>
+              <dd>{maccms:area type=auto}
+		  <a {if-A:"{page:area}"="[area:name]"} class="on" {endif-A}href="[area:link]">[area:name]</a>
+		  {/maccms:area}</dd>
+          </dl>
+  </div>
+  </div>
+   <div class="list-tab mb clearfix">
+    <ul>
+      <li><a {if-A:"{page:by}"="time"} class="time on" {endif-A} href="{page:linkbytime}"><em></em>最新</a></li>
+      <li><a {if-A:"{page:by}"="hits"} class="rq on" {endif-A} href="{page:linkbyhits}"><em></em>人气</a></li>
+      <li><a {if-A:"{page:by}"="score"} class="tj on" {endif-A} href="{page:linkbyscore}"><em></em>推荐</a></li>
+    </ul>
+   </div>
+   <div class="index-tj mb clearfix">
+    <ul>
+      {maccms:vod pagesize=30 type=current order=desc by=time}
+      <li class="mb{if-A:[vod:num]%3==0} m3{endif-A}{if-A:[vod:num]%5==0} m5{endif-A}">
+        <a class="li-hv" href="[vod:link]" title="[vod:name]">
+        <div class="img">
+          <img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/load.gif" alt="[vod:name]">
+          <b class="bg1"></b>
+          <b class="play-hv"></b>
+          <b class="sjbg2 png"></b>
+          <p class="bz">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</p>
+        </div>
+        <div class="text">
+          <p class="name">[vod:name]</p>
+          <p class="zy">[vod:starring]</p>
+        </div>
+      </a>
+      </li>
+      {/maccms:vod}
+    </ul>
+  </div>
+   <div class="page mb clearfix">
+{maccms:pages len=6}
+</div>  
+</div> 
+{maccms:foot}
+</body>
+</html>

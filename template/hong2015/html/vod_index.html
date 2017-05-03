@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>{maccms:name}-最新在线观看电影,电视,综艺,动漫的在线视频网站</title>
+<meta name="keywords" content="{maccms:keywords}" />
+<meta name="description" content="{maccms:description}" />
+<meta name="Resource-type" content="{maccms:name}" />
+{maccms:include}
+</head>
+<body oncontextmenu="window.event.returnValue=false">
+{maccms:head} 
+<!--轮播图开始-->
+<div id="banner">
+  <div class="banner-inner">
+    <div class="banner-pic">
+      <ul class="banner-pic-inner">
+        {maccms:vod num=10 type=all level=5 order=desc}
+        <li class="pic-01" {if-A:[vod:num]=1} style="display:block;background:url('[vod:picslide]')"{endif-A} style="display:none;background:url('[vod:picslide]') ">
+        <a href="[vod:link]" target="_blank" title="[vod:name]"></a>
+        </li>
+        {/maccms:vod}
+      </ul>
+    </div>
+    <div class="banner-btn-wrap">
+      <div class="banner-btn">
+        <div class="banner-btn-list">
+          <ul class="banner-btn-inner">
+            {maccms:vod num=10 type=all level=5 order=desc}
+            <li class="add-active"><i></i><img width='90' height='60' src="[vod:pic]"></li>
+            {/maccms:vod}
+          </ul>
+          <ul class="banner-intro-ul">
+            {maccms:vod num=10 type=all level=5 order=desc}
+            <li {if-A:[vod:num]=1} style="display:block;"{endif-A} style="display:none;">
+            <a href="[vod:link]" title="[vod:name]">[vod:name]</a>
+            </li>
+            {/maccms:vod}
+          </ul>
+        </div>
+        <!--banner-btn-list-->
+        <div class="banner-swap-btn"> <a href="javascript:;" class="left-btn"></a> <a href="javascript:;" class="right-btn"></a> </div>
+      </div>
+      <div class="banner-intro"></div>
+      <!--banner-intro--> 
+    </div>
+  </div>
+  <!--banner-inner--> 
+</div>
+<!--banner--><!--内容开始-->
+<div class="container">
+  <div class="container-inner"> 
+    <!--影视明星开始-->
+    <div class="con3 star-bot">
+      <div class="splendid-header">
+        <div class="fl"><span>今日热片</span>推荐</div>
+      </div>
+      <div class="star-pic">
+        <ul class="star-pic-list">
+          {maccms:vod num=7 type=all by=dayhits order=desc}
+          <li> <a href="[vod:link]" class="star-pic-list-a" target="_blank" title="[vod:name]"> <img  class="scrollLoading" width="140" height="190"  data-url="[vod:pic]" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]">
+            <div class="star-pic1"></div>
+            <div class="star-pic2">
+              <p>[vod:name]</p>
+            </div>
+            </a> </li>
+          {/maccms:vod}
+        </ul>
+      </div>
+    </div>
+    <!--con3--> 
+    
+    <!--电影开始-->
+    <div class="con2 margin-bottom-share">
+      <div class="teleplay">
+        <div class="teleplay-left fl">
+          <div class="splendid-header">
+            <div class="fl"> {maccms:menu type=1} <a href="[menu:link]" title="[menu:name]">最新<span>[menu:name]</span></a> {/maccms:menu} </div>
+          </div>
+          <!--splendid-header-->
+          
+          <div class="teleplay-content">
+            <div class="teleplay-content-inner" style="display:block;">
+              <ul class="teleplay-content-list">
+                {maccms:vod type=1 num=8 order=desc by=time}
+                <li>
+                  <div class="showPlay"> <a href="[vod:link]" class="tcl-pic" target="_blank" title="[vod:name]">
+                    {if-A:"{maccms:date}"="[vod:time]"}<i></i>{endif-A}
+                    <div class="tcl-pic1"><img class="scrollLoading" data-url="[vod:pic]" width="200" height="270" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]"></div>
+                    <div class="tcl-pic2"></div>
+                    </a> </div>
+                  <div class="tcl-title">
+                    <div class="movie-headline1"><a href="[vod:link]" target="_blank"  title="[vod:name]">[vod:name]</a></div>
+                    <p>[vod:contenttext len=20]</p>
+                  </div>
+                </li>
+                {/maccms:vod}
+              </ul>
+            </div>
+            <!--teleplay-content-inner--> 
+            
+          </div>
+          <!--teleplay-content--> 
+          
+        </div>
+        <!--teleplay-left-->
+        
+        <div class="teleplay-right fr">
+          <div class="recommend-header">
+            <div class="fl"> {maccms:menu type=1} <span>[menu:name]</span>人气排行</div>
+            <a href="[menu:link]" class="teleplay-more" target="_blank">更多&gt;</a> {/maccms:menu} </div>
+          <div class="teleplay-content">
+            <ul class="teleplay-con-list telclist4 tcl1">
+              {maccms:vod type=1 num=10 order=desc by=hits}
+              {if-A:[vod:num]=1}
+              <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+                <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+                  <p class="top-desc">[vod:contenttext len=24]......</p>
+                  <p class="pview">播放指数:[vod:hits]℃</p>
+                  <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+              </li>
+              {endif-A}
+              
+              {if-A:[vod:num]>1}
+              <li><i>[vod:num]</i><span class="views">[vod:hits]℃</span><a href="[vod:link]" target="_blank">[vod:name]</a></li>
+              {endif-A}
+              {/maccms:vod}
+            </ul>
+            <div class="teleplay-type">
+              <div class="teleplay-type-inner"><img width="250px" height="250px" src="{maccms:path_tpl}ad/250x250.jpg" alt="广告位放置" /></div>
+            </div>
+          </div>
+          <!--teleplay-content--> 
+        </div>
+        <!--teleplay-right--> 
+        
+      </div>
+      <!--teleplay--> 
+    </div>
+    <!--con2--> 
+    
+    <!--电视剧开始-->
+    <div class="con2 margin-bottom-share">
+      <div class="teleplay">
+        <div class="teleplay-left fl">
+          <div class="splendid-header">
+            <div class="fl"> {maccms:menu type=2} <a href="[menu:link]" title="最新[menu:name]">最新<span>[menu:name]</span></a> {/maccms:menu} </div>
+            <!--splendid-tab--> 
+          </div>
+          <!--splendid-header-->
+          
+          <div class="teleplay-content">
+            <div class="teleplay-content-inner" style="display:block;">
+              <ul class="teleplay-content-list">
+                {maccms:vod type=2 num=8 order=desc by=time}
+                <li>
+                  <div class="showPlay"> <a href="[vod:link]" class="tcl-pic" target="_blank" title="[vod:name]">
+                    {if-A:"{maccms:date}"="[vod:time]"}<i></i>{endif-A}
+                    <div class="tcl-pic1"><img class="scrollLoading" data-url="[vod:pic]" width="200" height="270" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]"></div>
+                    <div class="tcl-pic2"></div>
+                    </a> </div>
+                  <div class="tcl-title">
+                    <div class="movie-headline1"><a href="[vod:link]" target="_blank"  title="[vod:name]">[vod:name]</a></div>
+                    <p>[vod:contenttext len=20]</p>
+                  </div>
+                </li>
+                {/maccms:vod}
+              </ul>
+            </div>
+            <!--teleplay-content-inner--> 
+            
+          </div>
+          <!--teleplay-content--> 
+          
+        </div>
+        <!--teleplay-left-->
+        
+        <div class="teleplay-right fr">
+          <div class="recommend-header">
+            <div class="fl"> {maccms:menu type=2} <span>[menu:name]</span>人气排行</div>
+            <a href="[menu:link]" class="teleplay-more" target="_blank">更多&gt;</a> {/maccms:menu} </div>
+          <div class="teleplay-content">
+            <ul class="teleplay-con-list telclist4 tcl1">
+              {maccms:vod type=2 num=10 order=desc by=hits}
+              {if-A:[vod:num]=1}
+              <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+                <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+                  <p class="top-desc">[vod:contenttext len=24]......</p>
+                  <p class="pview">播放指数:[vod:hits]℃</p>
+                  <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+              </li>
+              {endif-A}
+              
+              {if-A:[vod:num]>1}
+              <li><i>[vod:num]</i><span class="views">[vod:hits]℃</span><a href="[vod:link]" target="_blank">[vod:name]</a></li>
+              {endif-A}
+              {/maccms:vod}
+            </ul>
+            <div class="teleplay-type">
+              <div class="teleplay-type-inner"><img width="250px" height="250px" src="{maccms:path_tpl}ad/250x250.jpg" alt="广告位放置" /></div>
+            </div>
+          </div>
+          <!--teleplay-content--> 
+        </div>
+        <!--teleplay-right--> 
+        
+      </div>
+      <!--teleplay--> 
+    </div>
+    <!--con2--> 
+    
+ 
+    
+    <!--综艺开始-->
+    <div class="con2 margin-bottom-share">
+      <div class="teleplay">
+        <div class="teleplay-left fl">
+          <div class="splendid-header">
+            <div class="fl">{maccms:menu type=3} <a href="[menu:link]" title="最新[menu:name]">最新<span>[menu:name]</span></a> {/maccms:menu}</div>
+          </div>
+          <!--splendid-header-->
+          
+          <div class="teleplay-content">
+            <div class="teleplay-content-inner" style="display:block;">
+              <ul class="teleplay-content-list">
+                {maccms:vod type=3 num=8 order=desc by=time}
+                <li>
+                  <div class="showPlay"> <a href="[vod:link]" class="tcl-pic" target="_blank" title="[vod:name]">
+                    {if-A:"{maccms:date}"="[vod:time]"}<i></i>{endif-A}
+                    <div class="tcl-pic1"><img class="scrollLoading" data-url="[vod:pic]" width="200" height="270" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]"></div>
+                    <div class="tcl-pic2"></div>
+                    </a> </div>
+                  <div class="tcl-title">
+                    <div class="movie-headline1"><a href="[vod:link]" target="_blank"  title="[vod:name]">[vod:name]</a></div>
+                    <p>[vod:contenttext len=20]</p>
+                  </div>
+                </li>
+                {/maccms:vod}
+              </ul>
+            </div>
+            <!--teleplay-content-inner--> 
+          </div>
+          <!--teleplay-content--> 
+          
+        </div>
+        <!--teleplay-left-->
+        
+        <div class="teleplay-right fr">
+          <div class="recommend-header">
+            <div class="fl"> {maccms:menu type=3} <span>[menu:name]</span>人气排行</div>
+            <a href="[menu:link]" class="teleplay-more" target="_blank">更多&gt;</a> {/maccms:menu} </div>
+          <div class="teleplay-content">
+            <ul class="teleplay-con-list telclist4 tcl1">
+              {maccms:vod type=3 num=10 order=desc by=hits}
+              {if-A:[vod:num]=1}
+              <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+                <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+                  <p class="top-desc">[vod:contenttext len=24]......</p>
+                  <p class="pview">播放指数:[vod:hits]℃</p>
+                  <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+              </li>
+              {endif-A}
+              
+              {if-A:[vod:num]>1}
+              <li><i>[vod:num]</i><span class="views">[vod:hits]℃</span><a href="[vod:link]" target="_blank">[vod:name]</a></li>
+              {endif-A}
+              {/maccms:vod}
+            </ul>
+            <div class="teleplay-type">
+              <div class="teleplay-type-inner"><img width="250px" height="250px" src="{maccms:path_tpl}ad/250x250.jpg" alt="广告位放置" /></div>
+            </div>
+          </div>
+          <!--teleplay-content--> 
+        </div>
+        <!--teleplay-right--> 
+        
+      </div>
+      <!--teleplay--> 
+    </div>
+    <!--con2--> 
+    <!--动漫开始-->
+    <div class="con2 margin-bottom-share">
+      <div class="teleplay">
+        <div class="teleplay-left fl">
+          <div class="splendid-header">
+            <div class="fl">{maccms:menu type=4} <a href="[menu:link]" title="最新[menu:name]">最新<span>[menu:name]</span></a> {/maccms:menu}</div>
+          </div>
+          <!--splendid-header-->
+          
+          <div class="teleplay-content">
+            <div class="teleplay-content-inner" style="display:block;">
+              <ul class="teleplay-content-list">
+                {maccms:vod type=4 num=8 order=desc by=time}
+                <li>
+                  <div class="showPlay"> <a href="[vod:link]" class="tcl-pic" target="_blank" title="[vod:name]">
+                    {if-A:"{maccms:date}"="[vod:time]"}<i></i>{endif-A}
+                    <div class="tcl-pic1"><img class="scrollLoading" data-url="[vod:pic]" width="200" height="270" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]"></div>
+                    <div class="tcl-pic2"></div>
+                    </a> </div>
+                  <div class="tcl-title">
+                    <div class="movie-headline1"><a href="[vod:link]" target="_blank"  title="[vod:name]">[vod:name]</a></div>
+                    <p>[vod:contenttext len=20]</p>
+                  </div>
+                </li>
+                {/maccms:vod}
+              </ul>
+            </div>
+            <!--teleplay-content-inner--> 
+          </div>
+          <!--teleplay-content--> 
+          
+        </div>
+        <!--teleplay-left-->
+        
+        <div class="teleplay-right fr">
+          <div class="recommend-header">
+            <div class="fl"> {maccms:menu type=4} <span>[menu:name]</span>人气排行</div>
+            <a href="[menu:link]" class="teleplay-more" target="_blank">更多&gt;</a> {/maccms:menu} </div>
+          <div class="teleplay-content">
+            <ul class="teleplay-con-list telclist4 tcl1">
+              {maccms:vod type=4 num=10 order=desc by=hits}
+              {if-A:[vod:num]=1}
+              <li class="list-no1"><span></span> <i>[vod:num]</i> <a href="[vod:link]" class="list-no1-pic" target="_blank"><img class="scrollLoading" data-url="[vod:pic]" width="90" height="120" src="{maccms:path_tpl}images/pic.png" alt=""></a>
+                <div class="list-no1-con"> <a href="[vod:link]" class="no1-tv-title" target="_blank">[vod:name]</a>
+                  <p class="top-desc">[vod:contenttext len=24]......</p>
+                  <p class="pview">播放指数:[vod:hits]℃</p>
+                  <a href="[vod:link]" target="_blank" class="top-btn">查看详情</a> </div>
+              </li>
+              {endif-A}
+              
+              {if-A:[vod:num]>1}
+              <li><i>[vod:num]</i><span class="views">[vod:hits]℃</span><a href="[vod:link]" target="_blank">[vod:name]</a></li>
+              {endif-A}
+              {/maccms:vod}
+            </ul>
+            <div class="teleplay-type">
+              <div class="teleplay-type-inner"><img width="250px" height="250px" src="{maccms:path_tpl}ad/250x250.jpg" alt="广告位放置" /></div>
+            </div>
+          </div>
+          <!--teleplay-content--> 
+        </div>
+        <!--teleplay-right--> 
+        
+      </div>
+      <!--teleplay--> 
+    </div>
+    <!--con2--> 
+    <!--微电影开始--> 
+    <!--con2--> 
+  </div>
+  <!--container-inner--> 
+</div>
+<!--container-->
+
+<div class="zt-footer" id="zt-footer">
+  <div class=zt-footerx-inner id=zt-footerx-inner> 友情链接:
+  <a href="http://xiaog.cc" target="_blank" title="小俊工作室">小俊工作室</a> 
+    <a href="http://mall.xiaog.cc" target="_blank" title="小俊模板商城">小俊模板商城</a> 
+
+    {maccms:link type=font} <a href="[link:link]" target="_blank" title="[link:name]">[link:name]</a> {/maccms:link} </div>
+  {maccms:foot} </div>
+</div>
+<!--movie-wrap-->
+
+</body>
+</html>

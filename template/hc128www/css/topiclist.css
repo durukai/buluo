@@ -1,0 +1,38 @@
+.container{width:1240px;margin:0 auto; height:auto;}
+.container .l{float:left; width:930px; margin-right:5px;}
+.container .l .alist{float:left; width:49.9%; margin-bottom:20px;}
+.container .l .alist .pic{float:left;overflow:hidden; width:110px; height:140px;text-align:center;  padding:10px;}
+.container .l .alist .pic img{max-height:140px; max-width:110px; border:0 none;  line-height:140px;}
+.container .l .alist ul{float:left;width:330px;}
+.container .l .alist li{ border-bottom:1px dashed #CCC; height:28px; line-height:28px; overflow:hidden;text-overflow:ellipsis}
+.container .l .alist li.title{font-size: 20px;}
+.container .l .alist li span{ float:left; width:49.9%;}
+.container .r{ float:right; width:300px;}
+.container .r h2{ clear:both;height: 32px;line-height: 32px;border: 1px solid #E8E8E8;text-align: left;padding: 0 14px;font-size: 14px;color: #2D2D2D;font-weight: bold;white-space: nowrap;}
+.container .r ul{width: 100%;float: left;}
+.container .r ul li{float:left;width: 100%;*height: 160px;text-align:center; overflow:hidden;}
+.container .r ul li a img{width: 100%; height:120px;line-height:120px;}
+.container .r ul li h6{margin-top:-30px;width: 80%;height:30px;position: relative;text-overflow: ellipsis;text-align: center;overflow: hidden;font-weight: normal;white-space: nowrap;margin-right: auto;margin-left: auto;}
+.container .r ul li h6 a{font-size: 18px;color: #FFFFFF;background: transparent url("../images/bg_banner_mask.png") repeat-x scroll 0px bottom;}
+.container .r ol{width: 100%;float: left;}
+.container .r ol li{float: left;width: 100%;line-height: 31px	9;overflow: hidden;}
+.container .r ol li em{ float:left;width: 20px;line-height: 58px;}
+.container .r ol li h5{float:left;width: 230px;	line-height: 28px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-weight: normal;text-align: left;margin-left: 5px;}
+.container .r ol li strong{float:right;font-weight: normal;color: #FF9805;line-height: 28px;}
+.num{display: inline-block;zoom: 1;width: 20px;height: 20px;line-height: 100px;text-align: center;color: white;background-color: #AAA;background-image: url(../images/number.svg);background-repeat: no-repeat;overflow: hidden;}
+.num_1{background-position:7px -55px;background-color:#ff7800;margin-top:7px;}
+.num_2{background-position:-21px -55px;background-color:#ff7800;margin-top:7px;}
+.num_3{background-position:-48px -55px;background-color:#ff7800;margin-top:7px;}
+.num_4{background-position:-74px -55px;margin-top:7px;}
+.num_5{background-position:-102px -55px;margin-top:7px;}
+.num_6{background-position:-128px -55px;margin-top:7px;}
+.num_7{background-position:-156px -55px;margin-top:7px;}
+.num_8{background-position:-182px -55px;margin-top:7px;}
+.num_9{background-position:-210px -55px;margin-top:7px;}
+.num_10{background-position:-236px -55px;margin-top:7px;}
+.num_11{background-position:-265px -55px;margin-top:7px;}
+.num_12{background-position:-292px -55px;margin-top:7px;}
+.num_13{background-position:-320px -55px;margin-top:7px;}
+.num_14{background-position:-346px -55px;margin-top:7px;}
+.num_15{background-position:-374px -55px;margin-top:7px;}
+.num_16,.num_17,.num_18,.num_19,.num_20,.num_21{background-position:10px 0;margin-top:7px;}

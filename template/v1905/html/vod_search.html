@@ -1,0 +1,110 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{page:key}-{maccms:name}</title>
+<meta name="keywords" content="{page:key},{maccms:name}"/>
+<meta name="description" content="{page:key},{maccms:name}"/>
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/index-css.css">
+ 
+<div class="main-wrap clearfix" data-channel="3">
+ 
+<div class="search-index">
+<div class="mod-hd clearfix">
+<ul class="search-nav-mark">
+</ul>
+</div>
+<div class="mod-bd clearfix">
+<div class="item">
+<dl class="clearfix">
+<dt>类型</dt>
+<dd><a href="{page:linktype}" class="first {if-A:"{page:typepid}"="0"}cur{endif-A}" >全部</a>
+ {maccms:menu type=auto}
+          		<a href="[menu:link]" {if-A:"{page:typeid}"="[menu:id]"} class="cur" {endif-A}>[menu:name]</a> 
+{/maccms:menu}  
+</dd>
+        </dl>
+        <a href="javascript:void(0);" class="more">更多</a>
+      </div>
+ <div class="item">
+        <dl class="clearfix">
+          <dt>剧情</dt>
+          	<dd><a href="{page:linkclass}"  class="first {if-A:"{page:classid}"=""}cur{endif-A}" >全部</a>
+          {maccms:class type=auto}
+          		<a href="[class:link]" {if-A:"{page:classid}"="[class:id]"} class="cur" {endif-A}>[class:name]</a> 
+          {/maccms:class}
+</dd>
+        </dl>
+        <a href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="item">
+        <dl class="clearfix">
+          <dt>地区</dt>
+          <dd><a href="{page:linkarea}" class="first {if-A:"{page:area}"=""}cur{endif-A}" >全部</a>
+            {maccms:area type=auto order=asc}
+          	<a href="[area:link]" {if-A:"{page:area}"="[area:name]"} class="cur" {endif-A}>[area:name]</a> 
+            {/maccms:area}
+          </dd>
+        </dl>
+        <a href="javascript:void(0);" class="more">更多</a>
+      </div>
+     <div class="item">
+        <dl class="clearfix">
+          <dt>时间</dt>
+          	<dd><a href="{page:linkyear}" class="first {if-A:"{page:year}"=""}cur{endif-A}" >全部</a>
+            {maccms:year type=auto start=2001 end=2015 order=desc}
+          		<a href="[year:link]" {if-A:"{page:year}"="[year:name]"} class="cur" {endif-A}>[year:name]</a> 
+            {/maccms:year}
+</dd>
+        </dl>
+        <a href="javascript:void(0);" class="more">更多</a>
+      </div>
+    </div>
+  </div>
+  <!-- 检索部分 END -->
+  
+  <!-- 检索开始 -->
+  <div class="relax-theater search-film-box clearfix">
+  <div class=" search-film">
+        <div class="mod-hd">
+          <div class="new"><a href="{page:linkbytime}"><samp {if-A:"{page:by}"="time"} class="now-n" {endif-A}>最新↓</samp></a><a href="{page:linkbyhits}"><samp {if-A:"{page:by}"="hits"} class="now-n" {endif-A}}>最热↓</samp></a></div><div class="title">搜索<strong style="color:#e12160;">《{page:key}》</strong>共找到<span class="num">{page:datacount}</span>个符合条件的视频</div>
+        </div>
+           <div class="relax-theater-pic width-980  clearfix">
+           <ul>
+{maccms:vod pagesize=24 order=desc by=time}
+            <li >
+                <div class="relax-pic"><a target="_blank" href="[vod:link]"><img src="[vod:pic]" class="pic" alt="[vod:name]"></a>
+                  <div class="relax-mask"></div>
+                  <div class="relax-detail center"><span class="score">[vod:score]分</span></div>
+                </div>
+                <div class="film-bottom-title">
+                  <div><a target="_blank" title="[vod:name]" href="[vod:link]">[vod:name]</a></div>
+                  <p title="[vod:name]">[vod:contenttext len=20]</p>
+                </div>
+                <div class="line"></div>
+                <div class="hover-line"></div>
+              </li>{/maccms:vod}      </ul>  
+          </div>
+     </div>
+     <!-- 分页部分 START --> 
+     <div id="new_page" class="blue14fontbold" style="padding-top:20px;">{maccms:pages len=6}</div>
+     <!-- 分页部分 END -->
+ 
+  </div>
+  <!-- 检索结束 -->
+
+</div>
+<script src="http://js.static.m1905.cn/core/jquery-edge.min.js"></script> 
+<script src="http://js.static.m1905.cn/core/seed.js"></script> 
+<script src="http://js.static.m1905.cn/core/app.lite.min.js"></script> 
+<script src="http://js.static.m1905.cn/core/ui.min.js"></script> 
+<script type="text/javascript" src="{maccms:path_tpl}js/fan.js"></script> 
+<script src="http://static.m1905.cn/hao/js/index.js" ></script>
+{maccms:foot}
+</body>
+</html>

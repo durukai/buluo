@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>看最新热门综艺排行榜,看卫视热播电视剧,看个卫视综艺热门,最新上映电影在线观_{maccms:name}</title>
+<meta name="keywords" content="看最新热门综艺排行榜,看卫视热播电视剧,看个卫视综艺热门,最新上映电影在线观看" />
+<meta name="description" content="{maccms:description}" />
+{maccms:load include.html}
+<link href="{maccms:path_tpl}css/label_all.css" rel="stylesheet" type="text/css" />
+<body>
+{maccms:load head.html}
+	<div class="w" style="padding-top: 65px;">
+	   <div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd>首页  »  排行榜</dd>
+			</dl>
+		</div>
+	</div>
+{maccms:matrix table=vod type=1,2,3,4}
+		<div class="w-content">
+			<ul>
+				<dd>
+					<span class="title">[matrix:name]</span>
+					<h5>看总评分榜</h5></dd>
+{maccms:vod num=10 type=[matrix:id] start=1 order=desc by=hits}
+				<li>
+					<span class="num">[vod:num].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:name]</a> / <a href="[vod:typeexpandlink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:score]</span>
+				</li>
+{/maccms:vod}
+			</ul>
+			<ul>
+				<dd>
+					<h5>看日点播排行榜</h5></dd>
+{maccms:vod num=10 type=[matrix:id] start=1 order=desc by=dayhits}
+				<li>
+					<span class="num">[vod:num].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:name]</a> / <a href="[vod:typeexpandlink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:score]</span>
+				</li>
+{/maccms:vod}
+			</ul>
+			<ul>
+				<dd>
+					<h5>看周点播排行榜</h5></dd>
+{maccms:vod num=10 type=[matrix:id] start=1 order=desc by=weekhits}
+				<li>
+					<span class="num">[vod:num].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:name]</a> / <a href="[vod:typeexpandlink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:score]</span>
+				</li>
+{/maccms:vod}
+			</ul>
+			<ul style="border-right:0 none;">
+				<dd>
+					<h5>看月点播排行榜</h5></dd>
+{maccms:vod num=10 type=[matrix:id] start=1 order=desc by=monthhits}
+				<li>
+					<span class="num">[vod:num].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:name]</a> / <a href="[vod:typeexpandlink]" target="_blank">[vod:typename]</a></span>
+					<span class="score">[vod:score]</span>
+				</li>
+{/maccms:vod}
+			</ul>
+		</div>
+{/maccms:matrix}
+	</div>
+﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+		    {maccms:foot}
+   </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+    <title>好看的{page:name}-最新{page:name}-经典{page:name}--{maccms:name}</title>
+    <meta name="keywords" content="{page:key}" />
+    <meta name="description" content="{page:des}" />
+{maccms:include}
+<link href="{maccms:path_tpl}css/type.css" rel="stylesheet" />
+<link href="{maccms:path_tpl}css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{maccms:head}
+{maccms:load focus_type.html}
+    <div class="mod_filter blyj bryj">
+        <div class="filter_item">
+            <h3 class="filter_title">按排行看</h3>
+            <ul class="filter_list">
+                <li><a href="index.php?m=vod-list-id-{maccms:curvodtypeid}-pg-1-order-desc-by-dayhits" target="_blank" title="今日最热">今日最热</a>
+                </li>
+                <li><a href="index.php?m=vod-list-id-{maccms:curvodtypeid}-pg-1-order-desc-by-weekhits" target="_blank" title="一周最热">一周最热</a>
+                </li>
+                <li><a href="index.php?m=vod-list-id-{maccms:curvodtypeid}-pg-1-order-desc-by-hits" target="_blank" title="月度最热">月度最热</a>
+                </li>
+                <li><a href="index.php?m=vod-list-id-{maccms:curvodtypeid}-pg-1-order-desc-by-time" target="_blank" title="今日更新">今日更新</a>
+                </li>
+                <li><a href="index.php?m=vod-list-id-{maccms:curvodtypeid}-pg-1-order-desc-by-similar" target="_blank" title="最新上映">最新上映</a>
+                </li>
+                <li><a href="index.php?m=vod-list-id-{maccms:curvodtypeid}-pg-1-order-desc-by-score" target="_blank" title="用户好评">用户好评</a>
+                </li>
+            </ul>
+        </div>
+        <div class="filter_item">
+            <h3 class="filter_title">按类型看</h3>
+            <ul class="filter_list" style="width: 265px;">
+			{maccms:matrix table=vod type=child parent={maccms:curvodtypeid}}
+                <li><a href="[matrix:link]" title="[matrix:name]">[matrix:name]</a>
+                </li>
+				{/maccms:matrix}
+                </ul>
+        </div>        
+        <div class="filter_item">
+            <h3 class="filter_title">按年代看</h3>
+            <ul class="filter_list">
+			{maccms:year order=desc type=auto start=2008 end=2017}
+                <li><a href="[year:link]" title="[year:name]">[year:name]</a>
+                </li>
+				{/maccms:year}
+                </ul>
+        </div>
+        <div class="filter_item">
+            <h3 class="filter_title">按剧情看</h3>
+            <ul class="filter_list" style="width: 484px;">
+			{maccms:class order=asc type=auto}
+                <li><a href="[class:link]" title="[class:name]">[class:name]</a>
+                </li>
+				{/maccms:class}
+                </ul>
+        </div>
+    </div>
+	{maccms:matrix type=auto table=vod}
+    <div class="wrapper">
+        <div class="l mt10">
+            <div class="mod_title">
+                <h2 class="title"><span class="text_sprite text_hot">看[matrix:name]</span></h2>
+                <div class="title_sub">
+				{maccms:vod num=5 type=[matrix:id] order=desc by=time}
+				<a href="[vod:link]">[vod:name]</a>
+				{/maccms:vod}
+				<a href="[matrix:link]">更多...</a>
+                </div>
+            </div>
+            <div class="mod_td">
+			{maccms:vod num=16 type=[matrix:id] start=1 order=desc by=time}
+			{if-A:[vod:num] < 5 }
+			<a href="[vod:link]" target="_blank" class="fisdgure">
+                    <img class="lazy" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" style="visibility: visible; " />
+                    <div class="figure_sign"><i class="num num_[vod:num]">[vod:num]</i>
+                    </div>
+                    <div class="figure_caption ftno"><strong>[vod:name]</strong>
+                    </div>
+                    </a>
+					{else-A}
+                    <ul>
+                        <li style="width:218px; margin-right:15px">
+                            <a href="[vod:link]" target="_blank" class="top_title" title="[vod:name]">	<i class="num num_[vod:num]">[vod:num]</i><span class="title_inner f14">[vod:name]</span>
+                            </a>
+                        </li>
+                    </ul>
+					{endif-A}
+					{/maccms:vod}
+                    </div>
+        </div>
+        <div class="mod_box mt10">
+            <div class="mod_hd">
+                <div class="mod_title">
+                    <h2 class="title">
+                            	<span class="text_medium">看[matrix:name]推荐</span>
+                                <i class="ico_text_top"></i>
+                            </h2>
+                </div>
+            </div>
+            <div class="mod_hd">
+			{maccms:vod num=15 type=[matrix:id] start=1 order=desc by=time}
+			{if-A:[vod:num] = 1 }
+                <a href="[vod:link]" target="_blank" class="figure">
+                    <img class="lazy" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" style="visibility: visible; " />
+                    <div class="figure_sign"><i class="num num_[vod:num]">[vod:num]</i>
+                    </div>
+                    <div class="figure_caption"><strong>[vod:name]</strong>
+                    </div>
+                </a>
+                <ul>
+				{else-A}
+                    <li>
+                        <a href="[vod:link]" target="_blank" class="top_title" title="[vod:name]">	<i class="num num_[vod:num]">[vod:num]</i><span class="title_inner">[vod:name]</span>
+                        </a>
+                    </li>
+					{endif-A}
+					{/maccms:vod}
+                    </ul>
+            </div>
+        </div>
+    </div>
+	{/maccms:matrix}
+	﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+    {maccms:foot}
+   </body>
+</html>

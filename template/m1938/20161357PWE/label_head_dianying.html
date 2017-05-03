@@ -1,0 +1,29 @@
+﻿   <div class="wrap vv">
+    <div class="navbottom">
+      <div class="l">
+	   请：<a href="javascript:void(0);" onClick="window.external.AddFavorite(document.location.href,document.title)"><font size="2" color="#fa9701">收藏本站</font></a>方便下次浏览！
+
+
+	  <!--
+{?maccms:menu order=asc by=sort table=vod type=1,5,6,7,8,9,10,11,12}
+		<a href="[menu:link]" {if-A:[menu:id]={maccms:curvodtypeid}} class="this"{endif-A} title="[menu:name]" target="_self"><SPAN>[menu:name]</SPAN></a>
+{?/maccms:menu}
+-->
+      </div>
+      <div class="r">
+
+      <a class="bar_login" id="login" href="{maccms:path}index.php?m=user-index.html" >用户中心</a> |
+      <a class="bar_history" id="history" href="javascript:void(0);" >观看记录</a>
+	  	  	  	  <form action="{maccms:link_search_vod}" method="post" style="margin:0px;display: inline">
+        <input type="text" id="wd" name="wd" class="sin" value="" style="border: 2px solid #5A5959;background-color:"/>
+        <input type="submit" id="soso" name="submit" class="submit" value="搜 索" style="width:50px;height:22px;background-color:"/>
+      </form>
+      </div>
+    </div>
+
+
+  </div>
+<div class="ads960">
+<script src="{maccms:path_ads}9601.js"></script>
+
+</div>

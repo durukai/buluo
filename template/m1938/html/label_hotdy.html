@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2014影视点播排行榜 精彩连放-4567高清视界</title>
+<meta name="keywords" content="2014影视点播排行榜 精彩连放-4567高清视界" />
+<meta name="description" content="2014影视点播排行榜 精彩连放-4567高清视界" />
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+
+<div id="main">
+    <div class="toplist">
+    	<div class="side">
+        	<div class="title">分类检索</div>
+            <ul>
+				<li><a href="{maccms:getlink hot.html}">排行榜首页</a></li>
+			
+                <li class="curr"><a href="{maccms:getlink hotdy.html}">电影</a></li>
+			
+                <li><a href="{maccms:getlink hottv.html}">电视</a></li>
+			
+                <li><a href="{maccms:getlink hotdm.html}">动画片</a></li>
+			
+                <li><a href="{maccms:getlink hotzy.html}">综艺片</a></li>
+			
+            </ul><i></i>
+        </div>
+        <div class="hotcon">
+			<div class="hotbox hotlist">
+            	<div class="title">电影</div>
+                <p class="bti"><s>排名</s><em>名称</em><i>评分</i></p>
+                <ul>
+{maccms:vod num=30 type=1 by=weekhits order=desc}
+<li><span>[vod:score]</span><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a></li>{/maccms:vod}	
+                </ul>
+            </div>
+    </div>
+    </div>
+</div>
+
+<!--/main-->
+
+<!--版权信息-->
+{maccms:foot}
+<div class="back-to-top" id="back-to-top"><a href="javascript:void(0);" target="_self">Back to Top</a></div>
+<script type="text/javascript" src="{maccms:path_tpl}images/IE6Top.js"></script>
+</body>
+</html>

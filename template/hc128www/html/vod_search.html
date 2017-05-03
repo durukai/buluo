@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>看个关于{page:key}的视频,所有{page:key}的视频,{page:key}在线观看_{maccms:name}</title>
+<meta name="keywords" content="看个关于{page:key}的视频,所有{page:key}的视频,{page:key}在线观看" />
+<meta name="description" content="搜索{page:key}的结果,所有有关{page:key}的搜索结果,{page:key}排行榜,{page:key}在线观看大全" />
+{maccms:load include.html}
+<link href="{maccms:path_tpl}css/search.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+{maccms:load head.html}
+<script type="text/javascript" src="{maccms:path_tpl}js/gaoliang.js" language="javascript"></script>
+<script language="javascript">
+$(document).ready(function(){
+      MarkHighLight(document.body, "{page:key}" , "Orange");
+});
+</script>
+<div class="mod_search_filter" style="padding-top: 85px;">
+</div>
+<div class="mod_list">
+	<div class="mod_key">搜索关键字<strong style="color:#e12160;">{page:key}</strong>共找到视频有<strong style="color:red" id="counts">{page:datacount}</strong>个</div>
+    <ul>
+		<div class="top_big mb10">
+{maccms:vod pagesize=3 order=desc by=time}
+		<li class="fl">
+		<div class="img fl mb5"><a href="[vod:link]" title="[vod:name]在线观看">	<img class="lazy yj10"onerror="this.src='/images/blank.png'" src="[vod:pic]"  alt="[vod:name]" title="[vod:name]" border="0"></a></div>
+			<dl class="fl ml15">
+			<h6 class="fl"> <a href="[vod:link]" class="c_txt5">[vod:name]</a><em>([vod:remarks])</em> <en style=" padding-left: 10px;font: 700 24px/30px Georgia; color: #FF6A00; margin-right: 5px; ">[vod:score]</en> </h6>
+			<dd><span class="c9">分类：</span>[vod:typename]</dd>
+			<dd><span class="c9">导演：</span>[vod:directed]</dd>
+			<dd><span class="c9">日期：</span>[vod:year]</dd>
+			<dd><span class="c9">主演：</span>[vod:starringlink]</dd>
+			<dd><span class="c9">地区：</span>[vod:area]</dd>
+			<dd><span class="c9">更新：</span>[vod:time style=y-m-d]</dd>
+			<dd><span class="c9">语言：</span>[vod:area]</dd>
+			<dd><span class="c9">TAG：</span>[vod:taglink]</dd>
+			<dd><span class="c9">播放：</span>[vod:hits]</dd>
+			<dt class="fl"><span class="c9">简介：[vod:content len=300]</span></dt>
+			<div class="mod_play"> <a href=" [vod:playlink]" class="btn_play_rem" title="播放全集"><span>播放全集</span></a> <a href="javascript:MAC.Fav(MAC.Url,MAC.Title)" class="btn_follow" title="关注"><i></i><span>关注</span></a> </div>
+			</dl>
+		</li>
+{/maccms:vod}
+		</div>
+{maccms:vod pagesize=30 order=desc by=time start=4}
+		<li>
+			<a title="[vod:name]" target="_blank" class="mod_poster_140" href="[vod:link]">
+				<img class="lazy yj" onerror="this.src='/images/blank.png'" src="[vod:pic]" alt="[vod:name]" />
+				<span class="figure_mask">[vod:remarks]</span>
+			</a>
+			<h6> <a title="[vod:name]" target="_blank" href="[vod:link]" class="ft">[vod:name]</a> </h6>
+			<p>分类：[vod:typename]</p>
+			<p>主演：[vod:starringlink]</p>
+		</li>
+		{/maccms:vod}
+		
+	</ul>
+</div>
+<div class="page" id="pager">{maccms:pages len=10}</div>
+<div class="footer" id="footer">
+    <div class="footer_inner">
+		    {maccms:foot}
+   </body>
+</html>

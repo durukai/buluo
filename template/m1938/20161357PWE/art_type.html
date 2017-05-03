@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{page:name}_{maccms:name}</title>
+<meta name="keywords" content="{page:name}第{page:now}页{page:key}" />
+<meta name="description" content="{page:name}第{page:now}页{page:des}" />
+{maccms:load inc.html} 
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+  <div class="h2 mb clearfix">{page:textlink}</div>
+    <div class="n-list mb clearfix">
+			<ul>
+			  {maccms:art pagesize=10}
+			   <li class="clearfix">
+			   	<div class="img">
+			   	<a href="[art:link]"><img src="[art:pic]" alt="[art:name]"></a>
+			   	</div>
+			    <div class="text">
+			    <p class="tit"><a href="[art:link]">[art:name]</a></p>
+			    <p class="des">[art:contenttext len=400]...</p>
+			    <p class="time">[art:time]</p>
+			    </div>
+			  </li>
+			  {/maccms:art}
+			</ul>
+	</div>
+	<div class="page mb clearfix">
+{maccms:pages len=6}</div>
+</div>
+{maccms:foot}
+</body>
+</html>

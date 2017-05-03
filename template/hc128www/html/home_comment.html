@@ -1,0 +1,43 @@
+﻿<section class="comment sec" id="cmt_anchor" style="border: 0px">
+    <div class="cmt_msg" id="cmt_msg">
+        <form class="cmt_form clearfix" action="/index.php?m=comment-save" method="post">
+            <input type="hidden" id="c_rid" name="c_rid" value="">
+            <div class="input_wrap fl clearfix">
+                <textarea id="c_content" name="c_content" class="fl" onKeyup="MAC.Remaining(this,200,'c_remaining')" onfocus="if(this.value=='请在这里发表您的个人看法，最多200个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多200个字。';};">请在这里发表您的个人看法，最多200个字。</textarea>
+                <input class="cmt_post" type="button" value="发布" onclick="MAC.Comment.Post();">
+            </div>
+            <p class="smt_wrap fl clearfix">
+                <span class="fr clearfix">
+				<span id="c_login" style="display: none;">
+					<span></span>
+                </span>昵称:
+                <input class="cmt_text" id="c_name" name="c_name" type="text" value="游客">	
+				 {if-A:{maccms:commentverify}==1}验证码:
+                <input type="text" id="c_code" name="c_code" class="cmt_text" style="width: 45px;" >&nbsp;&nbsp;
+                <img id="c_code_img" class="cmt_verify yj5" src="/inc/common/code.php?a=comment&s=" title="看不清楚? 换一张！" onClick="src='/inc/common/code.php?a=comment&s='+Math.random()" />{endif-A}
+                </span>
+            </p>
+        </form>
+        <div class="cmt_wrap">
+		{if-A:{page:datacount}==0}
+            <center>
+                <h3> 暂无评论，快来抢沙发吧！</h3>
+				</center>
+				{else-A}
+		{maccms:comment pagesize=5 vid=current order=desc by=time}
+        <div class="cmt_item clearfix">
+			<a class="face_wrap fl" href="javascript:;">●</a>
+			<div class="item_con fl">
+				<p class="top">
+					<span class="fr" style="padding-right: 11px;">[comment:time]</span>
+					<a class="name" href="javascript:;">[comment:name]</a>
+				</p>
+				<p class="con" style="color:[comment:color]">[comment:content]</p>
+			</div>
+		</div>
+		{/maccms:comment}
+		<div class="cmt_item_page">{maccms:pages len=1}</div>
+		{endif-A}
+	 	</div>
+    </div>
+</section>

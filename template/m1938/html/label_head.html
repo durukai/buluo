@@ -1,0 +1,34 @@
+<div class="wrapper">
+<div class="mask" id="mask_box"></div>
+<header class="header clearfix">
+  <p class="headLeft"><a href="{maccms:url}" class="aLogo"></a></p>
+  <p class="headRight"> <a href="javascript:void(0);" onclick="_dct_('dh_m_sousuo');" class="aSearch"><span>搜索</span></a> <a href="{maccms:getlink dy.html}" onclick="_dct_('dh_m_phb');" class="aRank cur"><span>排行榜</span></a> <a href="
+{maccms:link_gbook}" onclick="_dct_('dh_m_login');" target="_self" class="aUnLogin"><span id="unameHeader">留言</span></a> </p>
+</header>
+<section id="search_box" class="searchMenu" style="display:none">
+  <form action="{maccms:link_search_vod}" method="post" id="search_form" onsubmit="return searchM.submitSearch();">
+    <div class="searchFormCon globalPadding">
+      <p class="pSearchForm">
+        <input type="text" class="searchTxt searchTxtBlur" id="wd" name="wd" autocomplete="off"  value="请输入影片片名或演员名称。" onfocus="if(this.value=='请输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请输入影片片名或演员名称。';};" />
+        <input type="submit" id="searchbutton" class="searchBtn" value="" />
+        <i class="clearSearchBtn" style="display:none;"><em></em></i> </p>
+    </div>
+    <ul class="ulHotList globalPadding" id="search_history_list" style="display:none;">
+    </ul>
+  </form>
+  <p class="pHotLinks globalPadding" id="hot_word_box"></p>
+</section>
+<nav class="subNav globalPadding index_menu_top" id="nav_menu" style="display:none;">
+  <div class="con clearfix">
+    <p> <a{if-A:{maccms:siteaid}=10} class="cur"{endif-A} href="/" onclick="_dct_('dh_m_index');" target="_self">首页</a> {maccms:menu type=parent order=asc table=vod}<a {if-A:{maccms:curvodtypeid}=[menu:id]}class="cur" {endif-A}href="[menu:link]" {if-A:[menu:id]=1}onclick="_dct_('dh_m_dy');"{endif-A}{if-A:[menu:id]=2}onclick="_dct_('dh_m_dsj');"{endif-A}{if-A:[menu:id]=4}onclick="_dct_('dh_m_dm');" {endif-A}{if-A:[menu:id]=3}onclick="_dct_('dh_m_zy');"{endif-A}{if-A:[menu:id]=5}onclick="_dct_('dh_m_zb');"{endif-A}{if-A:[menu:id]=6}onclick="_dct_('dh_m_zt');"{endif-A} target="_self" >[menu:name]</a> {/maccms:menu} </p>
+  </div>
+</nav>
+
+<ul id="index_menu_box" class="navMenu clearfix" style="display:none;">
+  <li><a{if-A:{maccms:siteaid}=10} class="cur"{endif-A} href="/" onclick="_dct_('dh_m_index2');" target="_self"><img src="{maccms:path_tpl}images/rankIcon.png"><span>首页</span></a></li>
+  {maccms:menu type=parent order=asc table=vod}<a {if-A:{maccms:curvodtypeid}=[menu:id]}class="cur" {endif-A}href="[menu:link]" {if-A:[menu:id]=1}onclick="_dct_('dh_m_dy2');"{endif-A}{if-A:[menu:id]=2}onclick="_dct_('dh_m_dsj2');"{endif-A}{if-A:[menu:id]=4}onclick="_dct_('dh_m_dm2');" {endif-A}{if-A:[menu:id]=3}onclick="_dct_('dh_m_zy2');"{endif-A}{if-A:[menu:id]=5}onclick="_dct_('dh_m_zb2');"{endif-A}{if-A:[menu:id]=6}onclick="_dct_('dh_m_zt2');"{endif-A} target="_self" ><img src="{maccms:path_tpl}images/rankIcon.png"><span>[menu:name]</span></a>
+  </li>
+  {/maccms:menu}
+  <li><a href="{maccms:getlink dy.html}" onclick="_dct_('dh_m_phb2');"><img src="{maccms:path_tpl}images/rankIcon.png"><span>排行榜</span></a></li>
+  <li></li>
+</ul>

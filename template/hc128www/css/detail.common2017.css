@@ -1,0 +1,10 @@
+.styleBtn { float:left; vertical-align:middle}
+a:hover.styleBtn { text-decoration:none; cursor:pointer;}
+.styleBtn em { background:url(../images/detailRepeatMap.png) 0 0 repeat-x; float:left;}
+.styleBtn i { width:10px; background:url(../images/detailRepeatMap.png) 0 0 no-repeat; float:left}
+
+.styleBtnB { height:24px; line-height:24px;}
+.styleBtnB i { height:24px}
+.styleBtnB em { background-position:0 -124px; height: 23px;}
+.styleBtnB .iLeft { background-position:0 -99px}
+.styleBtnB .iRight { background-position:0 -149px}

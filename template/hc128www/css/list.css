@@ -1,0 +1,38 @@
+.mod_index_l_top{top:0px; width:300px;position:fixed;z-index:100000;_position:absolute;_top:expression(eval(document.documentElement.scrollTop));}
+.container{width: 1240px;margin: 0 auto;}
+.container .nvc{_display: inline;float: left;overflow: hidden;margin: 0 10px; width:1220px;}
+.container .nvc dl{position: relative;overflow: hidden;padding: 4px 0 9px 120px;zoom: 1;height: 26px;background: rgb(246, 247, 246) none repeat scroll 0% 0%;}
+.container .nvc dl dt{position: absolute;top: 0;left: 0;width: 120px;color: #484848;}
+.container .nvc dl dt span{display: block;width: 99px;height: 39px;_height: 40px;line-height: 39px;line-height: 41px 9;_line-height: 39px;overflow: hidden;text-align: center;font-weight: bold;font-size: 14px;border-right: #DEDEDE solid 1px;background: #F6F7F6;color: #484848;}
+.container .nvc dt .arrow{position: absolute;top: 50%;right: 20px;margin: -8px 0 0 0;font-size: 1em;font-style: normal;font-weight: 500;}
+.container .nvc dt .arrow .a_outer{position: absolute;z-index: 3;width: 0;height: 0;line-height: 0;border-top: 9px dashed transparent;border-bottom: 9px dashed transparent;border-right: none;border-left-width: 9px;border-left-style: solid;font-size: 0;color: #DEDEDE;font-style: normal;font-weight: 500;}
+.container .nvc dt .arrow .a_inner{left: -1px;z-index: 4;color: #F6F7F6;position: absolute;width: 0;height: 0;line-height: 0;border-top: 9px dashed transparent;border-bottom: 9px dashed transparent;border-right: none;border-left-width: 9px;border-left-style: solid;font-size: 0;font-style: normal;font-weight: 500;}
+.container .nvc dl dd{float: left;height: 21px;line-height: 21px;line-height: 24px 9;_line-height: 24px;overflow: hidden;margin: 5px 3px 0 0;padding: 0 6px;white-space: nowrap;}
+.container .l{position: relative;overflow: hidden;width: 300px;margin: 0 10px; float:left;}
+.mod_indexs{margin: 0 0 20px 0;margin-left: 0;zoom: 1;border: solid 1px #DEDEDE;_height:530px;min-height:580px;background: #FFF none repeat scroll 0% 0%;}
+.mod_indexs .mod_cont{padding:0;width:100%;height: auto;}
+.mod_indexs .mod_cont .h3{font-size: 14px;font-weight: normal;color: #787878;margin-top: 10px;border-bottom-width: 2px;border-bottom-style: inset;border-bottom-color: #999999;text-shadow: 1px 1px 0px #CCC;color: #000;}
+.mod_indexs .mod_cont ul{font-size: 0;height: auto;width: 100%;	background-color: #F5F5F5;overflow: hidden;}
+.mod_indexs .mod_cont li{float: left;display: inline-block;zoom: 1;width: 58px;height: 24px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size: 12px;}
+.mod_indexs .mod_cont li a{display: inline-block;zoom: 1;padding: 2px 6px;}
+.mod_indexs .mod_cont li a:hover{text-decoration:none;color:#0078b3;border: 1px solid #FF7800;border-radius: 5px;}
+.mod_indexs .mod_cont li.current a{font-weight: bold;cursor: default;color: #FF9805;zoom: 1;border: 1px solid #CCC;border-radius: 5px;}
+.container .l .mod_gg{margin: 0 0 20px 0;margin-left: 0;position: relative;zoom: 1;border: solid 1px #DEDEDE;_height:320px;min-height:320px }
+.container .r {_display: inline;float: left;overflow: hidden; width:900px;}
+.container .r .mod_toolbar{position: relative;height: 32px;overflow: hidden;margin-bottom: 20px;}
+.container .r .mod_toolbar ul{height: 31px;border-bottom: #C9C9C9 solid 1px;overflow: hidden;}
+.container .r .mod_toolbar ul li{float: left;width: 90px;height: 31px;margin: 0 -1px 0 0;background-color: #F6F6F8;}
+.container .r .mod_toolbar ul li a{display: block;height: 31px;line-height: 31px;text-align: center;font-size: 14px;border: #DEDEDE solid 1px;}
+.container .r .mod_toolbar ul li.current a{position: absolute;width: 88px;border: #C9C9C9 solid 1px;border-bottom: white solid 1px;font-weight: bold;cursor: default;color: #484848;background: white;}
+.container .r .mod_video_list{width: 940px; overflow:hidden;}
+.container .r .mod_video_list ul{zoom: 1;font-size: 0;letter-spacing: -4px; width:100%}
+.container .r .mod_video_list ul li{float: left;position: relative;width: 160px;margin: 0 12px 8px 0;padding: 5px;display: inline-block;zoom: 1;vertical-align: top;font-size: 12px;letter-spacing: 0;}
+.container .r .mod_video_list ul li:hover { background-color:#E9E9E9;border-radius:4px 4px 3px 3px}
+.container .r .mod_video_list ul li .mod_poster_170{position: relative;display: block;overflow: visible;_height: 230px;width: 160px;}
+.container .r .mod_video_list ul li .mod_poster_170 img{width:160px; height:210px; border:0 none;}
+.container .r .mod_video_list ul li .mark{position: absolute;top: auto;left: auto;right: 3px;bottom: 3px;display: inline-block;height: 16px;overflow: hidden;padding: 0 2px 0 3px;font-size: 12px;font-size: 120%	9;line-height: 15px;line-height: 16px	9;_line-height: 16px;color: white;text-align: center;cursor: pointer;background-color: rgba(0, 0, 0, .9);border-radius: 2px;filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#E5000000',endColorstr='#E5000000');}
+.container .r .mod_video_list ul li .mark_custom{position: absolute;left: auto;right: 2px;top: 2px;padding: 0 2px 0 3px;color: white;font-size: 12px;border-radius: 2px;background-color: #FF8406;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1);filter: none;z-index: 101;bottom: 3px;display: inline-block;height: 16px;overflow: hidden;line-height: 15px;line-height: 16px	9;text-align: center;cursor: pointer;}
+.container .r .mod_video_list ul li .scores{position: relative;width: 100%;overflow: hidden;margin: 6px 0 4px;_margin: 6px 0 4px;white-space: nowrap;text-overflow: ellipsis;}
+.container .r .mod_video_list ul li .scores strong{position: absolute;right: 0;top: 0;color: #FF9805;white-space: nowrap;font-family: STSong,Aparajita; font-family: STSong,Aparajita;font: 700 16px/18px Georgia;color: #FF6A00;}
+.container .r .mod_video_list ul li p{width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.container .r .mod_video_list ul li p a{ margin-right:5px;}

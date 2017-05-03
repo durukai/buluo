@@ -1,0 +1,1 @@
+﻿document.write("<div style=\"height: 250px;width: 300px;border: 1px dashed #18C2C8;background-color: #FFF;\">&nbsp; 广告位：300×250（M1938工作室精品广告位）</div>")

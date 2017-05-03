@@ -1,0 +1,19 @@
+   <div class="wrap vv">
+    <div class="navbottom">
+      <div class="l">
+{maccms:menu order=asc by=sort table=art type=3,20,21,22,23,24,25,26,27,28,29,30}
+		<a href="[menu:link]" {if-A:[menu:id]={maccms:curvodtypeid}} class="this"{endif-A} title="[menu:name]" target="_self"><SPAN>[menu:name]</SPAN></a>
+{/maccms:menu}
+      </div>
+      <div class="r">
+      <a class="bar_login" id="login" href="{maccms:path}index.php?m=user-index.html" >用户中心</a> |
+      <a class="bar_history" id="history" href="javascript:void(0);" >观看记录</a>
+      </div>
+    </div>
+
+
+  </div>
+<div class="ads960">
+<script src="{maccms:path_ads}9601.js"></script>
+
+</div>

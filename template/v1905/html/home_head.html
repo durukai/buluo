@@ -1,0 +1,88 @@
+
+<!-- 瀵艰埅寮€濮� -->
+
+<div id="header_float">
+
+<div class="header_film">
+
+  <div class="wrap head_box clearfix">
+
+    <h1><a title="{maccms:name}" class="hb_txt" href="http://{maccms:url}">{maccms:name}</a></h1>
+
+    <div class="login_box">
+
+<div class="look_history"><a class="bar_history" id="history" href="http://www.xiaog.cc/" >小俊工作室</a></div>
+
+      <div class="head_menu" id="headUser"><span class="head_user">{if-A:isN("{maccms:userid}")}<a href="{maccms:path}index.php?m=user-login.html">登陆</a></a>&nbsp;&nbsp;<q>|</q>&nbsp;&nbsp;<a href="{maccms:path}index.php?m=user-reg.html">注册</a></span>{else-A}<span class="head_user"><a href="{maccms:path}index.php?m=user-index.html">{maccms:username}{endif-A}</a></span></div>
+
+    </div>
+
+    <div class="hb_search">
+
+		<div class="hs_form clearfix">
+
+          <div class="sou_box clearfix">
+
+ <form target="_blank" action="{maccms:link_search_vod}" method="post">
+
+<div class="sou_frame">
+
+                  <i class="sou_tb"></i>
+
+  <input type="text" id="wd" name="wd" class="inputTxt" x-webkit-speech onblur="if(this.value==''){ this.value='100万部影片任你搜索';this.style.color='#cfcdcd';}" onfocus="if(this.value=='100万部影片任你搜索'){this.value='';this.style.color='';}" value="100万部影片任你搜索" />
+
+           </div>
+
+         <input type="submit" name="submit" class="but_click_sou" value="搜索" />
+
+      </form>
+
+  </div>
+
+            
+
+          <div class="menu_bar" style="display:none;">
+
+            
+
+
+
+          </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="v_m1905nav clearfix">
+
+  <div class="wrap clearfix">
+
+    <ul class="nav">
+
+	 <li  {if-A:{maccms:siteaid}=10} class="now" {endif-A}><a href="{maccms:path}">首页</a><i>|</i></li>
+
+{maccms:menu type=1,2,3,4,16}
+
+      <li {if-A:[menu:id]={maccms:curvodtypeid}} class="now" {endif-A}><a href="[menu:link]">[menu:name]</a><i>|</i></li>
+
+ {/maccms:menu}
+
+
+
+    </ul>
+
+	
+	<div class="explorer_box"><a href="#" target="_blank"><img src="{maccms:path_tpl}images/m1905player.jpg" alt=""></a></div>
+  </div>
+
+</div>
+
+</div>
+
+<div style="width: 100%; height: 100px;" id="search1905"></div>
+
+<!-- 头部结束 -->

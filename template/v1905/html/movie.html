@@ -1,0 +1,567 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>好看的{page:name}-最新{page:name}-经典{page:name}-{page:name}电影推荐-第{page:now}页-{maccms:name}</title>
+
+<meta name="keywords" content="{page:key}" />
+
+<meta name="description" content="{page:des}" />
+
+{maccms:include}
+
+</head>
+
+<body>
+
+{maccms:head}
+
+
+
+<div class="main-wrap clearfix dianying" id="content" data-channel="1">
+
+ <!-- 焦点图 start-->
+
+  <div class="focusMain isCarousel slider_box"> <a class="focusBtn focusPrev pngIcon" href="javascript:;"></a>
+
+    <div class="focusArea">
+
+      <div class="focusCon" style="width: 9800px;">
+
+{maccms:vod num=10 type={maccms:curvodtypeid} order=desc by=level level=5}
+
+     <div class="item" style="display: none;">
+
+          <h4 class="title font_yahei pngIcon"><a target="_blank" href="[vod:link]"><i class="pngIcon"></i>《[vod:name]》</a> <a target="_blank" href="[vod:link]">[vod:content len=24]</a></h4>
+
+          <a target="_blank" href="[vod:link]" title="《[vod:name]》"><img alt="《[vod:name]》" src="[vod:picslide]"></a> 
+
+          </div>
+
+	{/maccms:vod} 
+
+    </div>
+
+    </div>
+
+    <div class="silder_nav focusIndicators pngIcon">
+
+{maccms:vod num=10 type={maccms:curvodtypeid} order=desc by=level level=5}
+    <a target="_blank" href="[vod:link]" class="">
+
+     <s style="background-image:url('[vod:pic]'); width="83px;" height="53px;" "></s>
+
+          	<span class="font_yahei">[vod:typename]</span>
+
+          </a>
+
+{/maccms:vod} 
+
+    </div>
+
+     <a class="focusBtn focusNext pngIcon" href="javascript:;"></a>    </div>
+
+  <!-- 分类 start-->
+
+  <ul class="sortsBox font_yahei clearfix">
+
+    <li class="first"><a target="_blank" href="#" class="borderB">最近更新</a><a target="_blank" href="#">最近热门</a></li>
+
+    <li>
+
+      <h6>类型</h6>
+
+      <span class="l">
+
+{maccms:class type=auto num=9}
+
+      <a target="_blank" href="[class:link]">[class:name]</a>
+
+{/maccms:class}
+
+ </span> </li>
+
+    <li>
+
+      <h6>地区</h6>
+
+      <span class="l">
+
+  {maccms:area type=auto num=6}
+
+      <a target="_blank" href="[area:link]">[area:name len=6]</a>  {/maccms:area} </span> </li>
+
+    <li>
+
+      <h6>年代</h6>
+
+      <span class="l year">
+
+{maccms:year type=auto start=2010 end=2015 order=desc}
+
+      <a target="_blank" href="[year:link]">[year:name]</a>{/maccms:year}
+
+      </span> </li>
+
+    <li>
+
+      <h6 class="abc">基因</h6>
+
+      <span class="l">
+
+      <span class="lBox">
+
+{maccms:class type=auto num=6}
+
+           <a target="_blank" href="[class:link]">[class:name]</a>
+
+{/maccms:class}  </span>
+
+      <span class="lBox none">
+
+  	 {maccms:class type=auto num=6 start=7}
+
+           <a target="_blank" href="[class:link]">[class:name]</a>
+
+{/maccms:class}       </span><span class="change js_change"><a href="javascript:void(0)">换一组</a></span>
+
+      </span> </li>
+
+    <li class="last">
+
+      <h6>大家都在看</h6>
+
+      <span class="movie">
+
+{maccms:vod num=6 order=desc by=time} 
+
+<a target="_blank" href="[vod:link]" title="[vod:name]">[vod:name len=10]</a>
+
+{/maccms:vod}
+
+   </span> </li>
+
+  </ul>
+
+
+
+  <!-- 正在热播 start-->
+
+  <div class="hot-broad  tv-program clearfix"> 
+
+    <!--  正在热播left start-->
+
+     <div class="hot-broad-left">      
+
+      <h2 class="tv-left-title film-title"><b>正在热播</b></h2> 
+
+      <div class="hot-broad-pic">
+
+        <ul>
+
+{maccms:vod num=8 type={maccms:curvodtypeid} order=desc by=time}
+
+        <li>
+
+              <a target="_blank" class="link" title="[vod:name]" href="[vod:link]">
+
+                <div class="img">
+
+                  <div class="imgsrc"><img src="[vod:pic]" width="180px" height="135px"></div>
+
+                  <div class="tv-intro"></div>
+
+                  <div class="ho_play"></div>
+
+                  <!-- <div class="icon">独播</div> -->
+
+                  <div class="tv-brief">
+
+                    <span class="score">[vod:score]分</span>                  </div>                
+
+                </div>
+
+                <div class="tv-bottom-title">
+
+                  <h3>[vod:name]</h3>
+
+                                    	<p>[vod:content len=12]</p>
+
+                                  </div>
+
+             </a>              
+
+            </li> {/maccms:vod}    </ul>
+
+      </div>
+
+    </div>
+
+
+
+    <!--正在热播right s-->
+
+   <div class="film-right relax-theater-right movie-rank-height">
+
+        <div class="film-rank relax-rank">         
+
+          <ul>
+
+            <li class="active">今日</li>
+
+            <li>本周</li>
+
+            <li>本月</li>
+
+          </ul>
+
+          <h2 class="film-rank-title">热播榜</h2>
+
+        </div>
+
+        <div class="p_con1 relax-con">
+
+          <ul>
+
+          {maccms:vod num=1 type={maccms:curvodtypeid} order=desc by=hits}
+
+               	<li class="list-one">
+
+                	<p class="tl_img">
+
+                    	<a target="_blank" href="[vod:link]" title="[vod:name]"><img src="[vod:pic]" width="230px" height="138px" alt="[vod:name]"></a>
+
+                    	</p><div class="first-title1"><span class="seenum-one font_number one"><i></i><b>[vod:score]分</b></span> <em class="oneIcon">[vod:numfill]</em> <span class="tlTxt"> <a class="one" target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a></span> </div> 
+
+                    	                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=2 type={maccms:curvodtypeid} order=desc by=hits start=2}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="two">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=7 type={maccms:curvodtypeid} order=desc by=hits start=4}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="three">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod} </ul>
+
+          <ul class="hidden">
+
+          {maccms:vod num=1 type={maccms:curvodtypeid} order=desc by=weekhits}
+
+               	<li class="list-one">
+
+                	<p class="tl_img">
+
+                    	<a target="_blank" href="[vod:link]" title="[vod:name]"><img src="[vod:pic]" width="230px" height="138px" alt="[vod:name]"></a>
+
+                    	</p><div class="first-title1"><span class="seenum-one font_number one"><i></i><b>[vod:score]分</b></span> <em class="oneIcon">[vod:numfill]</em> <span class="tlTxt"> <a class="one" target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a></span> </div> 
+
+                    	                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=2 type={maccms:curvodtypeid} order=desc by=weekhits start=2}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="two">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=7 type={maccms:curvodtypeid} order=desc by=weekhits start=4}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="three">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod}       </ul>
+
+          <ul class="hidden">
+
+         {maccms:vod num=1 type={maccms:curvodtypeid} order=desc by=monthhits}
+
+               	<li class="list-one">
+
+                	<p class="tl_img">
+
+                    	<a target="_blank" href="[vod:link]" title="[vod:name]"><img src="[vod:pic]" width="230px" height="138px" alt="[vod:name]"></a>
+
+                    	</p><div class="first-title1"><span class="seenum-one font_number one"><i></i><b>[vod:score]分</b></span> <em class="oneIcon">[vod:numfill]</em> <span class="tlTxt"> <a class="one" target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a></span> </div> 
+
+                    	                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=2 type={maccms:curvodtypeid} order=desc by=monthhits start=2}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="two">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=7 type={maccms:curvodtypeid} order=desc by=monthhits start=4}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="three">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod}     </ul>
+
+        </div>
+
+      </div>
+
+  </div>
+
+  <!--正在热播right e-->
+
+
+
+
+
+  <!-- 轻松剧场 start-->
+
+ {maccms:matrix type=5,6,7,8,9,10,11}
+
+  <div class="relax-theater clearfix">
+
+    <div class="relax-theater-left clearfix">
+
+      <h2 class="relax-theater-title">
+
+         <b>[matrix:name]</b>
+
+         <span class="two-title"></span>
+
+      </h2>
+
+      <div class="relax-theater-pic">
+
+        <ul>
+
+ {maccms:vod type=[matrix:id] num=10 order=desc by=time}
+
+        <li>
+
+            <div class="relax-pic"> <a href="[vod:link]" title="[vod:name]" target="_blank"><img class="pic" src="[vod:pic]" alt="[vod:name]"></a>
+
+              <div class="relax-mask"></div>
+
+              <div class="relax-detail center"><span class="score">[vod:score]分</span></div>
+
+            </div>
+
+            <div class="film-bottom-title">
+
+              <div><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a></div>
+
+              <p title="[vod:name]">[vod:content len=12]</p>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="hover-line"></div>
+
+          </li>{/maccms:vod}    </ul>
+
+      </div>
+
+    </div>    
+
+    <div class="relax-right">
+
+      <div class="film-right relax-theater-right ">
+
+        <div class="film-rank relax-rank">         
+
+          <h2 class="film-rank-title">[matrix:name]热播榜</h2>
+
+        </div>
+
+        <div class="p_con1 relax-con">
+
+          <ul>
+
+          {maccms:vod num=1 type=[matrix:id] order=desc by=time}
+
+               	<li class="list-one">
+
+                	<p class="tl_img">
+
+                    	<a target="_blank" href="[vod:link]" title="[vod:name]"><img src="[vod:pic]" width="230px" height="138px" alt="[vod:name]"></a>
+
+                    	</p><div class="first-title1"><span class="seenum-one font_number one"><i></i><b>[vod:score]分</b></span> <em class="oneIcon">[vod:numfill]</em> <span class="tlTxt"> <a class="one" target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a></span> </div> 
+
+                    	                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=2 type=[matrix:id] order=desc by=time start=2}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="two">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod}
+
+{maccms:vod num=7 type=[matrix:id] order=desc by=time start=4}
+
+<li class="list">
+
+                	<p class="tl_img">
+
+                    	                    	</p><div class="first-title"><a class="one-new" target="_blank" href="[vod:link]" title="[vod:name]"><span class="seenum font_number"><i></i><b>[vod:score]分</b></span><em class="three">[vod:numjoin]</em> <span class="tlTxt">[vod:name]</span></a> </div>                   <p></p>
+
+                </li>
+
+{/maccms:vod}          </ul>
+
+        </div>
+
+      </div>      
+
+      <div class="relax-ad"><a href="#" target="_blank"><img src="{maccms:path_tpl}images/thumb_1_230_135_2014061106035133502.jpg" width="230px" height="135px" alt="" title=""></a></div>
+
+    </div>
+
+  </div> 
+
+  {/maccms:matrix}
+
+<!-- 轻松剧场 end--> 
+
+<!-- main end --> 
+
+<!--轮播样式-->
+
+<script type="text/javascript" src="http://js.static.m1905.cn/core/jquery-edge.min.js"></script>
+
+<style type="text/css" id="do-inline-css">.playlist-panel{ position:absolute; right:0; top:58px;  z-index:50; width:400px; background:#fafafa; display:none;}.playlist-panel .arrow_his{background: url(http://static.m1905.cn/hao/images/vMpic.gif) -672px -14px no-repeat; position:absolute; top:-10px; left:345px; width:15px; height:10px; display:block; }.active .playlist-panel{ display:block; }.playlist{ width:100%; overflow:hidden; }.playlist li{ height:38px;  line-height:38px;  font:14px/20px "Microsoft Yahei"; color:#9fafbb; }.playlist-panel .playlist li a{ color:#9fafbb; position:relative; border-left:4px solid #FFF; padding-right:20px; display:block; height:20px; padding:9px 20px; }.playlist li a:hover{ color:#9fafbb; position:relative; background-color:#9fafbb; border-color: #f97e76; }.playlist li .see-time{ float: right; width: 60px; text-align: right; color:#5db0c6; }.playlist li .btn-del ,.playlist li .btn-del-login{ color:#FFF;  float:right ; display:none; font-size:19px;}.playlist li .title{  width:290px; overflow:hidden; }.playlist li a:hover .see-time{ display:none; }.playlist li a:hover .btn-del{ display:block;}.playlist li a:hover .title{ color:#FFF;}.playlist li span{ width: auto; padding: 0 13px;  background-color: #5db0c6;  font: 14px/24px "Microsoft Yahei"; height:24px; display:inline-block; position:relative; color:#FFF; margin-top:9px; margin-left:14px; }.playlist li span q.caret{ top: 24px; color: #5db0c6; display: inline-block; vertical-align: middle;position:absolute; left: 50%; margin-left: -5px; background: url("http://static.m1905.cn/hao/images/small_icon.png") -15px -76px no-repeat;_background: url("http://static.m1905.cn/hao/images/small_icon.gif") -15px -76px no-repeat; border:0 ;width:12px ;height:6px ; overflow:hidden !important;}.playlist .progress-bar{ position:absolute; left:0; top:0; height: 100%; background:#dce8ee; opacity:.5; }.playlist-panel .panel-bd{ background:#ebf0f3; color:#333; font-size:14px; line-height:1.5; text-align:center; padding: 15px 10px 20px 10px; height:50px !important;}.playlist-panel .panel-bd a{ color:#3e4550;}.playlist-panel .panel-bd a .ico-del{background-position:-1193px 3px; width:18px; height:20px; line-height:20px; text-align:center; text-indent:999px; overflow:hidden; display:block; float:left; cursor:pointer; margin-left:10px;}.playlist-panel .user-fn{  text-align: left; }.playlist-panel .user-fn .fr{ color: #4ebcca; }</style><script type="text/javascript" src="http://js.static.m1905.cn/core/seed.js"></script>
+
+<script type="text/javascript" src="http://js.static.m1905.cn/core/app.lite.min.js"></script>
+
+<script type="text/javascript" src="http://js.static.m1905.cn/core/ui.min.js"></script> 
+
+<script>M.config({baseUrl : 'http://js.static.m1905.cn/'});	</script>
+
+<script type="text/javascript" src="{maccms:path_tpl}js/fan.js"></script> 
+
+
+
+<script src="http://static.m1905.cn/hao/js/index.js"></script>
+
+<script type="text/javascript" src="http://js.static.m1905.cn/index2012/store+json2.min.js"></script>
+
+<script type="text/javascript" src="http://static.m1905.cn/hao/js/ublue_ImageCarousel.min.js"></script> 
+
+<script type="text/javascript" src="http://static.m1905.cn/hao/js/film.js"></script>
+
+<script>
+
+mBuffer(function(){
+
+if( M.fn.getcookie('mauth') ){
+
+	var $wst = $('.wonderful-film-show'),
+
+	$mySub = $('.mysub',$wst),
+
+	PDAPI ='http://d.m1905.com/index.php?app=api&mod=Special&act=isRssed&id=';
+
+	var dataIds= new Array(); //定义一数组 
+
+    dataIds=GSCONFIG.ids.split(",");
+
+	$mySub.each(function(i, elem) {
+
+       $.ajax({
+
+			url: PDAPI+dataIds[i],
+
+			dataType: 'jsonp',
+
+			callback:'',
+
+			success: function (data) {
+
+				var elem = $mySub.eq(i);
+
+				if(data.status == 1){
+
+					elem.replaceWith('<span class="beensubs">已订阅</span><a href="javascript:;" class="unsubs" onclick="ui.specialRss.ui_click(this,\'undo\','+dataIds[i]+')">取消订阅</a>');
+
+				}
+
+			}
+
+		}) 
+
+    })
+
+}
+
+})
+
+</script>
+
+
+
+{maccms:foot}
+
+
+
+</body>
+
+</html>

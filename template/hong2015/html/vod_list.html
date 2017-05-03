@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>{maccms:name}-最新{page:name}-热播{page:name}推荐-2015最新上映{page:name}-第{page:now}页-</title>
+<meta name="keywords" content="最新{page:name},热播{page:name},人气{page:name},国产{page:name},美国{page:name},{page:name}排行榜,经典{page:name}推荐,{page:name}大全" />
+<meta name="description" content="{maccms:name}提供最新{page:name},热播{page:name}推荐,最新上映{page:name}在线观看,想看最新{page:name}大全,就来{maccms:name}" />
+<meta name="Resource-type" content="{maccms:name}" />
+{maccms:include}
+</head>
+<body oncontextmenu="window.event.returnValue=false">
+{maccms:head}
+<!--内容开始-->
+<div class="container">
+<div class="container-inner">
+<!--影视明星开始-->
+<div class="conx star-bot">
+  <div class="splendid-header">
+    <div class="fl"><span>{page:name}分类</span>索引</div>
+  </div>
+  <div class="starx-pic">
+    <div class="all-filtrate">
+      <div class="all-filtrate-content">
+        <div class="afc1-wrap"> <span class="afc1-span">按类型：</span>
+          <ul class="afc1">
+            <li {if-A:"{page:class}"=""} class="active-style2" {endif-A}><a href="{page:linkclass}" onFocus="this.blur()" target="_self" >全部</a></li>
+            {maccms:class type=auto}
+            <li {if-A:"{page:class}"="[class:id]"} class="active-style2" {endif-A}><a href="[class:link]" target="_self" onFocus="this.blur()">[class:name]</a></li>
+            {/maccms:class}
+          </ul>
+        </div>
+        <div class="afc1-wrap"> <span class="afc1-span">按地区：</span>
+          <ul class="afc1">
+            <li {if-A:"{page:area}"=""} class="active-style2" {endif-A}><a href="{page:linkarea}" onFocus="this.blur()" target="_self" >全部</a></li>
+            {maccms:area type=auto}
+            <li {if-A:"{page:area}"="[area:name]"} class="active-style2" {endif-A}><a href="[area:link]" target="_self" onFocus="this.blur()">[area:name]</a></li>
+            {/maccms:area}
+          </ul>
+        </div>
+        <div class="afc1-wrap"> <span class="afc1-span">按语言：</span>
+          <ul class="afc1">
+            <li {if-A:"{page:lang}"=""} class="active-style2" {endif-A}><a href="{page:linklang}" onFocus="this.blur()" target="_self" >全部</a></li>
+            {maccms:lang type=auto}
+            <li {if-A:"{page:lang}"="[lang:name]"} class="active-style2" {endif-A}><a href="[lang:link]" target="_self" onFocus="this.blur()">[lang:name]</a></li>
+            {/maccms:lang}
+          </ul>
+        </div>
+        <div class="afc1-wrap"> <span class="afc1-span">按年份：</span>
+          <ul class="afc1">
+            <li {if-A:"{page:year}"=""} class="active-style2" {endif-A}><a href="{page:linkyear}" onFocus="this.blur()" target="_self" >全部</a></li>
+            {maccms:year type=auto start=2000 end=2015 order=desc}
+            <li {if-A:"{page:year}"="[year:name]"} class="active-style2" {endif-A}><a href="[year:link]" target="_self" onFocus="this.blur()">[year:name]</a></li>
+            {/maccms:year}
+          </ul>
+        </div>
+        <div class="afc1-wrap"> <span class="afc1-span">按字母：</span>
+          <ul class="afc1">
+            <li {if-A:"{page:letter}"=""} class="active-style2" {endif-A}><a href="{page:linkletter}" onFocus="this.blur()" target="_self" >全部</a></li>
+            {maccms:letter type=auto letter=all}
+            <li {if-A:"{page:letter}"="[letter:name]"} class="active-style2" {endif-A}><a href="[letter:link]" target="_self" onFocus="this.blur()">[letter:name]</a></li>
+            {/maccms:letter}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--con3-->
+
+<!--电影开始-->
+<div class="con2 margin-bottom-share">
+<div class="teleplay">
+
+   <div class="teleplayx-left fl">
+
+      <div class="splendid-header">
+         <div class="fl">恐怖<span>{page:name}</span>大全</div>
+           <ul class="splendid-tab fl">
+             <li {if-A:"{page:by}"="time"} class="active-style2" {endif-A}><a href="{page:linkbytime}">按更新排序</a></li>
+             <li {if-A:"{page:by}"="score"} class="active-style2" {endif-A}><a href="{page:linkbyscore}">按高分排序</a></li>
+			 <li {if-A:"{page:by}"="hits"} class="active-style2" {endif-A}><a href="{page:linkbyhits}">按人气排序</a></li>
+			   
+           </ul><!--splendid-tab-->
+		   <strong style="float:right; margin-top:10px; margin-right:20px; color:#fff; font-weight:bold; font-size:14px; background-color:##f63873; padding:5px 10px 5px 10px">当前:  {page:name}     第{page:now}页</strong>
+      </div><!--splendid-header-->
+
+      <div class="teleplay-content">
+
+         <div class="teleplayx-content-inner" style="display:block;">
+             <ul class="teleplayx-content-list">
+               {maccms:vod pagesize=40 order=desc by=time}
+               <li>
+               <div class="showPlay">
+                  <a href="[vod:link]" class="tcl-pic" target="_blank">
+                    {if-A:"{maccms:date}"="[vod:time]"}<i></i>{endif-A}
+                      <div class="tcl-pic1"><img class="scrollLoading" data-url="[vod:pic]" width="200" height="270" src="{maccms:path_tpl}images/pic.png" alt="[vod:name]"></div>
+                      <div class="tcl-pic2"></div>
+                  </a>
+                  </div>
+                  <div class="tcl-title">
+                     <div class="movie-headline1"><a href="[vod:link]" target="_blank">[vod:name]</a></div>
+                     <p>主演：[vod:starring]</p>
+                  </div>
+               </li>
+			   {/maccms:vod}
+                </ul>
+         </div><!--teleplay-content-inner-->
+      </div><!--teleplay-content-->
+
+   </div><!--teleplay-left-->
+
+
+</div><!--teleplay-->
+</div><!--con2-->
+<!--分页开始-->
+<div class="ui-pages" id="aapages">
+		{maccms:pages len=6}			
+	  </div>
+<!--分页结束-->
+</div><!--container-inner-->
+</div><!--container-->
+
+<div class="zt-footer" id="zt-footer">
+{maccms:foot}
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<TITLE>搜索《{page:key}》关键词</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="{maccms:search},琪琪看片">
+<meta name="description" content="{maccms:search},琪琪看片">
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/index_4464_4464.css">
+<link type="text/css" rel="stylesheet" href="{maccms:path}images/jquery.autocomplete.css">
+{maccms:include}
+<body> 
+{maccms:head}
+<!--主体-->
+<div class="article clearfix">
+<!--左-->
+<div class="patL min-height">
+<div class="pad">
+<div class="clearfix">
+<div class="tabPage clearfix">
+<a class='ranksselected' href="#">搜索：&nbsp;名称或主演为“{page:key}”</a> 
+</div>
+ 
+</div>
+<div class="blueLine clear"></div>
+<div class="holder">
+<div class="videos120x160 clearfix">
+ {maccms:vod pagesize=10 by=time order=desc}
+<dl>
+<dt><a href="[vod:link]" target="_blank" box='{"areacode":"pic","title":"akbingo","type":"gotoblank"}'  ><img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" title="[vod:name]"/></a></dt>
+<dd>
+<h5 ><a href="[vod:link]"  target="_blank" box='{"areacode":"title","title":"akbingo6","type":"gotoblank"}'  title="[vod:name]">[vod:name]</a></h5>
+<h6>《[vod:name]》</h6>
+<p><span class="score"><strong>[vod:score]</strong>分</span>|<span class="update">[vod:time style=m-d]</span></p>
+</dd>
+</dl>
+ {/maccms:vod}
+</div>
+</div>
+ 
+<div><div class="badoo">{maccms:pages len=8}
+				</div></div>
+
+ 
+</div>
+</div>
+<!--左 end-->
+ 
+<!--右-->
+    	
+<div class="patR">
+ 
+<!--广告 开始-------------------->
+<div class="box">
+ 
+</div>
+<!--广告 结束-------------------->
+			            
+<!--排行榜 开始-------------------->
+<div class="box">
+<div class="pad">
+<h4>琪琪看片月排行榜</h4>
+ <ul class="orderList clearfix">
+ {maccms:vod num=10 by=monthhits order=desc}
+<li  class="fir"><em>[vod:numjoin]</em><a href="[vod:link]"  target="_blank">[vod:name]</a><span>[vod:hits]</span></li>
+{/maccms:vod}
+</ul>
+</div>
+</div>
+<!--排行榜 结束-------------------->
+ 
+<!--正在热播 开始-------------------->
+<div class="box">
+<div class="pad">
+<h4>琪琪看片最新更新</h4>
+<ul class="list clearfix">
+ {maccms:vod num=10 by=time order=desc}
+<li><a href="[vod:link]" target="_blank">[vod:name]</a><span>[vod:remarks]</span></li> 
+{/maccms:vod}
+ 
+ 
+</ul>
+</div>
+</div>
+<!--正在热播 结束-------------------->
+ 
+<!--广告 开始-------------------->
+<div class="box noMargin">
+ 
+</div>
+<!--广告 结束-------------------->
+</div>
+<!--右 end-->
+</div>
+<!--主体 结束------------------------------------------------------------->
+		<!--返回顶部开始-->
+<div class="to-top" id="goTop" areacode="gotop">
+	<a href="?m=vod-type-id-2.html" title="电视剧">电视剧</a>
+	<a href="?m=vod-type-id-1.html" title="电影">电影</a>
+	<a href="?m=vod-type-id-4.html" title="动漫">动漫</a>
+	<a href="?m=vod-type-id-3.html" class="last" title="综艺">综艺</a>
+	<a href="#" class="go-top">回到顶部</a>
+</div>
+<!--返回顶部结束-->
+{maccms:foot}
+<script src="{maccms:path_tpl}js/channel_4464.js"  type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">var tabsP = [["hot-resource-menu", "hot-resource-con", "cur", "hot"]];hd.channel(8, tabsP);</script>
+</body>
+</html>   

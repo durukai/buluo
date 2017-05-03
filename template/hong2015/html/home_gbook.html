@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>留言本-{maccms:name}</title>
+<meta name="keywords" content="{maccms:keywords}" />
+<meta name="description" content="{maccms:description}" />
+<link rel="stylesheet" href="{maccms:path_tpl}css/liuyan.css"/>
+{maccms:include}
+<script type="text/javascript">
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+</script>
+</head>
+<body oncontextmenu="window.event.returnValue=false">
+{maccms:head}
+<div class="gbook_wrap">
+<div class="qire-notice-box">	
+<div class="qire-notice">
+<b>咨询问题之前，请先到网页右上方的“用户帮助”浏览相关问题，如还是得不到解决，请在下方留言，我们会尽快给你解决。</b>
+<p><b>小俊工作室致力于网站模板仿制、定制、原创设计等，请牢记新域名<a target="_blank" href="http://www.xiaog.cc">www.xiaog.cc</a>和告诉你身边的朋友们吧。</b><b><span>We will always be together</span>.</b></p></div>
+	</div>
+  <div class="container fn-clear">
+    <div class="ui-gbook fn-left">
+      {maccms:gbook pagesize=10 order=desc by=time}
+      <div class="ui-gb-item fn-clear">
+        <div class="ui-gb-num"> <span class="gb-number">[gbook:id]</span>号留言 </div>
+        <div class="ui-gb-box ui-gb-cnt">
+          <div class="ui-gb-cnt-min">
+            <div class="ui-title"> <span>[gbook:time]</span>
+              <h5> [gbook:name] </h5>
+            </div>
+            <div class="ui-text">[gbook:content] </div>
+          </div>
+        </div>
+        {if-B:!isN("[gbook:reply]")}
+        <div class="ui-gb-box ui-gb-reply">
+          <div class="ui-gb-cnt-min">
+            <div class="ui-title">
+              <h6>管理员回复</h6>
+            </div>
+            <div class="ui-text2">[gbook:reply]<br>
+            </div>
+          </div>
+        </div>
+        {endif-B}
+      </div>
+      {/maccms:gbook}
+<div class="ui-pages" id="aapages">
+		{maccms:pages len=6}			
+	  </div>
+    </div>
+    <div class="ui-bar fn-right">
+      <div class="ui-form">
+
+
+
+        <form class="cmt_form clearfix" action="{maccms:path}index.php?m=gbook-save" method="post">
+        <input type="hidden" id="g_rid" name="g_rid" value="">
+          <div class="ui-form-title">我要留言</div>
+          <div class="ui-form-item">
+            <label class="ui-label">请输入您的昵称：</label>
+            <input type="text" name="g_name" id="g_name" class="ui-input" value="{if-B:"{maccms:userid}"=""}{else-B}{maccms:username}{endif-B}">
+          </div>
+          <div class="ui-form-item">
+            <label class="ui-label">请输入您的留言内容：</label>
+            <textarea name="g_content" id="g_content" rows="6" cols="50" class="ui-input ui-textarea" onKeyup="MAC.Remaining(this,200,'g_remaining')"></textarea>
+          </div>
+          <div class="ui-form-item">
+            <input type="submit" class="ui-button" value="发送留言">
+          </div>
+        </form>
+        
+
+      </div>
+      <div class="ui-message">
+        <p>如遇到问题，请先到用户帮助页面寻找解决方法。[<a href="{maccms:path_tpl}index.php?m=label-help.html">用户帮助</a>]</p>
+        <p>请不要在留言本发布违法信息。</p>
+        <p>版权投诉请附带版权所属证明发至本站邮箱787850323@qq.com，请不要在此留言，我们收到邮件后会立刻处理；</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="zt-footer" id="zt-footer"> {maccms:foot} </div>

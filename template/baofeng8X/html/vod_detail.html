@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<title>[vod:name]剧情介绍_[vod:typename] - 琪琪看片</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="[vod:name]在线播放下载,[vod:typename],琪琪看片">
+<meta name="description" content="琪琪看片提供[vod:typename] [vod:name]的在线观看和迅雷下载服务。">
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/style_1182.css" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/cinema_1182.css"/>
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/index_4464_4489.css">
+<link type="text/css" rel="stylesheet" href="{maccms:path}images/jquery.autocomplete.css">
+<link rel="shortcut icon" href="{maccms:path_tpl}images/favicon.ico" charset="utf-8" />
+<script type="text/javascript" src="{maccms:path_tpl}js/swith.js"></script>
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+
+<!-- 播放页导航 -->
+ 
+<div class="layer main">
+<div class="article clearfix">
+ 
+<div class="patL2">
+<div class="pad">
+<p class="pos" areacode="tree_category"><a href="/">首页</a> >> <a href="[vod:typelink]" target="_blank">[vod:typename]</a> >> [vod:name]</p>
+ 
+ 
+<div class="aboutThis clearfix">
+<div class="thumb"><img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';"  /></div>    
+<div class="makeup">
+<h3>[vod:name]</h3>
+<div style="min-height: 244px; _height: 244px; _overflow: visible;">
+						
+ 			
+<div class="score">
+<div class="score-num"><strong>[vod:score]</strong>分</div>
+<div class="score-peop"><span>[vod:scorenum]</span>人评分</div>
+</div>
+ 
+<div class="info clearfix">
+<span class="attr">发行地区： [vod:area]</span>  
+<span class="attr">影片语言： [vod:lang]</span>
+<span class="attr">上映年代： [vod:year]</span>
+<span class="attr">影片人气： <em id="hit">[vod:hits]</em>°C</span> 
+<span class="attr">影片状态： [vod:remarks]</span>                         
+<span class="attr">影片类型： [vod:typename]&nbsp;</span>                            
+<span class="attr">影片导演： [vod:directedlink]&nbsp;</span>                            
+<span class="attr">影片主演： [vod:starringlink]&nbsp;</span>
+<span class="attr">更新时间： [vod:time style=m-d]</span>
+<span id="qlwz-score">[vod:scoremark1]</span>
+</div>
+
+</div>
+</div>
+</div>
+ 
+<div class="seasons clearfix" areacode="set">
+ {maccms:play}
+<div class="box_lb mb">
+<div class="border">
+<div class="mtitle">
+<h3 class="p_qvod">[play:show]</h3>
+ 
+<span class="sort"><a href="javascript:void(0);" onclick="itemssort('qvod')">列表排序</a></span>
+<span class="keyword">[play:tip]</span>
+</div>
+</div>
+ 
+<div class="plist p_player">
+<div class="episodes clearfix">
+<ul>
+	{maccms:url order=asc}
+	<li><a href="[url:link]" target="_blank">[url:name]</a></li>
+	{/maccms:url}
+</ul>
+</div> 
+</div>   
+</div>
+{/maccms:play}
+</div>
+ 
+ 
+				
+</div>
+</div>
+ 
+ 
+<!--右侧  开始----------------------------------------------------->  
+<div class="patR">
+<!--广告  开始----------------------------------------------------->        	
+<div class="box">
+<script src="{maccms:path_tpl}ads/vod1.js"></script>
+</div>
+<!--广告  结束-----------------------------------------------------> 
+<!--相关推荐  开始----------------------------------------------------->
+<div class="box" areacode="recommend">
+<div class="pad2">
+<h4>相关热门</h4>
+<div class="holder">
+<div class="picList clearfix">
+{maccms:vod num=6 order=desc by=hits type={maccms:curvodtypeid}} 
+<dl>
+<dt><a href="[vod:link]" ><img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" alt="[vod:name]" /></a></dt>
+<dd><h5><a href="[vod:link]" >[vod:name]</a></h5></dd>
+<dd><h6>[vod:remarks]</h6></dd>
+</dl>
+{/maccms:vod} 
+</div>
+</div>
+</div>
+</div>
+<!--相关推荐  结束----------------------------------------------------->
+        
+<!--相关热门  开始----------------------------------------------------->
+<div class="box" areacode="broadcast_rank">
+<div class="pad">
+<h4>随机推荐</h4>
+<ul class="list clearfix">
+{maccms:vod num=10 order=desc by=rnd type={maccms:curvodtypeid}} 
+<li><a href="[vod:link]">[vod:name len=10]</a><span>[vod:remarks]</span></li>
+{/maccms:vod}
+
+ 
+</ul>
+</div>
+</div>
+<!--相关热门  结束----------------------------------------------------->
+ 
+<!--广告  开始----------------------------------------------------->        	
+<div class="box">
+<script src="{maccms:path_tpl}ads/vod2.js"></script>
+</div>
+<!--广告  结束-----------------------------------------------------> 
+</div>
+<!--右侧  结束----------------------------------------------------->  
+ 
+ 
+    	
+<div class="patL">
+<div class="pad">
+ 
+<div class="an">
+<div class="an_tt an_tt_tab">
+<h2 class="on" onclick="tab_show('1','6','taby_t_','taby_c_')" id="taby_t_1">影片点评</h2>
+<h2 onclick="tab_show('2','6','taby_t_','taby_c_')" id="taby_t_2">剧情介绍</h2>
+<h2 onclick="tab_show('3','6','taby_t_','taby_c_')" id="taby_t_3">导演作品</h2>
+<h2 onclick="tab_show('4','6','taby_t_','taby_c_')" id="taby_t_4">演员角色</h2>
+<h2 onclick="tab_show('5','6','taby_t_','taby_c_')" id="taby_t_5">海报剧照</h2>
+<h2 onclick="tab_show('6','6','taby_t_','taby_c_')" id="taby_t_6">资源下载</h2>
+</div>
+			
+<!--评论BEGIN  开始--------------------->
+<ol class="on" id="taby_c_1">				
+<div class="comment">
+<ul class="Commentbox">
+<div id="maccms_comment">[vod:comment]</div>
+</ul>
+</div>
+</ol>
+<!--评论BEGIN  结束--------------------->
+ 
+<!--剧情介绍  开始---------------------------------------> 
+<ol id="taby_c_2">				
+<div class="juqing briefTab">
+<p><div>[vod:contenttext]</div></p>
+</div>
+</ol>
+<!--剧情介绍  结束---------------------------------------> 
+ 
+<!--导演作品  开始--------------------------------------->
+<ol  id="taby_c_3">				
+<div class="director ">
+{maccms:vod  by=[vod:directed] order:desc} 
+<dl>
+<dt><a href="[vod:link]" ><img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" alt="[vod:name]"/></a></dt>
+<dd><h5><a href="[vod:link]" >[vod:name len=10]</a></h5></dd>
+<dd><h6>[vod:remarks]</h6></dd>
+</dl>
+{/maccms:vod}
+</div>
+</ol>
+<!--导演作品  结束---------------------------------------> 
+ 
+<!--演员角色  开始--------------------------------------->
+<ol  id="taby_c_4">				
+<div class="director ">
+{maccms:vod  by=[vod:starring] order:desc} 
+<dl>
+<dt><a href="[vod:link]" ><img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" alt="[vod:name]"/></a></dt>
+<dd><h5><a href="[vod:link]" >[vod:name len=10]</a></h5></dd>
+<dd><h6>[vod:remarks]</h6></dd>
+</dl>
+{/maccms:vod}
+</div>
+</ol>
+<!--演员角色  结束---------------------------------------> 
+ 
+<!--海报剧照  开始--------------------------------------->
+<ol  id="taby_c_5">				
+<div class="posterlist">
+<ul class="posterlist">
+[vod:content]
+</ul>
+</div>
+</ol>
+<!--海报剧照  结束---------------------------------------> 
+ 
+ 
+<!--资源下载  开始--------------------------------------->
+<ol  id="taby_c_6">				
+<div class="zyxz">
+ 
+<!--播放列表开始代码-->
+ {maccms:downlist}
+<tr><td colspan="2" align="left" class="bt">
+<h1>来源:[downlist:show]</h1>
+ 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	{maccms:url order=asc}
+	<li><a href="[url:link]" target="_blank">[url:name]</a></li>
+	{/maccms:url}
+<!--分集开始BD分集结束-->
+<tr>
+<td>
+<input type="checkbox" name="checkbox" value="checkbox" onclick="checkAll('copy_yah',this.checked)" checked />全选
+<input type="button" name="Submit" value="复制选中的集数" onclick="copy('copy_yah')" /></tr>
+</td>
+</table>
+</td>
+</tr>
+{/maccms:downlist}
+<!--播放列表结束代码-->
+</div>
+</ol>
+<!--资源下载  结束---------------------------------------> 
+</div>
+ 
+</div>
+</div>
+</div>
+<!--返回顶部开始-->
+<div class="to-top" id="goTop" areacode="gotop">
+	<a href="?m=vod-type-id-2.html" title="电视剧">电视剧</a>
+	<a href="?m=vod-type-id-1.html" title="电影">电影</a>
+	<a href="?m=vod-type-id-4.html" title="动漫">动漫</a>
+	<a href="?m=vod-type-id-3.html" class="last" title="综艺">综艺</a>
+	<a href="#" class="go-top">回到顶部</a>
+</div>
+<!--返回顶部结束-->
+{maccms:foot}
+
+	<script type="text/javascript">
+				var ad_dl_id = 'hddl';
+				var ads = [{
+					id: 'HD1', width: 960, height: 90, element: 'ad_HD1'
+				}, {
+					id: 'HD2', width: 960, height: 90, element: 'ad_HD2'
+				}];
+	</script>
+	
+	   <script type="text/javascript" src="{maccms:path_tpl}js/index_4464.js"></script>
+	<script type="text/javascript">
+	  hd.index();
+	</script> 
+</body>
+ </html>

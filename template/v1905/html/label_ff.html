@@ -1,0 +1,107 @@
+<div class="pic_main">
+ 
+<div class="foucs_left">
+<div class="focusPic" id="focus_pic">
+<div class="l_btn" id="l_btn01"></div>
+<div class="r_btn" id="r_btn01"></div>
+<div class="bigpic_box">
+{maccms:vod num=9 by=level level=5 type=all order=desc}
+<div class="fpic" style="display: none;">
+<a href="[vod:link]" title="[vod:name]" target="_blank"><img src="[vod:picslide]" class="lb-pic" alt="[vod:name]"></a>
+<h3><a href="[vod:link]" title="[vod:name]" target="_blank"><i></i><span>[vod:content len=24]</span></a>
+</h3>
+<span class="f_bg"></span>
+</div>
+{/maccms:vod}
+</div>
+<ul class="btPhoto">
+<li class="bt02" style="display: block;"></li>
+<li class="bt02" style="display: block;"></li>
+<li class="bt02" style="display: block;"></li>
+<li class="bt02" style="display: block;"></li>
+<li class="bt02 current" style="display: block;"></li>
+<li class="bt02" style="display: block;"></li>
+<li class="bt02" style="display: block;"></li>
+<li class="bt02" style="display: block;"></li>
+<li class="bt02" style="display: block;"></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="foucs_right">
+<div class="tab_menu">
+<ul>
+<li class="on">最热
+<div class="active"></div>
+</li>
+<div class="underline"></div>
+<li>电影
+<div class="active"></div>
+</li>
+<li>电视剧
+<div class="active"></div>
+</li>
+<li>综艺
+<div class="active"></div>
+</li>
+<li>动漫
+<div class="active"></div>
+</li>
+</ul>
+</div>
+<div class="tab_con">
+<div class="m-rank">
+<div class="line">
+{maccms:vod num=10 by=time type=all order=desc}
+<div class="item">
+<a class="name" target="_blank" href="[vod:link]" title="[vod:name]"><label {if-A:[vod:num]<4} class="hot" {endif-A}>[vod:numfill]</label><b>[vod:name]</b>
+                    <span>[vod:typename]</span></a>
+	</div>
+{/maccms:vod}
+          </div>
+        </div>
+        <div class="m-rank hidden">
+          <div class="line">
+{maccms:vod num=10 by=time type=1 order=desc}
+	    <div class="item">
+					<a class="name" target="_blank" href="[vod:link]" title="[vod:name]"><label {if-A:[vod:num]<4} class="hot" {endif-A}>[vod:numfill]</label><b>[vod:name]</b>
+                    <span>[vod:score]分</span></a>
+	</div>
+{/maccms:vod}			       
+          </div>
+        </div>
+        <div class="m-rank hidden">
+          <div class="line">
+{maccms:vod num=10 by=time type=2 order=desc}
+			 <div class="item">
+					<a class="name" target="_blank" href="[vod:link]" title="[vod:name]"><label {if-A:[vod:num]<4} class="hot" {endif-A}>[vod:numfill]</label><b>[vod:name]</b>
+                    <span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span></a>
+	</div>
+{/maccms:vod}					    
+          </div>
+        </div>
+        <div class="m-rank hidden">
+          <div class="line">
+		{maccms:vod num=10 by=time type=3 order=desc}
+			 <div class="item">
+					<a class="name" target="_blank" href="[vod:link]" title="[vod:name]"><label {if-A:[vod:num]<4} class="hot" {endif-A}>[vod:numfill]</label><b>[vod:name]</b>
+                    <span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span></a>
+	</div>
+{/maccms:vod}			
+          </div>
+        </div>
+        <div class="m-rank hidden">
+          <div class="line">
+			{maccms:vod num=10 by=time type=4 order=desc}
+			 <div class="item">
+					<a class="name" target="_blank" href="[vod:link]" title="[vod:name]"><label {if-A:[vod:num]<4} class="hot" {endif-A}>[vod:numfill]</label><b>[vod:name]</b>
+                    <span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span></a>
+	</div>
+{/maccms:vod}				
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--右侧tab end-->
+  </div>

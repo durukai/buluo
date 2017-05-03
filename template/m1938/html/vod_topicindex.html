@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>专题列表_页_{maccms:name}</title>
+<meta name="keywords" content="{maccms:name},专题电影，专题剧集" />
+<meta name="description" content="{maccms:name},2015专题" />
+{maccms:load inc.html} 
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+	<div class="h2"><a href="{maccms:indexlink}">首页</a> > 精彩专题总汇</div>
+	<div class="topiclist mb clearfix">
+  		<ul>
+  		{maccms:topic pagesize=10 order=desc by=time}
+      <li class="mb{if-A:[topic:num]%3==0} m2{endif-A}{if-A:[topic:num]%5==0} m4{endif-A}">
+        <a class="li-hv" href="[topic:link]" title="[topic:name]">
+        <div class="img">
+          <img src="[topic:pic]" alt="[topic:name]">
+          <b class="play-hv"></b>
+          <b class="bg png"></b>
+          <b class="tplay png"></b>
+          <div class="text">[topic:name]</div>
+        </div>
+      </a>
+      </li>
+      {/maccms:topic}
+  	    </ul>
+   </div>
+<div class="page mb clearfix">
+{maccms:pages len=6}</div>
+</div>
+{maccms:foot}
+</body>
+</html>

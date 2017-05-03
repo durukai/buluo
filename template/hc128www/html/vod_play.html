@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>在线观看[vod:name][vod:playnum],[vod:name]高清全集下载,[vod:name]播放全集,看个[vod:name]_{maccms:name}</title>
+<meta name="keywords" content="在线观看[vod:name][vod:playnum],[vod:name]高清全集下载,[vod:name]播放全集,看个[vod:name]" />
+<meta name="description" content="播放[vod:name][vod:playnum]剧情介绍[vod:name]讲述了[vod:contenttext len=60]" />
+{maccms:load include.html}
+    <link href="{maccms:path_tpl}css/play.css" rel="stylesheet" type="text/css" />
+    <script src="{maccms:path_tpl}js/playlist.js" type="text/javascript" language="javascript"></script>
+    <script type="text/javascript" src="{maccms:path_tpl}js/offlights.js"></script><script>MAC.History.Insert("[vod:name]","[vod:link]","[vod:typepname]","[vod:typelink]","[vod:pic]");</script>
+<body>
+{maccms:load head.html}
+    <div class="play_nav" style="padding-top: 70px;">
+        <dl>	<dt>[vod:textlink]</dt>
+            <!--<dd>《[vod:name]》-[vod:playname]</dd>-->
+        </dl>
+    </div>
+    <div class="player">
+        <div class="player_rghit fr" id="play_right" style="display: block;">
+            <div class="slide_playBox">
+                <div class="hd">
+                    <ul>
+                        <li>播放列表</li>
+                        <li>节目信息</li>
+                        <li>推荐视频</li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul class="play_box1 mr5">
+                        <h2 class="mt5"><a href="[vod:name]">[vod:name]</a></h2>
+                        <pf>[vod:score]</pf>
+                        <dl class="mt10">
+                            <div class="btn_focus f12">	<i class="ico_focus"></i><a href="javascript:void(0)" onclick="MAC.UserFav('[vod:id]');return false;"/>会员收藏</a></div>
+                            <div class="focus">加入我的个人中心，稍后观看</div>
+                        </dl>
+                        <div class="tab_box">
+							            <div class="showbox" id="dizhi">
+                <div class="box_tt box_tt_tab">
+				{maccms:play}
+                    <h2 id="nav_[play:from]" rel="play_tag" data="[play:from]" ><!--<i class="fl [play:from]"></i>--><span>[play:show]</span></h2>
+					{/maccms:play}
+                    </div>
+				{maccms:play}
+                <div class="box_con" id="box_[play:from]" {if-A:"[play:num]"> "1"} style="display:none" {endif-A}>
+                    <div class="control">
+					{if-A:"[play:urlcount]">"28"}
+                    <div class="videolist">	<span id="tab_[play:from]"></span>
+                    </div>
+					{endif-A}
+            </div>
+                <ul class="showplayul" id="list_[play:from]" rel="symax_player" data="[play:from]" order="desc" limit="36">
+				{maccms:url order=asc}
+                    <li>	<a href="[url:link]" class="{if-u:"[vod:playname]"="[url:name]"}ts{endif-u} bk"  title="[url:name]" id="[play:from]_[url:num]">[url:name]</a>
+                    </li>
+					{/maccms:url}
+                    </ul>
+					{if-A:"[play:urlcount]">"36"}
+			  <div class="playtips playtips_bottom">
+                    <p></p>
+                    <div class="turnlist" id="turn_[play:from]"></div>
+                </div>
+				{endif-A}
+            </div>
+			{/maccms:play}
+			</div>
+                            <div class="direct">
+                                <h2 class="dir mb5">看导演：[vod:directed] 相关</h2>
+                                <ul class="mt5 mb5">
+								{maccms:vod type=current num=4 order=desc similar=directed}
+								<li class="fl mt5 mb5 mr10">
+								<a target="_blank" _hot="index.movie.pre.small_img1" href="[vod:link]" class="fl" title="[vod:name]">
+                                            <img class="lazy" src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]">
+                                        </a>
+                                        <dl>
+                                            <dd class="tele"><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=6]</a>
+                                            </dd>
+                                            <dd class="play">[vod:hits]</dd>
+                                        </dl>
+                                    </li>
+									{/maccms:vod}</ul> 
+                                <h2 class="str mt20 mt5">看主演：[vod:starring len=20] 相关</h2>
+                                <ul class="mt10 mb5">
+								{maccms:vod type=current num=8 order=desc similar=starring}
+                                    <li class="fl mt5 mb5 mr10">
+                                        <a target="_blank" _hot="index.movie.pre.small_img1" href="[vod:link]" class="fl" title="[vod:name]">
+                                            <img class="lazy" src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]">
+                                        </a>
+                                        <dl>
+                                            <dd class="tele"><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=6]</a>
+                                            </dd>
+                                            <dd class="play">[vod:hits]</dd>
+                                        </dl>
+                                    </li>
+									{/maccms:vod}
+                                    </ul></div>
+                        </div>
+                        <div class="direct">
+                            <div id="coral_tp" class="coral_tp mt15 ml10">
+                                <div class="tp_wrap">
+                                    <div class="tp_down" id="tp_down_btn">
+                                        <a hidefocus="true" class="digg_voddown" href="javascript:void(0)"></a>
+                                    </div>
+                                    <div class="tp_up" id="tp_up_btn">
+                                        <a hidefocus="true" class="digg_vodup" href="javascript:void(0)"></a>
+                                    </div>
+                                    <div class="tp_num" id="digg>">	<span class="tp_c"><em id="digg_voddown_val">0</em></span>
+                                        <span class="tp_d"><em id="digg_vodup_val">0</em></span>
+                                        <div style="width: 50%;" class="tp_num_down" id="digg_voddown_sp">
+                                            <div class="tp_line"></div>
+                                        </div>
+                                        <div style="width:50%;" class="tp_num_up" id="digg_vodup_sp">
+                                            <div class="tp_line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <ul class="play_box2">
+                        <div class="boxtext mt5">
+                            <ul class="fl tl">
+                                <img src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]" class="lazy" />
+                                <li><b>《[vod:name]》</b>
+                                </li>
+                                <li><b>状态：</b>
+                                    [vod:remarks]</li> 
+                                <li><b>导演：</b>[vod:directedlink]</li> 
+                                <li><b>主演：</b>[vod:starringlink]</li>
+                                <li><b>类型：</b>[vod:typename]
+                                </li>
+                                <li><b>年份：</b>[vod:yearlink]</li>
+                                <li><b>地区：</b>[vod:arealink]</li>
+                                <li><b>Tag ：</b>[vod:taglink]</li>
+                                <li><b>更新时间：</b>[vod:time style=y-m-d]</li>
+                                <li><b>剧情分类：</b>[vod:classlink]
+                                </li>
+								<li><b>剧情简介：</b>
+                                </li>
+                                <div>[vod:contenttext]</div>
+                            </ul>
+                        </div>
+                    </ul>
+                    <ul class="play_box3">
+                        <h4 class="figures_title"><span class="title_txt bk">看精彩视频推荐</span></h4>
+                        <div class="mod_figures">
+                            <ul>
+							{maccms:vod type=current num=10 order=desc by=hits}
+                                <li class="fl">
+                                    <a target="_blank" _hot="index.movie.pre.small_img1" href="[vod:link]" title="[vod:name]">
+                                        <img class="lazy yj" src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]">
+                                    </a>
+                                    <p class="figure_desc">[vod:name]</p>
+                                </li>
+								{/maccms:vod}
+                                </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <script type="text/javascript">
+                jQuery(".slide_playBox").slide({switchLoad:"_src",trigger:"click",easing:"easeInQuint"});
+            </script>
+        </div>
+        <div id="playzgs" onclick="playzgs()" class="nextBtn fr"></div>
+        <div class="player_left"><a class="lightSwitcher" href="javascript:void();">关灯</a>
+            <div class="movie" id="video">
+                [vod:playerinfo][vod:player]
+            </div>
+        </div>
+    </div>
+    <div class="mod_action">
+        <div class="action_item ">
+            <a class="action_title" href="javascript:void(0)" onclick="MAC.UserFav('[vod:id]');return false;"><i class="ico_collect"></i><span class="ico_text"> 收藏到会员中心</span></a>
+        </div>
+        <div class="action_item">	<a role="button" class="action_title" target="_self" href="javascript:void(0)" onclick="MAC.Error(&quot;vod&quot;,&quot;[vod:id]&quot;,&quot;[vod:name]&quot;);return false;"><i class="ico_alert"></i><span class="ico_text mt5">报错</span></a>
+        </div>
+        <div class="action_item"><script>MAC.Score.Show(0,"vod",[vod:id]);</script></div>
+        <div class="played_count">今日<em>[vod:dayhits]</em><span class="ico_text">次播放</span>
+        </div>
+        <div class="like_btn">
+            </div>
+    </div>
+    <div class="like mt15">
+        <div class="l fl">
+            <div class="box">
+                <div class="mod_title">
+                    <h2 class="title">[vod:name]</h2>
+                </div>
+                <div class="mod_txt">
+                    <div class="fl">
+                        <p><span class="mod_tip">[vod:name]</span>
+                        </p></div>
+                    <ul class="details_list fl mt10">
+                        <li><span class="detail_title">标签：</span>
+                            <div class="detail_subfield">[vod:taglink]</div>
+                        </li> 
+                        <li><span class="detail_title">主演：</span>
+                            <div class="detail_content">[vod:starringlink]</div>
+                        </li> 
+                        <li><span class="detail_title">导演：</span>
+                            <div class="detail_content">[vod:directedlink]</div>
+                        </li> 
+                        <li><span class="detail_title">更新：</span>
+                            <div class="detail_content">[vod:time style=y-m-d]</div>
+                        </li> 
+                        <li><span class="detail_subfield">类型：[vod:typename]</span> </li></ul>
+                </div>
+                <div style="margin-top:10px; float:left; clear:none; height:180px; width:280px;">
+                    <div class="bdsharebuttonbox">
+                        <a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a>
+                        <a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                        <a href="#" class="bds_qq" data-cmd="qq" title="分享到QQ收藏"></a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                        <a href="#" class="bds_baidu" data-cmd="baidu" title="分享到百度搜藏"></a>
+                        <a href="#" class="bds_taobao" data-cmd="taobao" title="分享到我的淘宝"></a>
+                        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                        <a title="分享到开心网" href="#" class="bds_kaixin001" data-cmd="kaixin001"></a>
+                        <a title="分享到百度新首页" href="#" class="bds_bdhome" data-cmd="bdhome"></a>
+                        <a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a>
+                        <a title="分享到百度个人中心" href="#" class="bds_ibaidu" data-cmd="ibaidu"></a>
+                        <a title="分享到百度云收藏" href="#" class="bds_bdysc" data-cmd="bdysc"></a>
+                        <a title="分享到百度贴吧" href="#" class="bds_tieba" data-cmd="tieba"></a>
+                        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+                        <a href="#" class="bds_more" data-cmd="more"></a>
+                    </div>
+                    <script>
+                        window._bd_share_config = {
+                            "common": {
+                                "bdSnsKey": {},
+                                "bdText": "",
+                                "bdMini": "2",
+                                "bdPic": "",
+                                "bdStyle": "0",
+                                "bdSize": "32"
+                            },
+                            "share": {}
+                        };
+                        with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+                    </script>
+                </div>
+                <div class="mod_desc">
+                    <h2><p>[vod:name]简介</p></h2>
+					<div class="c9 mt5 ftno">[vod:contenttext]</div>
+                </div>
+            </div>
+            <div class="slide_SBox">
+                <div class="hd">
+                    <div class="mod_title mb5">
+                        <h2 class="title">大家都在看啥</h2>
+                        <span class="arrow"><a class="next fr">换一批</a></span>
+                    </div>
+                </div>
+                <div class="bd">
+                    <ul class="list mb5">
+					{maccms:vod type=all num=8 order=desc by=this}
+                        <li class="fl">
+                            <a href="[vod:link]">
+                                <img class="lazy yj" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]">[vod:name]</a><span>[vod:starring len=8]</span>
+                        </li>
+						{/maccms:vod}
+                       </ul>
+                    <ul class="list mb5">
+					{maccms:vod type=all num=8 start=9 order=desc by=this}
+                        <li class="fl">
+                            <a href="[vod:link]">
+                                <img class="lazy yj"  src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]">[vod:name]</a><span>[vod:starring len=8]</span>
+                        </li>
+						{/maccms:vod}
+                        </ul>
+                    <ul class="list mb5">
+					{maccms:vod type=all num=8 start=18 order=desc by=this}
+                        <li class="fl">
+                            <a href="[vod:link]">
+                                <img class="lazy yj"  src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]">[vod:name]</a><span>[vod:starring len=8]</span>
+                        </li>
+					    {/maccms:vod}
+                        </ul>
+                </div>
+            </div>
+            <script type="text/javascript">
+                jQuery(".slide_SBox").slide({switchLoad:"_src",easing:"easeInQuint"});
+            </script>
+        </div>
+        <div class="r"><div id="comment" class="comment"></div>
+            <div class="mod_guess_list mt15">
+                <div class="mod_title mb5">
+                    <h2 class="title">看最新相关</h2>
+                </div>
+				{maccms:vod type=current num=15 order=desc by=time}
+			{if-A:[vod:num] = 1 }
+            <ol>
+                <li>
+                    <div id="b[vod:num]" style="display:none;" onmouseover="changebox([vod:num]);"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                        <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> <span class="ml5 c9">[vod:remarks]</span></h6><strong class="strong">[vod:hits]</strong>
+                    </div>
+                    <dl id="a[vod:num]" >
+                        <a href="[vod:link]" title="[vod:name]" class="fl">
+                            <img src="[vod:pic]" width="160" height="200" />
+                        </a>
+                        <dd class="fl ml5"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                            <h6 class="f16"><a href="[vod:link]" title="[vod:name]">[vod:name]</a><div class="fr score">[vod:score]</div></h6> 
+                            <p class="plhit"><samp class="ml5 c9">[vod:hits]</samp>
+                            </p>
+                            <p class="state"><samp class="ml5 c9">[vod:remarks]</samp>
+                            </p>
+                            <p class="f12">导演:<samp class="ml5 c9">[vod:directed]</samp>
+                            </p>
+                            <p class="f12">主演:<samp class="ml5 c9">[vod:starring]</samp>
+                            </p>
+                            <p class="f12">看点:<samp class="ml5 c9">[vod:contenttext len=33]</samp>
+                            </p>
+                            <div class="mod_play mt10"> <a href="[vod:playlink]" target="_blank" class="btn_play_rem" title="播放全集"><span>播放全集</span></a>  <a href="javascript:MAC.Fav(MAC.Url,MAC.Title)" class="btn_follow" title="关注"><i></i><span>关注</span></a> 
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ol>
+			{else-A}
+			<ol>
+                <li>
+                    <div id="b[vod:num]"  onmouseover="changebox([vod:num]);"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                        <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> <span class="ml5 c9">[vod:remarks]</span></h6><strong class="strong">[vod:hits]</strong>
+                    </div>
+                    <dl id="a[vod:num]"  style="display:none;" >
+                        <a href="[vod:link]" title="[vod:name]" class="fl">
+                            <img src="[vod:pic]" width="160" height="200" />
+                        </a>
+                        <dd class="fl ml5"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                            <h6 class="f16"><a href="[vod:link]" title="[vod:name]">[vod:name]</a><div class="fr score">[vod:score]</div></h6> 
+                            <p class="plhit"><samp class="ml5 c9">[vod:hits]</samp>
+                            </p>
+                            <p class="state"><samp class="ml5 c9">[vod:remarks]</samp>
+                            </p>
+                            <p class="f12">导演:<samp class="ml5 c9">[vod:directed]</samp>
+                            </p>
+                            <p class="f12">主演:<samp class="ml5 c9">[vod:starring]</samp>
+                            </p>
+                            <p class="f12">看点:<samp class="ml5 c9">[vod:contenttext len=33]</samp>
+                            </p>
+                            <div class="mod_play mt10"> <a href="[vod:playlink]" target="_blank" class="btn_play_rem" title="播放全集"><span>播放全集</span></a>  <a href="javascript:MAC.Fav(MAC.Url,MAC.Title)" class="btn_follow" title="关注"><i></i><span>关注</span></a> 
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ol>
+			{endif-A}
+			{/maccms:vod}
+                </div>
+        </div>
+    </div>﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+		    {maccms:foot}
+<div id="shadow"></div>
+   </body>
+</html>

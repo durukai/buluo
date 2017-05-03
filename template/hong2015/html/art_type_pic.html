@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>{page:name}_{maccms:name}</title>
+<meta name="keywords" content="{page:name}第{page:now}页{page:key}" />
+<meta name="description" content="{page:name}第{page:now}页{page:des}" />
+{maccms:include}
+<script src="{maccms:path_tpl}js/blocksit.min.js" language="javascript" type="text/javascript"></script>
+<style type="text/css">
+#wrapper{width:1240px;margin:0 auto;padding-top: 125px;}
+#wrapper hgroup{text-align:center;}
+#wrapper h2{margin:5px 0;color:#FF6D99;text-shadow:1px 1px 2px #A50031;font-size:33px;font-family:Arial Narrow, Arial, sans-serif;}
+#wrapper h3{font-style:italic;font-weight:normal;font-size:18px;text-shadow:1px 1px 0 #fff;color:#888;margin:5px 0;}
+
+#container{position:relative;width:1240px;margin:0 auto 25px;padding-bottom: 10px;}
+#container .grid{width:200px;min-height:100px;padding: 15px;background:#fff;margin:8px;font-size:12px;float:left;box-shadow: 0 1px 3px rgba(34,25,25,0.4);-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);-webkit-transition: top 1s ease, left 1s ease;-moz-transition: top 1s ease, left 1s ease;-o-transition: top 1s ease, left 1s ease;	-ms-transition: top 1s ease, left 1s ease;border: 1px solid #CCC;}
+
+#container .grid strong {border-bottom:1px solid #ccc;margin:10px 0;display:block;padding:0 0 5px;font-size:17px;}
+#container .grid .meta{text-align:right;color:#777;font-style:italic;}
+#container .grid .imgholder{text-align:center;}
+#container .grid .imgholder img{max-width:100%;background:#ccc;/*display:block;*/}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(window).load( function() {
+		$('#container').BlocksIt({
+			numOfCol: 5,
+			offsetX: 8,
+			offsetY: 8
+		});
+	});
+	
+	//window resize
+	/*var currentWidth = 1240;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 660) {
+			conWidth = 440;
+			col = 2
+		} else if(winWidth < 880) {
+			conWidth = 660;
+			col = 3
+		} else if(winWidth < 1100) {
+			conWidth = 880;
+			col = 4;
+		} else {
+			conWidth = 1240;
+			col = 5;
+		}
+		
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 8,
+				offsetY: 8
+			});
+		}
+	});*/
+});
+</script>
+</head>
+<body>
+{maccms:head}
+<!-- Content -->
+<div id="wrapper">
+  <div id="container">
+{maccms:art num=100 order=desc by=time type=current}
+{if-A:"[art:pic]" != "/"}
+    <div class="grid">
+      <div class="imgholder"><a href="[art:link]"><img src="[art:pic]" alt="[art:name]" /></a></div> 
+      <strong>[art:name]</strong>
+      {if-B:not isN("[art:subname]")}<p>[art:subname len=35]...</p>{endif-B}
+      <div class="meta">[art:time]</div>
+    </div>
+{endif-A}
+{/maccms:art}
+  </div>
+</div>
+{maccms:foot}
+</body>
+</html>

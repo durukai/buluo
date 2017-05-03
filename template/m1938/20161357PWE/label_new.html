@@ -1,0 +1,80 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=uft8" />
+<title>影视点播更新榜 精彩连放-iiDVD影音- {maccms:name}</title>
+<meta name="keywords" content="影视点播排行榜 精彩连放-iiDVD影音-{maccms:name}" />
+<meta name="description" content="影视点播排行榜 精彩连放-iiDVD影音- {maccms:name}" />
+		<meta http-equiv="x-ua-compatible" content="ie=7" />
+
+		{maccms:include}
+</head>
+<body>
+		{maccms:head}
+
+
+<!--/header-->
+<!--/header-->
+<div id="main" class="view"><div class="banner">广告</div>
+    <div class="toplist">
+    	<div class="pside">
+        	<div class="title">分类检索</div>
+            <ul>
+                <li><a href="{maccms:getlink new.html}">排行榜首页</a></li>
+				
+                <li><a href="{maccms:getlink dynew.html}">电影</a></li>		
+                <li><a href="{maccms:getlink tvnew.html}">电视剧</a></li>		
+                <li><a href="{maccms:getlink dmnew.html}">动画片</a></li>		
+                <li><a href="{maccms:getlink zynew.html}">综艺片</a></li>		
+				
+            </ul>
+
+            <div class="sidead">
+            	广告
+            </div>
+            <div class="sidead">
+            	广告
+            </div>
+        </div>
+        <div class="hotcon">
+        	<div class="htitle"><h3>影视风云更新榜</h3></div>
+        	<div class="whhot">
+        	
+			 {maccms:matrix type=1,2,3,4}
+			
+        	<div class="hotbox">
+            	<div class="title">[matrix:name]</div>
+                <p class="bti"><s>排名</s><em>名称</em><i>点击</i></p>
+                <ul>
+                	  {maccms:vod type=[matrix:id] num=10 order=desc by=time}
+					   {if-A:[vod:num]<4}
+                	<li><span>[vod:hits]</span><i class="on">[vod:num]</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=6]</a></li>
+                	      {endif-A}
+
+                	    {if-A:[vod:num]>3}
+                	<li><span>[vod:hits]</span><i>[vod:num]</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=6]</a></li>
+                	
+      {endif-A}
+                						
+				{/maccms:vod}
+                </ul>
+                <p class="more"></p>
+            </div>
+            
+        	
+            	
+			 {/maccms:matrix}
+
+            
+      <!--/hotbox-->
+    </div>
+    </div>
+</div>
+
+<!--/main-->
+{maccms:foot}
+		<script type="text/javascript" src="{maccms:path_tpl}js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>电影频道-最新、最热、1080P，720P高清电影-</title> 
+<meta name="keywords" content="电影,预告片,大片,1080P,720P,最新电影,高清电影,国产片,欧美电影,港台电影,日韩电影,热播电影,免费电影,经典电影,高清视频,在线观看" /> <meta name="description" content="-电影频道提供当下最新、最火各类好看的电影大片在线观看服务，为您提供免费720P、1080P高品质正版3D高清电影内容在线观看服务，专业全面提供海量的好莱坞电影、华语电影、欧洲电影、日韩电影、经典电影" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta property="qc:admins" content="666027777765676375" /> 
+<meta property="wb:webmaster" content="397d9deb11aac29f" /> 
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/index_4464_4464.css">
+<link rel="shortcut icon" href="{maccms:path_tpl}images/favicon.ico" charset="utf-8" />
+{maccms:include}
+</head> 
+ <body> 
+{maccms:head}
+<!--轮播开始-->
+<div class="channel-change-pic clearfix" id="FocusMap" areacode="top_pic">
+    <div class="channel-change-pic-l">
+        <div class="channel-pic-con" id="switchB">
+		{maccms:vod num=1 type={page:id} by=time level=4 order=desc}
+            <a href="[vod:link]" class="linksVideo" target="_blank"></a>
+			{/maccms:vod}
+        </div>
+        <div class="channel-pic-main">
+            <div class="change-pic-shadow"></div>
+            <div class="channel-pic-num clearfix">
+                <div class="change-pic-l"></div>
+                <div class="channel-pic-list-cover">
+                    <ul class="change-pic-list">
+					{maccms:vod num=8 type={page:id} by=time level=4 order=desc}
+					<li>
+					<a data-color="" data-pic="[vod:picslide]" data-value="[vod:contenttext len=80]" title="[vod:name]" href="[vod:link]" data-href="[vod:link]" data-status="[vod:remarks]" data-format="channel-pic-type02" data-type="[vod:typename]"  data-director="[vod:directed]"   data-actor="[vod:starring len=14]"  target="_blank" ><img alt="[vod:name]" src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" ><span id="1"></span></a>
+					</li>
+					{/maccms:vod}
+					</ul>
+                </div>
+                <div class="change-pic-r"></div>
+            </div>  
+        </div>
+    </div>
+    <div class="channel-change-pic-r linksVideo">
+    </div>
+</div>
+<!--轮播结束-->
+<!--索引开始-->
+<div class="fast-nav clearfix" areacode="listtag">
+<dl class="channel-guide-con">
+<dt class="channel-guide-tit">按地区</dt>
+{maccms:area order=desc}
+<dd><a href="[area:link]"  target="_blank">[area:name]</a></dd>
+{/maccms:area}
+</dl>
+<dl class="channel-guide-con04">
+<dt class="channel-guide-tit">按类型</dt>
+{maccms:menu parent={page:id} order=desc}
+ <dd><a href="[menu:link]" target="_blank"  title="[menu:name]">[menu:name]</a></dd>
+ {/maccms:menu}
+  </dl>
+  <dl class="channel-guide-con05">
+  <dt class="channel-guide-tit">按语言</dt>
+  {maccms:lang order=desc}
+  <dd><a href="[lang:link]" target="_blank"  title="[lang:name]">[lang:name]</a></dd>
+  {/maccms:lang}
+  </dl></div>
+  <!--索引结束--
+  ><!--通栏广告1 开始-->
+  <div class="advertise960" id="ad_DY3" style="display:none">
+  <script type="text/javascript" src="{maccms:path_tpl}ads/list1.js" charset="utf-8"></script>
+  </div>
+  <!--通栏广告1 结束-->
+  {maccms:matrix parent={maccms:curvodtypeid} table=vod order=asc}
+<div class="main-two-column clearfix" id="InMovie">
+<div class="channel-con-l" areacode="mainland">
+<div class="channel-l-tit clearfix">
+
+            <h2 class="channel-tit-text">最新[matrix:name]</h2>
+            <p class="channel-tit-more"><a href="[matrix:link]" target="_blank">更多>></a></p>
+        </div>
+        <!--列表开始-->
+        <ul class="channel-l-poster clearfix">
+                {maccms:vod num=4 type=[matrix:id] by=time order=desc}  
+                          
+                <li>
+				   <div class="hot-pic-like js-collect shadow-cut" data-name="[vod:name]"  data-id="[vod:id]">
+                    <p><a class="poster-src" href="[vod:link]" target="_blank"  title="[vod:name]">                  
+                    <img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" width=135 height=180  alt="[vod:name]" /></a>
+                                <em class="hot-pic-type01"
+>720P
+</em></p>
+					<p class="hot-pic-shadow"></p>
+					<p class="hot-pic-fv">
+						<a class="fv-add-no" href="javascript:void(0);" title="收藏"></a>
+					</p>
+					
+										</div>
+                    <p class="hot-pic-tit clearfix">
+                    <span class="score">[vod:score]</span>
+                    <a href="[vod:link]" target="_blank" class="hot-pic-name" title="[vod:name]">[vod:name len=10]</a>
+                    </p>
+                    <p class="hot-pic-tip">[vod:starring len=10]</p>
+                </li>          
+                   {/maccms:vod}
+        </ul>
+        <!--列表结束-->
+        <ul class="channel-text-list clearfix">
+		{maccms:vod num=10 type=[matrix:id] by=time order=desc start=5}
+            <li>
+            <span class="score">[vod:score]</span>    
+            <em class="icon-play"></em>
+            <a class="hot-movie-tit" href="[vod:link]" target="_blank" title="[vod:name]">[vod:name len=10]</a>
+            <span class="hot-movie-text">[vod:remarks]</span>
+            </li>
+			{/maccms:vod}                  
+                        
+        </ul>                                  
+		</div>
+		
+		<div class="channel-con-r" areacode="mainland_rank"><div class="channel-r-tit clearfix">
+		            <h3 class="channel-hot-tit">[matrix:name]月播榜</h3>
+            <p class="channel-hot-more"><a href="[matrix:link]" target="_blank">更多>></a></p>
+			
+        </div>
+        <div class="good-ranking channel-r-list">
+            <ul>
+      
+            {maccms:vod num=1 type=[matrix:id] by=monthhits order=desc}          
+                <li class="first clearfix">
+                    <p class="poster"><img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" width=135 height=180  alt="[vod:name]" />
+					<em class="icon-num">[vod:numjoin]</em></p>
+                    <div class="review">
+                        <p class="review-tit clearfix">
+                        
+                            <span class="score">[vod:score]</span>
+                            <a class="hot-movie-tit" href="[vod:link]" target="_blank" title="[vod:name]">[vod:name len=10]</a>
+                        </p>
+                        <p class="review-text">[vod:contenttext len=30]</p>
+                    </div>
+                </li>      
+        {/maccms:vod}
+     
+              {maccms:vod num=2 type=[matrix:id] by=monthhits order=desc start=2}      
+                <li class="second">                    
+                    <span class="score">[vod:score]</span>
+                    <em class="icon-num-sec">[vod:numjoin]</em>
+                    <a class="hot-movie-tit" href="[vod:link]"  target="_blank"  title="[vod:name]">[vod:name len=15]</a>
+                </li>                           
+       {/maccms:vod}
+	    {maccms:vod num=7 type=[matrix:id] by=monthhits order=desc start=4}                   
+                <li class="second">
+                    <span class="score">[vod:score]</span>
+                    <em class="icon-num-third">[vod:numjoin]</em>
+                    <a class="hot-movie-tit" href="[vod:link]"  target="_blank"  title="[vod:name]">[vod:name len=15]</a>
+                </li>
+				{/maccms:vod}        
+            </ul>
+        </div></div></div><!--两栏结构结束--><!--两栏结构开始-->
+		{/maccms:matrix}
+		<!--返回顶部开始-->
+<div class="to-top" id="goTop" areacode="gotop">
+	<a href="?m=vod-type-id-2.html" title="电视剧">电视剧</a>
+	<a href="?m=vod-type-id-1.html" title="电影">电影</a>
+	<a href="?m=vod-type-id-4.html" title="动漫">动漫</a>
+	<a href="?m=vod-type-id-3.html" class="last" title="综艺">综艺</a>
+	<a href="#" class="go-top">回到顶部</a>
+</div>
+<!--返回顶部结束-->
+{maccms:foot}
+<script src="{maccms:path_tpl}js/channel_4464.js"  type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">var tabsP = [["hot-resource-menu", "hot-resource-con", "cur", "hot"]];hd.channel(8, tabsP);</script>
+</body>
+</html>

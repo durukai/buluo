@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+    <title>好看的{page:name}-最新{page:name}-经典{page:name}--{maccms:name}</title>
+    <meta name="keywords" content="{page:key}" />
+    <meta name="description" content="{page:des}" />
+{maccms:include}
+<link href="{maccms:path_tpl}css/type.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{maccms:head}
+    <div class="warpper" style="padding-top: 110px;">
+        <div class="qirebox">
+            <div class="qirepic">
+                <ul class="info">
+				 {maccms:vod num=9 order=desc by=level type=all}
+                    <li class="li_n" >
+                        <div class="qirepic-silder-panel"><i class="userfav"><a href="javascript:void(0)" onclick="MAC.UserFav('[vod:id]');return false;"/>会员收藏</a></i>
+                            <a class="qirepic-silder-img yj5 mt5" href="[vod:link]">
+                                <img src="[vod:pic]">
+                            </a>
+                            <div class="qirepic-silder-intro">
+                                <div class="qirepic-silder-title">
+                                    <h2><a target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a></h2>
+                                    <span>([vod:remarks])</span>
+                                </div>
+                                <ul class="qirepic-silder-info clearfix">
+                                    <li class="long">
+                                        <label>主演：</label><span>[vod:starring]</span>
+                                    </li>
+                                    <li>类型：<span>[vod:classname]</span>
+                                    </li>
+                                    <li>导演：<span>[vod:directed]</span>
+                                    </li>
+                                    <li>年份：<span>[vod:year]</span>
+                                    </li>
+                                    <li>时间：<span>15-09-01</span>
+                                    </li>
+                                </ul>
+                                <p class="qirepic-silder-desc">剧情：<span>[vod:contenttext len=130]</span>
+                                </p> <a class="qirepic-silder-play" href="[vod:link]" target="_blank">立即观看</a>
+                            </div>
+                        </div>
+                    </li>
+					{/maccms:vod}
+                    </ul>
+            </div>
+            <div class="set_num yj5">
+                <ul>
+				{maccms:vod num=9 order=desc by=level type=all}
+                    <li >
+                        <a class="yj" href="[vod:link]" target="_blank">
+                            <img  class="yj" src="[vod:pic]">
+                        </a>
+                    </li>
+					{/maccms:vod}
+                   </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(".qirebox").slide({
+            titCell: ".set_num ul li",
+            mainCell: ".qirepic ul.info",
+            effect: "fold",
+            autoPlay: true,
+            delayTime: 300
+        });
+    </script>
+    <div class="container">
+        <div class="nvc bks blyj bryj">
+            <dl>	<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+                <dd>{page:textlink}</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="container">
+        <div class="l">
+            <div class="mod_tpy_Box mt5 mb10">
+                <div class="hd">
+                    <ul>
+                        <li>日榜</li>
+                        <li>月榜</li>
+                        <li>总榜</li>
+                        <li>推荐</li>
+                    </ul>
+                </div>
+                <div class="bd mod_guess_video_list fl">
+                    <ol>
+					{maccms:vod num=10 type={maccms:curvodtypeid} start=1 order=desc by=dayhits}
+			{if-A:[vod:num] = 1 }
+                        <a href="[vod:link]" target="_blank" class="figure">
+                            <img class="lazy" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" style="visibility: visible; " />
+                            <div class="figure_sign yj"><i class="num num_[vod:num] f18">[vod:num]</i>
+                            </div>
+                            <div class="figure_caption ftno"><strong>[vod:name]</strong>
+                            </div>
+                        </a>
+						{else-A}
+                        <li> <em class="num num_[vod:num] yj">[vod:num]</em>
+                            <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> </h6>
+                            <en class="fr">[vod:score]</en>
+                        </li>
+						{endif-A}
+					{/maccms:vod}
+                        </ol>
+                    <ol>
+					{maccms:vod num=10 type={maccms:curvodtypeid} start=1 order=desc by=weekhits}
+			{if-A:[vod:num] = 1 }
+                        <a href="[vod:link]" target="_blank" class="figure">
+                            <img class="lazy" src="[vod:pic]" alt="[vod:name]" style="visibility: visible; " />
+                            <div class="figure_sign yj"><i class="num num_[vod:num]">[vod:num]</i>
+                            </div>
+                            <div class="figure_caption ftno"><strong>[vod:name]</strong>
+                            </div>
+                        </a>
+						{else-A}
+                        <li> <em class="num num_[vod:num] yj">[vod:num]</em>
+                            <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> </h6>
+                            <en class="fr">[vod:score]</en>
+                        </li>
+						{endif-A}
+					{/maccms:vod}
+                        </ol>
+                    <ol> 
+                    {maccms:vod num=10 type={maccms:curvodtypeid} start=1 order=desc by=monthhits}
+			{if-A:[vod:num] = 1 }
+                        <a href="[vod:link]" target="_blank" class="figure">
+                            <img class="lazy" src="[vod:pic]" alt="[vod:name]" style="visibility: visible; " />
+                            <div class="figure_sign yj"><i class="num num_[vod:num]">[vod:num]</i>
+                            </div>
+                            <div class="figure_caption ftno"><strong>[vod:name]</strong>
+                            </div>
+                        </a>
+						{else-A}
+                        <li> <em class="num num_[vod:num] yj">[vod:num]</em>
+                            <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> </h6>
+                            <en class="fr">[vod:score]</en>
+                        </li>
+						{endif-A}
+					{/maccms:vod}
+					</ol>
+                    <ol> 
+                    {maccms:vod num=10 type={maccms:curvodtypeid} start=1 order=desc by=hits}
+			{if-A:[vod:num] = 1 }
+                        <a href="[vod:link]" target="_blank" class="figure">
+                            <img class="lazy" src="[vod:pic]" alt="[vod:name]" style="visibility: visible; " />
+                            <div class="figure_sign yj"><i class="num num_[vod:num]">[vod:num]</i>
+                            </div>
+                            <div class="figure_caption ftno"><strong>[vod:name]</strong>
+                            </div>
+                        </a>
+						{else-A}
+                        <li> <em class="num num_[vod:num] yj">[vod:num]</em>
+                            <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> </h6>
+                            <en class="fr">[vod:score]</en>
+                        </li>
+						{endif-A}
+					{/maccms:vod}
+					</ol>
+                </div>
+
+            </div>
+            <script type="text/javascript">
+                jQuery(".mod_tpy_Box").slide();
+            </script>
+            <div class="mod_indexs mod_index_t">
+                <div class="mod_cont">
+                    <div class="h3">按类型看</div>
+                    <ul>
+                        <li {if-A:"{page:pid}"="0"} class="current" {endif-A}><a href="{page:linktype}" title="全部">全部</a></li>
+                        {maccms:menu type=auto order=asc table=vod}
+                <li {if-A:"{page:id}"="[menu:id]"} class="current" {endif-A}><a href="[menu:link]" title="[menu:name]">[menu:name]</a>
+                </li>
+				{/maccms:menu}
+				</ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按年代看</div>
+                    <ul>
+					<li class="current"><a href="javascript:void(0)" title="全部">全部</a>
+                    </li>
+                    {maccms:year order=desc type=auto start=2007 end=2017}
+                <li><a href="[year:link]" title="[year:name]">[year:name]</a>
+                </li>
+				{/maccms:year}
+				</ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按地区看</div>
+                    <ul>
+                        <li class="current"><a href="javascript:void(0)" title="全部">全部</a>
+                        </li>
+                        {maccms:area order=asc type=auto}
+                <li><a href="[area:link]" title="[area:name]">[area:name]</a>
+                </li>
+				{/maccms:area}
+				</ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按剧情看</div>
+                    <ul>
+                        <li class="current"><a href="javascript:void(0)" title="全部">全部</a>
+                        </li>
+                        {maccms:class order=asc type=auto}
+                <li><a href="[class:link]" title="[class:name]">[class:name]</a>
+                </li>
+				{/maccms:class}
+				</ul>
+                </div>
+                <div class="mod_cont">
+                    <div class="h3">按字母看</div>
+                    <ul>
+                        <li class="current"><a href="javascript:void(0)" title="全部">全部</a>
+                        </li>
+                        {maccms:letter order=asc type=auto}
+                <li><a href="[letter:link]" title="[letter:name]">[letter:name]</a>
+                </li>
+				{/maccms:letter}
+				</ul>
+                </div>
+            </div>
+            <div class="mod_gg"></div>
+        </div>
+        <div class="r ml10 mb10 mt5">
+            <div class="mod_toolbar">
+                <ul>
+                    <li class="current"><a href="{page:linkbytime}">看最新更新</a>
+                    </li>
+                    <li><a href="{page:linkbyhits}">看最近热播</a>
+                        </li>
+                        <li><a href="{page:linkbyscore}">看最受好评</a>
+                            </li>
+                </ul>
+            </div>
+            <div class="mod_video_list">
+                <ul>
+				{maccms:vod pagesize=40 order=desc by=time}
+                    <li>
+						<i class="userfav"><a href="javascript:void(0)" onclick="MAC.UserFav('[vod:id]');return false;"/>会员收藏</a></i>
+                        <a href="[vod:link]" target="_blank" class="mod_poster_170">
+                            <img class="lazy yj5" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]">
+							<sup class="mark">[vod:remarks]</sup>
+                            </a>
+                        <h6 class="scores f14">
+							<a href="[vod:link]" title="[vod:name]"target="_blank">[vod:name]</a>
+							<strong>[vod:score]</strong>
+						</h6>
+                        <p>主演：[vod:starringlink]</p>
+                    </li>
+					{/maccms:vod}
+					</ul>
+               <div class="page" id="pager">{maccms:pages len=10}</div>
+            </div>
+        </div>
+    </div>﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+   {maccms:foot}
+   </body>
+</html>

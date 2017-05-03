@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>最新{page:name}-免费高清{page:name}在线观看_琪琪看片</title>
+<meta name="keywords" content="最新{page:name},{page:name}高清在线,好看的{page:name},免费{page:name}在线观看" />
+<meta name="description" content="琪琪看片为您提供最新{page:name}免费高清在线观看，让您欣赏高清（480P，720P，1080P）的最新{page:name}，免费在线观看！看最新{page:name}，就来琪琪看片！" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/standard_4464.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/style_4464.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/cinema_4464.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/default_4464.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path}images/jquery.autocomplete.css">
+<link rel="shortcut icon" href="{maccms:path_tpl}images/favicon.ico" charset="utf-8" />
+{maccms:include}
+</head> 
+<body> 
+{maccms:head}
+<!--主体内容开始-->
+<div class="sort-list-main clearfix">
+	<div class="sort-list-l">
+		<div class="sort-list-ad-l">
+			<script type="text/javascript">
+			      var bf_ad_id = 'R1';
+			      var bf_ad_width = 200;
+			      var bf_ad_height = 200;
+			</script>
+			<script type="text/javascript" src="{maccms:path_tpl}ads/vodlist1.js"></script>
+		</div>
+		<div class="sort-list-ad-l">
+			<script type="text/javascript">
+			      var bf_ad_id = 'R1';
+			      var bf_ad_width = 200;
+			      var bf_ad_height = 200;
+			</script>
+			<script type="text/javascript" src="{maccms:path_tpl}ads/vodlist2.js"></script>
+		</div>
+		<div class="sort-list-ad-l">
+			<script type="text/javascript">
+			      var bf_ad_id = 'R2';
+			      var bf_ad_width = 200;
+			      var bf_ad_height = 200;
+			</script>
+			<script type="text/javascript" src="{maccms:path_tpl}ads/vodlist3.js"></script>
+		</div>
+	</div>
+	<div class="sort-list-r">
+						<div class="sort-list-r-mod01" areacode="listtag">
+			<!--选择开始-->
+			<div class="selecter">
+        <div class="sorts clearfix"  >
+        	<strong>按地区：</strong>
+		<div class="clearfix rp"   >
+            <a  href="{page:linkarea}" {if:"{page:area}"=""} class="active" {end if}>全部</a>
+			{maccms:area type=auto order=asc}
+          <a href="[area:link]" {if-A:"{page:area}"="[area:name]"} class="active" {endif-A}>[area:name]</a>
+          {/maccms:area}	    		
+	    	        </div>
+	</div>
+	        <div class="sorts clearfix"  >
+        	<strong>按类型：</strong>
+		 <div class="clearfix rp"  >
+            <a href="#">全部</a>
+			{maccms:menu type=auto}
+          <a href="[menu:link]" {if-A:"{page:id}"="[menu:id]"} class="active" {endif-A}>[menu:name]</a>
+          {/maccms:menu}
+	    	    </div>
+        </div>
+		<div class="sorts clearfix"   >
+		        	<strong>按上映：</strong>
+				<div class="clearfix rp"   >
+				
+            <a href="{page:linkyear}" {if:"{page:year}"=""} class="active" {end if}>不限</a>
+			{maccms:year type=auto start=1990 end=2014 order=desc}
+          <a href="[year:link]" {if-A:"{page:year}"="[year:name]"} class="active" {endif-A}>[year:name]</a>
+          {/maccms:year}  				   
+			    		</div>
+        </div> 
+ </div>			<!--选择结束-->
+		</div>
+						<div class="sort-list-r-mod02">
+					<div class="sort-list-r-tab">
+				<ul class="hot-resource-menu clearfix" areacode="tag">
+					<li class="cur ">最近更新</li>
+									</ul>
+			</div>
+		
+					<ul class="sort-list-r-poster clearfix" areacode="recommend">
+								{maccms:vod pagesize=30 type=current by=time order=desc}
+								<li>							    
+					<div class="hot-pic-like js-collect shadow-cut" data-name="[vod:name]"  data-id="[vod:id]">
+						<p>
+							<a class="poster-src" href="[vod:link]"  target="_blank" title="[vod:name]"><img src="[vod:pic]" onerror="javascript:this.src='{maccms:path}images/nopic.gif';" width="120" height="160" alt="[vod:name]" ></a>
+																				</p>
+						<p class="hot-pic-shadow"></p>
+						<p class="hot-pic-fv">
+							<a class="fv-add-no" href="javascript:void(0);" title="收藏"></a>
+						</p>
+					</div>
+					<p class="hot-pic-tit clearfix"><a href="[vod:link]" target="_blank" class="hot-pic-name" title="[vod:name]">[vod:name len=10]</a></p>
+					<p class="hot-pic-tip">[vod:remarks]</p>
+					<p class="pic-area-type">[vod:starring len=10]
+					</p>
+				</li>
+				{/maccms:vod}
+				</ul>
+			<!--翻页开始-->
+			<div class="pages" areacode="page">
+			<ul class="clearfix">{maccms:pages len=8}
+							</ul>
+						</div>
+			<!--翻页结束-->
+				</div>
+	</div>
+</div>
+<!--主体内容结束-->>
+<!--返回顶部开始-->
+<div class="to-top" id="goTop" areacode="gotop">
+	<a href="?m=vod-type-id-2.html" title="电视剧">电视剧</a>
+	<a href="?m=vod-type-id-1.html" title="电影">电影</a>
+	<a href="?m=vod-type-id-4.html" title="动漫">动漫</a>
+	<a href="?m=vod-type-id-3.html" class="last" title="综艺">综艺</a>
+	<a href="#" class="go-top">回到顶部</a>
+</div>
+<!--返回顶部结束-->
+{maccms:foot}
+	<script type="text/javascript">
+				var ad_dl_id = 'hddl';
+				var ads = [{
+					id: 'HD1', width: 960, height: 90, element: 'ad_HD1'
+				}, {
+					id: 'HD2', width: 960, height: 90, element: 'ad_HD2'
+				}];
+	</script>
+	
+	   <script type="text/javascript" src="{maccms:path_tpl}js/index_4464.js"></script>
+	<script type="text/javascript">
+	  hd.index();
+	</script> 
+</body>
+ </html>

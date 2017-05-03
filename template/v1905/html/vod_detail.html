@@ -1,0 +1,252 @@
+﻿
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html class="ie6 ielt8"><![endif]-->
+
+<!--[if IE 7]><html class="ie7 ielt8"><![endif]-->
+
+<!--[if IE 8]><html class="ie8"><![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<html>
+
+<!--<![endif]-->
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>《[vod:name]》百度影音电影-[vod:remarks]下载-[vod:from]在线观看 - [vod:typename] - {maccms:name}</title>
+
+<meta name="keywords" content="《[vod:name]》高清下载,《[vod:name]》在线观看,《[vod:name]》百度影音" />
+
+<meta name="description" content="[vod:name]剧情:[vod:contenttext len=60]" />
+
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/title.css">
+
+<script src="http://static.m1905.cn/??js/core/jquery-edge.min.js,passport/js/validate.js,passport/js/emailsuggest.js,passport/js/popReg.js,js/utils/artTemplate.js,hao/js/mSearchPlugin.js"></script>
+
+
+
+<body>
+
+
+
+{maccms:head}
+
+<!--[if lt IE 7]> 
+
+<script src="http://js.static.m1905.cn/index2012/IE7.js"></script>
+
+<![endif]-->
+
+<link type="text/css" rel="stylesheet" href="http://static.m1905.cn/hao/css/min_details.css">
+
+<link type="text/css" rel="stylesheet" href="http://static.m1905.cn/hao/css/dy_sty.css">
+
+<link type="text/css" rel="stylesheet" href="http://static.m1905.cn/hao/css/jg_page.css">
+
+<link rel="stylesheet" href="http://static.m1905.cn/hao/css/film_gg.css">
+
+<div class="zsm_xq result_page clearfix wap_dsj" id="content" data-yslog ="open" data-channel="2">
+
+
+
+    <div class="left_cont fl">
+
+  <div class="xq_and_play clearfix">
+
+			
+
+            <div class="fl dy_play">
+
+
+
+                <div class="gy_play">
+
+                    <a href="[vod:playlink]" target="_blank" class="src_hrfe" title="[vod:name]">
+
+                        <span class="gy_img"><img src="[vod:pic]" alt="[vod:name]" width="195" height="260"></span>
+
+                        <strong class="hover_bg">
+
+                            <em class="gy_logo"></em>
+
+                            <em class="gy_bg"></em>
+
+                        </strong>
+
+                    </a>                            	
+
+                </div>
+
+            </div>
+
+            <div class="fr right_cont">
+
+                <div class="film_name_cont">
+
+                    <h3>[vod:name]<strong>[vod:year]</strong></h3>
+
+                </div>
+
+                <p class="director"><span>导演：</span>[vod:directedlink]</p>                <p class="protagonist"><span>主演：</span>[vod:starringlink]</p>                <p class="director"><span>地区：</span>[vod:arealink]<span>年代：</span>[vod:yearlink]</p>                <p class="protagonist"><span>类型：</span>[vod:classlink]</p>   
+
+         
+
+                <p class="brief">
+
+                	                    <span class="brief_het">简介：</span><strong class="unfold">[vod:contenttext len=96] ...<em>[展开]</em></strong>
+
+                    	<strong class="pack_up">[vod:contenttext] <em>[收起]</em></strong>
+
+                                    </p>             
+
+<p class="juji">
+
+                    	<span>TAG：</span>
+
+                                	<strong class="unfold"><em>[vod:taglink]</em></strong>
+
+                	
+
+                </p>     
+
+            </div>
+
+        </div>
+
+       
+
+        <div class="sou_jg">
+
+<div class="laiyuan">
+
+	<div class="tab_show clearfix">
+
+ 		<ul class="row_list fl">
+
+ 		{maccms:play}<li {if-A:[play:num]=1} class="active" {endif-A}{if-A:"[play:show]"="[vod:playfromshow]"} class="active" {endif-A}> <a href="javascript:;"><img src="{maccms:path_tpl}images/player/[play:from].jpg"><span>[play:show]</span></a></li>{/maccms:play} 
+
+        </ul>
+
+	</div>
+
+
+
+    <div class="hundred_up">
+
+	{maccms:play}
+
+    <div {if-A:[play:num]=1}class="duiyin lock_on js_nflist" style="display:block"{endif-A}{if-A:"[play:show]"="[vod:playfromshow]"} class="duiyin lock_on js_nflist" style="display:block" {else-A}class="duiyin js_nflist" style="display:none" {endif-A}> 
+
+    	            <ul class="js_list clearfix">
+
+{maccms:url order=desc}
+
+            <li {if-A:"[play:show]"="[vod:playfromshow]"} style="background-color: rgb(251, 251, 251);" {endif-A}><script>document.write(playstr("[play:from]"));</script><a href="[url:link]" target="_blank">[url:num]</a>{if-A:[url:num]=[play:urlcount]}<i></i>{endif-A}</li>
+
+{/maccms:url}
+
+            </ul>   
+
+           </div>
+
+   {/maccms:play}
+
+       </div>
+
+</div>
+
+</div>      
+
+       <div class="gy_tab_set">
+
+        	<div class="tab_type clearfix">
+
+        		        			<p class="fl">
+
+        			<span class="active">猜你喜欢</span>                	<span >同演员作品</span>                	</p>
+
+                	<a href="javascript:;" class="fr in_group"></a>
+
+        		            </div>
+
+            <div class="all_list">
+
+            <ul class="clearfix item_lock mack_on">
+
+ {maccms:vod num=8 order=desc type={maccms:curvodtypeid} by=score}
+
+            	<li class="show_up">
+
+                    	<a target="_blank" href="[vod:link]">
+
+                        	<span><img src="[vod:pic]" alt="[vod:name]" width="165" height="220"/></span>
+
+                            <strong><b>[vod:name]</b><b>[vod:remarks]</b></strong>
+
+                        </a>
+
+                    </li>{/maccms:vod}
+
+                </ul>            <ul class="clearfix ">
+
+            	 {maccms:vod num=8 order=desc type={maccms:curvodtypeid} by=time]}
+
+            	<li class="show_up">
+
+                    	<a target="_blank" href="[vod:link]">
+
+                        	<span><img src="[vod:pic]" alt="[vod:name]" width="165" height="220"/></span>
+
+                            <strong><b>[vod:name]</b><b>[vod:remarks]</b></strong>
+
+                        </a>
+
+                    </li>{/maccms:vod}
+
+                </ul>                             	
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+<div class="rig_cont fr">
+
+	<h3>[vod:typename]排行榜</h3>
+
+	<ul class="roll_height">
+
+{maccms:vod num=10 by=weekhits type={maccms:curvodtypeid} order=desc}
+
+		<li {if-A:[vod:num]<4} class="num1" {endif-A}><i>[vod:numfill]</i><span><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></span><strong>[vod:score]分</strong></li>{/maccms:vod}
+
+	</ul>
+
+</div>
+
+</div>
+
+<script src="http://static.m1905.cn/hao/js/jg_pag.js"></script>
+
+<script src="http://static.m1905.cn/hao/js/min_det_js.js"></script>
+
+<script src="http://js.static.m1905.cn/core/ui.min.js"></script> 
+
+<script type="text/javascript" src="{maccms:path_tpl}js/fan.js"></script> 
+
+{maccms:foot}
+
+	</body>
+
+</div>
+
+</html>

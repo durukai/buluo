@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<meta property="og:type" content="videolist">
+<meta property="og:title" content="[vod:name]">
+<meta property="og:description" content="[vod:name]剧情:[vod:contenttext len=85]">
+<meta property="og:image" content="http://{maccms:url}[vod:pic]">
+<meta property="og:url" content="http://{maccms:url}[vod:link]">
+<meta property="og:video" content="http://{maccms:url}[vod:playlink]">
+<meta property="og:video:actor" content="[vod:starring]">
+<meta property="og:video:director" content="[vod:directed]">
+<meta property="og:video:duration" content="[vod:duration]">
+<meta property="og:video:pix" content="[vod:remarks]">
+<meta property="og:video:release_date" content="[vod:addtime style=yy-m-d]">
+<meta property="og:video:update_date" content="[vod:time style=yy-m-d]">
+<meta property="og:video:alias" content="[vod:subname]">
+<meta property="og:video:area" content="[vod:arealink]">
+<meta property="og:video:score" content="[vod:score]">
+<meta property="og:video:base_score" content="[vod:scoreall]">
+<meta property="og:video:tv" content="{maccms:name}">
+<meta property="og:isfree:class" content="1">
+<meta property="og:video:class" content="[vod:typename]">
+<meta property="og:video:host" content="">
+<meta property="og:video:language" content="[vod:lang]">
+<title>[vod:typepname][vod:name]最新更新,看个[vod:name]高清全集下载在线观看_{maccms:name}</title>
+<meta name="keywords" content="看[vod:name]最新更新,[vod:name]免费在线观看,[vod:name]高清全集下载,看[vod:name]最新剧集,[vod:name]tv版" />
+<meta name="description" content="[vod:typepname][vod:name]剧情介绍[vod:name]讲述了[vod:contenttext len=60]" />
+{maccms:load include.html}
+<link href="{maccms:path_tpl}css/detail.css" rel="stylesheet" />
+<script src="{maccms:path_tpl}js/playlist.js" type="text/javascript" language="javascript"></script><script>MAC.History.Insert("[vod:name]","[vod:link]","[vod:typepname]","[vod:typelink]","[vod:pic]");</script>
+</head>
+<body>
+{maccms:load head.html}
+{if-A:"[vod:picslide]"<"1"}
+{maccms:load detail_m.html}
+{endif-A}
+{if-A:"[vod:picslide]">"1"}
+{maccms:load detail_f.html}
+{endif-A}
+         <div class="picScroll mod_guess_video_list mt20">
+            <ul>
+			{maccms:vod type=current num=8 order=desc by=time}
+                <li>
+                    <a href="[vod:link]" class="mod_poster" title="[vod:name]">
+                        <img src="/images/blank.png" _src="[vod:pic]" alt="[vod:name]" />
+                    </a>
+                    <h6 class="mt10 f14"><a href="[vod:link]" title="[vod:name]">[vod:name]</a></h6>
+                    <p class="fl f12 mt3 ftno c9">主演：[vod:starringlink]</p>
+                </li>
+				{/maccms:vod}
+                </ul>
+				<a class="prev" _hot="cover3.1.playlist.new.prev" data-role="prev" href="javascript:;" hidefocus="true">
+				<span class="btn_inner">上一页</span></a>
+				<a class="next disabled" _hot="cover3.1.playlist.new.next" data-role="next" href="javascript:;" hidefocus="true">
+				<span class="btn_inner">下一页</span></a>
+        </div><script type="text/javascript">jQuery(".picScroll").slide({ mainCell:"ul",easing:"easeInOutBack", effect:"leftLoop", vis:4, scroll:4,  autoPage:true, switchLoad:"_src" });</script>
+    <div class="mod_guess_video_list mt15 fl">
+        <div class="mod_title">
+            <h2 class="title">看本类热播</h2>
+        </div>
+        <ul>
+		{maccms:vod type=current num=8 order=desc by=dayhits}
+            <li class="mt10 mb5 mr15 fl">
+                <a href="[vod:link]" class="mod_poster" title="[vod:name]">
+                    <img class="lazy yj" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" />
+                </a>
+                <h6 class="mt10 f14"><a href="/vod-detail-id-25188.html" title="[vod:name]">[vod:name]</a></h6>
+                <p class="fl f12 mt3 ftno c9">主演：[vod:starringlink]</p>
+            </li>
+			{/maccms:vod}
+            </ul>
+    </div>
+    </div>
+    <div class="r">
+        <div class="mod_hit_box mt15 mb5">
+            <div class="hd">	<span class="arrow f16">看排行榜</span>
+                <ul>
+				{maccms:matrix table=vod type=1,2,3,4}
+                    <li><span class="link_inner">看[matrix:name]</span>
+                        </a><i class="arrow_up"></i>
+                    </li>
+                    {/maccms:matrix}
+                </ul>
+            </div>
+            <div class="bd mod_guess_video_list fl">
+			{maccms:matrix table=vod type=1,2,3,4}
+                <ol class="mt5 mr10 mb10 ml5">
+				{maccms:vod num=10 type=[matrix:id] start=1 order=desc by=score}
+                    <li style="width: 50%;"> <em class="num num_[vod:num] yj">[vod:num]</em>
+                        <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> </h6>
+                    </li>
+					{/maccms:vod}
+                    </ol>
+					{/maccms:matrix}
+					</div>
+        </div>
+        <script type="text/javascript">
+            jQuery(".mod_hit_box").slide({
+                delayTime: 200,easing:"easeInExpo"
+            });
+        </script>
+        <div id="coral_tp" class="coral_tp mt10 ml10">
+            <div class="tp_wrap">
+                <div class="tp_down" id="tp_down_btn">
+                    <a hidefocus="true" class="digg_voddown" href="javascript:void(0)"></a>
+                </div>
+                <div class="tp_up" id="tp_up_btn">
+                    <a hidefocus="true" class="digg_vodup" href="javascript:void(0)"></a>
+                </div>
+                <div class="tp_num" id="digg>"><span class="tp_c"><em id="digg_voddown_val">0</em></span>
+                    <span class="tp_d"><em id="digg_vodup_val">0</em></span>
+                    <div style="width: 50%;" class="tp_num_down" id="digg_voddown_sp">
+                        <div class="tp_line"></div>
+                    </div>
+                    <div style="width:50%;" class="tp_num_up" id="digg_vodup_sp">
+                        <div class="tp_line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="comment" class="comment"></div>
+        <div class="mod_guess_list mt10 mb10">
+            <div class="mod_title mb5">
+                <h2 class="title">看本类排行</h2>
+            </div>
+			{maccms:vod type=current num=15 order=desc by=hits}
+			{if-A:[vod:num] = 1 }
+            <ol>
+                <li>
+                    <div id="b[vod:num]" style="display:none;" onmouseover="changebox([vod:num]);"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                        <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> <span class="ml5 c9">[vod:remarks]</span></h6><strong class="strong">[vod:hits]</strong>
+                    </div>
+                    <dl id="a[vod:num]" >
+                        <a href="[vod:link]" title="[vod:name]" class="fl">
+                            <img src="[vod:pic]" width="160" height="200" />
+                        </a>
+                        <dd class="fl ml5"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                            <h6 class="f16"><a href="[vod:link]" title="[vod:name]">[vod:name]</a><div class="fr score">[vod:score]</div></h6> 
+                            <p class="plhit"><samp class="ml5 c9">[vod:hits]</samp>
+                            </p>
+                            <p class="state"><samp class="ml5 c9">[vod:remarks]</samp>
+                            </p>
+                            <p class="f12">导演:<samp class="ml5 c9">[vod:directed]</samp>
+                            </p>
+                            <p class="f12">主演:<samp class="ml5 c9">[vod:starring]</samp>
+                            </p>
+                            <p class="f12">看点:<samp class="ml5 c9">[vod:contenttext len=33]</samp>
+                            </p>
+                            <div class="mod_play mt10"> <a href="[vod:playlink]" target="_blank" class="btn_play_rem_bottom" title="播放全集"><span>播放全集</span></a>  <a href="javascript:MAC.Fav(MAC.Url,MAC.Title)" class="btn_follow_bottom" title="关注"><i></i><span>关注</span></a> 
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ol>
+			{else-A}
+			<ol>
+                <li>
+                    <div id="b[vod:num]"  onmouseover="changebox([vod:num]);"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                        <h6><a href="[vod:link]" title="[vod:name]">[vod:name]</a> <span class="ml5 c9">[vod:remarks]</span></h6><strong class="strong">[vod:hits]</strong>
+                    </div>
+                    <dl id="a[vod:num]"  style="display:none;" >
+                        <a href="[vod:link]" title="[vod:name]" class="fl">
+                            <img src="[vod:pic]" width="160" height="200" />
+                        </a>
+                        <dd class="fl ml5"><em class="tnum tnum_[vod:num] yj">[vod:num]</em>
+                            <h6 class="f16"><a href="[vod:link]" title="[vod:name]">[vod:name]</a><div class="fr score">[vod:score]</div></h6> 
+                            <p class="plhit"><samp class="ml5 c9">[vod:hits]</samp>
+                            </p>
+                            <p class="state"><samp class="ml5 c9">[vod:remarks]</samp>
+                            </p>
+                            <p class="f12">导演:<samp class="ml5 c9">[vod:directed]</samp>
+                            </p>
+                            <p class="f12">主演:<samp class="ml5 c9">[vod:starring]</samp>
+                            </p>
+                            <p class="f12">看点:<samp class="ml5 c9">[vod:contenttext len=33]</samp>
+                            </p>
+                            <div class="mod_play mt10"> <a href="[vod:playlink]" target="_blank" class="btn_play_rem_bottom" title="播放全集"><span>播放全集</span></a>  <a href="javascript:MAC.Fav(MAC.Url,MAC.Title)" class="btn_follow_bottom" title="关注"><i></i><span>关注</span></a> 
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ol>
+			{endif-A}
+			{/maccms:vod}
+            </div>
+    </div>
+    </div>
+    </div>﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+		    {maccms:foot}
+   </body>
+</html>

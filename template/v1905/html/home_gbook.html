@@ -1,0 +1,247 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>{maccms:name}留言本 - 欢迎大家报告错误和提出建议</title>
+
+	<meta name="author" content="{maccms:name}留言本" />
+
+	<meta name="Copyright" content="{maccms:keywords}" />
+
+	<meta name="description" content="{maccms:description}" />
+
+<meta content="all" name="robots" />
+
+<link href="http://www.i2020by2.com/static/guest/style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- // Header Start -->
+
+<div class="header">
+
+	<div class="head-bar fn-clear">
+
+		<div class="logo fn-left">
+
+		<a href="/"><img src="/images/logo.png" alt="{maccms:name}" /></a>
+
+		</div>
+
+		<!-- // Logo End -->
+
+		<div class="gb-logo fn-left">
+
+		<a href="/"><img src="http://www.i2020by2.com/static/guest/gblogo.gif" alt="" /></a>
+
+		</div>
+
+		<!-- // Logo End -->
+
+		<div class="top-bar fn-right">
+
+			<a href="/">网站首页</a>
+
+			<a href="/faq/" target="_blank">常见问题</a>
+
+		</div>
+
+		<!-- // top-bar End -->
+
+		<!-- // search End -->
+
+	</div>
+
+<!--
+
+<div style="	width: 100%;border-top: 1px solid #f1e031;border-bottom: 1px solid #f1e031;background: #F5F5DC;margin-top:0px;	border-left: 1px solid #f1e031;border-right: 1px solid #f1e031;clear:both;width:938px;padding:10px;text-align:center;color:#e12160;margin:0px auto 0px">
+
+有同学反映新安装的西瓜影音播放黑屏，现查明是西瓜影音的版本问题，出现黑屏的同学可去<a href="http://www.xigua.com/">官网下载</a>最新的版本，也可以等明天我们发布新版本再下载
+
+</div>
+
+-->
+
+</div>	
+
+<!-- // Header End -->
+
+<div class="wrap">
+
+	<div class="container fn-clear">
+
+		<div class="ui-gbook fn-left">
+
+        	<!-- // ui-gb-num End -->
+
+ {maccms:gbook pagesize=10 order=desc by=time}
+
+  <div class="ui-gb-item fn-clear">
+
+	<div class="ui-gb-num">
+
+		<span class="gb-number">[gbook:id]</span>条留言
+
+	</div>
+
+	<!-- // ui-gb-num End -->
+
+	<div class="ui-gb-box ui-gb-cnt">
+
+		<div class="ui-gb-cnt-min">
+
+			<div class="ui-title">
+
+				<span>[gbook:time style=Y-m-d H:i:s]</span>
+
+				<h5> [gbook:name]</h5>						
+
+			</div>
+
+			<div class="ui-text">
+
+			[gbook:content]			</div>
+
+					</div>	
+
+	</div>
+
+	<!-- // ui-gb-cnt End -->{if-B:!isN("[gbook:reply]")}
+
+	<div class="ui-gb-box ui-gb-reply">
+
+		<div class="ui-gb-cnt-min">
+
+			<div class="ui-title">
+
+				<h5>管理员回复</h5>						
+
+			</div>
+
+			<div class="ui-text"><p>[gbook:reply]</p></div>
+
+		</div>	
+
+	</div>{endif-B}
+
+	<!-- // ui-gb-reply End --></div>{/maccms:gbook}
+
+<!-- // ui-gb-item End -->
+
+		<div class="bot"></div>	
+
+	<!-- // ui-page End -->{maccms:pages len=6}
+
+		</div>
+
+		<!-- // ui-gbook End -->
+
+		<div class="ui-bar fn-right">
+
+
+
+	<div class="ui-form">
+
+				<form id="msgleave" name="leavemsg" method="post" action="{maccms:path}index.php?m=gbook-save">
+
+                <input name="gb_cid" type="hidden" value="" />
+
+					<div class="ui-form-title"></div>
+
+					<div class="ui-form-item">
+
+						<label class="ui-label">请输入您的昵称：</label>
+
+                         <input name="g_name" id="g_name" type="hidden" value="" />
+
+                         <input class="ui-input"  name="g_name" id="g_name" type="text" value="" />
+
+					</div>
+
+					<div class="ui-form-item ui-form-type">
+
+						<label class="ui-label">留言类型：</label>
+
+						<ul id="gb_types">	
+
+							<li val="11">影片报错</li>
+
+							<li val="12">访问故障</li>
+
+							<li val="1">网站建议</li>
+
+							<li val="2">其他留言</li>	
+
+							<input name="gb_cid" type="hidden" id="gb_cid" value="0"/>
+
+						</ul>
+
+					</div>
+
+					<div class="ui-form-item ui-form-type-msg">
+
+						<p>请选择留言类型！</p>
+
+					</div>
+
+					<div class="ui-form-item">
+
+						<label class="ui-label">请输入您的留言内容：</label>
+
+						<textarea name="g_content" id="g_content" rows="6" cols="50" class="gb_content"></textarea>
+
+					</div>
+
+					 <div class="ui-form-item">		
+
+                        <label id="gb_tips"></label>
+
+            <input  class="ui-button" type="submit"  value="发送留言" onClick="return check_message()"  />
+
+					</div>
+
+				<input type="hidden" name="__hash__" value="33a98c1861de533dbd210f92380fa5a2" /></form>	
+
+			</div>
+
+			<!-- // ui-bar End -->	
+
+			<div class="ui-message">
+
+				<p>请勿提交非法信息和广告，违反者查封ID，甚至永久删除！谢谢合作~</p>
+
+				<p>快播播放不了的情况下，留言时请留下您的QQ，以便我们联系您；</p>
+
+				<p>版权投诉请附带版权所属证明发至邮箱805597953@qq.com，请不要在此留言，我们收到邮件后会立刻处理；</p>
+
+			</div>
+
+			<!-- // ui-message End -->		
+
+		</div>
+
+		<!-- // ui-bar End -->
+
+	</div>
+
+	<!-- // container End -->
+
+	<div class="ui-copyright">
+
+		Copyright &copy; 20012-2015 {maccms:name}留言本	</div>
+
+</div>	
+
+<!-- // wrap End -->
+
+</body>
+
+</html>
+

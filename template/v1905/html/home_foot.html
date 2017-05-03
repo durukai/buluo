@@ -1,0 +1,40 @@
+
+<!-- main end -->
+
+<!-- 底部说明 -->
+
+<div id="footer" class="clearfix">
+
+  <div>
+
+     <p>影音视频搜索结果源于互联网视频网站，系计算机系统根据搜索热度自动排列，不代表1905赞成被搜索网站的内容或立场。<br>
+模板由小俊工作室收费模板，欢迎站长们的使用，做网站，做模板，找小俊www.xiaog.cc</p>
+
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+M.config({baseUrl : 'http://js.static.m1905.cn/'});
+
+M.use( 'utils/adloader', function (adloader) {
+
+var $adQueue = $('.adArea');
+
+$adQueue.each(function (i, el) {
+
+var adthis = adloader(this);
+
+adthis && adthis.addIframeAd();
+
+adthis && adthis.switchIframeAd();
+
+});
+
+});
+
+</script> 
+
+
+<div id="reportcontrol" title="用户留言" style="position: fixed; right: 20px; opacity: 1; cursor: pointer;"><a href="{maccms:link_gbook}" class="report_stick" target="_blank"></a></div><div id="topcontrol" title="返回顶部" style="position: fixed; bottom: 30px; right: 20px; opacity: 0; cursor: pointer;"><a href="#top" class="top_stick"></a></div>

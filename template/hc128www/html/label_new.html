@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+<title>看最新更新综艺,看个最新播放电视剧,看卫视综艺全集,看个最新上映电影_{maccms:name}</title>
+<meta name="keywords" content="看最新更新综艺,看个最新播放电视剧,看卫视综艺全集,看个最新上映电影" />
+<meta name="description" content="{maccms:description}" />
+{maccms:load include.html}
+<link href="{maccms:path_tpl}css/label_all.css" rel="stylesheet" type="text/css" />
+<body>
+{maccms:load head.html}
+	<div class="w" style="padding-top: 65px;">
+	   <div class="container">
+		<div class="nvc">
+			<dl>
+				<dt>
+					<span>当前位置</span>
+					<i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
+				</dt>
+				<dd>首页  »  最近更新</dd>
+			</dl>
+		</div>
+	</div>
+		<div class="n-content">
+			<ul>
+				<dd>
+					<span class="title">最近更新100部</span>
+					<h5>最近更新时间</h5></dd>
+{maccms:vod num=100 type=all start=1 order=desc by=time}
+				<li>
+					<span class="num">[vod:num].</span>
+					<span class="tit"><a href="[vod:link]" target="_blank">[vod:name]</a> </span>
+					<span class="type"><a href="[vod:typeexpandlink]" target="_blank">[vod:typename]</a></span>
+					<span class="time">[vod:time style=m-d]</span>
+				</li>
+{/maccms:vod}
+			</ul>
+		</div>
+	</div>
+
+﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+		    {maccms:foot}
+   </body>
+</html>

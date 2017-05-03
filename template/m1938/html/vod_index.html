@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{maccms:name}</title>
+<meta name="keywords" content="{maccms:name}" />
+<meta name="description" content="{maccms:name}" />
+{maccms:load inc.html} 
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+  <div class="index-tj clearfix">
+    <div class="h1 clearfix"><span>强档推荐</span></div>
+    <ul>
+      {maccms:vod num=10 type=all order=desc by=time level=all}
+      <li class="mb{if-A:[vod:num]%3==0} m3{elseif-A:[vod:num]%5==0} m5{endif-A}{if-A:[vod:num]==10} n10{endif-A}">
+        <a class="li-hv" href="[vod:link]" title="[vod:name]">
+        <div class="img">
+          <img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/load.gif" alt="[vod:name]">
+          <b class="bg1"></b>
+          <b class="play-hv"></b>
+          <b class="sjbg2 png"></b>
+          <p class="bz">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</p>
+        </div>
+        <div class="text">
+          <p class="name">[vod:name]</p>
+          <p class="zy">[vod:starring]</p>
+        </div>
+      </a>
+      </li>
+      {/maccms:vod}
+    </ul>
+  </div>
+  {maccms:matrix type=parent}
+  	<div class="index-list clearfix">
+      <div class="index-list-l">
+  		<div class="h1 clearfix">
+  	<a class="more" href="[matrix:link]">更多&gt;&gt;</a><a href="[matrix:link]"><span>[matrix:name]</span></a>
+  		</div>
+  		<ul>
+  		{maccms:vod num=10 type=[matrix:id] order=desc by=time}
+  		<li class="mb{if-A:[vod:num]%3==0} m3{elseif-A:[vod:num]%4==0} m4{elseif-A:[vod:num]%5==0} m5{endif-A}{if-A:[vod:num]>8} n8{endif-A}{if-A:[vod:num]==10} n10{endif-A}">
+      <a class="li-hv" href="[vod:link]" title="[vod:name]">
+        <div class="img">
+          <img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/load.gif" alt="[vod:name]">
+          <b class="bg1"></b>
+          <b class="play-hv"></b>
+          <b class="sjbg2 png"></b>
+          <p class="bz">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</p>
+        </div>
+        <div class="text">
+          <p class="name">[vod:name]</p>
+          <p class="zy">[vod:starring]</p>
+        </div>
+      </a>
+      </li>
+  		{/maccms:vod}
+  	    </ul>
+  	</div>
+  <div class="index-list-r">
+    <div class="h1">热播榜</div>
+    <ul>
+     {maccms:vod num=15 type=[matrix:id] order=desc by=monthhits}
+     <li><a href="[vod:link]" title="[vod:name]"><span class="qt">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><span class="i{if-A:[vod:num]<4} i4{endif-A}">{if-A:[vod:num]<10}0{endif-A}[vod:num]</span>[vod:name]</a></li>
+     {/maccms:vod}
+   </ul>
+  </div>
+  </div>
+  {/maccms:matrix}
+  <div class="topiclist mb clearfix">
+    <div class="h1"><a class="more" href="{maccms:link_topic_vod}">更多&gt;&gt;</a><a href="{maccms:link_topic_vod}"><span>特色专题</span></a></div>
+    <ul>
+      {maccms:topic num=5 order=desc by=time}
+      <li class="mb{if-A:[topic:num]==2} m2{elseif-A:[topic:num]==4} m4{endif-A}">
+        <a class="li-hv" href="[topic:link]" title="[topic:name]">
+        <div class="img">
+          <img src="[topic:pic]" alt="[topic:name]">
+          <b class="play-hv"></b>
+          <b class="bg png"></b>
+          <b class="tplay png"></b>
+          <div class="text">[topic:name]</div>
+        </div>
+      </a>
+      </li>
+      {/maccms:topic}
+    </ul>
+  </div>
+</div>
+<div class="nylink">
+<div class="wrap ylink clearfix">
+    {maccms:link type=font}
+      <a href="[link:link]" target="_blank">[link:name]</a>
+    {/maccms:link}
+</div>
+</div>
+{maccms:foot}
+</body>
+</html>

@@ -1,0 +1,42 @@
+ <div class="layer head head-cinema" areacode="top1"> 
+ <div class="header clearfix"> 
+ <h1><a title="搜模板" href="/" target="_self">搜模板</a></h1> 
+ <div id="searchPane" class="find" style="z-index: 99"> 
+ <div class="search clearfix"> 
+<form id="formsearch" name="formsearch" method="post" action="{maccms:link_search_vod}" target="_blank" >
+<input  onblur="if(this.value==''){this.value='请输入影片名、关键字';this.style.color='#aaa'};var a = document.getElementById('keyword').value; document.getElementById('keyword').value = a;" onfocus="if(this.value=='请输入影片名、关键字'){this.value='';this.style.color='#aaa'};" value=请输入影片名、关键字 name="keyword" id="keyword" class="search-bar"  /> 
+<input  id="searchbtn" class="search-btn" value="搜索" type="submit"/>
+ </form> 
+ </div> 
+ <div id="searchRecommend" style="display: none; overflow: hidden;"> 
+ <div id="searchRecommendContent" class="search-suggest">
+ </div> 
+ <iframe frameborder="no" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 200px; z-index: -1;">
+ </iframe> 
+ </div> 
+ </div> 
+ <div class="mark"> 
+ <a href="http://www.456dy.com/index.php?m=label-zhibo.html" class="talk" target="_blank" title="直播">直播</a> 
+ <a areacode="kanguoBtn" id="viewRecordButton" class="expand tit" href="javascript:void(0);">看过</a> 
+ <a areacode="shoucangBtn" id="viewFavoriteButton" class="expand tit" href="javascript:void(0);">收藏</a> 
+ <em class="mark-num" id="favoriteR" style="display: none;"></em> 
+ <!--收藏记录面板--> 
+ <div style="display: none;" class="hoverBox" id="viewFavoritePanel" areacode="shoucang"> <div class="innerBox"> <div class="menuHolder"> <div class="frame"> <em class="hoverBox-arrow02"></em> <div class="his-none" style="display:none;"> <p class="his-none-text">您的列表中暂时没有内容</p> <p class="his-none-pic"></p> <p class="his-none-more"><a target="_blank" href="http://www.77kp.com">为您推荐热门影视</a></p> </div> <div class="his-cont" style="border: none;"> <ul class="clearfix"> </ul> </div> <p class="his-op"><a class="empty" href="javascript:void(0);">清空记录</a></p> </div> <iframe frameborder="no" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 223px; z-index: -1;"></iframe> </div> </div> </div> 
+ <!--收藏记录面板END--> 
+ <!--观看记录--> <div style="display: none;" class="hoverBox" id="viewRecordPane" areacode="kanguo"> <div class="innerBox"> <div class="menuHolder"> <div class="frame"> <em class="hoverBox-arrow01"></em> <p class="his-none" style="display:none;">暂时还没有您的观看记录</p> <div class=" his-cont" style="border: none;"> <ul class="clearfix"> </ul> </div> <p class="his-op"><a class="empty" href="javascript:void(0);">清空记录</a></p> </div> <iframe frameborder="no" style="position: absolute; top: 0px; left: 0px; width: 100%; height:223px; z-index: -1;"></iframe> </div> </div> </div> 
+ <!--观看记录面板 end--> 
+ </div> </div> </div> 
+ <!--导航开始--> 
+ <div class="hd-nav-bg" areacode="top2"> 
+ <div class="hd-nav clearfix"> 
+ <ul class="hd-nav-l clearfix"> 
+ <li class="no-bg cur"><a href="/" title="首页">首页</a></li>
+ {maccms:menu table=vod type=parent by=id order=asc} 
+ <li><a href="[menu:link]" title="[menu:name]">[menu:name]</a></li>
+ {/maccms:menu} 
+ </ul> 
+ <div class="hd-load-bf" areacode="b5clientdownload"> 
+ <div class="hd-load-text">快播下载</div> 
+ <div class="hd-load-con clearfix" style="display: none;"> 
+ <div class="hd-load-shadow"></div> <div class="hd-load-l"> 
+ <p class="hd-load-version">快播5</p> <p class="hd-load-tip">给您影院般的“极致”体验</p> <p class="hd-load-tip">版本：V5.19.213</p> <p class="hd-load-tip"><a href="http://www.kuaibo.com/index.html" target="_blank" title="查看详细">查看详细>></a></p> <p class="hd-load-btn"><a href="http://dl.kuaibo.com/QvodSetup5.exe" target="_blank" title="立即下载">立即下载</a></p> </div> <div class="hd-load-r"> <p class="hd-load-phone"><a href="hhttp://qd.kuaibo.com/android/QvodPlayer_V3.3.45_kbgw00001.apk" target="_blank" title="快播安卓客户端">快播安卓客户端</a></p> <p class="hd-load-win"><a href="http://www.windowsphone.com/zh-cn/store/app/%e5%bf%ab%e6%92%ad/ff5f6465-b81e-40dc-9692-25f3c73c5f20" target="_blank" title="快播WIN8客户端">快播WIN8客户端</a></p> <p class="hd-load-film"><a href="http://ios.dl.kuaibo.com/ios/QvodPlayer_3.3.35_kbgwios00001.ipa" target="_blank" title="快播iso客户端">快播看ios客户端</a></p> <p class="hd-load-more"><a href="http://www.kuaibo.com/download.html" target="_blank" title="更多产品">更多产品>></a></p> </div> </div> </div> </div> </div> <!--导航结束-->

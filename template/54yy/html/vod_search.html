@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{page:key}-{maccms:name}</title>
+<meta name="keywords" content="{page:key},{maccms:name}"/>
+<meta name="description" content="{page:key},{maccms:name}"/>
+<link href="{maccms:path_tpl}css/style.css" rel="stylesheet">
+<script src="{maccms:path_tpl}js/1.7.2.min.js"></script>
+<script src="{maccms:path_tpl}js/jq.js"></script>
+<script src="{maccms:path_tpl}js/common.js"></script>
+<script src="{maccms:path_tpl}js/function.js"></script>
+<script src="{maccms:path_tpl}js/jquery.lazyload.js"></script>
+<script src="{maccms:path_tpl}js/touchslider.js"></script>
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<!--[if lt IE 9]>
+<script src="{maccms:path_tpl}js/html5shiv.min.js"></script>
+<script src="{maccms:path_tpl}js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+{maccms:head}
+<div class="wrap">
+	<div class="channelall">
+		<div class="channelname clearfix">
+			与
+			<i class="type">{page:key}</i>相关，我们为你找到了
+			<i class="count">{page:datacount}</i>部影片
+		</div>
+		<div class="channeltab clearfix">
+			<div class="px">
+				<a class="on" href="{page:linkbytime}">最新
+				<a href="{page:linkbyhits}">最热</a>
+				<a href="{page:linkbyscore}">好评</a>
+			</div>
+		</div>
+		<div class="search">
+			<ul class="sul clearfix">
+        {maccms:vod pagesize=10 order=desc by=time}
+				<li>
+				<a class="link" href="[vod:link]" title="[vod:name]">
+				<div class="simg">
+					<div class="img">
+						<img class="lazy" data-original="[vod:pic]" src="{maccms:path_tpl}images/lazyload.gif" alt="[vod:name]">
+					</div>
+					<span class="ico scorebg">
+					<b>[vod:score]</b>
+					</span>
+				</div>
+				<div class="stext">
+					<h2>
+					<span class="name">《[vod:name]》</span></h2>
+					<p>
+						<span>
+						<em>备注：</em>
+						<em>类型：</em>[vod:typename]</span>
+					</p>
+					<p>
+						<span>
+						<em>地区/年代：</em>[vod:area]/[vod:year]</span>
+					</p>
+					<p>
+						<span>
+						<em>主演：</em>[vod:starring]</span>
+					</p>
+					<p>
+						<span>
+						<em>简介：</em>[vod:contenttext len=60]</span>
+					</p>
+				</div>
+				<i class="bg0"></i>
+				<span class="ico play">立即播放</span></a>
+				</li>
+		{/maccms:vod}
+			</ul>
+		</div>
+		<div class="page clearfix">
+        {maccms:pages len=6}
+		</div>
+	</div>
+	﻿
+   {maccms:foot}
+	</body>
+	</html>

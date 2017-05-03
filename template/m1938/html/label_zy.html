@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>热门综艺排行榜 2015热播综艺排行榜 - {maccms:name}</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta content="小俊工作室提供热播综艺排行榜。热播综艺排行榜推荐热播动作、喜剧、爱情、搞笑等热播综艺排行，大陆、日本、韩国、欧美大片尽在小俊工作室。" name="Description">
+<meta content="最新综艺排行榜,最新综艺排行,{maccms:name}" name="Keywords">
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="{maccms:name}" name="apple-mobile-web-app-title">
+{maccms:include}
+<link href="{maccms:path_tpl}/css/rank.v2.css" rel="stylesheet" type="text/css">
+<script>
+function nofind(e){ 
+	return e.src='{maccms:path_tpl}/images/focusDefault.jpg';
+}
+</script>
+</head><body>
+{maccms:load head.html}
+<section class="rankMain" id="data_list">
+  <nav class="rankNav"><a{if-A:{maccms:siteaid}=10} class="cur"{endif-A} href="{maccms:path}" onclick="_dct_('dh_m_index');" target="_self">首页</a><a href="{maccms:getlink dy.html}">电影</a><a href="{maccms:getlink dsj.html}">电视剧</a><a href="{maccms:getlink dm.html}">动漫</a><a href="{maccms:getlink zy.html}" class="cur">综艺</a></nav>
+  <div class="globalPadding">
+    <ul id="resize_list" class="picTxt picTxtA clearfix">
+      {maccms:vod num=39 by=hits type=3 order=desc}
+      <li>
+        <div class="con"> <a href="[vod:link]" title="[vod:name]"  onclick="_dct_('dy_m_top_[vod:num]');" rel="nofollow" target="_self"> <img height="250" data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" onerror="nofind(this);" alt=""> <i class="iRankNum"><em>[vod:num]</em></i>
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+          {elseif-A:[vod:state]>0}
+          {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+          {else-B} <span class="sNum">[连载[vod:state]]集
+          {endif-B}
+          {else-A}
+          {endif-A}
+          {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> <span class="sTit">[vod:name]</span> </a> </div>
+      </li>
+      {/maccms:vod}
+    </ul>
+  </div>
+</section>
+{maccms:foot}
+<script>
+$('#data_list img').lazyload({data_attribute:'src',threshold:30});
+</script>
+</body>
+</html>

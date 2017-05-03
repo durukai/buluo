@@ -1,0 +1,72 @@
+<div class="topall">
+      <div class="header hbd mb-r clearfix">
+        <div class="wrap head">
+          <div class="pclogo">
+            <a class="pcico logobg" href="/"></a>
+          </div>
+          <div class="search">
+            <form name="formsearch" id="formsearch" action='{maccms:link_search_vod}' method="post" target="_self" autocomplete="off">
+            
+            <input type="text" class="input" name="wd" class="sin" onblur="if(this.value==''){ this.value='100万部影片任你搜索';this.style.color='#cfcdcd';}" onfocus="if(this.value=='100万部影片任你搜索'){this.value='';this.style.color='';}" value="" />
+            
+              
+              <input class="ico imgbt" type="submit" value="" /></form>
+          </div>
+          <div class="dlzc">
+            <ul>
+              <li>
+                <a class="ico jl" href="{maccms:link_gbook}">留言</a></li>
+              <li>
+                <a class="ico dl" href="{maccms:path}index.php?m=user-index.html">登录/注册</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header clearfix">
+        <div class="wrap menu clearfix">
+          <div class="mlogo pc-r">
+            <img src="{maccms:path_tpl}images/logo.png" alt="{maccms:path}" /></div>
+           <ul class="ul-l mb-r">
+            <li>
+              <a href="{maccms:path}" title="首页" {if-A:{maccms:siteaid}=10}class="on"{endif-A}>首页</a></li>
+              {maccms:menu type=1,2,3,4,18,19 order=asc table=vod}
+            <li>
+            <a href="[menu:link]" target="_self" {if-A:[menu:id]={maccms:curvodtypeid}}class="on"{endif-A}{if-A:[menu:id]={maccms:curvodtypepid}}class="on"{endif-A}>[menu:name]</a></li>
+            {/maccms:menu}
+          </ul>
+          <ul class="ul-r mb-r">
+          {maccms:menu order=asc by=sort table=vod type=child  num=26}
+            <li>
+             <a href="[menu:link]" target="_self" {if-A:[menu:id]={maccms:curvodtypeid}}class="on"{endif-A}{if-A:[menu:id]={maccms:curvodtypepid}}class="on"{endif-A}>[menu:name]</a></li>
+           {/maccms:menu}
+           </ul>
+          <ul class="menu-r pc-r">
+            <li class="ico ho">
+              <a href="/">
+                <span class="wb">首页</span></a>
+            </li>
+            <li class="ico mjq lei">
+              <span class="wb">分类</span></li>
+            <li class="ico mjq sh">
+              <span class="wb">搜索</span></li>
+          </ul>
+        </div>
+        <div class="menu-down">
+          <ul>
+            {maccms:menu type=all order=asc table=vod}
+            <li>
+            <a href="[menu:link]" target="_self" {if-A:[menu:id]={maccms:curvodtypeid}}class="on"{endif-A}{if-A:[menu:id]={maccms:curvodtypepid}}class="on"{endif-A}>[menu:name]</a></li>
+            {/maccms:menu}
+          </ul>
+        </div>
+        <div class="search-down clearfix">
+          <div class="shall">
+            <form name="formsearch" id="formsearch" action='{maccms:link_search_vod}' method="post" target="_self" autocomplete="off">
+              <div class="shall1">
+                <input type="text" class="input" name="wd" class="sin" onblur="if(this.value==''){ this.value='100万部影片任你搜索';this.style.color='#cfcdcd';}" onfocus="if(this.value=='100万部影片任你搜索'){this.value='';this.style.color='';}" value="" />
+                <input class="ico imgbt" type="submit" value="" /></div>
+            </form>
+          </div>
+          <div class="shclose">关闭</div></div>
+      </div>
+</div>

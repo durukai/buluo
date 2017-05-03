@@ -1,0 +1,100 @@
+<div class="site_focus" style="padding-top:125px;" id="mod_txv_focus">
+    	<div class="focus_inner">
+		{maccms:matrix table=vod type={maccms:curvodtypeid}}
+		{maccms:vod num=14 type=[matrix:id] start=1 order=desc by=time level=1}
+        {if-A:[vod:num] = 1}
+		<a href="[vod:link]" target="_blank" class="focus_img" style="background-image: url([vod:picslide]); background-color:#4E4946;"></a>
+            <div class="focus_control yj">
+            	<h3 class="focus_title" title="" id="mod_txv_focus_title">[vod:name][vod:subname]</h3>
+                <div class="focus_thumbnails">
+                    <div class="focus_thumbnails_inner" id="mod_txv_focus_nav">
+                        <ul class="focus_thumbnails_list cf">
+                            <li class="current" title="[vod:name][vod:subname]" img="[vod:picslide]"  num="[vod:num]" color="4E4946" href="[vod:link]">
+                                <a href="[vod:link]" class="link_thumbnails" target="_blank"><img class="lazy"src="[vod:pic]" alt="[vod:name]"></a></li>
+								{else-A}
+                            <li  title="[vod:name][vod:subname]" img="[vod:picslide]"  num="[vod:num]" color="211A10" href="[vod:link]">
+                                <a href="[vod:link]" class="link_thumbnails" target="_blank"><img class="lazy"src="[vod:pic]" alt="[vod:name]"></a></li>				
+                                {endif-A}
+								{/maccms:vod}
+								{/maccms:matrix}
+					  </ul>
+				  </div>
+                    <a href="javascript:;" class="btn_prev yj" id="focus_smaillPic_prev" title="上一组" hidefocus="true"><i class="ico_prev yj"></i><span class="btn_inner">上一组</span></a>
+                   <a href="javascript:;" class="btn_next yj" id="focus_smaillPic_next" title="下一组" hidefocus="true"><span class="btn_inner">下一组</span><i class="ico_next yj"></i></a>
+               </div>
+            </div>
+        </div> 
+  </div>
+<script type="text/javascript">
+    (function() {
+        var v280 = {};
+        v280.Focus = {
+            focusNum: $("#mod_txv_focus_nav li").length,
+            currentNum: 0,
+            setFocus: function() {
+                var imgObj = $(".focus_img");
+                var liObj = $("#mod_txv_focus_nav li").get(this.currentNum);
+                imgObj.stop().animate({
+                    opacity: '0.4'
+                }, 500, function() {
+                    $("#mod_txv_focus_title").html($(liObj).attr("title"));
+                    imgObj.css({
+                        "background-image": "url(" + $(liObj).attr('img') + ")"
+                    });
+                    imgObj.attr("href", $(liObj).attr('href'));
+                    var color = $(liObj).attr('color');
+                    if (color != "") imgObj.css("background-color", "#" + color);
+                    imgObj.animate({
+                        opacity: '1'
+                    }, 500);
+                });
+                this.show();
+            },
+            show: function() {
+                var liObj = $("#mod_txv_focus_nav li").get(this.currentNum);
+                $("#mod_txv_focus_nav li").removeClass("current");
+                $(liObj).addClass("current");
+                var start = 0,
+                    end = this.focusNum;
+                if (this.focusNum <= 7) return;
+                if (this.currentNum >= 7) {
+                    if (this.currentNum % 7 == 0) start = this.currentNum;
+                    else start = parseInt(this.currentNum / 7) * 7;
+                }
+                if (start + 7 > end) start = end - 7;
+                else end = start + 7;
+                $("#mod_txv_focus_nav li").css("display", "none");
+                for (var i = start; i < end; i++) {
+                    liObj = $("#mod_txv_focus_nav li").get(i);
+                    $(liObj).css("display", "list-item");
+                }
+            },
+            Prev: function() {
+                this.currentNum--;
+                if (this.currentNum < 0) this.currentNum = this.focusNum - 1;
+                this.setFocus();
+            },
+            Next: function() {
+                this.currentNum++;
+                if (this.currentNum >= this.focusNum) this.currentNum = 0;
+                this.setFocus();
+            },
+            Auto: function() {
+                window.setInterval(function() {
+                    v280.Focus.Next();
+                }, 8000);
+            }
+        };
+        v280.Focus.Auto();
+        $("#focus_smaillPic_prev").click(function() {
+            v280.Focus.Prev()
+        });
+        $("#focus_smaillPic_next").click(function() {
+            v280.Focus.Next()
+        });
+        $("#mod_txv_focus_nav li").mouseover(function() {
+            v280.Focus.currentNum = parseInt($(this).attr("num")) - 1;
+            v280.Focus.setFocus();
+        });
+    })();
+</script>

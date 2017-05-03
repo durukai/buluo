@@ -1,0 +1,163 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=uft8" />
+<title>影视排行榜-{maccms:name}</title>
+<meta name="keywords" content="热门影视排行榜 精彩连放-{maccms:name}影院" />
+<meta name="description" content="热门影视排行榜-{maccms:name}" />
+{maccms:include}
+<base target="_blank" />
+</head>
+<body>
+<div class="wrap">
+{maccms:head}
+<div class="box b mb"><!-- 广告位：全站顶部横幅 -->
+<script src="{maccms:path_ads}960-90.js"></script>
+</div> 
+  <div class="hot_box b mb">
+    <h5>{maccms:name}电影排行榜</h5>
+    <div class="box">
+      <div class="hot_list">
+        <h4>本周收视榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=1 by=weekhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>本月收视榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=1 by=monthhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>收视总榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=1 by=hits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+    </div>
+    <!--/Box-->
+  </div>
+  <!--/Hot Box-->
+  <div class="hot_box b mb">
+    <h5>{maccms:name}电视剧排行榜</h5>
+    <div class="box">
+      <div class="hot_list">
+        <h4>本周收视榜</h4>
+        <ul>
+   			 {maccms:vod num=10 type=2 by=weekhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>本月收视榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=2 by=weekhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>收视总榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=1 by=hits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+    </div>
+    <!--/Box-->
+  </div>
+  <!--/Hot Box-->
+
+  <!--/Hot Box-->
+  <div class="hot_box b mb">
+    <h5>{maccms:name}动漫排行榜</h5>
+    <div class="box">
+      <div class="hot_list">
+        <h4>本周收视榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=4 by=weekhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>本月收视榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=4 by=monthhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>收视总榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=1 by=hits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+    </div>
+    <!--/Box-->
+  </div>
+  <!--/Hot Box-->
+  <div class="hot_box b mb">
+    <h5>{maccms:name}综艺片排行榜</h5>
+    <div class="box">
+      <div class="hot_list">
+        <h4>本周收视榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=3 by=weekhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>本月收视榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=3 by=monthhits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+      <div class="hot_list">
+        <h4>收视总榜</h4>
+        <ul>
+			 {maccms:vod num=10 type=3 by=hits order=desc}
+          <li><p><em>[vod:num]</em><a href="[vod:link]" title="[vod:name]">[vod:name]</a></p><span>[vod:remarks]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <!--/Hot List-->
+    </div>
+    <!--/Box-->
+  </div>
+  <!--/Hot Box-->
+<!-- 广告位：全站富媒体 -->
+{maccms:foot}
+ <script src="{maccms:path_tpl}js/history_new.js"></script>
+<script>WriteHistory();</script>
+</div>
+
+</body>
+</html>

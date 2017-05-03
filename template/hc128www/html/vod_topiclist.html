@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,chrome=1" />
+    <title>{page:name},关于{page:name},{page:name}的影片_{maccms:name}</title>
+    <meta name="keywords" content="{page:name},关于{page:name},{page:name}的影片" />
+    <meta name="description" content="{maccms:description}" />
+{maccms:include}
+<link href="{maccms:path_tpl}css/topiclist.css" rel="stylesheet" />
+</head>
+<body>
+{maccms:head}
+ <div class="container" style="padding-top: 125px;">
+        <div class="home_navigation">
+            <dl><dt><span>当前位置</span> <i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i></dt>
+			<dd><a href="/">首页</a>  »  {page:name}(共{page:datacount}部/总浏览{page:hits}次)</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="container">
+        <div class="l">
+		{maccms:vod pagesize=10 topic=current order=desc by=time}
+            <div class="alist">
+                <div class="pic">
+                    <a href="[vod:link]">
+                        <img class="lazy" data-original="[vod:pic]" src="/images/blank.png" alt="[vod:name]" align="middle" />
+                    </a>
+                </div>
+                <ul>
+                    <li class="title"><a href="[vod:link]">[vod:name]</a>{if-A:not isN("[vod:remarks]")}<font size="2">  [vod:remarks]</font>{endif-A}</li>
+                    <li>导演：[vod:directedlink]</li>
+                    <li>主演：[vod:starringlink]</li>
+                    <li><span>类型：[vod:typename]</span>  <span>地区：[vod:arealink]</span>
+                    </li>
+                    <li><span>总播放量：[vod:hits]</span>  <span>总评分：[vod:scoreall]</span>：</li>
+                </ul>
+            </div>
+			{/maccms:vod}
+            <div class="page" style=" clear:both; text-align:center;">{maccms:pages len=5}</div>
+        </div>
+        <div class="r">
+            <h2>最新专题</h2>
+            <ul class="mb10">
+			{maccms:topic id=all order=desc by=time num=5}
+                <li class="mt3">
+                    <a href="[topic:link]" class="mod_poster" title="[topic:name]">
+                        <img class="yj10" src="[topic:pic]" alt="[topic:name]" />
+                    </a>
+                    <h6><a href="[topic:link]" title="[topic:name]">[topic:name]/a></h6>
+                </li>
+				{/maccms:topic}
+                </ul>
+            <h2>热门专题</h2>
+            <ol>
+			{maccms:topic id=all order=desc by=hits num=9}
+                <li><em class="num num_[topic:num]">[topic:num]</em>
+                    <h5><a href="[topic:link]" title="[topic:name]">[topic:name]</a></h5>
+                    <strong>[topic:hits]</strong> 
+                </li>
+				{/maccms:topic}
+                </ol>
+        </div>
+    </div>﻿<div class="footer" id="footer">
+    <div class="footer_inner">
+{maccms:foot}
+</body>
+</html>

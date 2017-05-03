@@ -1,0 +1,41 @@
+
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>[vod:name] [vod:playname] [vod:from]在线观看</title>
+<meta name="keywords" content="{maccms:keywords}" />
+<meta name="description" content="{maccms:description}" />
+<link href="{maccms:path_tpl}css/style.css" rel="stylesheet" type="text/css" />
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<script src="{maccms:path_tpl}pl/jquery-1.7.2.min.js"></script>
+<script src="{maccms:path_tpl}pl/video.js"></script>
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div id="PLAYER">
+<div id="playerbox">
+<center>
+
+[vod:playerinfo]
+	[vod:player] 
+	</center>
+</div>
+</div>
+    <script language="javascript" type="text/javascript">
+        function click_a(playermenu)
+        {
+            if(document.getElementById(playermenu).style.display != "block")
+            {
+                document.getElementById(playermenu).style.display = "block";
+            }
+            else
+            {
+                document.getElementById(playermenu).style.display = "none";
+            }
+        }
+    </script>
+	
+{maccms:foot}
+</body>
+</html>

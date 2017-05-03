@@ -1,0 +1,164 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>[vod:name] [vod:playname]-琪琪看片</title>
+<meta name="keywords" content="[vod:name],[vod:starring],[vod:typenmae]" />
+<meta name="description" content="[vod:contenttext len=60]" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/standard_4489.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/style_4489.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/cinema_4489.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/default_4489.css" charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="{maccms:path}images/jquery.autocomplete.css">
+<link rel="shortcut icon" href="{maccms:path_tpl}images/favicon.ico" charset="utf-8" />
+{maccms:include}
+<script src="{maccms:path}js/player.js"></script>
+</head>
+<body>
+<!-- 播放页导航 -->
+{maccms:head} 
+<!--播放窗口-->
+<div class="playNEW-window" areacode="play_area">
+    <div class="floating-layer-new">
+        <div id="acmeExperienceBar" style="z-index: 98;position: relative;">
+        </div>
+        <div class="play-window-new">
+				<div class="play-window-l">
+					<!--播放导航-->
+					<div class="play-nav-l-new" areacode="tree_category">
+						<h1><a title="[vodlinfo:name][playinfo:name]" >[vod:name]<em>[vod:playname]</em></a></h1>
+						<p>
+						<a title="[vod:typename]">[vod:typename]</a><em>&gt;</em><a title="[vod:area]">[vod:area]</a>
+						</p>
+					</div>
+					<!--播放导航end-->
+					<!--播放窗口-->
+					<div class="playerflash">
+					[vod:playerinfo][vod:player]
+					</div>
+					<!--播放窗口end-->
+				</div>
+            <div class="playerlabel-new"  areacode="ad_area">
+                <div class="narrownewbor-new" id="play_tabs">
+                    <div class="narrowtitle-new"><a href="javascript:void(0);" class="cur hon" title="广告赞助">广告赞助</a></div>
+                    <div class="narrowinfo-new">
+				<!--播放窗口左侧开始-->
+				<script type="text/javascript" src="{maccms:path_tpl}ads/vodplay1.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--主体内容开始-->
+<div class="main-two-column clearfix" id="toolbar">
+		<!--播放页按钮组开始-->
+        <div class="play-con-btn-wrap">
+			<div class="play-con-btn clearfix">
+			<div class="play-con-btn-l" areacode="buttonarea">
+                	            <a href="javascript:void(0);" class="play-con-btn03" ><em id="desk">放到桌面</em></a>
+                
+	            <a href="javascript:void(0);" class="play-con-btn04" style="display:none;" ><em id="favorite">收藏夹</em></a>
+		    <a href="javascript:void(0);" class="play-con-btn04 js-collect" data-farther="text" data-name="[vod:name]" data-id="[vod:id]"><em class="fv-add-no">收藏</em></a>
+	           </div>
+	    <!-- 引导桌面快捷结束 -->
+            			<div class="play-share clearfix">
+					<div class="play-share-text">分享到</div>
+					<div class="play-share-btn">
+						
+						<!-- Baidu Button BEGIN -->
+						<script type="text/javascript">
+							var bds_config = {
+								'review': 'off'
+							};
+						</script>
+						<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'[vod:link]','pic':'[vod:pic]','text': '我正在琪琪看片观看：【[vod:name]】，很赞！'}">
+							<a class="bds_tsina"></a>
+							<a class="bds_tqq"></a>
+							<a class="bds_renren"></a>
+							<a class="bds_qzone"></a>
+							<a class="bds_sqq"></a>
+						</div>
+						<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>
+						<script type="text/javascript" id="bdshell_js"></script>
+						<script type="text/javascript">
+							document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+						</script>
+						<!-- Baidu Button END -->
+						
+					</div>
+				</div>
+            		</div>
+		</div>
+		<!--综合菜单开始-->
+		{maccms:play}
+		<div class="play-detail-tab" areacode="set">
+			<ul class="play-tab-menu clearfix">
+				<li class="cur" title="[play:show]">[play:show]</li>
+			</ul>
+			<div class="good-ranking play-detail">
+			    <div>
+					<div  style="" class="seasons clearfix seasons-play" id="minfoBar">
+			            <div class="fenji clearfix" style="display: none;"></div>
+                                        
+                      			            <div class="episodes clearfix  play-episodes-new" m_aid=110945 m_fmt="720P"  >
+                                            {maccms:url order=asc}
+											<li><a href="[url:link]" id="[play:from]_[url:num]" >[url:name]</a></li>
+											{/maccms:url}
+                                         
+                                                                                                             </div>
+                                         	        		</div>
+        		</div>
+				</div>
+				{/maccms:play}
+				<!--第一个切换完毕-->
+							
+								<!-- 第三个切换 -->
+				<div style="display:block;">
+					<div class="play-mod-l">
+						<div class="play-detail-text clearfix">
+							<p class="score">[vod:score]</p><h2><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></h2><p class="tip" id="update_text"></p>
+						</div>
+						<div class="play-detail-text-area clearfix">
+							<p class="play-detail-area-l"><span>地区：</span>[vod:arealink] [vod:year]</p>
+														<p class="play-detail-area-r"><span>类型：</span>[vod:typename]</p>
+													</div>
+												<div class="play-detail-text-area clearfix">
+														<p class="play-detail-area-l"><span>导演：</span>[vod:directedlink]</p>
+																					<p class="play-detail-area-r"><span>主演：</span>[vod:starringlink]</p>
+													</div>
+																		<div class="play-detail-text-word">
+						<span>简介：</span>[vod:contenttext]
+						</div>
+											</div>
+				</div>
+
+			</div>
+		</div>
+		<!--综合菜单结束-->
+		<!--广告开始-->
+<div class="main-ad-column clearfix">
+	<div class="main-ad-column-l">
+<script type="text/javascript" src="{maccms:path_tpl}ads/vodplay2.js" charset="utf-8"></script>
+		
+	</div>
+	<div class="main-ad-column-m">
+<script type="text/javascript" src="{maccms:path_tpl}ads/vodplay3.js" charset="utf-8"></script>		
+		
+	</div>
+	<div class="main-ad-column-r">
+<script type="text/javascript" src="{maccms:path_tpl}ads/vodplay4.js" charset="utf-8"></script>
+		
+	</div>
+</div>
+<!--广告结束-->
+<div class="play-serv-wrap"  areacode="play_customer">
+</div>
+{maccms:foot}
+<script src="{maccms:path_tpl}js/channel_4464.js"  type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">var tabsP = [["hot-resource-menu", "hot-resource-con", "cur", "hot"]];hd.channel(8, tabsP);</script>
+</body>
+</html>
