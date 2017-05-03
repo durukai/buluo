@@ -1,8 +1,8 @@
 .site_head{width:100%;height:77px; z-index:999;position:fixed; background-color:#FFF;}
 .head_inner{position:relative;width:1240px;margin:0 auto; z-index:99;height:77px; background-color:#FFFFFF;}
-.site_logo{width: 220px;height: 65px;padding-top: 5px;background: url(../images/logo.png) 0 -108px no-repeat;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;font-size:1em;}
-.site_logo .link_logo {display: block;width: 200px;height: 65px;background: url(../images/logo.png) 0 0 no-repeat;margin-top: 5px;margin-left: 15px;}
-.mod_ad_head{position:absolute;top: 20px;left: 260px;width: 120px;height: 50px;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;}
+.site_logo{width: 275px;height: 65px;padding-top: 5px;background: url(../images/logo.png) 0 -108px no-repeat;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;font-size:1em;}
+.site_logo .link_logo {display: block;width: 275px;height: 65px;background: url(../images/logo.png) 0 0 no-repeat;margin-top: 5px;margin-left: 15px;}
+.mod_ad_head{position:absolute;top: 20px;left: 335px;width: 120px;height: 50px;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;}
 .mod_ad_head img {/*width: 120px*/;height: 50px; border:0 none;}
 .mod_search{display: block;position: absolute;top: 22px;left: 440px;width: 518px;height: 46px;zoom: 1;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;}
 .search_inner{position: relative;_width: 521px;float: left;}
