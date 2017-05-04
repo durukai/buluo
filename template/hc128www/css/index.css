@@ -4,8 +4,9 @@
 .menu li a {color:#000000; text-decoration:none; padding:4px 5px 6px 5px;  border-left:1px solid #ececec; border-right:1px solid #ececec;}
 .menu li a.tabactive {border-left:1px solid #d7d7d7; border-right:1px solid #d7d7d7; background-color:#CCCCCC; font-weight:bold;  position:relative;}
 #tabcontent1,#tabcontent2,#tabcontent3,#tabcontent4 {border:1px solid #ececec; width:198px; text-align:center;padding:6px 0px; font-size:12px; margin-bottom:5px;}
-.site_focus{position: relative;z-index: 1;width:100%;height: 504px;background-color: #FFF;}
-.site_focus .focus_inner{position: relative;width: 100%;height: 100%;overflow: hidden;}
+.site_focus{position: relative;z-index: 1;width:100%;height: 504px;background-color: #000;}
+/*.site_focus{position: relative;z-index: 1;width:1512px;height: 504px;background-color: #FFF;margin: 0 auto;}*/
+.site_focus .focus_inner{position: relative;width: 1340px;height: 100%;overflow: hidden;margin: 0 auto;}
 .site_focus .focus_img{display: block;position: absolute;top: 0;left: 0;z-index: 2;width: 100%;height: 100%;background-position: top center;/*background-repeat: no-repeat;*/}
 .focus_control{position: absolute;z-index: 3;left: 50%;bottom: 34px;width: 1012px;height: 64px;margin-left: -506px;background: rgba(0, 0, 0, .26);filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#88000000',endColorstr='#88000000');}
 .site_focus .focus_control .focus_title{width: 257px;height: 50px;line-height: 24px;margin: 7px 10px;overflow: hidden;font-size: 18px;font-weight: 500;color: white;text-shadow: 0 1px 2px #333;}

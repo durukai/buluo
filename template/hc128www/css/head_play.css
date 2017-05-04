@@ -1,8 +1,8 @@
 ﻿.site_head{width:100%;height:60px; z-index:999;position:fixed; background-color:#FFF;}
 .head_inner{position:relative;width:1240px;margin:0 auto; z-index:99;height:60px; background-color:#FFFFFF;}
 .site_logo{width: 220px;height: 65px;padding-top: 5px;background: url(../images/logo.png) 0 -108px no-repeat;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;font-size:1em;}
-.site_logo .link_logo {display: block;width: 170px;height: 54px;background: url(../images/logom.png) 0 0 no-repeat;margin-top: 2px;}
-.mod_ad_head{position:absolute;top: 10px;left: 180px;width: 21%;height: 50px;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;}
+.site_logo .link_logo {display: block;width: 210px;height: 54px;background: url(../images/logom.png) 0 0 no-repeat;margin-top: 2px;}
+.mod_ad_head{position:absolute;top: 10px;left: 220px;width: 21%;height: 50px;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;}
 .mod_ad_head img {width: 120px;height: 50px; border:0 none;}
 .mod_search{display: block;position: absolute;top: 10px;left: 480px;width: 518px;height: 46px;zoom: 1;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;}
 .search_inner .myselect{display: block;position: absolute;padding:9px; right: 85px;width: 12%;height: 100%;/*background: url(../images/sprite_search.png) 0 -164px repeat-x;*/overflow: hidden;border: solid 1px #D1D1D1;appearance:none;-moz-appearance:none;-webkit-appearance:none;padding-right: 14px;background:url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;}
