@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>好看的{page:name}-最新{page:name}-经典{page:name}-{page:name}电影推荐-第{page:now}页-{maccms:name}</title>
+<meta name="keywords" content="{page:key}" />
+<meta name="description" content="{page:des}" />
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div class="main">
+  <div class="gather_block_01"></div>
+  <div class="g_box_02">
+    <div class="left_07">
+      <div class="left_04_01">
+        <div class="head_11" id="choosed">
+          <h1>当前位置：{page:textlink}</h1>
+        </div>
+        <dl class="txt_list_06">
+<dt>按分类：</dt>
+<dd>
+<a href="{page:linktype}" {if-A:"{page:pid}"="0"} {endif-A}><span>全部</span></a>
+{maccms:menu type=auto}<a href="[menu:link]" {if-A:"{page:id}"="[menu:id]"} {endif-A}>[menu:name]</a>{/maccms:menu}
+</dd></dl>
+<dl class="txt_list_06">
+<dt>按地区：</dt>
+<dd>
+<a href="{page:linkarea}" {if-A:"{page:area}"=""} {endif-A}><span>全部</span></a>
+{maccms:area type=auto order=asc}<a href="[area:link]" {if-A:"{page:area}"="[area:name]"} {endif-A}>[area:name]</a>{/maccms:area}
+</dd></dl>
+<dl class="txt_list_06">
+<dt>按年份：</dt>
+<dd>
+<a href="{page:linkyear}" {if-A:"{page:year}"=""} {endif-A}><span>全部</span></a>
+{maccms:year type=auto start=2000 end=2014 order=desc}<a href="[year:link]" {if-A:"{page:year}"="[year:name]"} {endif-A}>[year:name]</a>{/maccms:year}
+</dd></dl>
+<dl class="txt_list_066">
+<dt>按字母：</dt>
+<dd>
+<a href="{page:linkletter}" {if-A:"{page:letter}"=""} {endif-A}><span>全部</span></a>
+{maccms:letter type=auto letter=all}<a href="[letter:link]" {if-A:"{page:letter}"="[letter:name]"} {endif-A}>[letter:name]</a>{/maccms:letter}
+</dd>
+        </dl>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_01"></div>
+      <div class="left_04_02">
+        <div class="head_01 head_01_03">
+<ul class="lef cent">
+            <li><a class="fir down">全部</a></li>
+            <li><a href="{page:linkbytime}">时间</a></li>
+            <li><a href="{page:linkbyhits}">人气</a></li>
+            <li><a href="{page:linkbyscore}">评分</a></li>
+</ul>
+          <h4> <span>显示方式:</span> <a> <i class="lis"></i>列表 </a> <a> <i class="a_d a_d_down"></i>海报 </a> </h4>
+        </div>
+<ul class="list_01 list_01_03_02">
+{maccms:vod pagesize=20 order=desc by=time}
+<li> <a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"><span></span><font>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</font></a><div class="txt"><a href="[vod:link]" title="[vod:name]" target="_blank" style="font-size:13px;">[vod:name len=7]</a><span class="orange">[vod:hits]</span></div><div class="nam">[vod:arealink] [vod:year]</div><p>[vod:starring]</p></li>
+{/maccms:vod}
+</ul>
+<div class="page_select">
+{maccms:pages len=6}
+</div>
+</div>
+</div>
+    <div class="right_06">
+      <div class="right_04_01">
+        <div class="head_10">
+          <h1>电影排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01">
+{maccms:vod num=3 type=1 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=1 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+ </ul>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_01"></div>
+      <div class="right_04_01">
+        <div class="head_10">
+          <h1>电视剧排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01">
+{maccms:vod num=3 type=2 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=2 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_01"></div>
+      <div class="right_04_01">
+        <div class="head_10">
+          <h1>动漫排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01">
+{maccms:vod num=3 type=4 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=4 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_01"></div>
+      <div class="right_04_01">
+        <div class="head_10">
+          <h1>综艺排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01">
+{maccms:vod num=3 type=3 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=3 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_01"></div>
+      <div class="right_04_01">
+        <div class="head_10">
+          <h1>总排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01">
+{maccms:vod num=3 type=all by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=all by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><span class="oran">[vod:dayhits]</span></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+      </div>	  
+	  
+	  
+    </div>
+  </div>
+</div>
+
+<div class="gather_block_01"></div>
+{maccms:foot}
+</body>
+</html>

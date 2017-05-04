@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>影视部落</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta content="提供最新最快的影视资讯和在线播放" name="Description">
+<meta content="免费在线电影" name="Keywords">
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="影视部落" name="apple-mobile-web-app-title">
+<script>var SitePath='/',SiteAid='10',SiteTid='',SiteId='';</script>
+<script type="text/javascript">var Root='/';var Sid='';var Cid='';var Id='';</script>
+<link href="/template/mobile//images/icon.jpg" rel="apple-touch-icon-precomposed">
+<link href="/template/mobile//images/icon.jpg" rel="apple-touch-icon">
+<link href="/template/mobile//css/global.css" rel="stylesheet" type="text/css">
+<link href="/template/mobile//css/font_css.css" rel="stylesheet" type="text/css">
+<link href="/template/mobile//css/main.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/template/mobile/js/home.js"></script>
+<script type="text/javascript" src="/template/mobile//js/zepto.js"></script>
+<link href="/template/mobile//css/index_v2.css" rel="stylesheet" type="text/css">
+<script> 
+function nofind(e){ 
+	return e.src='maccms:path_tpl}/images/focusDefault.jpg';
+}
+</script>
+</head><body>
+<div class="wrapper">
+<div class="mask" id="mask_box"></div>
+<header class="headerbar">
+      <section class="headBox">
+        <a class="pull-left logo" href="/" title="">
+          <i>
+            <img src="/templets/hanjutv-m/images/logo.png" alt="" title=""></i>
+        </a>
+        <a href="http://m.hc128.cn" rel="nofollow" class="app_down pull-right">
+          <span>下载APP</span></a>
+        <a href="/" rel="nofollow" class="zui-icon iconfont icon-lishijilu pull-right"></a>
+        <a href="/index.php?m=vod-search" rel="nofollow" class="zui-icon iconfont icon-sousuo pull-right"></a>
+      </section>
+</header>
+<div class="subNavheader">
+<nav class="subNav globalPadding" id="nav_menu" style="display:block">
+  <div class="con clearfix">
+    <p> <a class="cur"  href="/" onclick="_dct_('dh_m_index');" target="_self">首页</a> <a href="/?m=vod-type-id-1.html"  onclick="_dct_('dh_m_dy');" target="_self" >电影</a> <a href="/?m=vod-type-id-2.html"  onclick="_dct_('dh_m_tv');" target="_self" >连续剧</a> <a href="/?m=vod-type-id-3.html"  onclick="_dct_('dh_m_ze');" target="_self" >综艺</a> <a href="/?m=vod-type-id-4.html"  onclick="_dct_('dh_m_dm');"  target="_self" >动漫</a> <a href="/?m=vod-type-id-23.html"   target="_self" >纪录片</a> <a href="/?m=vod-type-id-25.html"   target="_self" >微电影</a> </p>
+  </div>
+</nav>
+</div>
+<section id="search_box" class="searchMenu" style="display:none">
+  <form action="/index.php?m=vod-search" method="post" id="search_form" onsubmit="return searchM.submitSearch();">
+    <div class="searchFormCon globalPadding">
+      <p class="pSearchForm">
+        <input type="text" class="searchTxt searchTxtBlur" id="wd" name="wd" autocomplete="off"  value="请输入影片片名或演员名称。" onfocus="if(this.value=='请输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在输入影片片名或演员名称。';};" />
+        <input type="submit" id="searchbutton" class="searchBtn" value="" />
+        <i class="clearSearchBtn" style="display:none;"><em></em></i> </p>
+    </div>
+    <ul class="ulHotList globalPadding" id="search_history_list" style="display:none;">
+    </ul>
+  </form>
+  <!--	
+	<form action="/index.php?m=vod-search" method="post" id="search">
+<input type="text" id="wd" name="wd" class="search-input" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};" />
+<input type="submit" id="searchbutton"  class="search-button" value="" /></form>
+-->
+  <p class="pHotLinks globalPadding" id="hot_word_box"></p>
+</section>
+<nav class="subNav globalPadding index_menu_top" id="nav_menu" style="display:none;">
+  <div class="con clearfix">
+    <p> <a class="cur" href="/" onclick="_dct_('dh_m_index');" target="_self">首页</a> <a href="/?m=vod-type-id-1.html" onclick="_dct_('dh_m_dy');" target="_self" >电影</a> <a href="/?m=vod-type-id-2.html" onclick="_dct_('dh_m_tv');" target="_self" >连续剧</a> <a href="/?m=vod-type-id-3.html" onclick="_dct_('dh_m_ze');" target="_self" >综艺</a> <a href="/?m=vod-type-id-4.html" onclick="_dct_('dh_m_dm');"  target="_self" >动漫</a> <a href="/?m=vod-type-id-23.html"  target="_self" >纪录片</a> <a href="/?m=vod-type-id-25.html"  target="_self" >微电影</a> </p>
+  </div>
+</nav>
+
+<div class="loginPop" style="display:none;">
+  <ul class="ulForm clearfix">
+    <li><span class="sInput"><i class="iIcon iUserName"></i>
+      <input type="text" id="username" name="username" class="inputTxt formInput" maxlength="24" placeholder="请输入用户名">
+      </span></li>
+    <li><span class="sInput"><i class="iIcon iPassWord"></i>
+      <input type="password" id="password" name="password" class="inputTxt formInput" placeholder="请输入密码">
+      </span></li>
+    <li><span class="sInput sInputA"><i class="iIcon iCaptchaIcon"></i>
+      <input type="text" name="captcha" maxlength="2" class="inputTxt formInput" placeholder="请输入验证码" id="captcha">
+      </span><span class="sCaptchaPic"><img width="70" height="34" id="captchaImg" src="#"></span><i class="iChange" id="changeBtnId"></i></li>
+    <li style="display:none;"><span class="sError"></span></li>
+    <li><a id="sublogin" class="userBtnStyle userBtnStyleA" href="javascript:void(0);">登录</a></li>
+    <li>
+      <p class="pBtn clearfix"><a href="#" target="_self" class="left">忘记密码？</a><a href="#" target="_self" class="right">立即注册</a></p>
+    </li>
+    <li class="thirdParty"> <span class="sTit">使用第三方帐号，一键登录。</span>
+      <div class="list clearfix" id="oathLoginList"></div>
+    </li>
+  </ul>
+</div>
+<ul id="index_menu_box" class="navMenu clearfix" style="display:none;">
+  <li><a class="cur" href="/" onclick="_dct_('dh_m_index2');" target="_self"><img src="/template/mobile/images/rankIcon.png"><span>首页</span></a></li>
+  <a href="/?m=vod-type-id-1.html" onclick="_dct_('dh_m_dy2');" target="_self" ><img src="/template/mobile/images/rankIcon.png"><span>电影</span></a>
+  </li>
+  <a href="/?m=vod-type-id-2.html" onclick="_dct_('dh_m_tv2');" target="_self" ><img src="/template/mobile/images/rankIcon.png"><span>连续剧</span></a>
+  </li>
+  <a href="/?m=vod-type-id-3.html" onclick="_dct_('dh_m_ze2');" target="_self" ><img src="/template/mobile/images/rankIcon.png"><span>综艺</span></a>
+  </li>
+  <a href="/?m=vod-type-id-4.html" onclick="_dct_('dh_m_dm2');"  target="_self" ><img src="/template/mobile/images/rankIcon.png"><span>动漫</span></a>
+  </li>
+  <a href="/?m=vod-type-id-23.html"  target="_self" ><img src="/template/mobile/images/rankIcon.png"><span>纪录片</span></a>
+  </li>
+  <a href="/?m=vod-type-id-25.html"  target="_self" ><img src="/template/mobile/images/rankIcon.png"><span>微电影</span></a>
+  </li>
+  
+  <li><a href="/index.php?m=label-dy.html" onclick="_dct_('dh_m_phb2');"><img src="/template/mobile/images/rankIcon.png"><span>排行榜</span></a></li>
+  <li></li>
+</ul>
+
+<section class="main">
+  <div class="focus" id="focus">
+    <ul class="focusCon clearfix" id="focusCon">
+      
+      <li class="cur"><a onClick="_dct_('m_index_jdt_1');" href="/?m=vod-detail-id-4443.html" target="_self"><img data-src="/upload/vod/2017-05-18/201705181495080330.jpg"  alt=""  src="/template/mobile//images/focusDefault.png" alt="" ><span class="sTit"><em>《今晚80后脱口秀 2017》《今晚80后脱口秀》</em></span></a></li>
+      
+      <li ><a onClick="_dct_('m_index_jdt_2');" href="/?m=vod-detail-id-4488.html" target="_self"><img data-src="/upload/vod/2017-05-18/201705181495079495.jpg"  alt=""  src="/template/mobile//images/focusDefault.png" alt="" ><span class="sTit"><em>《欢乐喜剧人 第三季》《欢乐喜剧人》是东方</em></span></a></li>
+      
+      <li ><a onClick="_dct_('m_index_jdt_3');" href="/?m=vod-detail-id-29952.html" target="_self"><img data-src="/upload/vod/2017-05-18/201705181495077254.jpg"  alt=""  src="/template/mobile//images/focusDefault.png" alt="" ><span class="sTit"><em>《人民的名义》简介：一位国家部委的</em></span></a></li>
+      
+    </ul>
+    <p class="focusTab" id="focusTab"><i class="cur"></i><i ></i><i ></i></p>
+  </div>
+  <div class="mod_a globalPadding">
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>连续剧排行榜</span><a onClick="_dct_('m_index_tbrj_gd');" href="/?m=vod-type-id-2.html" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_1');" href="/?m=vod-detail-id-317.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950872550.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">8.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">神机妙算刘伯温</span> <span class="sDes">共30集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_2');" href="/?m=vod-detail-id-389.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950866500.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">9.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">伪装者</span> <span class="sDes">共48集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_3');" href="/?m=vod-detail-id-46.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950898300.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">4.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">你的传奇之危机四伏</span> <span class="sDes">更新至38集</span></div>
+        </li>
+        
+      </ul>
+	    <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_1');" href="/?m=vod-detail-id-936.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950830080.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">10.0分</em> </span></a></div>
+			<div class="con_bottom"><span class="sTit">关东微喜剧</span> <span class="sDes">更新至469集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_2');" href="/?m=vod-detail-id-479.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950859780.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">5.0分</em> </span></a></div>
+			<div class="con_bottom"><span class="sTit">家和万事兴</span> <span class="sDes">共68集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_3');" href="/?m=vod-detail-id-7809.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950816095.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">3.0分</em> </span></a></div>
+			<div class="con_bottom"><span class="sTit">咱们结婚吧</span> <span class="sDes">正片</span></div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="mod_a globalPadding">
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>热播电影</span><a onClick="_dct_('m_index_tbrj_gd');" href="/?m=vod-type-id-1.html" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_1');" href="/?m=vod-detail-id-22437.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149508658718.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">5.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">捉妖记</span> <span class="sDes">正片</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_2');" href="/?m=vod-detail-id-21971.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149508643010.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">9.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">万物生长</span> <span class="sDes">正片</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_3');" href="/?m=vod-detail-id-1789.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149507966610.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">4.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">电影恋爱学</span> <span class="sDes">第2015集</span></div>
+        </li>
+        
+      </ul>
+	   <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_1');" href="/?m=vod-detail-id-22079.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950864654.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">7.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">左耳</span> <span class="sDes">正片</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_2');" href="/?m=vod-detail-id-1344.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950805310.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">2.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">唐人街探案</span> <span class="sDes">正片</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_3');" href="/?m=vod-detail-id-961.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950828480.jpg" src="/template/mobile//images/indexDefault.png" alt="" >
+             <span class="sNum">[完结]
+            
+            <em class="emHot">3.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">老炮儿</span> <span class="sDes">正片</span></div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="mod_a globalPadding">
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>热门综艺</span><a onClick="_dct_('m_index_tbrj_gd');" href="/?m=vod-type-id-3.html" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_1');" href="/?m=vod-detail-id-4443.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/201705181495080345.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">热推</em>  </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">今晚80后脱口秀 2017</span> <span class="sDes">更新至04-27期</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_2');" href="/?m=vod-detail-id-4488.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/201705181495079702.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">热推</em>  </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">欢乐喜剧人 第三季</span> <span class="sDes">更新至04-09期</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_3');" href="/?m=vod-detail-id-29953.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950900958.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">6.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">新娱乐在线 2017 5月</span> <span class="sDes">更新至05-01期</span></div>
+        </li>
+        
+      </ul>
+	    <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_1');" href="/?m=vod-detail-id-25696.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950879389.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">2.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">超人访问团 第一季</span> <span class="sDes">更新至20170425</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_2');" href="/?m=vod-detail-id-25697.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149508793810.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">5.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">韩伴FUN 2017 5月</span> <span class="sDes">更新至20170502</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_3');" href="/?m=vod-detail-id-25695.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950879388.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">4.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">猪头传媒 2017 5月</span> <span class="sDes">更新至20170502</span></div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="mod_a globalPadding">
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>动漫精选</span><a onClick="_dct_('m_index_tbrj_gd');" href="/?m=vod-type-id-4.html" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_1');" href="/?m=vod-detail-id-5005.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149508069210.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">3.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">小伶玩具</span> <span class="sDes">更新至360集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_2');" href="/?m=vod-detail-id-4980.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950806876.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">2.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">银魂 精选集</span> <span class="sDes">更新至4集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_3');" href="/?m=vod-detail-id-4961.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950806826.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">6.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">博人传 火影忍者新时代</span> <span class="sDes">更新至3集</span></div>
+        </li>
+        
+      </ul>
+	        <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_1');" href="/?m=vod-detail-id-4931.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149508067214.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">3.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">爆兽猎人</span> <span class="sDes">更新至21集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_2');" href="/?m=vod-detail-id-4929.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149508067212.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">9.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">偶像大师 灰姑娘剧场 第一季</span> <span class="sDes">更新至4集</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_3');" href="/?m=vod-detail-id-4928.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149508067211.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">7.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">偶像时间 美妙天堂</span> <span class="sDes">更新至4集</span></div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="mod_a globalPadding">
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>悬疑片推荐</span><a onClick="_dct_('m_index_tbrj_gd');" href="/?m=vod-type-id-18.html" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_1');" href="/?m=vod-detail-id-29921.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149509009116.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">7.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">看不见的客人</span> <span class="sDes"></span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_2');" href="/?m=vod-detail-id-29741.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950900477.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">5.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">足迹</span> <span class="sDes"></span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_3');" href="/?m=vod-detail-id-1509.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149507957415.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">5.0分</em> </span></a> </div>
+			<div class="con_bottom"><span class="sTit">谋杀似水年华</span> <span class="sDes">正片</span></div>
+        </li>
+        
+      </ul>
+	        <ul class="picTxt picTxtA clearfix">
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_1');" href="/?m=vod-detail-id-15048.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950840673.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">3.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">凡人烦恼</span> <span class="sDes">正片</span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_2');" href="/?m=vod-detail-id-29696.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/149509003419.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">3.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">红灯</span> <span class="sDes"></span></div>
+        </li>
+        
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_3');" href="/?m=vod-detail-id-29681.html"  target="_self"> <img data-src="/upload/vod/2017-05-18/14950900334.jpg" src="/template/mobile//images/indexDefault.png" alt="">
+             <span class="sNum">[完结]
+            
+            <em class="emHot">9.0分</em> </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">移魂都市</span> <span class="sDes"></span></div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+   </section>
+<footer class="footer">
+  <p class="pLinks"><a href="/index.php?m=label-dy.html">排行榜</a>|<a href="/index.php?m=gbook-show.html">用户反馈</a>|<a href="javascript:scroll(0,0)" target="_self">返回顶部</a></p>
+  <p class="copyRight">Copyright &copy; icp123 
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261068293'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261068293' type='text/javascript'%3E%3C/script%3E"));</script> </p>
+</footer>
+</div>
+<section class="fixedBtnList" style="display:none;"> <a class="gotoTop" target="_self" href="javascript:scroll(0,0)"></a> <a class="aFeedBack" href="/index.php?m=gbook-show.html"></a> </section>
+
+<!--<script type="text/javascript" src="/template/mobile//js/jquery-1.7.2.min.js"></script>-->
+<script type="text/javascript" src="/template/mobile//js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/template/mobile//js/jquery.cookie.min.js"></script>
+<!--<script type="text/javascript" src="/template/mobile//js/md5.min00.js"></script>
+<script type="text/javascript" src="/template/mobile//js/login00.min.js"></script>-->
+<script type="text/javascript" src="/template/mobile//js/iscroll.js"></script>
+<!--<script type="text/javascript" src="/template/mobile//js/hot_word00.js"></script>-->
+<script type="text/javascript" src="/template/mobile//js/common.min.1027.js"></script>
+<script type="text/javascript" src="/template/mobile/js/index.min.js"></script>
+</body>
+</html>

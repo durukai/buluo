@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>{page:name}-专题-爱奇艺影视大全</title>
+    <meta name="title" content="电影-专题-爱奇艺影视大全" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+ {maccms:include}
+    
+ <link type="text/css" rel="stylesheet" href="{maccms:path_tpl}zt/zt.css" />
+  </head>
+  <body class="qypage-980">
+    
+<script type="text/javascript">
+  window.Q = window.Q || {};
+  Q.PageInfo = Q.PageInfo || {};
+  Q.PageInfo.respInfo ={
+    cnf:[
+      {
+        layout:0,
+        cls:'qypage-980',
+        range:{
+          min:0,
+          max:1259
+        },
+        extraInfo:{}
+      },
+      {
+        layout:1,
+        cls:'qypage-1180',
+        range:{
+          min:1260,
+          max:Number.MAX_VALUE
+        },
+        extraInfo:{}
+      }
+    ],
+    curLayout:0
+  }
+</script>
+<script>
+  (function () {
+    var body = Q.$('body');
+    var width = Q.page.getViewWidth() > Q.page.getWidth() ? Q.page.getWidth() : Q.page.getViewWidth();
+    if (Q && Q.PageInfo&&Q.PageInfo.respInfo) {
+      
+      var cnf = Q.PageInfo.respInfo.cnf;
+      body.removeClass(cnf[Q.PageInfo.respInfo.curLayout].cls);
+      for (var i = 0; i < cnf.length; i++) {
+        if (width >= cnf[i].range.min && width <= cnf[i].range.max && !body.hasClass(cnf[i].cls)) {
+          body.addClass(cnf[i].cls);
+          Q.PageInfo.respInfo.curLayout = cnf[i].layout;
+          break;
+        }
+      }
+    }
+  })();
+</script>
+    <div class="page-search">
+   {maccms:head}
+<div id="content" class="layout">
+
+  <div class="bread-crumb-nav border-gray fn-clear">
+    <ul class="bread-crumbs"><li class="home">{page:name} - 影视专题策划</li></ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <div id="specail-page" class="border-gray">
+    <div class="specail-banner">
+      <img src="{page:pic}" alt="{page:name}" title="{page:name}"/>
+    </div>
+    <!-- // specail-banner end -->
+    <div class="specail-desc">
+      <h2>{page:name}</h2>
+      <p>
+       {page:content} ...人气：{page:hits}
+      </p>
+    </div>
+    <div class="specail-mask">
+    </div>
+  </div>
+  <!-- // specail-page end -->
+  <div class="margin-b10" id="specail-list">
+    <div class="module-hot-specail border-gray"><h2 class="module-title">{page:name}的影视作品</h2><a class="module-more"></a></div>
+    <ul class="yun-list yun-list-latest-tab-box"  id="yun-list">
+	{maccms:vod pagesize=50 topic=current order=desc by=time}
+          <li class="yun yun-small  border-gray">
+		    <a href="[vod:link]" target="_blank" class="yun-link" title="[vod:name]">
+		     <img class="yun-img" src="[vod:pic]" alt="[vod:name]" style="width: 138px; height: 183px; margin-left: 0px; margin-top: 0px; visibility: visible;" />
+                      <label class="score">[vod:score]</label>
+		            </a>
+		            <div class="yun-meta">
+		                <h3 class="yun-title">
+		                    <a href="[vod:link]" title="[vod:name]" target="_blank" class="yun-title-link">[vod:name]</a>
+		                </h3>
+		                <span class="yun-rank"></span>
+		                <ol class="yun-meta-list">
+		                    <li class="yun-meta-item yun-meta-actor"><span class="yun-meta-val"><i class="iconfont f-s-12 m-r-9">&#xf00d6;</i>[vod:starring]</span></li>
+		                    <li class="yun-meta-item yun-meta-type"><span class="yun-meta-val"><i class="iconfont f-s-12 m-r-9">&#xf00b6;</i>[vod:time style=y-m-d]</span></li>
+		                </ol>
+		            </div>
+		        </li>
+    {/maccms:vod}
+     </ul>
+    </div>
+  <!-- // specail-list end -->
+</div>
+{maccms:foot}
+    </div>
+     
+
+
+    <script type="text/javascript">
+      Q.projectName = 'qiyiV2'; 
+      Q.load("movieLibTvIndex");   
+    </script>
+
+					
+  </body>
+</html>

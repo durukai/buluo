@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>电影-专题-爱奇艺影视大全</title>
+    <meta name="title" content="电影-专题-爱奇艺影视大全" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+ {maccms:include}
+    
+ 
+  </head>
+  <body class="qypage-980">
+    
+<script type="text/javascript">
+  window.Q = window.Q || {};
+  Q.PageInfo = Q.PageInfo || {};
+  Q.PageInfo.respInfo ={
+    cnf:[
+      {
+        layout:0,
+        cls:'qypage-980',
+        range:{
+          min:0,
+          max:1259
+        },
+        extraInfo:{}
+      },
+      {
+        layout:1,
+        cls:'qypage-1180',
+        range:{
+          min:1260,
+          max:Number.MAX_VALUE
+        },
+        extraInfo:{}
+      }
+    ],
+    curLayout:0
+  }
+</script>
+<script>
+  (function () {
+    var body = Q.$('body');
+    var width = Q.page.getViewWidth() > Q.page.getWidth() ? Q.page.getWidth() : Q.page.getViewWidth();
+    if (Q && Q.PageInfo&&Q.PageInfo.respInfo) {
+      
+      var cnf = Q.PageInfo.respInfo.cnf;
+      body.removeClass(cnf[Q.PageInfo.respInfo.curLayout].cls);
+      for (var i = 0; i < cnf.length; i++) {
+        if (width >= cnf[i].range.min && width <= cnf[i].range.max && !body.hasClass(cnf[i].cls)) {
+          body.addClass(cnf[i].cls);
+          Q.PageInfo.respInfo.curLayout = cnf[i].layout;
+          break;
+        }
+      }
+    }
+  })();
+</script>
+    <div class="page-search">
+   {maccms:head}
+      <div class="wrapper-content wrapper-content-300 wrapper-content-300-index clearfix">
+        <div id="block-C" class="site-main" data-block-name="主内容"> 
+          
+<div class="mod-tab mt10">
+  <ul class="tab-normal clearfix">
+    <li class="selected"><a href="#" title="所有专题" >所有专题</a></li>
+  </ul>
+</div> 
+
+          <div class="mod-tab-body wrapper-cols">
+            
+    <div class="tab-body tab-body_2" style="display:block">
+      <div class="wrapper-piclist">
+        <ul class="site-piclist movieLib-picList-230129">
+          {maccms:topic pagesize=20 table=vod id=all}	
+            <li>
+              <div class="site-piclist_pic">
+                <a title="[topic:name]" href="[topic:link]" class="site-piclist_pic_link" target="_blank">
+                  <img width="100%" height="100%" title="[topic:name]" alt="[topic:name]" src="[topic:pic]" rseat="img1"></a>
+              </div>
+              <div class="site-piclist_info"> 
+                <p class="site-piclist_info_title">
+                  <a target="_blank" title="[topic:name]" href="[topic:link]" rseat="name1">[topic:name]</a>
+                </p>
+                <p class="site-piclist_info_describe">[topic:contenttext len=10]</p> 
+              </div>
+            </li>
+          
+{/maccms:topic}	
+          
+        </ul>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+      </div>
+{maccms:foot}
+    </div>
+     
+
+
+    <script type="text/javascript">
+      Q.projectName = 'qiyiV2'; 
+      Q.load("movieLibTvIndex");   
+    </script>
+
+					
+  </body>
+</html>

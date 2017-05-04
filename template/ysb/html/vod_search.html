@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{page:wd}电影在线观看-{page:wd}高清下载-{page:wd}磁力链接-{page:wd}网盘播放-小俊工作室</title>
+    <meta name="title" content="小俊工作室{page:wd}高清,{page:wd}高清完整版,{page:wd}在线播放,{page:wd}茄子电影在线观看" />
+    <meta name="keywords" content="[vod:content len=80]..." />
+    <meta name="description" content="{maccms:description}" />
+    <link rel="canonical" href="{maccms:url}"/>
+    <meta name="mobile-agent" content="format=xhtml;url=http://m.{maccms:url}"/>
+    <link href="http://m.{maccms:url}" rel="alternate" media="only screen and (max-width: 1000px)"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    {maccms:include}
+    <script src="{maccms:path_tpl}js/home.js"></script>
+</head>
+<body>
+{maccms:head}
+<div class="header_bg"></div><!--头部结束-->
+<div class="tab-a navs w1214">
+    <div class="wz fn-left">
+                <span>
+                    您所在的位置：
+                </span>
+        <a href="{maccms:path} " title="{maccms:name}">
+            首页
+        </a>
+        <em>
+            &gt;&gt;
+        </em>
+        <a class="current" href="/special/">
+            搜索{page:wd}列表
+        </a>
+    </div>
+</div>
+<div class="new-list">
+    <div class="tab-a w1214">
+        <div class="top-nav">
+            <h3>
+                广告位ID
+            </h3>
+            <ul>
+            </ul>
+        </div>
+        <div class="serach-box">
+            <div class="serach-title">
+                <h5>
+                    搜索
+                    <strong>
+                        {page:wd}
+                    </strong>
+                    共找
+                    <strong id="counts">
+                        {page:datacount}
+                    </strong>
+                    个相关内容
+                </h5>
+                <div class="ui-pages uipages fn-right" id="short-page">
+                </div>
+            </div>
+            <div id="contents">
+                <ul class="serach-ul">
+                    {maccms:vod pagesize=8 order=desc by=time}
+                    <li>
+                        <a class="list-img" href="[vod:link]" title="[vod:name]">
+                            <img class="loading" src="[vod:pic]"
+                                 data-original="[vod:pic]"
+                                 style="display: block;">
+                            <label class="score">
+                                [vod:score]
+                            </label>
+                            <label class="title">
+                                {if-A:not isN("[vod:remarks]")}
+                                [vod:remarks]
+                                {elseif-A:[vod:state]=0}
+                                完结
+                                {elseif-A:[vod:state]>0}
+                                {if-B:[vod:state]>10000}
+                                连载[vod:state]期
+                                {else-B}
+                                连载[vod:state]集</label><label class="status"></label>
+                            {endif-B}
+                            {else-A}
+                            {endif-A}
+                        </a>
+                        <div class="info">
+                            <h2>
+                                <a target="_blank" href="[vod:link]">
+                                    [vod:name]
+                                </a>
+                            </h2>
+                            <p class="actor">
+                                <em>
+                                    导演:
+                                </em>
+                                [vod:directedlink]
+                            </p>
+                            <p class="actor">
+                                <em>
+                                    主演:
+                                </em>
+                                [vod:starringlink]
+                            </p>
+                            <p class="type aleft">
+                                <em>
+                                    类型:
+                                </em>
+                                [vod:typename][vod:classname]
+                            </p>
+                            <p class="type aright">
+                                <em>
+                                    地区：
+                                </em>
+                                [vod:arealink]
+                            </p>
+                            <p class="type aleft">
+                                <em>
+                                    上映:
+                                </em>
+                                [vod:year]
+                            </p>
+                            <p class="type aright">
+                                <em>
+                                    更新:
+                                </em>
+                                [vod:time style=yy-m-d]
+                            </p>
+                            <p class="plot">
+                                <em>
+                                    剧情:
+                                </em>
+                                [vod:contenttext len=115]…
+                            </p>
+                        </div>
+                    </li>
+                    {/maccms:vod}
+                </ul>
+            </div>
+            <!-- // img-list end -->
+            <div class="uipages pages" id="long-page">
+                <div class="page">{maccms:pages len=6}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部开始-->
+{maccms:foot}
+<!--底部结束-->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+        try {
+            var s, a, i, j, r, c, l = document.getElementsByTagName("a"),
+                    t = document.createElement("textarea");
+            for (i = 0; l.length - i; i++) {
+                try {
+                    a = l[i].getAttribute("href");
+                    if (a && a.indexOf("/cdn-cgi/l/email-protection") > -1 && (a.length > 28)) {
+                        s = '';
+                        j = 27 + 1 + a.indexOf("/cdn-cgi/l/email-protection");
+                        if (a.length > j) {
+                            r = parseInt(a.substr(j, 2), 16);
+                            for (j += 2; a.length > j && a.substr(j, 1) != 'X'; j += 2) {
+                                c = parseInt(a.substr(j, 2), 16) ^ r;
+                                s += String.fromCharCode(c);
+                            }
+                            j += 1;
+                            s += a.substr(j, a.length - j);
+                        }
+                        t.innerHTML = s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                        l[i].setAttribute("href", "mailto:" + t.value);
+                    }
+                } catch(e) {}
+            }
+        } catch(e) {}
+    })();
+    /* ]]> */
+
+</script>
+
+
+</body>
+
+</html>

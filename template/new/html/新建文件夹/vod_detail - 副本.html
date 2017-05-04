@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>《[vod:name]》百度影音电影-[vod:remarks]下载-[vod:from]在线观看 - [vod:typename] - {maccms:name}</title>
+<meta name="keywords" content="《[vod:name]》高清下载,《[vod:name]》在线观看,《[vod:name]》百度影音" />
+<meta name="description" content="[vod:name]剧情:[vod:contenttext len=60]" />
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+<div class="main new-width">
+  <div class="gather_block_03"></div>
+  <div class="dda-01" style="margin:0 auto;">广告</div>
+  <div class="gather_block_03"></div>
+  <div class="g_box_02">
+    <div class="content_01 content_01_bg delay-h">
+      <div class="video_tv_cont_01">
+        <div class="cont">
+          <div class="lef"> <img src="[vod:pic]" alt="[vod:name]" data-original="{maccms:path}images/nopic.gif" style="width:150px;height:200px;"/>
+            <div id="follow"> <a href="javascript:void(0);" class="jia_gz" onclick="Imovie.follow()"></a> <span>播放:[vod:hits]次</span></div>
+分享代码
+          </div>
+          <div class="rig">
+            <div class="fen">
+              <h1>[vod:name]</h1>
+              <span class="num orange" id="movieScroe"></span>
+              <div class="star_b">
+                <div id="z"></div>
+                <span style="padding-left: 90px;" id="score_info">已有 人参与评论</span></div>
+            </div>
+            <div class="lef-sort">
+              <div class="d_z_y"><span>导演:</span><font>[vod:directedlink]</font></div>
+              <div class="d_z_y"><span>主演:</span><font>[vod:starringlink]</font></div>
+              <div class="d_z_y"><span>类型:</span><font><a target="_blank" href="[vod:typelink]">[vod:typename]</a> [vod:typeexpandlink]</font></div>
+              <div class="d_z_y"><span>Tag:</span><font>[vod:taglink]</font></div>
+			  <div class="d_z_y"><span>评论:</span><font><a href="#pl">写评论</a></font></div>
+            </div>
+            <div class="rig-sort">
+              <div class="d_z_y"><span>地区:</span><font>[vod:arealink]</font></div>
+              <div class="d_z_y"><span>年份:</span><font>[vod:yearlink]</font></div>
+              <div class="d_z_y"><span>语言:</span><font>[vod:langlink]</font></div>
+              <div class="d_z_y"><font>[vod:addtime]</font></div>
+            </div>
+            <div class="gather_block_04"></div>
+            <div class="d_z_y dzy"><span>来源:</span>
+              <p style="text-indent:0px;">[vod:from]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="dda-04 dda-04-02" style="margin:0 auto;">广告1</div>
+    </div>
+    <div class="gather_block_03"></div>
+    <div class="new-left">
+<div class="dda-02" style="margin:0 auto;">广告2</div>
+
+{maccms:play}
+<div class="blank10B"></div>
+<div class="block_ku clear">
+<div class="soybox ">
+<h2><span>&nbsp;播放列表[play:num]：（[play:from]）</span>【[play:tip]】</h2>
+</div>
+<div class="soyurl">
+<ul>
+{maccms:url order=asc}<li><a href="[url:link]" title="[url:name]">[url:name]</a></li>{/maccms:url}
+</ul>
+</div></div>
+{/maccms:play}
+
+<div class="gather_block_03"></div>
+      <div class="content_01 content_01_bg">
+        <div class="gather_block_01"></div>
+        <div class="head_07 head_07_01">
+          <div class="h_div">
+            <h3>热门影片</h3>
+          </div></div>
+        <ul class="list_06" style="width:auto;">
+{maccms:vod num=10 type=all by=time order=desc}
+<li><a class="b_a" href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><a class="titl" href="[vod:link]" title="[vod:name]"target="_blank">[vod:name]</a><div class="f_c">[vod:arealink]</div></li>
+{/maccms:vod}
+</ul>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_03"></div>
+      <div class="content_01 content_01_bg">
+        <div class="gather_block_01"></div>
+        <div class="head_07 head_07_01">
+          <div class="h_div">
+            <h3><strong>[vod:name]剧情介绍</strong></h3>
+          </div></div>
+        <ul class="list_06" style="width:auto;">
+<div class="jjie">
+[vod:content]
+</div>
+        </ul>
+        <div class="gather_block_01"></div>
+      </div>
+    </div>
+    <div class="right_07 new-right">
+<div class="dda-03" style="margin:0 auto;">广告3 </div>
+      <div class="gather_block_03"></div>
+      <div class="right_05 right_05_01">
+        <div class="head_10">
+          <h1>[vod:typename] 日排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01 list_04_02">
+{maccms:vod num=3 type=current by=dayhits order=desc}
+<li><i class="orange_bg">[vod:num]</i> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font></font></a><span>[vod:score]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=current by=dayhits order=desc start=4}
+<li><i>[vod:numjoin]</i> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font></font></a><span>[vod:score]</span></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_03"></div>
+      <div class="right_05 right_05_01">
+        <div class="head_10">
+          <h1>[vod:typename] 周排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01 list_04_02">
+{maccms:vod num=3 type=current by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font></font></a><span>[vod:score]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=current by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font></font></a><span>[vod:score]</span></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+      </div>
+      <div class="gather_block_03"></div>
+      <div class="right_05 right_05_01">
+        <div class="head_10">
+          <h1>[vod:typename] 月排行</h1>
+        </div>
+        <div class="gather_block_01"></div>
+        <ul class="list_04 list_04_01 list_04_02">
+{maccms:vod num=3 type=current by=monthhits order=desc}
+<li><i class="orange_bg">[vod:num]</i> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font></font></a><span>[vod:score]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=current by=monthhits order=desc start=4}
+<li><i>[vod:numjoin]</i> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font></font></a><span>[vod:score]</span></li>
+{/maccms:vod}
+        </ul>
+      </div>
+      <div class="gather_block_03"></div>
+      <div class="dda-03" style="margin:0 auto;overflow:hidden;height:0px;">
+广告
+      </div>
+    </div>
+  </div>
+[vod:comment]
+</div>
+<div class="gather_block_01"></div>
+
+{maccms:foot}
+</body>
+</html>

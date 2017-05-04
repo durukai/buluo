@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>正在播放 [vod:name] [vod:playname]</title>
+<meta name="Keywords" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta name="description" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<link rel="stylesheet" type="text/css" href="{maccms:path_tpl}css/play.min.css" />
+<link rel="stylesheet" type="text/css" href="{maccms:path_tpl}css/header.min.css" />
+{maccms:include}
+</head>
+<body>
+<div id="webtips_vip" ignore="1"></div>
+<div class="g_hd g_black_hd cf" id="g_miniHeader">
+<div class="wrap_header" id="wrap_header">
+  <div class="main_header cf" id="DomLogo"> <a title="PPTV.com网络电视" href="{maccms:path}" class="logo" target="_blank"><img class="png-img" src="{maccms:path_tpl}images/logo1.png" width="140" height="28" alt="PPTV网络电视"></a>
+    <div class="topnav cf">
+      <div class="fl">
+<form action="{maccms:link_search_vod}" method="post" class="search">
+<input type="text" id="wd" name="wd" class="txt" onblur="if(this.value==''){ this.value='100万部影片任你搜索';this.style.color='#cfcdcd';}" onfocus="if(this.value=='100万部影片任你搜索'){this.value='';this.style.color='';}" value="100万部影片任你搜索" />
+<button type="submit" title="search" value="搜索" class="btn"></button>
+</form>
+      </div>
+      <div class="keys">
+        <div class="ranks cf"> <a title="排行" id="playRankBtn" target="_blank" href="http://www.pptv.com/top/" class="grank"><em></em><span class="text">排行</span><span class="index-bg"></span></a> </div>
+
+<div class="login-layer"><a  class="login bar_login" class="bar_login" id="login" href="{maccms:path}index.php?m=user-index.html" ><span class="ico-3"></span></a></div>
+    </div>
+  </div>
+</div>
+<!-- wrap_header end -->
+<!-- 播放 -->
+<div class="playbox_bg" tj_id="show_playbox">
+  <div class="wp_playbox">
+    <div class="main_playbox">
+      <div class="playerbox">
+        <div class="player" id="pptv_playpage_box" >[vod:playerinfo][vod:player]</div>
+      </div>
+    </div>
+  </div>
+</div></br><!--   播放结束  -->
+
+<div id="content" class="layout">
+<div class="ui-sponsor"><!-- 广告位：vod03 --></div>
+
+<div class="ui-box" id="detail-list"><a name=""></a>
+{maccms:play}
+<div class="play-list-box">
+<div class="caption fn-clear"><h4>[vod:name] <font color="#FF0000">[play:from]</font> 在线观看</h4>
+<div class="txt">[[play:tip]]</div>
+</div>
+<div class="content">
+<p class="play-list">
+{maccms:url order=asc}<a rel="nofollow" href="[url:link]">[url:name]</a>{/maccms:url}
+</p>
+</div></div>
+{/maccms:play}
+</div>
+
+<div class="ui-box" id="like-focus">
+<div class="ui-title"><h2>喜欢看“<strong>[vod:name]</strong>”的人也喜欢：</h2></div>
+<ul class="img-list fn-clear">
+{maccms:vod num=7 type=all by=time order=desc}
+<li><a class="play-img" target="_blank" href="[vod:link]" title="[vod:name]"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"/><label class="mask"></label><label class="text">[vod:remarks]</label><label class="score">[vod:score]</label></a><h5><a target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a></h5></li>
+{/maccms:vod}
+</ul><!-- // img-list end -->
+<ul class="txt-list fn-clear">
+{maccms:vod num=15 type=all by=time order=desc}
+<li><span>[vod:num].</span><a target="_blank" href="[vod:link]" title="[vod:name]">[vod:name]</a></li>
+{/maccms:vod}
+</ul><!-- // txt-list End -->
+</div><!-- // ui-box#like-focus end -->
+
+<div class="ui-sponsor" style="width:1000px;overflow:hidden;"><!-- 广告位：vod04 --></div>
+
+<div class="ui-box" id="comment" >
+<div class="ui-title"><h3>网友评论</h3></div>
+<div class="ui-cnt">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+<!-- UY END -->
+</div><!-- // comment End -->
+</div><!-- // ui-box end -->
+
+</div></br><!-- // wrap End -->
+{maccms:foot}
+</body>
+</html>

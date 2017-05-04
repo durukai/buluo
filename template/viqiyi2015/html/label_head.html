@@ -1,0 +1,176 @@
+<div id="block-A" data-block-name="导航">
+  <div class="topNavWrap-player" data-widget-compatible="wrap" data-ipadhack-elem="nav">
+    <div class="navPlayer topNav-player topNav-fixed" data-widget-navctrl="player" data-widget-toplinefloater="blackFloater">
+      <div class="navcont clearfix  ">
+        <div class="topNavLt">
+          <a class="logo" href="/" data-navpingback="logo" rseat="iQIYI_logo"><img title="爱奇艺 iQIYI.COM" alt="爱奇艺 iQIYI.COM" src="{maccms:path_tpl}play/logo108x35_black.png" rseat="iQIYI_yxpz"></a>
+        </div>
+        <div class="topNavMid" data-widget-navanim="wrap" data-navanim-param="play">
+          <div class="dhome"><a href="/" data-btn="backhome" data-navpingback="home" title="返回爱奇艺首页" alt="返回爱奇艺首页" rseat="返回爱奇艺首页"></a></div>
+          <div class="dhBox">
+            <div class="dhGuide" data-widget-navctrl-elem="guide">
+              <div class="" data-widget-navctrl-elem="shadow" rseat="导航">导航</div>
+            </div>
+            <!-- guide End -->
+          </div>
+        </div>
+        <!-- nav first Start -->
+        
+        <div class="navboxFirst" data-widget-navctrl-elem="first" style="display:none">
+          <div class="mod-navPop clearfix">
+            <div class="navPop_bd clearfix">
+              <ul class="nav_one clearfix">
+                
+                   
+                  <li><a  href="{maccms:getlink hot.html}"  >热门榜</a></li>	
+                  <li><a  href="{maccms:getlink hots.html}"  >更新榜</a></li>	
+				     <li><a  href="{maccms:link_gbook}"  >留言本</a></li>	
+              </ul>
+              <ul class="nav_two clearfix">
+                
+                  
+                  {maccms:menu type=parent order=asc table=vod}
+                  
+                  <li><a  href="[menu:link]"  >[menu:name]</a></li>
+                
+                 	{/maccms:menu}	
+              </ul>
+              <ul class="nav_three clearfix">
+                 <li><a href="/?m=vod-type-id-5.html"  >动作片</a></li>
+
+                	
+                  
+                  <li><a href="/?m=vod-type-id-6.html"  >喜剧片</a></li>
+
+                	
+                  
+                  <li><a href="/?m=vod-type-id-7.html"  >爱情片</a></li>
+
+                	
+                  
+                  <li><a href="/?m=vod-type-id-8.html"  >科幻片</a></li>
+
+                	
+                  
+                  <li><a href="/?m=vod-type-id-9.html"  >恐怖片</a></li>
+
+                	
+                  
+                  <li><a href="/?m=vod-type-id-10.html"  >剧情片</a></li>
+
+	
+              </ul>
+              <ul class="nav_four clearfix">   
+                  {maccms:menu  parent=2 order=asc table=vod}
+                  
+                  <li><a href="[menu:link]"  >[menu:name]</a></li>
+
+                	{/maccms:menu}	
+                                               
+              </ul>
+              <ul class="nav_five clearfix">                
+                
+                  
+                  {maccms:menu  parent=3 order=asc table=vod}
+                  
+                  <li><a href="[menu:link]"  >[menu:name]</a></li>
+
+                	{/maccms:menu}	
+                  
+              </ul>
+              <ul class="nav_six clearfix">
+                
+                  
+                  
+                                 {maccms:menu type=parent parent=4 order=asc table=vod}
+                  
+                  <li><a href="[menu:link]"  >[menu:name]</a></li>
+
+                	{/maccms:menu}	
+                           
+              </ul>
+
+            </div>
+            <!-- app download start -->
+            <div class="mod-appDownload-nav">
+              <a href="/" class="appDownload-nav_img" title=""></a>
+              <p class="appDownload-nav_desc"><span>提高3倍流畅度！</span><a href="/" class="appDownload-nav_link">立即下载</a></p>
+            </div>
+            <!-- app download end -->
+          </div>
+        </div>
+        <iframe class="frame-leftMenu" frameborder="0" data-navctrl-elem="underframe"></iframe>
+        <!-- nav first End -->
+        <div class="topNavRt topNavRt_new"  data-widget-navmsgtips="navmsgtips">
+
+          
+            <div data-widget-activity="topNavBox"></div>
+          
+          <!--topNavRt topLogin start-->
+          <div class="topLogin" id="data-temp-new" data-con="head" style="display: block;">
+            <!--add bofang jilu-->
+            
+            <!--topNav_records start-->
+			          <div class="topNav_update topNav_records topNav_records" data-playhistory-cls="topNav_update" id="widget-playhistory-new">
+              <a class="a1 jilu"   href="#" id="history">观看记录<b></b></a>
+     
+              <!-- iframe -->
+              <div data-playhistory-elem="underframe" style="display: block;">
+              </div>
+            </div>
+            <div class="topNav_update topNav_records topNav_records" data-playhistory-cls="topNav_update" id="widget-playhistory-new">
+              <a class="a1 jilu"   href="{maccms:link_gbook}" >留言本</a>
+     
+              <!-- iframe -->
+              <div data-playhistory-elem="underframe" style="display: block;">
+              </div>
+            </div>
+            <!--topNav_records end-->
+          </div>
+          <!--topNavRt topLogin end-->
+          <!--topNavRt search start-->
+          <div class="clearfix">
+            <div data-widget-suggest="suggest"  class="searchbox" >
+                    {maccms:vod num=6 type=all by=hits order=desc}
+                <a title="[vod:name]" href='[vod:link]' target='_blank' style="display:none;"></a>
+                    {/maccms:vod}
+              
+      	<form action="{maccms:link_search_vod}" method="post">
+                <div class="srchDef">
+                  <span class="in">
+				   <input type="text" id="wd" name="wd" class="navTopTxt" x-webkit-speech value="请在此处输入影片名或演员名称" onfocus="if(this.value=='请在此处输入影片名或演员名称'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片名或演员名称';};"/>
+                  </span>
+                  <span class="out">
+				   <input type="button" id="searchbutton" class="navTopBtn" />
+                  </span>
+                </div>
+              </form>
+
+              <div class="top-search-tip dn" id="wholenetsearch-tip">
+                <div class="tip-pop">
+                  <span class="arrow"></span>
+                  <a href="javascript:;" class="close" j-delegate="close"></a>
+                  <p>搜索互联网全部视频</p>
+                </div>
+              </div>
+
+              <div class="soResult" data-suggest-elem="body" style="display:none;">
+                <div class="soResult_con">
+                  <ul class="soResult_list" data-suggest-elem="list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav_pop_single" data-navmsgtips-content="content" ></div>
+          <!--topNavRt search end-->
+          <div class="gradientLayer"></div>
+        </div>
+        <!--新吸顶登录 开始-->
+
+        <iframe data-topnavloginbar-elem="underframe" class="frame-loginBar" frameborder="0" style="display: none;"></iframe>
+        <!--新吸顶登录 结束-->
+      </div>
+      <iframe class="frame-topNav-player" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>

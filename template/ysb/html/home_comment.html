@@ -1,0 +1,104 @@
+<div class="vod-title">
+    <h2><em><span class="total fl">共<em id="item_count">{page:datacount}</em>条影片评论，</span>看完后，请发表你的看法？</em></h2>
+</div>
+<div class="ui-cnt clear">
+    <form id="commform" action="{maccms:path}index.php?m=comment-save" method="post">
+        <div class="ui-form clear" id="cmt-input-bd">
+            <div class="ui-form-item">
+                            <textarea cols="60" rows="5" class="ui-input ui-textarea" id="c_content" name="c_content" onKeyup="MAC.Remaining(this,200,'c_remaining')" onfocus="if(this.value=='请在这里发表您的个人看法，最多200个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多200个字。';};"	>请在这里发表您的个人看法，最多200个字。</textarea>
+                <input type="hidden" id="c_rid" name="c_rid" value="">
+            </div>
+            <div class="ui-form-info clear">
+                <a rel="nofollow" class="ui-button aright" value="发布" onclick="MAC.Comment.Post();">
+                    提交
+                </a>
+                <p class="aright">
+                    请勿提交非法信息和广告，违反者查封ID，甚至永久删除！谢谢合作~
+                </p>
+                <p class="fl clearfix">
+                    <img onclick="MAC.AddEm('c_content',1);" src="{maccms:path}images/face/1.gif">
+                    <img onclick="MAC.AddEm('c_content',2);" src="{maccms:path}images/face/2.gif">
+                    <img onclick="MAC.AddEm('c_content',3);" src="{maccms:path}images/face/3.gif">
+                    <img onclick="MAC.AddEm('c_content',4);" src="{maccms:path}images/face/4.gif">
+                    <img onclick="MAC.AddEm('c_content',5);" src="{maccms:path}images/face/5.gif"><img onclick="MAC.AddEm('c_content',6);" src="{maccms:path}images/face/6.gif"><img onclick="MAC.AddEm('c_content',7);" src="{maccms:path}images/face/7.gif"><img onclick="MAC.AddEm('c_content',8);" src="{maccms:path}images/face/8.gif"><img onclick="MAC.AddEm('c_content',9);" src="{maccms:path}images/face/9.gif"><img onclick="MAC.AddEm('c_content',10);" src="{maccms:path}images/face/10.gif"><img onclick="MAC.AddEm('c_content',11);" src="{maccms:path}images/face/11.gif"><img onclick="MAC.AddEm('c_content',12);" src="{maccms:path}images/face/12.gif"><img onclick="MAC.AddEm('c_content',13);" src="{maccms:path}images/face/13.gif"><img onclick="MAC.AddEm('c_content',14);" src="{maccms:path}images/face/14.gif"><img onclick="MAC.AddEm('c_content',15);" src="{maccms:path}images/face/15.gif"><img onclick="MAC.AddEm('c_content',16);" src="{maccms:path}images/face/16.gif">
+                    <span class="remaining fr" id="c_remaining">200</span>
+                </p>
+                <div class="clear">
+                </div>
+            </div>
+            <div>
+                昵称:<input class="cmt_text" id="c_name" name="c_name" type="text" value="茄子游客">{if-A:{maccms:commentverify}==1} 验证码:<input type="text" id="c_code" name="c_code" class="cmt_text"/>&nbsp;&nbsp;<img id="c_code_img" class="cmt_verify" src="{maccms:path}inc/common/code.php?a=comment&s=" title="看不清楚? 换一张！" onClick="src='{maccms:path}inc/common/code.php?a=comment&s='+Math.random()"/>{endif-A}
+                </div>
+        </div>
+    </form>
+    <div class="ui-bar fn-clear">
+        <div class="view-filter"><a rel="nofollow" class="current" href="javascript:void(0);"><span>最新评论</span></a></div>
+        <div class="ui-pages commpage aright" id="pagebox">
+            <div class="page">{maccms:pages len=6}</div>
+        </div>
+    </div>
+    {if-A:{page:datacount}==0}
+    <center><h3> 暂无评论，快来抢沙发吧！</h3></center>
+    {else-A}
+    <div class="comment-focus">
+            {maccms:comment pagesize=10 vid=current order=desc by=time}
+            <li id="li[comment:id]" class="comment-item fn-clear">
+                <div class="comment-time">
+                    <p class="date-time">
+                        <strong>
+                            [comment:time]
+                        </strong>
+                    </p>
+                </div>
+                <div class="comment-post">
+                    <div class="comment-post-arrow">
+                    </div>
+                    <div class="comment-post-cnt">
+                        <div class="comment-avatar">
+                            <a>
+
+                                <img src="{maccms:path_tpl}images/tx.gif"
+                                     alt="dai751726">
+                            </a>
+                        </div>
+                        <div class="comment-body">
+                            <div class="comment-text">
+                    <span class="user">
+                        <a>
+                            [comment:name]
+                        </a>
+                    </span>：
+                                <em>
+                                    <em>
+                                        [comment:content]
+                                    </em>
+                                </em>
+                            </div>
+                            <div class="comment-assist fn-clear">
+                                <p class="fn-left">
+                        <span class="digg">
+                            <a href="javascript:void(0)" class="sup">
+                                排列：第[comment:num]楼
+
+                            </a>
+                        </span>
+                                </p>
+                                <p class="fn-right">
+                                    <a href="javascript:void(0)" data="454" class="reply">
+                                        IP地址：[comment:ip]
+                                    </a>
+                                </p>
+                            </div>
+                            <div id="rep454" class="comms">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fn-clear">
+                    </div>
+                </div>
+            </li>
+            {/maccms:comment}
+    </div>
+    {endif-A}
+<br>
+</div>

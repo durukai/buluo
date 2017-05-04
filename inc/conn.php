@@ -1,6 +1,8 @@
 <?php
 define('MAC_ROOT', substr(__FILE__, 0, -13));
 require(MAC_ROOT.'/inc/config/config.php');
+require(MAC_ROOT.'/inc/config/mobile_check.php');
+
 require(MAC_ROOT.'/inc/config/cache.php');
 require(MAC_ROOT.'/inc/common/class.php');
 require(MAC_ROOT.'/inc/common/function.php');

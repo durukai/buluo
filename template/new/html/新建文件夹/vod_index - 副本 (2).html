@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{maccms:name}</title>
+<meta name="keywords" content="{maccms:keywords}" />
+<meta name="description" content="{maccms:description}" />
+{maccms:include}
+
+</head>
+<body>
+{maccms:head}
+
+<div class="slide slide_tv">
+<div class="slide_block_01" id="slider0">
+<div class="list_block">
+<h1 class="a-txt"></h1>
+<ul class="slide_list_ul_01 switcher">
+{maccms:vod num=1 type=all by=time order=desc level=5}
+<li class="current" data-text="[vod:name]"><a href="[vod:link]" title="[vod:name]"><i></i><img  data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /></a></li>
+{/maccms:vod}
+{maccms:vod num=6 type=all by=time order=desc level=5 start=2}
+<li  data-text="[vod:name]"><a href="[vod:link]" title="[vod:name]"><i></i><img  data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /></a></li>
+{/maccms:vod}
+</ul>
+<a href="javascript:;" class="lef-btn prve_butt"></a>
+<a href="javascript:;" class="rig-btn next_butt"></a>
+</div>
+<div class="alpha_bg"></div>
+<div class="rig_cont">
+<div class="cont">
+<div class="head_06">
+<a href="javascript:void(0)" id="slide_1" class="down">今日热门</a>
+<a href="javascript:void(0)" id="slide_2">电影</a>
+<a href="javascript:void(0)" id="slide_3" class="las">电视剧</a><i class="jt_up"></i></div>
+<div class="gather_block_01"></div>
+<ul id="slide_con_1" class="list_04">
+{maccms:vod num=3 type=all by=weekhits order=desc}
+<li><i class="orange_bg">[vod:numfill]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=8 type=all by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+<ul id="slide_con_2" class="list_04" style="display:none;">
+{maccms:vod num=3 type=1 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:numfill]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=8 type=1 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+<ul id="slide_con_3" class="list_04" style="display:none;">
+{maccms:vod num=3 type=2 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:numfill]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=8 type=2 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+</div>
+</div>
+<div class="rig_cont_bg"></div>
+<ul class="img_block conbox">
+{maccms:vod num=1 type=all by=time order=desc level=5}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" width="710" height="350"/></a></li>
+{/maccms:vod}
+{maccms:vod num=6 type=all by=time order=desc level=5 start=2}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" width="710" height="350"/></a></li>
+{/maccms:vod}
+</ul>
+</div>
+</div>
+<div class="shadow_crow"></div>
+</div>
+<div class="main">
+<div class="gather_block_01"></div>
+<div class="head_07"><div class="h_div"><h1 class="h_bg h_bg_01"></h1></div></div>
+<ul id="hp" class="list_06 list_06_01">
+{maccms:vod num=1 type=all level=1,2,3 order=desc}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_0"><div id="des_0" class="blue_bgcolor" style="display:none;"><p>年份：[vod:year]<br />[vod:content len=68]...</p></div><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b blue_bgcolor" id="d_0"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=2}
+<li><div class="v_name_b gray_bgcolor" id="d_1"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div><div class="gather_block_02"></div><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_1"><div id="des_1" class="gray_bgcolor" style="display:none;"><p>年份：[vod:year]<br />[vod:content len=68]...</p></div><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=3}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_2"><div id="des_2" class="purple_bgcolor" style="display:none;"><p>年份：[vod:year]<br />[vod:content len=68]...</p></div><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b purple_bgcolor" id="d_2"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=4}
+<li><div class="v_name_b gray_bgcolor" id="d_3"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div><div class="gather_block_02"></div><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_3"><div id="des_3" class="gray_bgcolor" style="display:none;"><p>年份：[vod:year]<br />[vod:content len=68]...</p></div><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=5}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_4"><div id="des_4" class="green_bgcolor" style="display:none;"><p>年份：[vod:year]<br />[vod:content len=68]...</p></div><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b green_bgcolor" id="d_4"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=6}
+<li><div class="v_name_b gray_bgcolor" id="d_5"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div><div class="gather_block_02"></div><a href="http://v.dianxin.com/dianying/mv_show_4966.html" target="_blank" class="b_a" id="a_5"><div id="des_5" class="gray_bgcolor" style="display:none;"><p>年份：[vod:year]<br />[vod:content len=68]...</p></div><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=7}
+<li class="las"><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_6"><div id="des_6" class="violet_bgcolor" style="display:none;"><p>年份：[vod:year]<br />[vod:content len=68]...</p></div><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b violet_bgcolor" id="d_6"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+</ul>
+<div class="gather_block_01"></div>
+<table class="tab_01" cellpadding="0" cellspacing="1">
+<thead><td>大片抢鲜</td><td>同步更新</td><td>午夜激情</td><td>都市男女</td><td>火爆男人</td></thead>
+<tr>
+<td>
+<ul class="list_01 list_01_03" id="index_tt1_con">
+<li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4855.html" target="_blank"><img src="data/uploads/msImg/movie/1310/16/138189450565.jpg"></a>
+<div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4855.html" target="_blank">金刚狼2（TS）</a><span class="orange">0</span></div>
+<p>猛男野性十足 美女惊艳四座</p>
+</li>
+<li class="las">
+<a href="http://v.dianxin.com/dianying/mv_show_4802.html" target="_blank"><img src="data/uploads/msImg/movie/1310/16/138189446676.jpg"></a>
+<div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4802.html" target="_blank">赤焰战场2（DVD）</a><span class="orange">0</span></div>
+<p>李秉宪加盟力拼好莱坞老将</p>
+</li>
+</ul>
+</td>
+<td>
+<ul class="list_01 list_01_03" id="index_tt2_con">
+<li>
+<a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4981.html" target="_blank"><img src="data/uploads/msImg/movie/1310/16/138189427481.jpg"></a>
+<div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4981.html" target="_blank">心战（TS）</a><span class="orange">0</span></div>
+<p>任达华张家辉斗法步步惊心</p>
+</li>
+<li class="las">
+<a href="http://v.dianxin.com/dianying/mv_show_4974.html" target="_blank"><img src="data/uploads/msImg/movie/1310/16/138189424761.jpg"></a>
+<div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4974.html" target="_blank">一路顺疯（DVDScr）</a><span class="orange">0</span></div>
+<p>烂兄难弟疯狂寻爱之旅</p>
+</li>
+</ul>
+            </td>
+            <td>
+            	<ul class="list_01 list_01_03" id="index_tt3_con">
+                	<li>
+                    	<a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4983.html" target="_blank"><img src="data/uploads/msImg/movie/1310/21/138234589034.jpg"></a>
+                        <div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4983.html" target="_blank">特殊身份（DVDScr）</a><span class="orange">0</span></div>
+                        <p>甄子丹角色表现中国人傲骨</p>
+                    </li>
+                	<li class="las">
+                    	<a href="http://v.dianxin.com/dianying/mv_show_4803.html" target="_blank"><img src="data/uploads/msImg/movie/1310/16/138189415386.jpg"></a>
+                        <div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4803.html" target="_blank">催眠潜凶</a><span class="orange">0</span></div>
+                        <p>盗窃案背后展现黑色惊悚</p>
+                    </li>
+                </ul>
+            </td>
+            <td>
+            	<ul class="list_01 list_01_03" id="index_tt4_con">
+                	<li>
+                    	<a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4966.html" target="_blank"><img src="data/uploads/msImg/movie/1309/18/137947560070.jpg"></a>
+                        <div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4966.html" target="_blank">我想和你好好的（DVD）</a><span class="orange">0</span></div>
+                        <p>冯绍峰甜蜜腻爱来袭</p>
+                    </li>
+                	<li class="las">
+                    	<a href="http://v.dianxin.com/dianying/mv_show_4956.html" target="_blank"><img src="data/uploads/msImg/movie/1309/16/137932309789.jpg"></a>
+                        <div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4956.html" target="_blank">4B青年之4楼B座（DVDScr）</a><span class="orange">0</span></div>
+                        <p>爆笑直戳当下青年“三点”</p>
+                    </li>
+                </ul>
+            </td>
+            <td>
+            	<ul class="list_01 list_01_03" id="index_tt5_con">
+                	<li>
+                    	<a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4979.html" target="_blank"><img src="data/uploads/msImg/movie/1309/28/138036068295.jpg"></a>
+                        <div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4979.html" target="_blank">独行侠</a><span class="orange">0</span></div>
+                        <p>狂野德普化身印第安带你冒险</p>
+                    </li> 
+                	<li class="las">
+                    	<a href="http://v.dianxin.com/dianying/mv_show_4975.html" target="_blank"><img src="data/uploads/msImg/movie/1310/16/138189433173.jpg"></a>
+                        <div class="txt"><a class="v_name" href="http://v.dianxin.com/dianying/mv_show_4975.html" target="_blank">逃出生天 3D（DVD）</a><span class="orange">0</span></div>
+                        <p>刘青云、古天乐火场争斗</p>
+                    </li> 
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <div class="gather_block_01"></div>
+ 
+<style> 
+.gg_z{ width:978px; height:39px; border:1px solid #f3d1a3; background:url(/template/default/images/xy_1.jpg) repeat-x;font-size:12px; overflow:hidden;}
+.tit_z{ width:76px; height:39px; background:url(/template/default/images/gg.jpg) no-repeat 0 0; margin-left:10px; line-height:40px; color:#fff;  font-weight:bold; text-indent:9px; float:left; display:inline;}
+.gwz_z{ line-height:40px; float:left; width:890px; height:39px; overflow:hidden; }
+.gwz_z a{ color:#e37100; text-decoration:none; margin:0 22px;}
+.gwz_z a:hover{ text-decoration:underline; color:#ff0000;}
+.gg_bs_z{width:978px; height:39px; border:1px solid #d4d4d4; background:#fff; font-size:12px;}
+.tit_bs_z{ background:url(/template/default/images/gg.jpg) no-repeat -77px 0;}
+</style>
+<div class="gg_bs_z">
+<div class="tit_z tit_bs_z">热门推广</div>
+    <div class="gwz_z">
+        <a href="http://wan.dianxin.com/ad/frxz2/?pid=AD00000011_" target="_blank" title="凡人修真2" rel="nofollow">凡人修真2</a>
+        <a href="http://wan.dianxin.com/ad/smzt/?pid=AD00000011_" target="_blank" title="神魔遮天" rel="nofollow">神魔遮天</a>
+        <a href="http://wan.dianxin.com/ad/sq/?pid=AD00000011_" target="_blank" title="神曲" rel="nofollow">神曲</a>
+        <a href="http://wan.dianxin.com/ad/sxd/?pid=AD00000011_" target="_blank" title="神仙道" rel="nofollow">神仙道</a>
+        <a href="http://wan.dianxin.com/ad/xlfc/?pid=AD00000011_" target="_blank" title="仙落凡尘" rel="nofollow">仙落凡尘</a>
+        <a href="http://wan.dianxin.com/ad/mhfx/?pid=AD00000011_" target="_blank" title="梦幻飞仙" rel="nofollow">梦幻飞仙</a>
+        <a href="http://wan.dianxin.com/ad/dzxy/?pid=AD00000011_" target="_blank" title="斗战西游" rel="nofollow">斗战西游</a>
+        <a href="http://wan.dianxin.com/ad/lj/?pid=AD00000011_" target="_blank" title="龙将" rel="nofollow">龙将</a>
+        <a href="http://wan.dianxin.com/ad/bd/?pid=AD00000011_" target="_blank" title="霸刀" rel="nofollow">霸刀</a>
+        <a href="http://wan.dianxin.com/ad/zxy/?pid=AD00000011_" target="_blank" title="醉西游" rel="nofollow">醉西游</a>
+        </div>
+</div>
+ 
+    
+<!--<div class="dad_01"><a href="" target="_blank"><img src="/template/default/movie/pic/big_pic.jpg" /></a></div>-->
+    <div class="gather_block_01"></div>
+    <div class="g_box_01">
+    	<div class="gather_block_01"></div>
+    	<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_02"></h1><!--<a href="" class="huan_bg"></a>--></div></div>
+    	<ul class="list_06 " id="index_tt6_con">
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4458.html" target="_blank"><em class="gao_qing_i"></em><img src="/data/uploads/msImg/movie/1208/06/134422270730.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4458.html" target="_blank">黄金大劫案</a><div class="f_c"><a>宁浩三年磨一剑力作</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4649.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1212/20/135599179614.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4649.html" target="_blank">我们需要性</a><div class="f_c"><a>女权斗争重要影片</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4787.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1302/19/136126822968.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4787.html" target="_blank">西游·降魔篇</a><div class="f_c"><a>文章艳舞露点秀贱功</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4818.html" target="_blank"><em class="gao_qing_i"></em><img src="http://image.dianxin.com/data/uploads/msImg/movie/1303/11/136298835363.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4818.html" target="_blank">笑功震武林</a><div class="f_c"><a>江湖高手囧事录</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4967.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1308/30/137784748024.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4967.html" target="_blank">狄仁杰之神都龙王（DVD）</a><div class="f_c"><a>赵又廷出演狄仁杰不惧对比 baby回应票房毒药质疑</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4958.html" target="_blank"><em class="gao_qing_i"></em><img src="http://image.dianxin.com/data/uploads/msImg/movie/1308/14/137646821097.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4958.html" target="_blank">了不起的盖茨比</a><div class="f_c"><a>小李子穆丽根演绎爱恨情侣</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4932.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1307/24/137465337526.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4932.html" target="_blank">环太平洋</a><div class="f_c"><a>机甲战士海陆空激斗巨怪</a></div></li>
+        </ul>
+        <div class="gather_block_01"></div>
+    </div>
+    <div class="gather_block_01"></div>
+ 
+    <div class="g_box_02">
+    	<div class="left_01">
+        	<div class="gather_block_01"></div>
+        	<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_03"></h1><div class="r_nav">
+<a href="http://v.dianxin.com/dianying/list_t0-a9-y0-y0-d0-l1.html" target="_blank">美国</a>|
+<a href="http://v.dianxin.com/dianying/list_t0-a19-y0-y0-d0-l1.html" target="_blank">香港</a>|
+<a href="http://v.dianxin.com/dianying/list_t0-a7-y0-y0-d0-l1.html" target="_blank">韩国</a>|
+<a href="http://v.dianxin.com/dianying/list_t0-a1-y0-y0-d0-l1.html" target="_blank">大陆</a>|
+<a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y0-d0-l1.html" target="_blank">更多<i class="jt_right_01"></i></a></div></div></div>
+            <div class="t_v_intr">
+            	<a href="http://v.dianxin.com/dianying/mv_show_4943.html" class="a_img" target="_blank"><img src="/data/uploads/msImg/sg/1308/26/137750678210.jpg" /><font><b>小时代：青木时代</b>郭敬明展幻灭青春</font><span></span></a>
+                <p>导演：<font>郭敬明</font><br />
+主演：<font>杨幂,郭采洁,柯震东,凤小岳,陈学冬</font><br />
+简介： 毕业制作圆满落幕，顾里的生日宴会也随之到来，但谁也没有想到，这是一场枪林弹雨的鸿门宴。顾里与南湘的男友席城的苟且往事被揭，导致姊妹反目、兄弟阋墙....</p>
+<ul class="list_11">
+            	<li><a href="http://v.dianxin.com/dianying/mv_show_4830.html" target="_blank"><i class="ico_02"></i>分手合约</a></li>
+            	<li><a href="http://v.dianxin.com/dianying/mv_show_4777.html" target="_blank"><i class="ico_02"></i>致逝去的青春</a></li>
+            	<li><a href="http://v.dianxin.com/dianying/mv_show_4801.html" target="_blank"><i class="ico_02"></i>魔境仙踪</a></li>
+            	<li><a href="http://v.dianxin.com/dianying/mv_show_4754.html" target="_blank"><i class="ico_02"></i>特种部队2：复仇</a></li>
+            	<li><a href="http://v.dianxin.com/dianying/mv_show_4843.html" target="_blank"><i class="ico_02"></i>毒战</a></li>
+            	<li><a href="http://v.dianxin.com/dianying/mv_show_4787.html" target="_blank"><i class="ico_02"></i>西游·降魔篇</a></li>
+            </ul>
+            </div>
+            <ul class="list_06" id="index_tt7_con">
+                <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4967.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1308/30/137784748024.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4967.html" target="_blank">狄仁杰之神都龙王（DVD）</a><div class="f_c"><a>赵又廷出演狄仁杰不惧对比 baby回应票房毒药质疑</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4983.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1309/17/137939025625.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4983.html" target="_blank">特殊身份（DVDScr）</a><div class="f_c"><a>甄子丹角色表现中国人傲骨</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4975.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1309/05/137836862678.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4975.html" target="_blank">逃出生天 3D（DVD）</a><div class="f_c"><a>刘青云、古天乐火场争斗</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4855.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1304/03/136497935480.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4855.html" target="_blank">金刚狼2（TS）</a><div class="f_c"><a>猛男野性十足 美女惊艳四座</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4803.html" target="_blank"><em class="gao_qing_i"></em><img src="http://image.dianxin.com/data/uploads/msImg/movie/1302/27/136195272156.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4803.html" target="_blank">催眠潜凶</a><div class="f_c"><a>盗窃案背后展现黑色惊悚</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4802.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/movie/1302/27/136195207568.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4802.html" target="_blank">赤焰战场2（DVD）</a><div class="f_c"><a>李秉宪加盟力拼好莱坞老将</a></div></li>
+            </ul>
+        </div>
+        <div class="right_01">
+        	<div class="gather_block_01"></div>
+        	<ul class="list_12">
+            	<li><span>类型</span><a href="http://v.dianxin.com/dianying/list_t94-a0-y0-y0-d0-l1.html" target="_blank">励志</a><a href="http://v.dianxin.com/dianying/list_t90-a0-y0-y0-d0-l1.html" target="_blank">音乐</a><a href="http://v.dianxin.com/dianying/list_t89-a0-y0-y0-d0-l1.html" target="_blank">生活</a><a href="http://v.dianxin.com/dianying/list_t88-a0-y0-y0-d0-l1.html" target="_blank">文艺</a><a href="http://v.dianxin.com/dianying/list_t86-a0-y0-y0-d0-l1.html" target="_blank">古装</a><a href="http://v.dianxin.com/dianying/list_t85-a0-y0-y0-d0-l1.html" target="_blank">家庭</a><a href="http://v.dianxin.com/dianying/list_t84-a0-y0-y0-d0-l1.html" target="_blank">青春</a><a href="http://v.dianxin.com/dianying/list_t83-a0-y0-y0-d0-l1.html" target="_blank">魔幻</a><a href="http://v.dianxin.com/dianying/list_t14-a0-y0-y0-d0-l1.html" target="_blank">犯罪</a><a href="http://v.dianxin.com/dianying/list_t75-a0-y0-y0-d0-l1.html" target="_blank">伦理</a><a href="http://v.dianxin.com/dianying/list_t33-a0-y0-y0-d0-l1.html" target="_blank">剧情</a></li>
+                <li><span>地区</span><a href="http://v.dianxin.com/dianying/list_t0-a-y0-y0-d0-l1.html" target="_blank">内地</a><a href="http://v.dianxin.com/dianying/list_t0-a-y0-y0-d0-l1.html" target="_blank">美国</a><a href="http://v.dianxin.com/dianying/list_t0-a-y0-y0-d0-l1.html" target="_blank">韩国</a><a href="http://v.dianxin.com/dianying/list_t0-a-y0-y0-d0-l1.html" target="_blank">法国</a><a href="http://v.dianxin.com/dianying/list_t0-a-y0-y0-d0-l1.html" target="_blank">英国</a></li>
+                <li><span>年份</span><a href="http://v.dianxin.com/dianying/list_t0-a0-y39-y0-d0-l1.html" target="_blank">2013</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y10-y0-d0-l1.html" target="_blank">2012</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y11-y0-d0-l1.html" target="_blank">2011</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y12-y0-d0-l1.html" target="_blank">2010</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y13-y0-d0-l1.html" target="_blank">2009</a></li>
+                <li><span>明星</span><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y12-d0-l1.html" target="_blank">谢霆锋</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y11-d0-l1.html" target="_blank">刘德华</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y4-d0-l1.html" target="_blank">孙俪</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y9-d0-l1.html" target="_blank">文章</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y5-d0-l1.html" target="_blank">成龙</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y2-d0-l1.html" target="_blank">黄渤</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y8-d0-l1.html" target="_blank">黎明</a><a href="http://v.dianxin.com/dianying/list_t0-a0-y0-y24-d0-l1.html" target="_blank">李连杰</a></li>
+            </ul>
+            <div class="gather_block_01"></div>
+            <div class="search_small"><input type="text" class="inp_txt" id="movie" /><input onclick="msearch()" type="button" class="sub_butt" value="" /></div>
+            <div class="gather_block_01"></div>
+            <div class="head_08"><h1>电影排行榜</h1><div class="r_nav"><a>播放次数</a><!--<a href="" class="down">票房</a>--></div><div class="line_b"></div></div>
+            <div class="gather_block_01"></div>
+            <ul class="list_04 list_04_01">
+                	<li><i class="orange_bg">1</i><a href="http://v.dianxin.com/dianying/mv_show_4613.html" target="_blank">人再囧途之泰囧</a><span>10722</span></li>
+                	<li><i class="orange_bg">2</i><a href="http://v.dianxin.com/dianying/mv_show_4853.html" target="_blank">妈咪</a><span>8652</span></li>
+                	<li><i class="orange_bg">3</i><a href="http://v.dianxin.com/dianying/mv_show_4932.html" target="_blank">环太平洋</a><span>7024</span></li>
+                	<li><i>4</i><a href="http://v.dianxin.com/dianying/mv_show_4787.html" target="_blank">西游·降魔篇</a><span>6080</span></li>
+                	<li><i>5</i><a href="http://v.dianxin.com/dianying/mv_show_4807.html" target="_blank">上位</a><span>5040</span></li>
+                	<li><i>6</i><a href="http://v.dianxin.com/dianying/mv_show_4604.html" target="_blank">一路向西（粤语）</a><span>4637</span></li>
+                	<li><i>7</i><a href="http://v.dianxin.com/dianying/mv_show_4772.html" target="_blank">厨子·戏子·痞子</a><span>4130</span></li>
+                	<li><i>8</i><a href="http://v.dianxin.com/dianying/mv_show_4122.html" target="_blank">婚前试爱</a><span>4058</span></li>
+                	<li><i>9</i><a href="http://v.dianxin.com/dianying/mv_show_4903.html" target="_blank">速度与激情6</a><span>3869</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="gather_block_01"></div>
+    <div class="g_box_01">
+    	<div class="gather_block_01"></div>
+    	<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_04"></h1><!--<a href="" class="huan_bg"></a>--></div></div>
+    	<ul class="list_06 " id="index_tt9_con">
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4943.html" target="_blank"><img src="/data/uploads/msImg/sg/1308/20/137698993473.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4943.html" target="_blank">小时代：青木时代</a><div class="f_c"><a>打悲情牌五位女主角悲恸流泪</a></div></li>
+
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4914.html" target="_blank"><img src="/data/uploads/msImg/sg/1308/20/13769899853.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4914.html" target="_blank">激战</a><div class="f_c"><a>彭于晏苦练格斗打出一片天</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4924.html" target="_blank"><img src="/data/uploads/msImg/sg/1308/20/137699003791.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4924.html" target="_blank">一夜惊喜</a><div class="f_c"><a>范冰冰卖萌耍宝勇敢寻爱 </a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4942.html" target="_blank"><img src="/data/uploads/msImg/sg/1308/20/137699006817.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4942.html" target="_blank">宫锁沉香</a><div class="f_c"><a>福卷化身黑暗终极BOSS</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4925.html" target="_blank"><img src="/data/uploads/msImg/sg/1308/20/137699015559.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4925.html" target="_blank">一场风花雪月的事</a><div class="f_c"><a>Angelababy遭遇三角恋</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4946.html" target="_blank"><img src="/data/uploads/msImg/sg/1308/20/137699027283.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4946.html" target="_blank">玛德2号</a><div class="f_c"><a>黄晓明、徐若瑄童心未泯拯救熊孩子</a></div></li>
+            <li><a class="b_a" href="http://v.dianxin.com/dianying/mv_show_4948.html" target="_blank"><img src="/data/uploads/msImg/sg/1308/20/137699046634.jpg"></a><a class="titl" href="http://v.dianxin.com/dianying/mv_show_4948.html" target="_blank">怪兽大学</a><div class="f_c"><a>大眼仔、毛怪联手搞怪</a></div></li>
+        </ul>
+        <div class="gather_block_01"></div>
+    </div>
+    <div class="gather_block_01"></div>
+    <div class="g_box_02">
+    	<div class="left_01">
+        	<div class="gather_block_01"></div>
+        	<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_05"></h1><div class="r_nav">
+<a href="http://v.dianxin.com/dianshiju/list_t0-a1-y0-y0-d0-l1.html" target="_blank">大陆</a>|
+<a href="http://v.dianxin.com/dianshiju/list_t0-a19-y0-y0-d0-l1.html" target="_blank">香港</a>|
+<a href="http://v.dianxin.com/dianshiju/list_t0-a7-y0-y0-d0-l1.html" target="_blank">韩国</a>|
+<a href="http://v.dianxin.com/dianshiju/list_t0-a9-y0-y0-d0-l1.html" target="_blank">美国</a>|
+<a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y0-d0-l1.html" target="_blank">更多<i class="jt_right_01"></i></a></div></div></div>
+            <div class="t_v_intr">
+            	<a href="http://v.dianxin.com/dianshiju/mv_show_3474.html" class="a_img" target="_blank"><img src="/data/uploads/msImg/sg/1310/23/138250166663.jpg" /><font><b>吸血鬼日记 第五季</b>吸血鬼强势回归</font><span></span></a>
+                <p>导演：<font>马科斯·西恩加</font><br />
+主演：<font>保罗·韦斯利,伊恩·萨默海尔德</font><br />
+简介： 达蒙和埃琳娜度过了一个快乐的夏天。他们和杰米住在一起——开学之后埃琳娜去上大学，准备开始感受自己的美好人生。不过这仅仅是问题的开始，Somerhalder说，也</p>
+<ul class="list_11">
+            	<li><a href="http://v.dianxin.com/dianshiju/mv_show_3465.html" target="_blank"><i class="ico_02"></i>美女与野兽第2季</a></li>
+            	<li><a href="http://v.dianxin.com/dianshiju/mv_show_3469.html" target="_blank"><i class="ico_02"></i>未来青年</a></li>
+            	<li><a href="http://v.dianxin.com/dianshiju/mv_show_3467.html" target="_blank"><i class="ico_02"></i>绿箭侠第2季</a></li>
+            	<li><a href="http://v.dianxin.com/dianshiju/mv_show_3466.html" target="_blank"><i class="ico_02"></i>性爱大师</a></li>
+            	<li><a href="http://v.dianxin.com/dianshiju/mv_show_3449.html" target="_blank"><i class="ico_02"></i>灭世 第二季</a></li>
+            	<li><a href="http://v.dianxin.com/dianshiju/mv_show_3459.html" target="_blank"><i class="ico_02"></i>金牌老爸</a></li>
+            </ul>
+            </div>
+            <ul class="list_06" id="index_tt8_con">
+                <li><a class="b_a" href="http://v.dianxin.com/dianshiju/mv_show_3512.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/series/1311/19/138485014517.jpg"><span style="width:100%; bottom:0; left:0;"></span><font style="width:100%; bottom:0; left:0;">更新至19集</font></a><a class="titl" href="http://v.dianxin.com/dianshiju/mv_show_3512.html" target="_blank">爱闪亮</a><div class="f_c"><a>海角王子遇上灰姑娘</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianshiju/mv_show_3446.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/series/1309/27/138025324382.jpg"><span style="width:100%; bottom:0; left:0;"></span><font style="width:100%; bottom:0; left:0;">更新至8集</font></a><a class="titl" href="http://v.dianxin.com/dianshiju/mv_show_3446.html" target="_blank">生活大爆炸第7季</a><div class="f_c"><a>用芝士让绳命更有意义</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianshiju/mv_show_3445.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/series/1309/27/138025289062.jpg"><span style="width:100%; bottom:0; left:0;"></span><font style="width:100%; bottom:0; left:0;">更新至7集</font></a><a class="titl" href="http://v.dianxin.com/dianshiju/mv_show_3445.html" target="_blank">摩登家庭第5季</a><div class="f_c"><a>索菲娅爆乳撅臀叫板麦莉</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianshiju/mv_show_3444.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/series/1309/27/138025262173.jpg"><span style="width:100%; bottom:0; left:0;"></span><font style="width:100%; bottom:0; left:0;">更新至8集</font></a><a class="titl" href="http://v.dianxin.com/dianshiju/mv_show_3444.html" target="_blank">犯罪心理第9季</a><div class="f_c"><a>主角回归 人人都是大克星</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianshiju/mv_show_3443.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/series/1309/25/138009777769.jpg"><span style="width:100%; bottom:0; left:0;"></span><font style="width:100%; bottom:0; left:0;">更新至8集</font></a><a class="titl" href="http://v.dianxin.com/dianshiju/mv_show_3443.html" target="_blank">神盾局特工第1季</a><div class="f_c"><a>超级英雄集结号</a></div></li>
+                <li><a class="b_a" href="http://v.dianxin.com/dianshiju/mv_show_3441.html" target="_blank"><img src="http://image.dianxin.com/data/uploads/msImg/series/1309/25/138009700921.jpg"><span style="width:100%; bottom:0; left:0;"></span><font style="width:100%; bottom:0; left:0;">更新至9集</font></a><a class="titl" href="http://v.dianxin.com/dianshiju/mv_show_3441.html" target="_blank">破产姐妹 第三季</a><div class="f_c"><a>白富美加毒蛇屌丝才绝配</a></div></li>
+            </ul>
+        </div>
+        <div class="right_01">
+        	<div class="gather_block_01"></div>
+        	<ul class="list_12">
+            	<li><span>类型</span><a href="http://v.dianxin.com/dianshiju/list_t96-a0-y0-y0-d0-l1.html" target="_blank">军旅</a><a href="http://v.dianxin.com/dianshiju/list_t95-a0-y0-y0-d0-l1.html" target="_blank">纪实</a><a href="http://v.dianxin.com/dianshiju/list_t92-a0-y0-y0-d0-l1.html" target="_blank">情景</a><a href="http://v.dianxin.com/dianshiju/list_t91-a0-y0-y0-d0-l1.html" target="_blank">情感</a><a href="http://v.dianxin.com/dianshiju/list_t87-a0-y0-y0-d0-l1.html" target="_blank">年代</a><a href="http://v.dianxin.com/dianshiju/list_t82-a0-y0-y0-d0-l1.html" target="_blank">偶像</a><a href="http://v.dianxin.com/dianshiju/list_t81-a0-y0-y0-d0-l1.html" target="_blank">穿越</a><a href="http://v.dianxin.com/dianshiju/list_t80-a0-y0-y0-d0-l1.html" target="_blank">生活</a><a href="http://v.dianxin.com/dianshiju/list_t79-a0-y0-y0-d0-l1.html" target="_blank">谍战</a><a href="http://v.dianxin.com/dianshiju/list_t78-a0-y0-y0-d0-l1.html" target="_blank">青春</a><a href="http://v.dianxin.com/dianshiju/list_t58-a0-y0-y0-d0-l1.html" target="_blank">现代</a></li>
+                <li><span>地区</span><a href="http://v.dianxin.com/dianshiju/list_t0-a1-y0-y0-d0-l1.html" target="_blank">内地</a><a href="http://v.dianxin.com/dianshiju/list_t0-a9-y0-y0-d0-l1.html" target="_blank">美国</a><a href="http://v.dianxin.com/dianshiju/list_t0-a7-y0-y0-d0-l1.html" target="_blank">韩国</a><a href="http://v.dianxin.com/dianshiju/list_t0-a10-y0-y0-d0-l1.html" target="_blank">法国</a><a href="http://v.dianxin.com/dianshiju/list_t0-a11-y0-y0-d0-l1.html" target="_blank">英国</a></li>
+                <li><span>年份</span><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y39-y0-d0-l1.html" target="_blank">2013</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y10-y0-d0-l1.html" target="_blank">2012</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y11-y0-d0-l1.html" target="_blank">2011</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y12-y0-d0-l1.html" target="_blank">2010</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y13-y0-d0-l1.html" target="_blank">2009</a></li>
+                <li><span>明星</span><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y12-d0-l1.html" target="_blank">谢霆锋</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y11-d0-l1.html" target="_blank">刘德华</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y4-d0-l1.html" target="_blank">孙俪</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y9-d0-l1.html" target="_blank">文章</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y5-d0-l1.html" target="_blank">成龙</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y2-d0-l1.html" target="_blank">黄渤</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y8-d0-l1.html" target="_blank">黎明</a><a href="http://v.dianxin.com/dianshiju/list_t0-a0-y0-y24-d0-l1.html" target="_blank">李连杰</a></li>
+            </ul>
+            <div class="gather_block_01"></div>
+            <div class="search_small"><input type="text" class="inp_txt" id="tv" /><input onclick="tsearch()" type="button" class="sub_butt" value="" /></div>
+            <div class="gather_block_01"></div>
+            <div class="head_08"><h1>电视剧排行榜</h1><div class="r_nav"><a>播放次数</a></div><div class="line_b"></div></div>
+            <div class="gather_block_01"></div>
+            <ul class="list_04 list_04_01">
+                	<li><i class="orange_bg">1</i><a href="http://v.dianxin.com/dianshiju/mv_show_3328.html" target="_blank">爱在春天 TV版</a><span>12347</span></li>
+                	<li><i class="orange_bg">2</i><a href="http://v.dianxin.com/dianshiju/mv_show_3099.html" target="_blank">隋唐英雄</a><span>8338</span></li>
+                	<li><i class="orange_bg">3</i><a href="http://v.dianxin.com/dianshiju/mv_show_3287.html" target="_blank">盛夏晚晴天</a><span>5262</span></li>
+                	<li><i>4</i><a href="http://v.dianxin.com/dianshiju/mv_show_3196.html" target="_blank">笑傲江湖</a><span>5188</span></li>
+                	<li><i>5</i><a href="http://v.dianxin.com/dianshiju/mv_show_3293.html" target="_blank">陆贞传奇</a><span>5106</span></li>
+                	<li><i>6</i><a href="http://v.dianxin.com/dianshiju/mv_show_3087.html" target="_blank">离婚前规则</a><span>4513</span></li>
+                	<li><i>7</i><a href="http://v.dianxin.com/dianshiju/mv_show_3249.html" target="_blank">百万新娘之爱无悔 </a><span>4216</span></li>
+                	<li><i>8</i><a href="http://v.dianxin.com/dianshiju/mv_show_3255.html" target="_blank">X女特工</a><span>3747</span></li>
+                	<li><i>9</i><a href="http://v.dianxin.com/dianshiju/mv_show_3094.html" target="_blank">神枪</a><span>3649</span></li>
+            </ul>
+        </div>
+ 
+ <div class="gather_block_01"></div>
+        <div class="g_box_01">
+        	<div class="gather_block_01"></div>
+        	<div class="head_07 head_07_01"><div class="h_div"><h1 class="size_h">友情链接</h1><div class="r_nav"><a href="" rel="nofollow" target="_blank">QQ:1519274020</a><a href="" rel="nofollow" target="_blank">QQ:698132</a></div></div></div>
+            <div class="f_link">
+<a href="http://www.yeniu.cc/    " target="_blank">野牛电影网</a>|
+<a href="http://kaifeng.huatu.com" target="_blank">开封人事考试网</a>|
+<a href="http://www.fwol.cn" target="_blank">名站在线</a>|
+<a href="http://www.jidi.com/" target="_blank">基地游戏</a>|
+<a href="http://www.9498.com/" target="_blank">9498小游戏</a>|
+<a href="http://baishiwww.com/" target="_blank">最新电影</a>|
+<a href="http://www.niuzhan.cc" target="_blank">百度影音电影</a>|
+<a href="http://80332.com/" target="_blank">电影天堂</a>|
+<a href="http://www.gangtiexia3.com/" target="_blank">钢铁侠3</a>|
+<a href="http://www.z207.com/" target="_blank">好看电影网</a>|
+<a href="http://www.aimei1688.com/" target="_blank">爱168 影院</a>|
+<a href="http://www.678fff.net/" target="_blank">678fff影视</a>|
+<a href="http://www.11dyw.net/" target="_blank">人人影视</a>|
+<a href="http://521qvod.com/" target="_blank">开心播播网</a>|
+<a href="http://www.360dym.com/ " target="_blank">360电影迷</a>|
+<a href="http://www.ght.cc/" target="_blank">电影王国</a>|
+<a href="http://www.tudouwang.tv " target="_blank">土豆网电视剧</a>|
+<a href="http://www.weimeii.com/" target="_blank">唯美电影</a>|
+<a href="http://92kk.net/ " target="_blank">大哥电影院</a>|
+<a href="http://www.fengxing6.com/" target="_blank">风行下载2013正式版官方下载 </a>|
+<a href="http://www.qvod189.com/" target="_blank">快播电影</a>|
+<a href="http://www.lydy58.com/" target="_blank">最新上映电影 </a>|
+<a href="http://www.vhuan.com/" target="_blank">奇热影院</a>|
+<a href="http://dy.leyiplayer.com/" target="_blank">乐艺影院</a>|
+</div>
+            <div class="gather_block_01"></div>
+        </div>
+    </div>
+</div>
+<div class="float-windows-hot">
+<div class="we2mabg"></div>
+    <p>扫一扫 关注点心微信</p>
+    <a href="">关注点心购物</a>
+</div>
+<script type="text/javascript" src="http://v.dianxin.com/data/js/pass.js"></script>
+<script type="text/javascript" src="http://tongji.dianxin.com/dx_count.js"></script>
+<div class="gather_block_01"></div>
+    <div class="footer">
+        <div class="footer_c">
+            <div class="footer_r_nav"><a target="_blank" href="http://e.weibo.com/dianxincom" rel="nofollow">官方微博</a>|<a target="_blank" href="http://bbs.dianxin.com/" rel="nofollow">论坛交流</a>|<a target="_blank" href="/repair.php" rel="nofollow">主页修复</a>|<a target="_blank" href="/apply.php" rel="nofollow">申请收录</a>|<a target="_blank" href="/feedback.php" rel="nofollow">意见反馈</a>|<a target="_blank" href="/ad_web.php" rel="nofollow">广告联系</a>|<a target="_blank" href="/job.php" rel="nofollow">招贤纳才</a>
+            <span>渝ICP备11001072号</span><span>@2012dianxin.com</span>
+            </div>
+        </div>
+        <div class="every_polic">
+            <div style="margin-right:10px;"><a href="http://www.cqnet110.gov.cn" target="_blank" style="width:35px;" rel="nofollow"><img src="/sentrybox.gif"></a><p style="width:110px;">公安局公共信息网络<br>安全报警服务平台</p></div>
+            <div><a href="http://www.cqnet110.gov.cn" target="_blank" rel="nofollow"><img src="/sentrybox.jpg"></a><p>渝公网备<br>500103015-00589</p></div>
+        </div>
+    </div>
+<div id="login_js"></div>
+<div style="display:none;"><script src="http://v7.cnzz.com/stat.php?id=4823909&web_id=4823909" language="JavaScript"></script>
+</div>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=0&amp;pos=right&amp;uid=0" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript"> 
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END --><script> 
+$("#slide_1").mouseover(function() {
+$(this).attr("class","down");
+$("#slide_2").attr("class","");
+$("#slide_3").attr("class","las");
+$("#slide_con_1").show();
+$("#slide_con_2").hide();
+$("#slide_con_3").hide();
+$(".jt_up").animate({left:"0px"});
+});
+$("#slide_2").mouseover(function() {
+$(this).attr("class","down");
+$("#slide_1").attr("class","");
+$("#slide_3").attr("class","las");
+$("#slide_con_1").hide();
+$("#slide_con_2").show();
+$("#slide_con_3").hide();
+$(".jt_up").animate({left:"79px"});
+});
+$("#slide_3").mouseover(function() {
+$(this).attr("class","down las");
+$("#slide_2").attr("class","");
+$("#slide_1").attr("class","");
+$("#slide_con_1").hide();
+$("#slide_con_2").hide();
+$("#slide_con_3").show();
+$(".jt_up").animate({left:"158px"});
+});
+$("#hp").find('li').each(function(i){
+$("#a_"+i).mousemove(function() {
+$("#des_"+i).fadeTo(300, 0.8);
+})
+$("#a_"+i).mouseleave(function() {
+$("#des_"+i).stop(true, true).fadeOut(200);
+})
+$("#d_"+i).mousemove(function() {
+$("#des_"+i).fadeTo(300, 0.8);
+})
+$("#d_"+i).mouseleave(function() {
+$("#des_"+i).stop(true, true).fadeOut(200);
+})
+})
+function msearch() {
+var movie = encodeURI($("#movie").val());
+var url = "http://v.dianxin.com/search_a_"+movie+".html";
+window.open(url);
+}
+function tsearch() {
+var tv = encodeURI($("#tv").val());
+var url = "http://v.dianxin.com/search_a_"+tv+".html";
+window.open(url);
+}
+</script>
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F926e309b5ed8adadd720a4d512cb9811' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

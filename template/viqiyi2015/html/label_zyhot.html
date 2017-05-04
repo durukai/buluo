@@ -1,0 +1,168 @@
+
+
+ 
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+	<meta charset="utf-8">
+    <title>综艺排行榜-热门、最新的综艺排行-爱奇艺影视大全</title>
+	<meta name="title" content="综艺排行榜-热门、最新的综艺排行-爱奇艺影视大全" />
+	<meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/xiaogcc_top.css" />
+    <script type="text/javascript" src="{maccms:path_tpl}js/sea1.2.js"></script>	
+ 
+  </head>
+  <body class="qypage-1180">
+	<div class="page-search">
+      {maccms:head}
+      <div class="site-main">
+        <div class="mt20 clearfix">
+          <div class="top_main">
+            <div class="top_main_inner">
+              
+
+<div style="display: block;" id="block-A" data-block-name="主内容">
+  <table class="mod_top_list-table" id="hotsearch-ranklist">
+    <thead>
+      <tr>
+        <th class="tl">关键词</th>
+        <th>主持人/嘉宾</th>
+        <th><span data-ranklist-elem="yes" rseat="819o_yes">昨日指数</span></th>
+        <th><span data-ranklist-elem="week" rseat="819o_week">最近一周指数</span></th>
+        <th><span data-ranklist-elem="mon" rseat="819o_mon">最近一月指数</span></th>
+      </tr>
+    </thead>
+    <tbody data-ranklist-elem="list">
+      
+       
+      
+     
+      
+         {maccms:vod num=50 type=3 by=hits order=desc}
+        <tr data-ranklist-elem="item" >
+          <td class="col-title">
+            <div class="rank_list">
+              <i class="icon_top icon_top-other" data-ranklist-elem="rank">[vod:num]</i>
+              <a href="[vod:link]" class="item_name" rseat="819k1_dianying" target='_blank'>[vod:name]</a>
+            </div>
+          </td>
+          
+              <td>
+                <span class="item_usrInfo">
+[vod:starringlink]
+                </span>
+              </td>
+            
+          <td class="col-num">
+            <div class="rank_list" data-ranklist-yes="4004724">
+              <span class="item_num">[vod:dayhits]</span>
+              <i class="tend tend_up" title="上升"></i>
+            </div>
+          </td>
+          <td class="col-num">
+            <div class="rank_list" data-ranklist-week="11483963">
+              <span class="item_num">[vod:weekhits]</span>
+              <i class="tend tend_up" title="上升"></i>
+            </div>
+          </td>
+          <td class="col-num">
+            <div class="rank_list" data-ranklist-mon="18128753">
+              <span class="item_num">[vod:monthhits]</span>
+			   <i class="tend tend_up" title="上升"></i>
+            </div>
+          </td>
+        </tr>
+      
+             {/maccms:vod}
+      
+    </tbody>
+  </table>
+</div>
+
+            </div>
+          </div>
+          <div class="top_side" id="block-B" data-block-name="左侧导航">
+            
+<ul class="mod_side_nav">
+  
+           <li class="nav_item">
+
+        <a class="link_item" href="{maccms:getlink hot.html}" title="首页" rseat="819c_shouye">
+          <i class="icon_home"></i>
+          <em class="item_title">首页</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+      <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink hots.html}" title="热搜" rseat="819c_resou">
+          <i class="icon_hot"></i>
+          <em class="item_title">热门</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+         <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink dyhot.html}" title="电影" rseat="819c_dianying">
+          <i class="icon_movie"></i>
+          <em class="item_title">电影</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+           <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink tvhot.html}" title="电视剧" rseat="819c_dianshiju">
+          <i class="icon_tv"></i>
+          <em class="item_title">电视剧</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+      <li class="nav_item selected">
+        <a class="link_item" href="{maccms:getlink zyhot.html}" title="综艺" rseat="819c_zongyi">
+          <i class="icon_variety"></i>
+          <em class="item_title">综艺</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+      
+           <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink dmhot.html}" title="动漫" rseat="819c_dongman">
+          <i class="icon_cartoon"></i>
+          <em class="item_title">动漫</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+
+
+</ul>
+          </div>
+        </div>
+      </div>
+{maccms:foot}   
+
+ </div>
+     
+
+<div class="baseScrollBar" id="widget-vscrollbar">
+  <ul class="baseScrollBar_menus">
+    <li data-widget-totopbtn="totop" data-totopbtn-time="150" data-totopbtn-hoverclass="selected" data-totopbtn-undownclass="unEffective">
+      <a href="javascript:void(0);" class="baseToTop" title="回顶部" data-totopbtn-totop="show"></a>
+    </li>
+    <li>
+      <a href="javascript:void(0);" class="helpFeedback" title="帮助及反馈" id="widget-feedbackbtn"></a>
+    </li>
+  </ul>
+</div>
+
+    <script type="text/javascript">
+      Q.projectName = 'qiyiV2'; 
+      Q.load("movieLibTvIndex");   
+    </script>
+    
+					
+  </body>
+  
+</html>

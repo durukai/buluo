@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>最新{page:name}系列,{page:name}系列电影,明星{page:name}系列,{page:name}系列大全-小俊工作室</title>
+    <meta name="title" content="小俊工作室,最新{page:name}专题,电影专题,明星专题,专题大全" />
+    <meta name="keywords" content="小俊工作室提供最新电影、电视、明星专题包含的影片,电影介绍，剧情介绍等完全免费在线观看！" />
+    <meta name="description" content="{maccms:description}" />
+    <link rel="canonical" href="{maccms:url}"/>
+    <meta name="mobile-agent" content="format=xhtml;url=http://m.{maccms:url}"/>
+    <link href="http://m.{maccms:url}" rel="alternate" media="only screen and (max-width: 1000px)"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    {maccms:include}
+    <script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+    <script src="{maccms:path_tpl}js/home.js"></script>
+    <script type="text/javascript">uaredirect("");</script>
+    <style type="text/css">
+        body{background-color:#000;background-image:url({page:pic});background-repeat:no-repeat;background-position:center
+        0px;}.top_banner{width:100%;height:200px;}
+    </style>
+</head>
+<body>
+{maccms:head}
+<div class="header_bg"></div><!--头部结束-->
+<div class="tab-a top_banner w1214">
+</div>
+<div class="tab-a w1214">
+    <div class="topobjbox">
+        <div class="shareboxbg">
+        </div>
+        <div class="sharebox">
+            <!-- Baidu Button BEGIN -->
+            <div class="bdsharebuttonbox">
+                <a href="#" class="bds_more" data-cmd="more">
+                </a>
+                <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">
+                </a>
+                <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">
+                </a>
+                <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">
+                </a>
+                <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">
+                </a>
+                <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">
+                </a>
+            </div>
+            <script>
+                window._bd_share_config = {
+                    "common": {
+                        "bdSnsKey": {},
+                        "bdText": "",
+                        "bdMini": "2",
+                        "bdMiniList": false,
+                        "bdPic": "",
+                        "bdStyle": "0",
+                        "bdSize": "32"
+                    },
+                    "share": {},
+                    "selectShare": {
+                        "bdContainerClass": null,
+                        "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin", "sqq"]
+                    }
+                };
+                with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~ ( - new Date() / 36e5)];
+            </script>
+            <!-- Baidu Button END -->
+        </div>
+    </div>
+</div>
+<div class="special-box">
+    <div class="tab-a special-info w1214">
+        <h2>
+            详细介绍
+        </h2>
+        <div class="special-txt" style="height:75px;">
+            <p class="content">
+                {page:content}
+                            </p>
+        </div>
+    </div>
+    <div class="tab-a w1214">
+        <div class="special-all">
+            <ul class="list_module_img">
+                {maccms:vod pagesize=50 topic=current order=desc by=time}
+                <li>
+                    <a class="list-img" href="[vod:link]" title="[vod:name]" target="_blank">
+                        <img class="loading" src="[vod:pic]"
+                             data-original="[vod:pic]"
+                             style="display: block;">
+                        <label class="score">
+                            [vod:score]
+                        </label>
+                        <label class="title">
+                            {if-A:not isN("[vod:remarks]")}
+                            [vod:remarks]
+                            {elseif-A:[vod:state]=0}
+                            完结
+                            {elseif-A:[vod:state]>0}
+
+                            {if-B:[vod:state]>10000}
+                            连载[vod:state]期
+                            {else-B}
+                            连载[vod:state]集</label><label class="status"></label>
+                        {endif-B}
+                        {else-A}
+
+                        {endif-A}
+                    </a>
+                    <div class="info">
+                        <h2>
+                            <a href="[vod:link]" title="[vod:name]" target="_blank">
+                                [vod:name]
+                            </a>
+                        </h2>
+                        <p class="actor">
+                            <em>
+                                主演:
+                            </em>
+                            [vod:starring]
+                        </p>
+                        <p class="type">
+                            <em>
+                                类型:
+                            </em>
+                            [vod:typename]
+                        </p>
+                        <p class="showtime">
+                            <em>
+                                上映:
+                            </em>
+                            [vod:year]
+                        </p>
+                        <p class="up">
+                            <em>
+                                更新:
+                            </em>
+                            [vod:time style=yy-m-d]
+                        </p>
+                        <p class="plot">
+                            <em>
+                                剧情:
+                            </em>
+                            [vod:contenttext len=80]……
+                        </p>
+                    </div>
+                </li>
+                {/maccms:vod}
+            </ul>
+        </div>
+    </div>
+    <script language="javascript">
+        $(document).ready(function() {
+            var menuYloc = $("#l_menu_item").offset().top;
+            $(window).scroll(function() {
+                var stops = $(window).scrollTop() - menuYloc;
+                var zsheight = $("#l_menu_item").innerHeight();
+                var maxtop = zsheight + stops + 20;
+                var czheight = $("div.r_itembox").innerHeight();
+                if (stops > 0 && maxtop < czheight) $("#l_menu_item").stop(true, false).animate({
+                            top: stops + 20 + "px"
+                        },
+                        {
+                            duration: 400,
+                            queue: false
+                        });
+                else if (maxtop > czheight) $("#l_menu_item").stop(true, false).animate({
+                            top: czheight - zsheight + "px"
+                        },
+                        {
+                            duration: 400,
+                            queue: false
+                        });
+                else $("#l_menu_item").stop(true, false).animate({
+                                top: "0px"
+                            },
+                            {
+                                duration: 400,
+                                queue: false
+                            });
+            });
+            $("#l_menu_item a").click(function(e) {
+                $("html,body").animate({
+                            scrollTop: $($(this).attr("href")).offset().top
+                        },
+                        300);
+                e.preventDefault();
+            });
+
+        });
+    </script>
+    <!--底部开始-->
+    {maccms:foot}
+    <!--底部结束-->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        (function() {
+            try {
+                var s, a, i, j, r, c, l = document.getElementsByTagName("a"),
+                        t = document.createElement("textarea");
+                for (i = 0; l.length - i; i++) {
+                    try {
+                        a = l[i].getAttribute("href");
+                        if (a && a.indexOf("/cdn-cgi/l/email-protection") > -1 && (a.length > 28)) {
+                            s = '';
+                            j = 27 + 1 + a.indexOf("/cdn-cgi/l/email-protection");
+                            if (a.length > j) {
+                                r = parseInt(a.substr(j, 2), 16);
+                                for (j += 2; a.length > j && a.substr(j, 1) != 'X'; j += 2) {
+                                    c = parseInt(a.substr(j, 2), 16) ^ r;
+                                    s += String.fromCharCode(c);
+                                }
+                                j += 1;
+                                s += a.substr(j, a.length - j);
+                            }
+                            t.innerHTML = s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                            l[i].setAttribute("href", "mailto:" + t.value);
+                        }
+                    } catch(e) {}
+                }
+            } catch(e) {}
+        })();
+        /* ]]> */
+
+    </script>
+</div>
+</body>
+</html>

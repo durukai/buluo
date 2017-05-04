@@ -1,0 +1,1 @@
+﻿document.write('<img src=\''+SitePath+'template/ysb/images/300x250.jpg\' />')

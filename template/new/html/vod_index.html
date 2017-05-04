@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{maccms:name}</title>
+<meta name="keywords" content="{maccms:keywords}" />
+<meta name="description" content="{maccms:description}" />
+{maccms:include}
+<script type="text/javascript" src="{maccms:path_tpl}js/video.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/dx_sp_search.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/global_new.js"></script>
+</head>
+<body>
+{maccms:head}
+
+<div class="slide slide_tv">
+<div class="slide_block_01" id="slider0">
+<div class="list_block">
+<h1 class="a-txt"></h1>
+<ul class="slide_list_ul_01 switcher">
+{maccms:vod num=1 type=all by=time order=desc level=5}
+<li class="current" data-text="[vod:name]"><a href="[vod:link]" title="[vod:name]" target="_blank"><i></i><img  data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /></a></li>
+{/maccms:vod}
+{maccms:vod num=6 type=all by=time order=desc level=5 start=2}
+<li  data-text="[vod:name]"><a href="[vod:link]" title="[vod:name]" target="_blank"><i></i><img  data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /></a></li>
+{/maccms:vod}
+</ul>
+<a href="javascript:;" class="lef-btn prve_butt"></a>
+<a href="javascript:;" class="rig-btn next_butt"></a>
+</div>
+<div class="alpha_bg"></div>
+<div class="rig_cont">
+<div class="cont">
+<div class="head_06">
+<a href="javascript:void(0)" id="slide_1" class="down">今日热门</a>
+<a href="javascript:void(0)" id="slide_2">电影</a>
+<a href="javascript:void(0)" id="slide_3" class="las">电视剧</a><i class="jt_up"></i></div>
+<div class="gather_block_01"></div>
+<ul id="slide_con_1" class="list_04">
+{maccms:vod num=3 type=all by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=8 type=all by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+<ul id="slide_con_2" class="list_04" style="display:none;">
+{maccms:vod num=3 type=1 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=8 type=1 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+<ul id="slide_con_3" class="list_04" style="display:none;">
+{maccms:vod num=3 type=2 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=8 type=2 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+</div>
+</div>
+<div class="rig_cont_bg"></div>
+<ul class="img_block conbox">
+{maccms:vod num=1 type=all by=time order=desc level=5}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" width="710" height="350"/></a></li>
+{/maccms:vod}
+{maccms:vod num=6 type=all by=time order=desc level=5 start=2}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" width="710" height="350"/></a></li>
+{/maccms:vod}
+</ul>
+</div>
+</div>
+<div class="shadow_crow"></div>
+</div>
+<div class="main">
+<div class="gather_block_01"></div>
+<div class="head_07"><div class="h_div"><h1 class="h_bg h_bg_01"></h1></div></div>
+<ul id="hp" class="list_06 list_06_01">
+{maccms:vod num=1 type=all level=1,2,3 order=desc}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_0"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b blue_bgcolor" id="d_0"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=2}
+<li><div class="v_name_b gray_bgcolor" id="d_1"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div><div class="gather_block_02"></div><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_1"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=3}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_2"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b purple_bgcolor" id="d_2"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=4}
+<li><div class="v_name_b gray_bgcolor" id="d_3"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div><div class="gather_block_02"></div><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_3"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=5}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_4"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b green_bgcolor" id="d_4"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=6}
+<li><div class="v_name_b gray_bgcolor" id="d_5"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div><div class="gather_block_02"></div><a href="http://v.dianxin.com/dianying/mv_show_4966.html" target="_blank" class="b_a" id="a_5"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a></li>
+{/maccms:vod}
+{maccms:vod num=1 type=all level=1,2,3 order=desc start=7}
+<li class="las"><a href="[vod:link]" title="[vod:name]" target="_blank" class="b_a" id="a_6"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><div class="gather_block_02"></div><div class="v_name_b violet_bgcolor" id="d_6"><i class="dotted_line">{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a><span>[vod:starring len=12]</span></div></li>
+{/maccms:vod}
+</ul>
+<div class="gather_block_01"></div>
+<div class="gg_bs_z">
+<div class="tit_z tit_bs_z">热门推广</div>
+<div class="gwz_z">
+<a href="#" target="_blank" title="凡人修真2" rel="nofollow">凡人修真2</a>
+广告
+</div>
+</div>
+<div class="gather_block_01"></div>
+<div class="g_box_01">
+<div class="gather_block_01"></div>
+<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_02"></h1></div></div>
+<ul class="list_06 " id="index_tt6_con">
+{maccms:vod num=7 type=4 by=time order=desc}
+<li><a class="b_a" href="[vod:link]" title="[vod:name]" target="_blank"><em class="gao_qing_i"></em><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /></a><a class="titl" href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><div class="f_c"><a>[vod:starring len=12]</a></div></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+    </div>
+    <div class="gather_block_01"></div>
+ 
+    <div class="g_box_02">
+    	<div class="left_01">
+        	<div class="gather_block_01"></div>
+        	<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_03"></h1><div class="r_nav">
+{maccms:menu parent=1}<a href="[menu:link]" title="[menu:name]">[menu:name]</a>|{/maccms:menu}
+</div></div></div>
+<div class="t_v_intr">
+{maccms:vod num=1 type=1 by=time order=desc}
+<a href="[vod:link]" title="[vod:name]" class="a_img" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /><font><b>[vod:name]</b>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</font><span></span></a><p>导演：<font>[vod:directed]</font><br />主演：<font>[vod:starring]</font><br />简介：[vod:content len=72]....</p>
+{/maccms:vod}
+<ul class="list_11">
+{maccms:vod num=6 type=1 by=time order=desc start=8}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><i class="ico_02"></i>[vod:name]</a></li>
+{/maccms:vod}
+            </ul>
+            </div>
+            <ul class="list_06" id="index_tt7_con">
+{maccms:vod num=6 type=1 by=time order=desc start=2}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"/></a><a class="titl" href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><div class="f_c"><a>[vod:starring]</a></div></li>
+{/maccms:vod}
+            </ul>
+        </div>
+        <div class="right_01">
+        	<div class="gather_block_01"></div>
+<ul class="list_12">
+<li><span>按地区</span>
+{maccms:area type=auto order=asc}<a href="[area:link]" {if-A:"{page:area}"="[area:name]"} {endif-A} target="_blank">[area:name]</a>{/maccms:area}
+</li>
+<li><span>按年份</span>
+{maccms:year type=auto start=2000 end=2013 order=desc}<a href="[year:link]" {if-A:"{page:year}"="[year:name]"} {endif-A} target="_blank">[year:name]</a>{/maccms:year}
+</li>
+<li><span>按字母</span>
+{maccms:letter type=auto letter=all}<a href="[letter:link]" {if-A:"{page:letter}"="[letter:name]"} {endif-A} target="_blank">[letter:name]</a>{/maccms:letter}
+</li>
+</ul>
+<div class="head_08"><h1>电影排行榜</h1><div class="r_nav"><a>播放次数</a></div><div class="line_b"></div></div>
+<div class="gather_block_01"></div>
+<ul class="list_04 list_04_01">
+{maccms:vod num=3 type=1 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=1 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+</div>
+</div>
+    <div class="gather_block_01"></div>
+    <div class="g_box_01">
+    	<div class="gather_block_01"></div>
+    	<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_04"></h1></div></div>
+    	<ul class="list_06 " id="index_tt9_con">
+{maccms:vod num=7 type=3 by=time order=desc}
+<li><a class="b_a" href="[vod:link]" title="[vod:name]" target="_blank"><em class="gao_qing_i"></em><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /></a><a class="titl" href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><div class="f_c"><a>[vod:starring len=12]</a></div></li>
+{/maccms:vod}
+        </ul>
+        <div class="gather_block_01"></div>
+    </div>
+    <div class="gather_block_01"></div>
+    <div class="g_box_02">
+    	<div class="left_01">
+        	<div class="gather_block_01"></div>
+        	<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_05"></h1><div class="r_nav">
+{maccms:menu parent=2}<a href="[menu:link]" title="[menu:name]">[menu:name]</a>|{/maccms:menu}
+</div></div></div>
+<div class="t_v_intr">
+{maccms:vod num=1 type=2 by=time order=desc}
+<a href="[vod:link]" title="[vod:name]" class="a_img" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]" /><font><b>[vod:name]</b>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</font><span></span></a><p>导演：<font>[vod:directed]</font><br />主演：<font>[vod:starring]</font><br />简介：[vod:content len=72]....</p>
+{/maccms:vod}
+<ul class="list_11">
+{maccms:vod num=6 type=2 by=time order=desc start=8}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><i class="ico_02"></i>[vod:name]</a></li>
+{/maccms:vod}
+</ul>
+</div>
+<ul class="list_06" id="index_tt8_con">
+{maccms:vod num=6 type=2 by=time order=desc start=2}
+<li><a href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"/></a><a class="titl" href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><div class="f_c"><a>[vod:starring]</a></div></li>
+{/maccms:vod}
+</ul>
+</div>
+<div class="right_01">
+<div class="gather_block_01"></div>
+<ul class="list_12">
+<li><span>按地区</span>
+{maccms:area type=auto order=asc}<a href="[area:link]" {if-A:"{page:area}"="[area:name]"} {endif-A} target="_blank">[area:name]</a>{/maccms:area}
+</li>
+<li><span>按年份</span>
+{maccms:year type=auto start=2000 end=2013 order=desc}<a href="[year:link]" {if-A:"{page:year}"="[year:name]"} {endif-A} target="_blank">[year:name]</a>{/maccms:year}
+</li>
+<li><span>按字母</span>
+{maccms:letter type=auto letter=all}<a href="[letter:link]" {if-A:"{page:letter}"="[letter:name]"} {endif-A} target="_blank">[letter:name]</a>{/maccms:letter}
+</li>
+</ul>
+<div class="head_08"><h1>电视剧排行榜</h1><div class="r_nav"><a>播放次数</a></div><div class="line_b"></div></div>
+<div class="gather_block_01"></div>
+<ul class="list_04 list_04_01">
+{maccms:vod num=3 type=2 by=weekhits order=desc}
+<li><i class="orange_bg">[vod:num]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=2 by=weekhits order=desc start=4}
+<li><i>[vod:numjoin]</i><a  href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><span>[vod:dayhits]</span></li>
+{/maccms:vod}
+</ul>
+</div>
+ 
+<div class="gather_block_01"></div>
+<div class="g_box_01">
+<div class="gather_block_01"></div>
+<div class="head_07 head_07_01"><div class="h_div"><h1 class="size_h">友情链接</h1><div class="r_nav"><a href="" rel="nofollow">QQ:</a></div></div></div>
+<div class="f_link">
+{maccms:link type=font}
+<a href="[link:link]" target="_blank" title="[link:name]">[link:name]</a>|
+{/maccms:link}
+</div>
+<div class="gather_block_01"></div>
+</div>
+</div>
+</div>
+<div class="float-windows-hot">
+<div class="we2mabg"></div>
+<p>扫一扫 关注本站微信</p>
+<a href="">返回顶部</a>
+</div>
+<div class="gather_block_01"></div>
+{maccms:foot}
+
+<script> 
+$("#slide_1").mouseover(function() {
+$(this).attr("class","down");
+$("#slide_2").attr("class","");
+$("#slide_3").attr("class","las");
+$("#slide_con_1").show();
+$("#slide_con_2").hide();
+$("#slide_con_3").hide();
+$(".jt_up").animate({left:"0px"});
+});
+$("#slide_2").mouseover(function() {
+$(this).attr("class","down");
+$("#slide_1").attr("class","");
+$("#slide_3").attr("class","las");
+$("#slide_con_1").hide();
+$("#slide_con_2").show();
+$("#slide_con_3").hide();
+$(".jt_up").animate({left:"79px"});
+});
+$("#slide_3").mouseover(function() {
+$(this).attr("class","down las");
+$("#slide_2").attr("class","");
+$("#slide_1").attr("class","");
+$("#slide_con_1").hide();
+$("#slide_con_2").hide();
+$("#slide_con_3").show();
+$(".jt_up").animate({left:"158px"});
+});
+$("#hp").find('li').each(function(i){
+$("#a_"+i).mousemove(function() {
+$("#des_"+i).fadeTo(300, 0.8);
+})
+$("#a_"+i).mouseleave(function() {
+$("#des_"+i).stop(true, true).fadeOut(200);
+})
+$("#d_"+i).mousemove(function() {
+$("#des_"+i).fadeTo(300, 0.8);
+})
+$("#d_"+i).mouseleave(function() {
+$("#des_"+i).stop(true, true).fadeOut(200);
+})
+})
+</script>
+</body>
+</html>

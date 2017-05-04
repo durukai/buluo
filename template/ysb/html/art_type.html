@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{page:name}_影视资讯_明星八卦新闻_新片预告新闻_小俊工作室</title>
+    <meta name="title" content="小俊工作室_2015最新新闻,影视资讯,明星八卦新闻,新片预告新闻" />
+    <meta name="keywords" content="2015小俊工作室提供资讯栏目为你速递最新最全,最快的电影资讯、电视资讯、电影电视剧预告花絮，明星八卦等希望你能喜欢,快发给朋友大家一起来分享吧" />
+    <meta name="description" content="{maccms:description}" />
+    <link rel="canonical" href="{maccms:url}"/>
+    <meta name="mobile-agent" content="format=xhtml;url=http://m.{maccms:url}"/>
+    <link href="http://m.{maccms:url}" rel="alternate" media="only screen and (max-width: 1000px)"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    {maccms:include}
+</head>
+<body>
+{maccms:head}
+<div class="header_bg"></div><!--头部结束-->
+<div class="tab-a navs w1214">
+    <div class="wz fn-left">
+        <span>您所在的位置：</span>
+        <a class="current" href="{page:link}" tppabs="{page:link}" title="{page:textlink}">{page:textlink}</a>
+    </div>
+</div>
+<div class="new-list">
+    <div class="tab-a list-all w1214">
+        <div  class="tab-l news-list-tab w930 fn-left">
+
+            <div class="all-title"><h2>{page:name}</h2></div>
+            <ul class="list_module_img">
+                {if-A:{page:datacount}==0}
+                <center><h3> 暂无数据 </h3></center>
+                {else-A}
+                {maccms:art pagesize=8 order=desc by=time}
+                <li><a class="list-img aleft" href="[art:link]" title="[art:name]" target="_blank">
+                    <img class="loading" src="[art:pic]" tppabs="[art:pic]" data-original="[art:pic]"  alt="[art:name]"  />
+                    <label class="name">[art:name]</label></a>
+                    <div class="news-info">
+                        <h2><a href="[art:link]" tppabs="[art:link]" title="[art:name]" target="_blank">[art:name]</a></h2><span>[art:time style=yy-m-d]</span>
+                        <p>[art:contenttext len=120]...…</p>
+                    </div>
+                </li>
+                {/maccms:art}
+            </ul>
+            <div class="tab-l uipages pages w930" id="long-page">
+                <strong>{maccms:pages len=6}</strong>{endif-A}
+                           </div>
+        </div>
+        <div class="tab-r list-tab-r fn-right">
+            {maccms:matrix type=1,2,3,4 table=vod}
+            <div class="all-title">
+                <h2>[matrix:name]</h2>
+                <span>
+                    <a href="[matrix:link]" tppabs="[matrix:link]" target="_blank">更多>></a>
+                </span>
+            </div>
+            <ul class="list-news">
+                {maccms:vod num=9 type=[matrix:id] by=time order=desc}
+                <li><i class="c">[vod:num].</i>
+                    <a href="[vod:link]" tppabs="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=15]</a>
+                    <span class="c">[vod:weekhits]</span>
+                </li>
+                {/maccms:vod}
+            </ul>
+            {/maccms:matrix}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!--底部开始-->
+{maccms:foot}
+<!--底部结束-->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    (function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&a.indexOf("/cdn-cgi/l/email-protection") > -1  && (a.length > 28)){s='';j=27+ 1 + a.indexOf("/cdn-cgi/l/email-protection");if (a.length > j) {r=parseInt(a.substr(j,2),16);for(j+=2;a.length>j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);}t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+    /* ]]> */
+</script>
+</body>
+</html>

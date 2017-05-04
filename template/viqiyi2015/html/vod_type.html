@@ -1,0 +1,196 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+            <title>{page:name}-热门{page:name}-爱奇艺全网影视</title>
+        <meta name="description" content="爱奇艺全网影视电影列表页为你提供全网最热门的科幻电影大全。">
+    
+ {maccms:include}
+</head>
+
+<body class="qypage-980">
+<script type="text/javascript">
+    window.Q = window.Q || {};
+    Q.PageInfo = Q.PageInfo || {};
+    Q.PageInfo.respInfo = {
+        cnf: [
+            {
+                layout: 0,
+                cls: 'qypage-980',
+                range: {
+                    min: 0,
+                    max: 1259
+                },
+                extraInfo: {}
+            },
+            {
+                layout: 1,
+                cls: 'qypage-1180',
+                range: {
+                    min: 1260,
+                    max: Number.MAX_VALUE
+                },
+                extraInfo: {}
+            }
+        ],
+        curLayout: 0
+    }
+</script>
+
+
+
+<div class="page-search">
+    <!-- 搜索头部 开始 -->
+    
+{maccms:head}
+                
+
+
+
+<!-- 分类 -->
+<div class="container clearfix">
+    <div class="mod_sear_menu mt20 mb30">
+                    <div class="mod_sear_list         "             data-widget-expcol="expcol" data-expcol-cls="mod_sear_list_open"
+     >
+                <h3>按类型：</h3>
+                <ul class="mod_category_item">
+<li><a href="{page:linktype}" {if-A:"{page:pid}"="0"} class="selected" {endif-A} data="id-0">全部</a></li>
+                    {maccms:menu type=auto}
+          <li><a href="[menu:link]" {if-A:"{page:id}"="[menu:id]"} class="selected" {endif-A} data="id-[menu:id]">[menu:name]</a></li>
+          {/maccms:menu}
+
+                                          
+                                    </ul>
+
+                            </div>
+                    <div class="mod_sear_list         "      >
+                <h3>按地区：</h3>
+                <ul class="mod_category_item">
+                               <li><a href="{page:linkarea}" {if-A:"{page:area}"=""} class="selected" {endif-A} data="area-0">全部</a></li>
+		  {maccms:area type=auto order=asc}
+          <li><a href="[area:link]" {if-A:"{page:area}"="[area:name]"} class="selected" {endif-A} data="area-[area:name]">[area:name]</a></li>
+          {/maccms:area}
+                                                        </ul>
+                            </div>
+                    <div class="mod_sear_list         "      >
+                <h3>按年代：</h3>
+                <ul class="mod_category_item">
+		<li><a href="{page:linkyear}" {if-A:"{page:year}"=""} class="selected" {endif-A} data="year-0">全部</a></li>
+		 {maccms:year type=auto start=2002 end=2015 order=desc}
+         <li><a href="[year:link]" {if-A:"{page:year}"="[year:name]"} class="selected" {endif-A} data="year-[year:name]">[year:name]</a></li>
+         {/maccms:year}
+                                                                            </ul>
+                            </div>
+							                    <div class="mod_sear_list         "      >
+                <h3>按剧情：</h3>
+                <ul class="mod_category_item">
+		  <li><a href="{page:linkclass}" {if-A:"{page:class}"=""} class="selected" {endif-A} data="class-0">全部</a></li>
+		  {maccms:class type=auto}
+          <li><a href="[class:link]" {if-A:"{page:class}"="[class:name]"} class="selected" {endif-A} data="class-[class:name]">[class:name]</a></li>
+          {/maccms:class}
+                                                                            </ul>
+                            </div>
+							<div class="mod_sear_list         "      >
+                <h3>按字母：</h3>
+                <ul class="mod_category_item">
+		 <li><a href="{page:linkletter}" {if-A:"{page:letter}"=""} class="selected" {endif-A} data="letter-0">全部</a></li>
+         {maccms:letter type=auto letter=all}
+         <li> <a href="[letter:link]" {if-A:"{page:letter}"="[letter:name]"} class="selected" {endif-A} data="letter-[letter:name]">[letter:name]</a></li>
+         {/maccms:letter}                                              </ul>
+                            </div>
+
+            </div>
+</div>
+<!-- 分类 end-->    </div>
+    <!-- 导航 结束 -->
+
+    <!-- 搜索内容 开始 -->
+    <div class="wrapper-content clearfix mb20">
+        <div class="site-main">
+            <!-- 筛选结果 -->
+            <!-- 筛选结果 -->
+<div class="mb15 clearfix">
+    <div class="sort-result-container">
+        <div class="sort-result-l">
+            <em class="vm-inline c-999">排序:</em>
+            <a  title="按更新排序" class="checkBox-item             checkBox-selected
+ ml5">
+                <span class="search-checkBox">
+                    <i class="search-checkBox-inner"></i>
+                </span>
+                <em class="vm-inline">按更新</em>
+            </a>
+
+        </div>
+    </div>
+</div>
+            <div class="wrapper-cols" data-block-name="电影">
+                <div class="wrapper-piclist">
+                    
+<ul class="site-piclist site-piclist-180236 site-piclist-auto" data-widget-listviptip="listviptip">
+     
+		
+            {maccms:vod pagesize=30 order=desc by=time}
+            
+      <li>
+            <div class="site-piclist_pic">
+                <a data-searchpingback-elem="link" data-searchpingback-param="ptype=1&pos=6"
+                    class="site-piclist_pic_link"
+                    href = "[vod:link]"
+                                            alt="[vod:name]" title="[vod:name]"         target="_blank"
+    >
+                    <img width="180" height="236" src="            [vod:pic]
+    " alt="[vod:name]"
+                         title="[vod:name]" rseat="dsjp7"/>
+                    <p class="    " data-qidanadd-ele="definition">
+                                                </p>
+                    <div class="wrapper-listTitle">
+                        <div class="mod-listTitle">
+                            <p class="textOverflow" rseat="dsjt7"> [vod:time style=m-d]
+    </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="site-piclist_info">
+                <div class="mod-listTitle_left">
+                    <p class="site-piclist_info_title">
+                        <a data-searchpingback-elem="link" data-searchpingback-param="ptype=1&pos=6"
+                            href = "[vod:link]"
+                                                            title="[vod:name]" rseat="bigTitle"         target="_blank"
+    >            [vod:name]
+    </a>
+                    </p>
+                </div>
+                <div class="role_info">
+                            <em>主演:</em>
+                                    <em>
+[vod:starring]
+                </em>
+                                        </div>
+            </div>
+        </li>
+            
+             {/maccms:vod}	  
+    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 搜索内容 结束 -->
+            <!-- 页码 开始 -->
+        <div class="mod-page" >
+{maccms:pages len=6}
+        </div>
+        <!-- 页码 结束 -->
+
+<div id="block-W" data-block-name="底部版权" class="qy_footer"> <div class="footmenu"> <a href="/" class="s1" title="APP专区">APP专区</a> | <a href="/" rel="nofollow" title="公司介绍">公司介绍</a> | <a href="/" rel="nofollow" title="新闻动态">新闻动态</a> | <a href="/" rel="nofollow" title="联系方式">联系方式</a> | <a href="/" rel="nofollow" title="招聘英才">招聘英才</a> | <a href="http://open.iqiyi.com" rel="nofollow" title="开放平台">开放平台</a> | <a href="/" rel="nofollow" title="帮助与反馈">帮助与反馈</a> | <a href="/" rel="nofollow" title="AboutUs">About Us</a> </div> <div class="copyright"> <a href="">爱奇艺</a> <span>&copy; 2014 iQIYI.COM</span> </div> </div> 
+</div>
+</body>
+<script type="text/javascript">
+    Q.projectName = 'qiyiV2';
+    Q.load('videoLibraryList')
+</script>
+
+</html>

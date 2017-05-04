@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>网络直播,芒果台直播,湖南卫视,cctv直播-小俊工作室</title>
+    <meta name="title" content="小俊工作室高清直播,网络直播,芒果台直播,湖南卫视,cctv直播" />
+    <meta name="keywords" content="小俊工作室最新最全的网络影视吧，芒果、湖南卫视、浙江卫视、cctv电视台等国内等卫视直播,让您不用看电视就能观看自己希望看的直播网站一切都在小俊工作室" />
+    <meta name="description" content="{maccms:description}" />
+    <link rel="canonical" href="{maccms:url}"/>
+    <meta name="mobile-agent" content="format=xhtml;url=http://m.{maccms:url}"/>
+    <link href="http://m.{maccms:url}" rel="alternate" media="only screen and (max-width: 1000px)"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    {maccms:include}
+    <script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+    <script src="{maccms:path_tpl}js/home.js"></script>
+    <script type="text/javascript">uaredirect("");</script>
+
+</head>
+<body>
+{maccms:head}
+<div class="header_bg"></div><!--头部结束-->
+<div class="tab-a navs w1214">
+    <div class="wz fn-left">
+                <span>
+                    您所在的位置：
+                </span>
+        <a href="{maccms:path}" title="{maccms:name}">
+            首页
+        </a>
+        <em>
+            &gt;&gt;
+        </em>
+        <a class="current">
+            直播
+        </a>
+    </div>
+</div>
+<div class="new-list">
+    <div class="tab-a list-all w1214" style="padding-top:10px;">
+        <iframe width="1214" scrolling="no" height="600" align="middle" frameborder="no"
+                src="http://live.64ma.com/tv/live.html" hspace="0" vspace="0" marginheight="0"
+                marginwidth="0" name="tv">
+        </iframe>
+    </div>
+</div>
+<!--底部开始-->
+{maccms:foot}
+<!--底部结束-->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+        try {
+            var s, a, i, j, r, c, l = document.getElementsByTagName("a"),
+                    t = document.createElement("textarea");
+            for (i = 0; l.length - i; i++) {
+                try {
+                    a = l[i].getAttribute("href");
+                    if (a && a.indexOf("/cdn-cgi/l/email-protection") > -1 && (a.length > 28)) {
+                        s = '';
+                        j = 27 + 1 + a.indexOf("/cdn-cgi/l/email-protection");
+                        if (a.length > j) {
+                            r = parseInt(a.substr(j, 2), 16);
+                            for (j += 2; a.length > j && a.substr(j, 1) != 'X'; j += 2) {
+                                c = parseInt(a.substr(j, 2), 16) ^ r;
+                                s += String.fromCharCode(c);
+                            }
+                            j += 1;
+                            s += a.substr(j, a.length - j);
+                        }
+                        t.innerHTML = s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                        l[i].setAttribute("href", "mailto:" + t.value);
+                    }
+                } catch(e) {}
+            }
+        } catch(e) {}
+    })();
+    /* ]]> */
+
+</script>
+</body>
+
+</html>

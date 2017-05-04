@@ -1,0 +1,589 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN"> 
+<head> 
+<meta charset="UTF-8"> <title>爱奇艺影视大全-中国最新最全的影视资料库</title>
+ <meta name="title" content="爱奇艺影视大全-中国最新最全的影视资料库"> <meta name="keywords" content="视频搜索，全网视频搜索，影视大全，影视资料库"> 
+ <meta name="description" content="爱奇艺影视大全，中国最新最全的影视资料库，提供免费、高清的电影、电视剧、动漫、综艺等网络视频一站式在线观看体验。">
+
+ {maccms:include}
+ </head>
+ <body class="qypage-980"> 
+ <script type="text/javascript"> window.Q = window.Q || {}; Q.PageInfo = Q.PageInfo || {}; Q.PageInfo.respInfo = { cnf: [ { layout: 0, cls: 'qypage-980', range: { min: 0, max: 1259 }, extraInfo: {} }, { layout: 1, cls: 'qypage-1180', range: { min: 1260, max: Number.MAX_VALUE }, extraInfo: {} } ], curLayout: 0 } </script>
+ <script> (function () { var body = Q.$('body'); var width = Q.page.getViewWidth() > Q.page .getWidth() ? Q.page.getWidth() : Q.page .getViewWidth(); if (Q && Q.PageInfo && Q.PageInfo.respInfo) { var cnf = Q.PageInfo.respInfo.cnf; body .removeClass(cnf[Q.PageInfo.respInfo.curLayout].cls); for (var i = 0; i < cnf.length; i++) { if (width >= cnf[i].range.min && width <= cnf[i].range.max && !body.hasClass(cnf[i].cls)) { body.addClass(cnf[i].cls); Q.PageInfo.respInfo.curLayout = cnf[i].layout; break; } } } })(); </script> 
+ <div class="page-search">
+ 
+{maccms:head}
+ 
+ 
+  <div data-block-name="热词" id="block-C"> 
+ <div class="site-main"> 
+ <ul class="rec_tropic_item mb10 clearfix"> 
+ {maccms:vod num=12 type=all by=hits order=desc}
+ <li><a href="[vod:link]"  target="_blank" alt="[vod:name]" title="[vod:name]" rseat="topName1">[vod:name] <i class="tropic_icon"></i> </a> </li>
+ {/maccms:vod}
+
+
+ 
+ </ul> 
+ </div> 
+ </div> 
+ <div class="focus-search focus-search_v clearfix focus_tj"> 
+ <div class="focusTline"></div> 
+ <div data-block-name="焦点图" id="block-D"> 
+ <div class="focus-search-tabScroll_pic" data-widget-qiyupingback="indexFocus" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="8cabb8aa6562e48f2ccf57f0b8a7f1fa" data-qiyupingback-cid="0" data-qiyupingback-bkt="ysdq_salmon20_freshness_ctr" data-qiyupingback-area="ysdq_salmon" data-qiyupingback-p2="9005" data-qiyupingback-path="1" data-widget-indexfocus="indexFocus" data-indexfocus-disableanim="100" data-interval="5000" data-indexfocus-textshowtime="10" data-indexfocus-trigger="mouseover"> 
+ <div class="pic_btnLeft"> <a href="javascript:;" class="search-focus_btnLeft" data-indexfocus-change="prev_btn"></a> </div> 
+ <div class="pic_btnRight"> <a data-indexfocus-change="next_btn" href="javascript:;" class="search-focus_btnRight"></a> </div> 
+ <div class="position-focusSearch_mainList">
+ <ul class="focusSearch_mainList" data-indexfocus-elem="bigPics">
+ {maccms:vod num=10 type=all  order=desc by=level level=4,5}
+ <li style="background-image: url([vod:picslide]); display: block; opacity: 1;"> <a data-play-rseat="btn1" data-rseat="name1" href="[vod:link]" data-qiyupingback-elem="item" data-qiyupingback-idx="0" data-qiyupingback-taid="200054014" data-qiyupingback-tcid="6" hidefocus="true" data-indexfocus-elem="currentPlayPage" target="_blank" data-indexfocus-currenttitleelem="[vod:name]" data-indexfocus-title="[vod:name]" data-indexfocus-description="[vod:content len=20]..." rseat="img1"> 
+   {if-A:[menu:id]=1}<i class="scroll_tip tip_dianying"></i>{endif-A}{if-A:[menu:id]=2}<i class="scroll_tip tip_dianshiju"></i>{endif-A}{if-A:[menu:id]=3}<i class="scroll_tip tip_zongyi"></i>{endif-A} </a>
+ </li> 
+ {/maccms:vod}
+ </ul> 
+ </div> 
+ <div class="focus-search-tabScroll_title clearfix"> 
+ <div class="tabScroll_l_block" data-private-display="block" data-indexfocus-elem="playPageWrap"> 
+ {maccms:vod num=1 type=all  order=desc by=level level=4,5}
+ <div class="btn_wrap"> <a target="_blank" class="focusSearch_btn" data-qiyupingback-elem="item" data-qiyupingback-idx="0" data-qiyupingback-taid="200054014" data-qiyupingback-tcid="6" href="[vod:link]" title="[vod:name]" data-indexfocus-playelem="playBtn" data-indexfocus-elem="playBigBtn" rseat="btn"></a> </div> 
+ <div class="desc_wrap"> <a target="_blank" href="[vod:link]" data-qiyupingback-elem="item" data-qiyupingback-idx="0" data-qiyupingback-taid="200054014" data-qiyupingback-tcid="6" class="title" title="[vod:name]" data-indexfocus-elem="playPageLink" data-indexfocus-maintitleelem="playPageMainTitle" rseat="listem">[vod:name]</a> <a href="[vod:link]" data-qiyupingback-elem="item" data-qiyupingback-idx="0" data-qiyupingback-taid="200054014" data-qiyupingback-tcid="6" data-indexfocus-elem="playPageLink" data-indexfocus-maintitleelem="playPageMainDescription" target="_blank" class="subTle" title="[vod:name]">[vod:content len=20]...</a> </div> 
+  {/maccms:vod}
+ </div> 
+
+ <ul data-indexfocus-elem="smallPics" class="scroll_area"> 
+  {maccms:vod num=10 type=all  order=desc by=level level=4,5}
+ <li data-indexfocus-index="[vod:num]" class="{if-A:[vod:num] = 1}selected{endif-A}"><a rseat="sele[vod:num]" href="[vod:link]" data-qiyupingback-elem="item" data-qiyupingback-idx="[vod:num]" data-qiyupingback-taid="200054014" data-qiyupingback-tcid="6" target="_blank"></a></li> 
+  {/maccms:vod}
+
+ </ul>
+ </div> 
+ </div> </div> <div data-block-name="频道列表" id="block-E"> 
+ <div class="search-tab-list" data-widget-tab="tab" data-tab-changedelay="300"> 
+ <div class="tab-title"> 
+ <ul class="tab-title-item clearfix"> 
+ <li data-tab-elem="title" class="selected"><a title="热榜" href="#" rseat="style1" rseat="title1">热榜</a></li> 
+ <li data-tab-elem="title"><a title="电视剧" href="#" rseat="style1" rseat="title2">电视剧</a></li> 
+ <li data-tab-elem="title"><a title="电影" href="#" rseat="style1" rseat="title3">电影</a></li> 
+ <li data-tab-elem="title"><a title="综艺" href="#" rseat="style1" rseat="title4">综艺</a></li> 
+ <li data-tab-elem="title"><a title="动漫" href="#" rseat="style1" rseat="title5">动漫</a></li> 
+ </ul> </div> 
+ <div class="tab-body">
+ <ul class="top-list" data-tab-elem="body">
+       {maccms:vod num=10 by=hits type=all order=desc }  
+ <li class="top"><a class="tip" rseat="1_namecount1">[vod:num]</a> <a title="[vod:name]" class="title " href="[vod:link]" rseat="1topname[vod:num]" target="_blank">[vod:name]</a> <a title="[vod:name]" target="_blank" class="desc" href="[vod:link]" rseat="1cname1">[vod:typename]</a> </li> 
+      	{/maccms:vod} 	
+ </ul> 
+ <ul class="top-list" data-tab-elem="body" style="display: none;"> 
+  {maccms:vod num=10 by=time type=2 order=desc }  
+ <li class="top"><a class="tip" rseat="2_namecount1">[vod:num]</a> <a title="[vod:name]" class="title title_new0529" href="[vod:link]" rseat="2topname1" target="_blank">[vod:name]</a> <a title="[vod:name]" class="desc desc_new0529" href="[vod:link]" rseat="2cname1" target="_blank">
+{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</a></li> 
+	{/maccms:vod} 	
+ </ul> 
+ <ul class="top-list" data-tab-elem="body" style="display: none;"> 
+  {maccms:vod num=10 by=time type=1 order=desc }  
+ <li class="top"><a class="tip" rseat="3_namecount1">[vod:num]</a><a title="[vod:name]" class="title title_new0529" href="[vod:link]" rseat="3topname1" target="_blank">[vod:name]</a> <a title="[vod:name] " class="desc desc_new0529" href="[vod:link]" rseat="3cname1" target="_blank">[vod:typename] </a></li> 
+ 	{/maccms:vod}
+</ul> 
+ 
+ <ul class="top-list" data-tab-elem="body" style="display: none;">
+ {maccms:vod num=10 by=time type=3 order=desc } 
+ <li class="top"><a class="tip" rseat="4_namecount1">[vod:num]</a> <a title="[vod:name]" class="title title_new0529" href="[vod:link]" rseat="4topname1" target="_blank">[vod:name]</a> <a title="[vod:name]" class="desc desc_new0529" href="[vod:link]" rseat="4cname1" target="_blank">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</a></li> 
+ 	{/maccms:vod}
+ </ul> 
+ <ul class="top-list" data-tab-elem="body" style="display: none;">
+  {maccms:vod num=10 by=time type=4 order=desc } 
+ <li class="top"><a class="tip" rseat="5_namecount1">[vod:num]</a> <a title="[vod:name]" class="title title_new0529" href="[vod:link]" rseat="5topname1" target="_blank">[vod:name]</a> <a title="52集全" class="desc desc_new0529" href="[vod:link]" rseat="5cname1" target="_blank">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</a></li> 
+	{/maccms:vod}
+ </ul> 
+ </div> </div> </div> </div> 
+ <div class="wrapper-content wrapper-content-300 wrapper-content-300-index clearfix"> 
+ <div class="site-main"> 
+ <div class="wrapper-cols"> 
+ <div class="site-main-outer"> 
+ <div data-block-name="今日热点" id="block-F">
+ <div class="site-main-inner" data-widget-tab="tab" data-tabname="hotmeinv"> 
+ <div class="searchList-title clearfix"> <div class="searchList-title-right">  </div> <div class="searchList-title-left"> <h3> <i class="qiyu-site-icons recHot_ico" rseat="recHot_ico"> </i> <span rseat="今日热点"> 今日热点 </span> </h3> </div> 
+ <ul class="title-subLinks"> <li data-tab-elem="title" rseat="tag1" class="firstItem selected" data-tab-elem="title"> <a href="javascript:;" title="热门"> 热门 </a> </li> <li data-tab-elem="title" rseat="tag2" data-tab-elem="title"> <a href="javasctipt:;" title="美女主播"> 美女主播 </a> </li> </ul> </div> 
+ <!-- loading start--> 
+ <div class="listNav-tab" data-tab-elem="body">
+ <div data-widget-qiyuhotday="hot" data-widget-qiyupingback="dailyHotspot" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="2498f2f9c24d9cc3eb6c3463e105bcdd" data-qiyupingback-cid="-2" data-qiyupingback-bkt="ysdq_lizard20_main" data-qiyupingback-area="ysdq_lizard" data-qiyupingback-p2="9005" data-qiyupingback-keyframe="first" > 
+ <div class="flow-twoBlock clearfix" style="display: block;"> 
+ <div class="qy-col col-2"> <div class="wrapper-piclist" data-elems="big"> 
+ <ul class="site-piclist movieLib-picList-330247"> 
+   {maccms:vod num=1 by=time type=all order=desc } 
+ <li > <div class="site-piclist_pic"> <a target="_blank" alt="[vod:name]" title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link"> <img width="100%" height="100%" rseat="bigPic" alt="[vod:name]" title="[vod:name]" src="[vod:pic]"></a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" alt="[vod:name]" title="[vod:name]"  href="[vod:link]">[vod:name]</a> </p> </div> </li> 
+ {/maccms:vod}
+ </ul> 
+ </div>
+ </div> 
+ <div class="o-hidden"> 
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587 movieLib-picList-tleTwo" data-elems="content1"> 
+  {maccms:vod num=3 by=time type=1 order=desc } 
+ <li> <div class="site-piclist_pic"> <a title="《[vod:name]》[vod:content len=16]" href="[vod:link]" class="site-piclist_pic_link" target="_blank" > <img width="100%" height="100%"  title="《[vod:name]》[vod:content len=16]" alt="《[vod:name]》[vod:content len=16]" src="[vod:pic]"> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="《[vod:name]》[vod:content len=16]" href="[vod:link]" >《[vod:name]》[vod:content len=16] </a> </p> </div> </li>
+
+  {/maccms:vod}
+ </ul> 
+ </div>
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587 movieLib-picList-tleTwo" data-elems="content2"> 
+  {maccms:vod num=3 by=time type=2 order=desc } 
+ <li> <div class="site-piclist_pic"> <a title="《[vod:name]》[vod:content len=16]" href="[vod:link]" class="site-piclist_pic_link" target="_blank" > <img width="100%" height="100%"  title="《[vod:name]》[vod:content len=16]" alt="《[vod:name]》[vod:content len=16]" src="[vod:pic]"> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="《[vod:name]》[vod:content len=16]" href="[vod:link]" >《[vod:name]》[vod:content len=16] </a> </p> </div> </li>
+
+  {/maccms:vod}
+
+</ul> 
+ </div> </div> </div> 
+ 
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587 movieLib-picList-tleTwo" data-elems="content3"> 
+  {maccms:vod num=5 by=time type=3,4 order=desc } 
+ <li> <div class="site-piclist_pic"> <a title="《[vod:name]》[vod:content len=16]" href="[vod:link]" class="site-piclist_pic_link" target="_blank" > <img width="100%" height="100%"  title="《[vod:name]》[vod:content len=16]" alt="《[vod:name]》[vod:content len=16]" src="[vod:pic]"> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="《[vod:name]》[vod:content len=16]" href="[vod:link]" >《[vod:name]》[vod:content len=16] </a> </p> </div> </li>
+
+  {/maccms:vod}
+ 
+ </ul> 
+ </div>
+ </div> 
+ </div>
+ <div class="listNav-tab" data-tab-elem="body" style="display: none;" id="block-BI"> 
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-15587 site-piclist-gray">
+   {maccms:vod num=5 by=hits type=1 order=desc } 
+ <li> <div class="site-piclist_pic"> <a title="[vod:name] " href="[vod:link]" target="_blank" class="site-piclist_pic_link"> <img width="180" height="101" src="[vod:pic]" title="[vod:name] " alt="[vod:name] "> </a> <a class="tip-funs" href="javascript:;"> <i class="icon-p"></i> <span class="num-funs">[vod:hits]</span> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank"  title="[vod:name] " href="[vod:link]">[vod:name] </a> </p> <p rseat="itemPrompt_0" class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> 
+ </div> 
+ <div class="wrapper-piclist">
+ <ul class="site-piclist site-piclist-15587 site-piclist-gray"> 
+   {maccms:vod num=5 by=hits type=2 order=desc } 
+ <li> <div class="site-piclist_pic"> <a title="[vod:name] " href="[vod:link]" target="_blank" class="site-piclist_pic_link"> <img width="180" height="101" src="[vod:pic]" title="[vod:name] " alt="[vod:name] "> </a> <a class="tip-funs" href="javascript:;"> <i class="icon-p"></i> <span class="num-funs">[vod:hits]</span> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank"  title="[vod:name] " href="[vod:link]">[vod:name] </a> </p> <p rseat="itemPrompt_0" class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> 
+ <div class="wrapper-piclist">
+ <ul class="site-piclist site-piclist-15587 site-piclist-gray">
+   {maccms:vod num=5 by=hits type=3,4 order=desc } 
+ <li> <div class="site-piclist_pic"> <a title="[vod:name] " href="[vod:link]" target="_blank" class="site-piclist_pic_link"> <img width="180" height="101" src="[vod:pic]" title="[vod:name] " alt="[vod:name] "> </a> <a class="tip-funs" href="javascript:;"> <i class="icon-p"></i> <span class="num-funs">[vod:hits]</span> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank"  title="[vod:name] " href="[vod:link]">[vod:name] </a> </p> <p rseat="itemPrompt_0" class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> 
+ </div> 
+ </div> 
+
+ </div> 
+ </div>
+ </div>
+ <!-- hot side start -->
+ <div class="site-main-side site-main-side-index" data-block-name="今日焦点右侧" id="block-G"> 
+ <div class="side-inner"> <div class="site-title"> <div class="site-title_left"> <h3><span class="title-index" rseat="专题精选">专题精选</span></h3> <a class="title-index-more" target="_blank" href="{maccms:link_topic_vod}">更多&gt;</a> </div> </div> 
+ 
+ <div class="site-side-posFix site-side-posFixNew">
+{maccms:topic num=3 id=all table=vod}
+ <ul class="site-piclist site-piclist-280106"> 
+ 
+ <li class="clearfix"> <div class="site-piclist_pic"> <a alt="[topic:content len=10]" title="[topic:content len=10]" target="_blank" href="[topic:link]" class="site-piclist_pic_link"> <img width="100%" height="100%" alt="[topic:content len=10]" title="[vod:content len=10]" src="[topic:pic]" /> </a> </div>
+ <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a rseat="bigName0" alt="[topic:content len=10]" target="_blank" title="[topic:content len=10]" href="[topic:link]">[topic:content len=10]</a> </p> </div> </li> 
+ </ul>
+{/maccms:topic}
+
+ 
+ </div> 
+ </div> 
+ </div> <!-- hot side end --> </div> 
+ <div class="wrapper-cols mt20">
+ <div class="site-main-outer" data-block-name="电影" id="block-M"> 
+ <div class="site-main-inner" data-widget-tab="tab"> 
+ <div class="searchList-title clearfix"> <div class="searchList-title-right"> <a target="_blank" class="more" href="/?m=vod-type-id-1.html" rseat="more">更多&gt;</a> </div> <div class="searchList-title-left"> <h3> <i class="qiyu-site-icons dianying_ico" rseat="recHot_ico"></i><span rseat="电影">电影</span> </h3> </div> 
+ <ul class="title-subLinks"> 
+    {maccms:vod num=1  type=5 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="1" rseat="tag1" class="firstItem selected"><a href="#" title="[vod:typename]">[vod:typename]</a></li> 
+  {/maccms:vod}
+  {maccms:vod num=1  type=6 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="2" rseat="tag2"><a href="#" title="[vod:typename]">[vod:typename]</a></li>
+   {/maccms:vod}
+ {maccms:vod num=1  type=7 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="3" rseat="tag3"><a href="#" title="[vod:typename]">[vod:typename]</a></li>
+    {/maccms:vod}
+  {maccms:vod num=1  type=8 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="4" rseat="tag4"><a href="#" title="[vod:typename]">[vod:typename]</a></li>
+    {/maccms:vod}
+   {maccms:vod num=1  type=9 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="5" rseat="tag5"><a href="#" title="[vod:typename]">[vod:typename]</a></li> 
+    {/maccms:vod}
+    {maccms:vod num=1  type=10 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="6" rseat="tag6"><a href="#" title="[vod:typename]">[vod:typename]</a></li> 
+    {/maccms:vod}
+ </ul> </div>
+ <div data-tab-elem="body" data-seq="1" data-private-display="block" data-widget-qiyupingback="dianyingTab1" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="6356fa1317471bedd511d2d821a5894f" data-qiyupingback-cid="1" data-qiyupingback-bkt="ysdq_lizard30_main" data-qiyupingback-area="ysdq_lizard" data-qiyupingback-p2="9005" > 
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+ {maccms:vod num=5 by=time type=5 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> 
+ </div>
+ <div class="wrapper-piclist">
+ <ul class="site-piclist site-piclist-155203"> 
+ {maccms:vod num=5 by=hits type=5 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> </div> 
+ </div>
+
+ <div data-tab-elem="body" data-seq="2" data-private-display="block" style="display: none;"> 
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203">
+ {maccms:vod num=5 by=time type=6 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+
+ </ul> 
+ </div>
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-155203"> 
+  {maccms:vod num=5 by=hits type=6 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+
+ </ul> </div> </div> 
+ 
+ <div data-tab-elem="body" data-seq="3" data-private-display="block" style="display: none;"> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+   {maccms:vod num=5 by=time type=7 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> </div> 
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-155203"> 
+    {maccms:vod num=5 by=hits type=7 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> </div> 
+ </div> 
+ <div data-tab-elem="body" data-seq="4" data-private-display="block" style="display: none;"> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+    {maccms:vod num=5 by=time type=8 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> 
+ </div> 
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-155203">
+     {maccms:vod num=5 by=hits type=8 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> </div> </div>
+
+ <div data-tab-elem="body" data-seq="5" data-private-display="block" style="display: none;"> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+     {maccms:vod num=5 by=time type=9 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> </div> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203">
+      {maccms:vod num=5 by=hits type=9 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> 
+ </div>
+ </div> 
+ 
+ 
+ <div data-tab-elem="body" data-seq="6" data-private-display="block" style="display: none;"> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+     {maccms:vod num=5 by=time type=10 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> </div> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203">
+      {maccms:vod num=5 by=hits type=10 order=desc } 
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"  /> </a> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe">[vod:content len=8]</p> </div> </li>
+   {/maccms:vod}
+ </ul> 
+ </div>
+ </div> 
+ 
+ </div> 
+ </div> 
+ 
+ <!-- movie side start --> 
+ <div class="site-main-side"> <div class="side-border side-border-index" data-widget-tab="tab"> <div data-block-name="电影排行榜" id="block-N">
+ <div class="site-title"> <div class="site-title_right"></div> <div class="site-title_left"> <h3> <span>百度电影排行榜</span> </h3> 
+ <ul class="title-subLinks"> 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="1" rseat="tag1" class="firstItem selected"><a href="#">全部</a></li> 
+
+ </ul> </div> </div> 
+ <div data-tab-elem="body" data-seq="1" data-private-display="block">
+ <div class="mod-rank-twoCol clearfix"> <ul class="rank-list"> 
+ {maccms:vod num=5 by=hits type=1 order=desc } 
+ <li><i class="icon-rankTop" rseat="序号[vod:num]">[vod:num]</i> <a class="rank-item" href="[vod:link]" title="[vod:name]" rseat="topTitle1" target="_blank">[vod:name]</a></li> 
+   {/maccms:vod}
+ </ul> 
+ <ul class="rank-list"> 
+  {maccms:vod num=5 by=dayhits type=1 order=desc } 
+ <li><i class="icon-rankNormal" rseat="序号[vod:num]">[vod:num]</i>  <a class="rank-item" href="[vod:link]" title="[vod:name]" rseat="topTitle1" target="_blank">[vod:name]</a></li> 
+   {/maccms:vod}
+
+ </ul> 
+ </div> </div> 
+</div> <div class="dotted-line"></div> <div data-block-name="电影分类" id="block-O"> 
+<div class="genreWrap mb8"> 
+<ul class="clearfix"> 
+   {maccms:menu type=5,6,7,8,9,10,11}
+<li><a class="" href="[menu:link]" title="[menu:name]" alt="[menu:name]" rseat="2" target="_blank">[menu:name]</a></li>
+  {/maccms:menu}
+ </ul> 
+ </div> 
+ </div> <div class="dotted-line"></div> <div data-block-name="院线热映" id="block-P">
+ <div class="mod-searchStar" id="widget-slidewidget-1" data-slide-circle="true" data-slide-name="childrenIndexSlide" data-slide-step="1" data-slide-disp="1" data-slide-enabletouch="true" data-slide-enableScroll="true" data-slide-disablewheel="true" data-slide-lBtnClass="disabled" data-slide-rBtnClass="disabled" data-slide-useDefaultOffset="true" data-slide-style="marginLeft" data-slide-dura="1000"> <h2 class="mb8 pr" rseat="院线热映"> <i class="title-arrow"></i>院线热映 <div class="gridCtrol"> <a href="javascript:void(0);" data-slide-elem="pbtn" class="disabled"><i class="site-icons arrL"></i> </a> <a data-slide-elem="nbtn" href="javascript:void(0);"> <i class="site-icons arrR"></i> </a> </div> </h2> 
+ <div class="partA_r partB_r" data-slide-elem="content"> 
+ <ul data-slide-elem="list" class="s-scroll-content"> 
+ 
+ <li class="clearfix s-scroll-item" data-seq="1" data-slide-elem="item"> 
+  {maccms:vod num=1 by=hits type=1 order=desc } 
+ <div class="s-scroll-bd clearfix"> <a class="top-dq_headImg" href="[vod:link]" alt="[vod:name]" target="_blank"><img src="[vod:pic]" rseat="img1_1"></a> <div class="o-hidden"> <dl> <dt> <a href="[vod:link]" rseat="itemName1_1" alt="[vod:name]" target="_blank">[vod:name]</a> </dt> <dd class="desc999" rseat="dq_releasetime1_1" alt="[vod:addtime]内地上映"> [vod:addtime]内地上映</dd> <dd class="desc999" rseat="dq_actors1_1" alt="[vod:directed] ">[vod:directed] </dd> </dl> </div> </div> 
+    {/maccms:vod}
+	 {maccms:vod num=1 by=dayhits type=1 order=desc } 
+ <div class="s-scroll-bd clearfix"> <a class="top-dq_headImg" href="[vod:link]" alt="[vod:name]" target="_blank"><img src="[vod:pic]" rseat="img1_2"></a> <div class="o-hidden"> <dl> <dt> <a  href="[vod:link]" rseat="itemName1_2" alt="[vod:name]" target="_blank">[vod:name]</a> </dt> <dd class="desc999" rseat="dq_releasetime1_2" alt=" [vod:addtime]内地上映"> [vod:addtime]内地上映</dd> <dd class="desc999" rseat="dq_actors1_2" alt="[vod:directed] ">[vod:directed] </dd> </dl> </div> </div> </li> 
+   {/maccms:vod}
+</ul> </div> </div> </div> </div> 
+</div> <!-- movie side end --> 
+</div> 
+<div class="wrapper-cols mt20">
+ <div class="site-main-outer" data-block-name="电视剧" id="block-H"> <div class="site-main-inner" data-widget-tab="tab">
+ <div class="searchList-title clearfix"> <div class="searchList-title-right"> <a target="_blank" class="more" href="/?m=vod-type-id-2.html" rseat="more">更多&gt;</a> </div> <div class="searchList-title-left"> <h3> <i class="qiyu-site-icons dianshiju_ico" rseat="recHot_ico"></i><span rseat="电视剧">电视剧</span> </h3> </div>
+ <ul class="title-subLinks"> 
+
+    {maccms:vod num=1  type=12 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="1" rseat="tag1" class="firstItem selected"><a href="#" title="[vod:typename]">[vod:typename]</a></li> 
+  {/maccms:vod}
+  {maccms:vod num=1  type=13 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="2" rseat="tag2"><a href="#" title="[vod:typename]">[vod:typename]</a></li>
+   {/maccms:vod}
+ {maccms:vod num=1  type=14 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="3" rseat="tag3"><a href="#" title="[vod:typename]">[vod:typename]</a></li>
+    {/maccms:vod}
+  {maccms:vod num=1  type=15 order=desc } 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="4" rseat="tag4"><a href="#" title="[vod:typename]">[vod:typename]</a></li>
+    {/maccms:vod}
+
+
+ 
+ </ul>
+ </div> 
+ <div data-tab-elem="body" data-seq="1" data-private-display="block" data-widget-qiyupingback="dianshijuTab1" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="6356fa1317471bedd511d2d821a5894f" data-qiyupingback-cid="2" data-qiyupingback-bkt="ysdq_lizard30_main" data-qiyupingback-area="ysdq_lizard" data-qiyupingback-p2="9005" > 
+ <div class="wrapper-piclist">
+ <ul class="site-piclist site-piclist-155203"> 
+    {maccms:vod num=5 by=time type=12 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul>
+ </div>
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+    {maccms:vod num=5 by=hits type=12 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul> </div> 
+ </div> 
+ <div data-tab-elem="body" data-seq="2" data-private-display="block" style="display: none;"> 
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+     {maccms:vod num=5 by=time type=13 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul> </div> 
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-155203">
+    {maccms:vod num=5 by=hits type=13 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul> </div> 
+ </div>
+ <div data-tab-elem="body" data-seq="3" data-private-display="block" style="display: none;"> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-155203"> 
+      {maccms:vod num=5 by=time type=14 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul> </div> 
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-155203"> 
+     {maccms:vod num=5 by=hits type=14 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul> </div> </div> 
+ <div data-tab-elem="body" data-seq="4" data-private-display="block" style="display: none;"> <div class="wrapper-piclist">
+ <ul class="site-piclist site-piclist-155203">
+       {maccms:vod num=5 by=time type=15 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul> </div> <div class="wrapper-piclist">
+ <ul class="site-piclist site-piclist-155203">  
+      {maccms:vod num=5 by=hits type=15 order=desc }
+ <li > <div class="site-piclist_pic"> <a class="site-piclist_pic_link" href="[vod:link]" title="[vod:name]" target="_blank"> <img width="100%" height="100%" src="[vod:pic]" alt="[vod:name]" title="[vod:name]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_left">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a href="[vod:link]" title="[vod:name]" rseat="itemName1_1_1" target="_blank">[vod:name]</a> </p> <p class="site-piclist_info_describe" >[vod:content len=8]</p> </div> </li> 
+    {/maccms:vod}
+ </ul> </div> </div> </div> </div> <div class="site-main-side"> <div class="side-border side-border-index"> <div data-block-name="电视剧风云榜" id="block-I" data-widget-tab="tab"> <div class="site-title"> <div class="site-title_right"></div> <div class="site-title_left"> <h3> <span>百度电视剧榜</span> </h3> 
+ <ul class="title-subLinks"> 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="1" rseat="tag1" class="firstItem selected"><a href="#">全部</a></li> </ul> </div> </div> 
+ <div data-tab-elem="body" data-seq="1" data-private-display="block"> <div class="mod-rank-twoCol clearfix"> <ul class="rank-list"> 
+   {maccms:vod num=5 by=hits type=2 order=desc }
+ <li><i class="icon-rankTop" rseat="序号[vod:num]">[vod:num]</i> <a class="rank-item" target="_blank" href="[vod:link]" title="[vod:name]" rseat="topTitle1">[vod:name]</a></li> 
+    {/maccms:vod}
+ </ul> 
+ <ul class="rank-list"> 
+ {maccms:vod num=5 by=dayhits type=2 order=desc } 
+ <li><i class="icon-rankNormal" rseat="序号[vod:num]">[vod:num]</i>  <a class="rank-item" href="[vod:link]" title="[vod:name]" rseat="topTitle1" target="_blank">[vod:name]</a></li> 
+   {/maccms:vod} </ul> </div> </div>   
+ </div> <div class="dotted-line"></div> <div data-block-name="电视剧分类" id="block-J"> <div class="genreWrap mb8"> <ul class="clearfix"> 
+    {maccms:menu type=12,13,14,15}
+<li><a class="" href="[menu:link]" title="[menu:name]" alt="[menu:name]" rseat="2" target="_blank">[menu:name]</a></li>
+  {/maccms:menu}
+
+ </ul> </div> </div> </div> <div class="side-border side-border-index mt20"> <div data-block-name="热搜明星" id="block-L"> <div class="mod-searchStar" > <h2 class="pr mb5"> <i class="title-arrow"></i>热搜明星 </h2> <div data-slide-elem="content" class="hot-star-wrap hot-star-wrap-twoRow"> 
+ <ul class="clearfix"> 
+  {maccms:vod num=6 by=time type=2 order=desc } 
+ <li class="clearfix"> <a href="[vod:link]" alt="[vod:name]" target="_blank"><img src="[vod:pic]" rseat="img1" width="70" height="70" /></a> <p class="hot-s_n"> <a href="[vod:link]" alt="[vod:name]" rseat="itemName1" target="_blank">[vod:name]</a> </p> </li>
+   {/maccms:vod}
+ </ul> </div> </div> </div> </div> </div> </div> <div class="wrapper-cols mt20"> <div class="site-main-outer" data-block-name="综艺" id="block-Q"> <div class="site-main-inner" data-widget-tab="tab"> <div class="searchList-title clearfix"> <div class="searchList-title-right"> <a target="_blank" class="more" href="/?m=vod-type-id-3.html" rseat="more">更多&gt;</a> </div> <div class="searchList-title-left"> <h3> <i class="qiyu-site-icons zongyi_ico" rseat="recHot_ico"></i><span rseat="综艺">综艺</span> </h3> </div> 
+ <ul class="title-subLinks"> <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="1" rseat="tag1" class="firstItem selected"><a href="#" title="热门综艺 ">热门综艺 </a></li> 
+ <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="2" rseat="tag2"><a href="#" title="国内强档 ">国内强档</a></li>
+ </ul> </div> <div data-tab-elem="body" data-seq="1" data-widget-qiyupingback="zongyiTab1" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="6356fa1317471bedd511d2d821a5894f" data-qiyupingback-cid="6" data-qiyupingback-bkt="ysdq_lizard30_main" data-qiyupingback-area="ysdq_lizard" data-qiyupingback-p2="9005" data-private-display="block"> 
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-15587"> 
+   {maccms:vod num=5 by=hits type=3 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div>
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587"> 
+   {maccms:vod num=5 by=dayhits type=3 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> </div> <div data-tab-elem="body" data-seq="2" data-private-display="block" style="display: none;"> <div class="wrapper-piclist">
+ <ul class="site-piclist site-piclist-15587">
+   {maccms:vod num=5 by=time type=3 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587"> 
+    {maccms:vod num=5 by=daytime type=3 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> </div>  </div> </div> <div class="site-main-side"> <div class="side-border side-border-index"> <div id="block-I" data-widget-tab="tab"> <div class="site-title"> <div class="site-title_right"></div> <div class="site-title_left"> <h3> <span>百度综艺排行榜</span> </h3> 
+</div> </div> 
+ <div data-tab-elem="body" data-seq="1" data-private-display="block"> <div class="mod-rank-twoCol clearfix"> <ul class="rank-list"> 
+   {maccms:vod num=5 by=hits type=3 order=desc }
+ <li><i class="icon-rankTop" rseat="序号[vod:num]">[vod:num]</i> <a class="rank-item" target="_blank" href="[vod:link]" title="[vod:name]" rseat="topTitle1">[vod:name]</a></li> 
+    {/maccms:vod}
+ </ul> 
+ <ul class="rank-list"> 
+ {maccms:vod num=5 by=dayhits type=3 order=desc } 
+ <li><i class="icon-rankNormal" rseat="序号[vod:num]">[vod:num]</i>  <a class="rank-item" href="[vod:link]" title="[vod:name]" rseat="topTitle1" target="_blank">[vod:name]</a></li> 
+   {/maccms:vod} </ul> </div> </div>   
+ </div> <div class="dotted-line"></div> <div data-block-name="综艺分类" id="block-J"> <div class="genreWrap mb8"> <ul class="clearfix"> 
+     {maccms:area type=auto order=asc}
+<li><a class="" href="[area:link]" title="[area:name]" alt="[area:name]" rseat="2" target="_blank">[area:name]</a></li>
+  {/maccms:area}
+
+ </ul> </div> </div> </div> <div class="side-border side-border-index mt20">  </div> </div>
+
+ </div> 
+ 
+ <div class="wrapper-cols mt20"> <div class="site-main-outer"> <div class="site-main-inner" data-widget-tab="tab" data-block-name="动漫" id="block-T"> <div class="searchList-title clearfix"> <div class="searchList-title-right"> <a target="_blank" class="more" href="/?m=vod-type-id-2.html" rseat="more">更多&gt;</a> </div> <div class="searchList-title-left"> <h3> <i class="qiyu-site-icons dongman_ico" rseat="recHot_ico"></i><span rseat="动漫">动漫</span> </h3> </div> <ul class="title-subLinks"> <li data-tab-elem="title" data-lazyhover="true" data-lazyhovertm="500" data-seq="1" rseat="tag1" class="firstItem selected"><a href="#" title="热门动漫">热门动漫</a></li> 
+ </ul> </div> <div data-tab-elem="body" data-seq="1" data-widget-qiyupingback="dongmanTab1" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="6356fa1317471bedd511d2d821a5894f" data-qiyupingback-cid="4" data-qiyupingback-bkt="ysdq_lizard30_main" data-qiyupingback-area="ysdq_lizard" data-qiyupingback-p2="9005" data-private-display="block">
+ <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587">
+   {maccms:vod num=5 by=hits type=4 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ 
+ </ul> </div> 
+ <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-15587">
+    {maccms:vod num=5 by=dayhits type=4 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> </div> 
+ </div> </div> 
+<div class="site-main-side"> <div class="side-border side-border-index"> <div id="block-I" data-widget-tab="tab"> <div class="site-title"> <div class="site-title_right"></div> <div class="site-title_left"> <h3> <span>百度动漫排行榜</span> </h3> 
+</div> </div> 
+ <div data-tab-elem="body" data-seq="1" data-private-display="block"> <div class="mod-rank-twoCol clearfix"> <ul class="rank-list"> 
+   {maccms:vod num=5 by=hits type=4 order=desc }
+ <li><i class="icon-rankTop" rseat="序号[vod:num]">[vod:num]</i> <a class="rank-item" target="_blank" href="[vod:link]" title="[vod:name]" rseat="topTitle1">[vod:name]</a></li> 
+    {/maccms:vod}
+ </ul> 
+ <ul class="rank-list"> 
+ {maccms:vod num=5 by=dayhits type=4 order=desc } 
+ <li><i class="icon-rankNormal" rseat="序号[vod:num]">[vod:num]</i>  <a class="rank-item" href="[vod:link]" title="[vod:name]" rseat="topTitle1" target="_blank">[vod:name]</a></li> 
+   {/maccms:vod} </ul> </div> </div>   
+ </div> <div class="dotted-line"></div> <div data-block-name="动漫分类" id="block-J"> <div class="genreWrap mb8"> <ul class="clearfix"> 
+     {maccms:area type=auto order=asc}
+<li><a class="" href="[area:link]" title="[area:name]" alt="[area:name]" rseat="2" target="_blank">[area:name]</a></li>
+  {/maccms:area}
+
+ </ul> </div> </div> </div>
+ <div class="side-border side-border-index mt20">  </div> </div>
+ </div>
+ <div class="wrapper-cols mt20"> <div class="site-main-outer"> <div class="site-main-inner" data-widget-tab="tab" data-block-name="体育" id="block-AG" data-widget-qiyupingback="tiyu" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="2498f2f9c24d9cc3eb6c3463e105bcdd" data-qiyupingback-cid="17" data-qiyupingback-bkt="ysdq_lizard20_main" data-qiyupingback-area="ysdq_lizard" data-qiyupingback-p2="9005" > <div class="searchList-title clearfix"> <div class="searchList-title-right"> <a target="_blank" class="more" href="/" rseat="more"> 更多&gt; </a> </div> 
+ <div class="searchList-title-left"> <h3><i class="qiyu-site-icons tiyu_ico" rseat="recHot_ico"></i><span rseat="体育">体育</span></h3> </div> </div> <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-15587 movieLib-picList-tleTwo">
+    {maccms:vod num=5 by=hits type=6 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587 movieLib-picList-tleTwo"> 
+    {maccms:vod num=5 by=hits type=7 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> </div> </div> 
+ <div class="site-main-side"> <div class="side-border" data-block-name="百度体育排行榜" id="block-BB"> <div class="site-title"> <div class="site-title_right"> </div> <div class="site-title_left"> <h3> <span> 体育排行榜 </span> </h3> </div> </div> <div class="mod-search-topList mod-search-topListOne">
+ <ul class="search-topList clearfix"> 
+    {maccms:vod num=10 by=hits type=7 order=desc } 
+ <li> <a href="[vod:link]" class="topList-item" title="[vod:name]" target="_blank" > <i class="topList-num" rseat="序号[vod:num]">[vod:num]</i> <em class="topList-title" rseat="topTitle1"> [vod:name] </em> </a> </li>
+  {/maccms:vod}
+ </ul> </div> </div> </div>
+ </div>
+ <div class="wrapper-cols mt20"> <div class="site-main-outer"> <div class="site-main-inner" data-widget-tab="tab" data-block-name="娱乐" id="block-AA" data-widget-qiyupingback="yule" data-qiyupingback-ppuid="2186622738" data-qiyupingback-uid="73de0f26505b2fea7fb02dc6236ae233" data-qiyupingback-eventid="2498f2f9c24d9cc3eb6c3463e105bcdd" data-qiyupingback-cid="7" data-qiyupingback-bkt="ysdq_lizard20_main" data-qiyupingback-area="ysdq_lizard" data-qiyupingback-p2="9005" > <div class="searchList-title clearfix"> <div class="searchList-title-right"> <a target="_blank" class="more" href="/" rseat="more"> 更多&gt; </a> </div> 
+ <div class="searchList-title-left"> <h3><i class="qiyu-site-icons yule_ico" rseat="recHot_ico"></i><span rseat="娱乐">娱乐</span></h3> </div> </div> <div class="wrapper-piclist"> <ul class="site-piclist site-piclist-15587 movieLib-picList-tleTwo"> 
+     {maccms:vod num=5 by=hits type=3 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul>
+ </div> <div class="wrapper-piclist"> 
+ <ul class="site-piclist site-piclist-15587 movieLib-picList-tleTwo"> 
+     {maccms:vod num=5 by=hits type=10 order=desc } 
+ <li  > <div class="site-piclist_pic"> <a title="[vod:name]" href="[vod:link]" class="site-piclist_pic_link" target="_blank"> <img width="100%" height="100%" rseat="img1_1_1" title="[vod:name]" alt="[vod:name]" src="[vod:pic]"> </a> <div class="wrapper-listTitle"> <div class="mod-listTitle"> <p class="mod-listTitle_right" >{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0}[完结]{elseif-A:[vod:state]>0}{if-B:[vod:state]>10000}[连载[vod:state]]期{else-B}[连载[vod:state]]集{endif-B}{else-A}
+{endif-A}</p> </div> </div> </div> <div class="site-piclist_info"> <p class="site-piclist_info_title"> <a target="_blank" title="[vod:name]" href="[vod:link]" rseat="name1_1_1">[vod:name]</a> </p> <p class="site-piclist_info_describe" rseat="itemSubordinateTitle1_1_1">[vod:content len=8]</p> </div> </li> 
+ {/maccms:vod}
+ </ul> </div> </div> </div> <div class="site-main-side"> <div class="side-border" data-block-name="百度娱乐排行榜" id="block-BB"> <div class="site-title"> <div class="site-title_right"> </div> <div class="site-title_left"> <h3> <span> 娱乐排行榜 </span> </h3> </div> </div> <div class="mod-search-topList mod-search-topListOne"> <ul class="search-topList clearfix">
+    {maccms:vod num=10 by=hits type=2 order=desc } 
+ <li> <a href="[vod:link]" class="topList-item" title="[vod:name]" target="_blank" > <i class="topList-num" rseat="序号[vod:num]">[vod:num]</i> <em class="topList-title" rseat="topTitle1"> [vod:name] </em> </a> </li>
+  {/maccms:vod}
+ </ul> </div> </div> </div> </div> 
+
+ </div> </div> 
+{maccms:foot}
+ </div> 
+
+ 
+ <div class="baseScrollBar" id="widget-vscrollbar"> 
+ <ul class="baseScrollBar_menus"> <li data-widget-totopbtn="totop" data-totopbtn-time="150" data-totopbtn-hoverclass="selected" data-totopbtn-undownclass="unEffective"> <a href="javascript:void(0);" class="baseToTop" title="回顶部" data-totopbtn-totop="show"></a> </li> <li> <a href="javascript:void(0);" class="helpFeedback" title="帮助及反馈" id="widget-feedbackbtn"></a> </li> </ul> 
+ </div> 
+ <div data-vlibplayhistory-client="pc"></div> 
+ 
+ 
+ <script type="text/javascript"> Q.projectName = 'qiyiV2'; Q.load("movLibIndexV2"); </script> 
+
+
+ </body>
+ </html>

@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{maccms:name}</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta content="{maccms:description}" name="Description">
+<meta content="{maccms:keywords}" name="Keywords">
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="{maccms:name}" name="apple-mobile-web-app-title">
+{maccms:include}
+<link href="{maccms:path_tpl}/css/index_v2.css" rel="stylesheet" type="text/css">
+<script> 
+function nofind(e){ 
+	return e.src='maccms:path_tpl}/images/focusDefault.jpg';
+}
+</script>
+</head><body>
+{maccms:head}
+<section class="main">
+  <div class="focus" id="focus">
+    <ul class="focusCon clearfix" id="focusCon">
+      {maccms:vod num=6 start=1 table=vod type=all by=level level=1 order=desc}
+      <li {if-A:[vod:numjoin]=1}class="cur"{endif-A}><a onClick="_dct_('m_index_jdt_[vod:num]');" href="[vod:link]" target="_self"><img data-src="[vod:picslide]"  alt=""  src="{maccms:path_tpl}/images/focusDefault.png" alt="" ><span class="sTit"><em>《[vod:name]》[vod:contenttext len=10]</em></span></a></li>
+      {/maccms:vod}
+    </ul>
+    <p class="focusTab" id="focusTab">{maccms:vod by=time type=all order=desc level=1,2,3,4,5 num=7 start=1  table=vod}<i {if-A:[vod:numjoin]=1}class="cur"{endif-A}></i>{/maccms:vod}</p>
+  </div>
+  <div class="mod_a globalPadding">{maccms:matrix type=2 table=vod}
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>[matrix:name]排行榜</span><a onClick="_dct_('m_index_tbrj_gd');" href="[matrix:link]" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc year=2015}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="" >
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span></a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+	    <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc year=2015  start=4}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_tbrj_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="" >
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span></a></div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+    </div>
+  </div>
+  {/maccms:matrix}
+  <div class="mod_a globalPadding">{maccms:matrix type=1 table=vod}
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>热播[matrix:name]</span><a onClick="_dct_('m_index_tbrj_gd');" href="[matrix:link]" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc year=2015}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="" >
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+	   <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc year=2015 start=4}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="" >
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+    </div>
+  </div>
+  {/maccms:matrix}
+  <div class="mod_a globalPadding">{maccms:matrix type=3 table=vod}
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>热门[matrix:name]</span><a onClick="_dct_('m_index_tbrj_gd');" href="[matrix:link]" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="">
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+	    <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc start=4}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_rmzy_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="">
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+    </div>
+  </div>
+  {/maccms:matrix}
+  <div class="mod_a globalPadding">{maccms:matrix type=4 table=vod}
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>[matrix:name]精选</span><a onClick="_dct_('m_index_tbrj_gd');" href="[matrix:link]" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="">
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span></a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+	        <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc start=4}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_dmjx_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="">
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+    </div>
+  </div>
+  {/maccms:matrix}
+  <div class="mod_a globalPadding">{maccms:matrix type=18 table=vod}
+    <div class="th_a"><span class="sMark"><i class="iPoint"></i>[matrix:name]推荐</span><a onClick="_dct_('m_index_tbrj_gd');" href="[matrix:link]" class="aMore" target="_self"><i class="moreArrow"></i></a></div>
+    <div class="tb_a">
+      <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="">
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span></a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+	        <ul class="picTxt picTxtA clearfix">
+        {maccms:vod num=3 by=time type=[matrix:id] order=desc start=4}
+        <li>
+          <div class="con"> <a onClick="_dct_('m_index_wlsb_[vod:num]');" href="[vod:link]"  target="_self"> <img data-src="[vod:pic]" src="{maccms:path_tpl}/images/indexDefault.png" alt="">
+            {if-A:[vod:state]=0} <span class="sNum">[完结]
+            {elseif-A:[vod:state]>0}
+            {if-B:[vod:state]>10000} <span class="sNum">[连载[vod:state]]期
+            {else-B} <span class="sNum">[连载[vod:state]]集
+            {endif-B}
+            {else-A}
+            {endif-A}
+            {if-A:[vod:level]>0}<em class="emHot">热推</em> {else-A}<em class="emHot">[vod:score]分</em>{endif-A} </span> </a> </div>
+			<div class="con_bottom"><span class="sTit">[vod:name]</span> <span class="sDes">{if-A:is_numeric([vod:remarks])}{if-B:[vod:remarks]==0}全集{else-B}第[vod:remarks]集{endif-B}{else-A}[vod:remarks]{endif-A}</span></div>
+        </li>
+        {/maccms:vod}
+      </ul>
+    </div>
+  </div>
+  {/maccms:matrix} </section>
+{maccms:foot}
+<script type="text/javascript" src="{maccms:path_tpl}js/index.min.js"></script>
+</body>
+</html>

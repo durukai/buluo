@@ -1,0 +1,61 @@
+<div class="wrapper">
+<div class="mask" id="mask_box"></div>
+<header class="headerbar">
+      <section class="headBox">
+        <a class="pull-left logo" href="/" title="">
+          <i>
+            <img src="/templets/hanjutv-m/images/logo.png" alt="" title=""></i>
+        </a>
+        <a href="http://m.hc128.cn" rel="nofollow" class="app_down pull-right">
+          <span>下载APP</span></a>
+        <a href="/" rel="nofollow" class="zui-icon iconfont icon-lishijilu pull-right"></a>
+        <a href="/index.php?m=vod-search" rel="nofollow" class="zui-icon iconfont icon-sousuo pull-right"></a>
+      </section>
+</header>
+<section id="search_box" class="searchMenu" style="display:none">
+  <form action="{maccms:link_search_vod}" method="post" id="search_form" onsubmit="return searchM.submitSearch();">
+    <div class="searchFormCon globalPadding">
+      <p class="pSearchForm">
+        <input type="text" class="searchTxt searchTxtBlur" id="wd" name="wd" autocomplete="off"  value="请输入影片片名或演员名称。" onfocus="if(this.value=='请输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在输入影片片名或演员名称。';};" />
+        <input type="submit" id="searchbutton" class="searchBtn" value="" />
+        <i class="clearSearchBtn" style="display:none;"><em></em></i> </p>
+    </div>
+    <ul class="ulHotList globalPadding" id="search_history_list" style="display:none;">
+    </ul>
+  </form>
+  <p class="pHotLinks globalPadding" id="hot_word_box"></p>
+</section>
+<nav class="subNav globalPadding index_menu_top" id="nav_menu" style="display:none;">
+  <div class="con clearfix">
+    <p> <a{if-A:{maccms:siteaid}=10} class="cur"{endif-A} href="{maccms:path}" onclick="_dct_('dh_m_index');" target="_self">首页</a> {maccms:menu type=parent order=asc table=vod}<a {if-A:{maccms:curvodtypeid}=[menu:id]}class="cur" {endif-A}href="[menu:link]" {if-A:[menu:id]=1}onclick="_dct_('dh_m_dy');"{endif-A}{if-A:[menu:id]=2}onclick="_dct_('dh_m_tv');"{endif-A}{if-A:[menu:id]=4}onclick="_dct_('dh_m_dm');" {endif-A}{if-A:[menu:id]=3}onclick="_dct_('dh_m_ze');"{endif-A}{if-A:[menu:id]=18}onclick="_dct_('dh_m_vip');"{endif-A}{if-A:[menu:id]=36}onclick="_dct_('dh_m_vdy');"{endif-A} target="_self" >[menu:name]</a> {/maccms:menu} </p>
+  </div>
+</nav>
+<div class="loginPop" style="display:none;">
+  <ul class="ulForm clearfix">
+    <li><span class="sInput"><i class="iIcon iUserName"></i>
+      <input type="text" id="username" name="username" class="inputTxt formInput" maxlength="24" placeholder="请输入用户名">
+      </span></li>
+    <li><span class="sInput"><i class="iIcon iPassWord"></i>
+      <input type="password" id="password" name="password" class="inputTxt formInput" placeholder="请输入密码">
+      </span></li>
+    <li><span class="sInput sInputA"><i class="iIcon iCaptchaIcon"></i>
+      <input type="text" name="captcha" maxlength="2" class="inputTxt formInput" placeholder="请输入验证码" id="captcha">
+      </span><span class="sCaptchaPic"><img width="70" height="34" id="captchaImg" src="#"></span><i class="iChange" id="changeBtnId"></i></li>
+    <li style="display:none;"><span class="sError"></span></li>
+    <li><a id="sublogin" class="userBtnStyle userBtnStyleA" href="javascript:void(0);">登录</a></li>
+    <li>
+      <p class="pBtn clearfix"><a href="#" target="_self" class="left">忘记密码？</a><a href="#" target="_self" class="right">立即注册</a></p>
+    </li>
+    <li class="thirdParty"> <span class="sTit">使用第三方帐号，一键登录。</span>
+      <div class="list clearfix" id="oathLoginList"></div>
+    </li>
+  </ul>
+</div>
+<ul id="index_menu_box" class="navMenu clearfix" style="display:none;">
+  <li><a{if-A:{maccms:siteaid}=10} class="cur"{endif-A} href="{maccms:path}" onclick="_dct_('dh_m_index2');" target="_self"><img src="{maccms:path_tpl}images/rankIcon.png"><span>首页</span></a></li>
+  {maccms:menu type=parent order=asc table=vod}<a {if-A:{maccms:curvodtypeid}=[menu:id]}class="cur" {endif-A}href="[menu:link]" {if-A:[menu:id]=1}onclick="_dct_('dh_m_dy2');"{endif-A}{if-A:[menu:id]=2}onclick="_dct_('dh_m_tv2');"{endif-A}{if-A:[menu:id]=4}onclick="_dct_('dh_m_dm2');" {endif-A}{if-A:[menu:id]=3}onclick="_dct_('dh_m_ze2');"{endif-A}{if-A:[menu:id]=18}onclick="_dct_('dh_m_vip2');"{endif-A}{if-A:[menu:id]=36}onclick="_dct_('dh_m_vdy2');"{endif-A} target="_self" ><img src="{maccms:path_tpl}images/rankIcon.png"><span>[menu:name]</span></a>
+  </li>
+  {/maccms:menu}
+  <li><a href="{maccms:getlink dy.html}" onclick="_dct_('dh_m_phb2');"><img src="{maccms:path_tpl}images/rankIcon.png"><span>排行榜</span></a></li>
+  <li></li>
+</ul>

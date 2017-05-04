@@ -1,0 +1,109 @@
+<div id="block-A" data-block-name="页头">
+<div class="mod-addToScreen" id="widget-addtohome" data-pos="lib" style=""> </div>
+<div class="mod_custom_header" id="widget-customheader">
+<a href="javascript:;" class="custom_header_guide dn"></a>
+<div class="custom_header_inner">
+<div class="part_left">
+<a class="link_left" href="/" title="{maccms:name}" target="_blank">欢迎访问本站</a>
+<a class="link_left"  id="a-home" rel="external nofollow" href="javascript:void(0);" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.199tv.com/')">设为首页</a>
+ <a class="link_left" target="_self" href="javascript:void(0);" onclick='fav();' title="收藏本站" >收藏本站</a>
+</div>
+<div class="part_center">
+</div>
+<div class="part_right">
+<!-- link list -->
+<div class="linkList_wrap">
+<div class="dropDown_wrap login_box" id="widget-userregistlogin"> 
+<div style="display: inline-block">
+<div class="topLoginBar"> <a href="{maccms:path}index.php?m=user-index.html" class="login" data-elem="topLoginPanel" j-login="title">登录</a>
+<div class="usrTxGeneral-box_hover" style="display: none;" data-widget-loginbox="loginbox" data-loginbox-loc="lib"></div>
+</div>
+<span class="dotted_line" data-elem="splitline"></span>
+<div class="topRegisterBar"> <a href="{maccms:path}index.php?m=user-reg.html" class="login" data-elem="topRegistPanel" j-register="title">注册</a>
+<div class="usrTxGeneral-box_hover usrTxGeneral-box_hover_reg" style="display: none;" data-widget-registbox="registbox"></div>
+</div>
+</div>
+
+</div>
+
+<span class="dotted_line"> </span>
+<div class="dropDown_wrap">
+  <a class="quick_history" href="#" id="history">观看记录<i class="arrow arrow-down"></i> </a>
+
+</div>
+<span class="dotted_line"> </span>
+
+<div class="dropDown_wrap" data-widget-videofavorite="videofavorite">
+<a href="{maccms:link_gbook}" title="用户留言" data-videofavorite-elem="trigger"> 用户留言 <i class="arrow arrow-down"></i> </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="mod_search_header search-movieLib">
+<div class="container clearfix">
+<!-- logo -->
+<div class="logo_wrap">
+<h1 class="logo">
+<a href="/">{maccms:name}</a>
+</h1>
+</div>
+<!-- search input -->
+<div class="searchBox_wrap">
+<div class="clearfix" >
+
+	<form action="{maccms:link_search_vod}" method="post">
+	<div class="clearfix">
+<div class="fl pr">
+ <input type="text" id="wd" name="wd" class="search_input" x-webkit-speech value="请在此处输入影片名或演员名称" onfocus="if(this.value=='请在此处输入影片名或演员名称'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片名或演员名称';};"/>
+</div>
+<div class="fl">
+ <input type="submit" id="searchbutton" class="search_btn" value="搜全网"/>
+</div>
+</div>
+</form>
+
+
+<div class="soResult" style="display: none;" data-private-display="block" data-suggest-elem="body">
+<div class="soResult_con">
+<ul class="soResult_list" data-suggest-elem="list">
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+<!-- header right -->
+<div class="search_header_right">
+<i class="movieLib-icons movIcon-newTip"></i>
+<span class="search_rightTips">搜 “<a href="/" class="search_rightTips_link">四川地震</a>” 查看整个事件脉络发展</span>
+</div>
+</div>
+</div> </div>
+<div id="block-B">
+<div class="mod_search_nav mb10">
+<div class="main_search_nav">
+<!-- -->
+<div class="container clearfix" data-widget-maincontent="maincontent">
+<ul class="main_item" id="j_movMain">
+
+<li class="selected"><a class="nav_item" href="/" title="首页" rseat="首页">首页</a><i class="nav_item_bg"></i></li>
+	{maccms:menu type=parent order=asc table=vod}
+<li ><a class="nav_item" href="[menu:link]" title="[menu:name]" rseat="[menu:name]">[menu:name]</a><i class="nav_item_bg"></i></li>
+	{/maccms:menu}	
+
+<li><a class="nav_item" href="{maccms:link_topic_vod}" title="专题" rseat="专题">专题</a><i class="nav_item_bg"></i></li>
+</ul>
+<ul class="sub_item">
+<li><a class="nav_item" href="{maccms:getlink zixun.html}" title="资讯" rseat="资讯">资讯</a><i class="nav_item_bg"></i></li>
+<li><a class="nav_item" href="{maccms:getlink music.html}" title="音乐" rseat="音乐">音乐</a><i class="nav_item_bg"></i></li>
+<li><a class="nav_item" href="#" title="搞笑" rseat="搞笑">搞笑<i class="movieLib-icons movIcon_hot"></i></a><i class="nav_item_bg"></i></li>
+<li><a class="nav_item" href="#" title="游戏" rseat="游戏">游戏</a><i class="nav_item_bg"></i></li>
+<li><a class="nav_item" href="#" title="科技" rseat="科技">科技</a><i class="nav_item_bg"></i></li>
+<li><a class="nav_item" href="{maccms:getlink hot.html}" title="热搜榜" rseat="热搜榜">热搜榜</a><i class="nav_item_bg"></i></li>
+</ul>
+</div>
+</div>
+</div>
+</div>

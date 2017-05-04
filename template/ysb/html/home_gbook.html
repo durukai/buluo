@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>留言本-小俊工作室</title>
+    <meta name="title" content="留言本-小俊工作室">
+    <meta name="keywords" content="留言本-小俊工作室" />
+    <meta name="description" content="留言本-小俊工作室" />
+    <link rel="canonical" href="{maccms:url}"/>
+    <meta name="mobile-agent" content="format=xhtml;url=http://m.{maccms:url}"/>
+    <link href="http://m.{maccms:url}" rel="alternate" media="only screen and (max-width: 1000px)"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    {maccms:include}
+    <script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+    <script src="{maccms:path_tpl}js/home.js"></script>
+    <script type="text/javascript">uaredirect("");</script>
+    <script language="javascript">
+        var reloadcode = function() {
+            $('#safecode').attr('src', "/?s=user-code-index-" + Math.random());
+        }
+        $(document).ready(function() {
+            $('#gb_content').focus(function() {
+                if ($('#gb_content').val() == '请留下您的宝贵意见，最多200个字。') {
+                    $('#gb_content').val('');
+                }
+            });
+            $('#nickname').focus(function() {
+                if ($('#nickname').val() == '请输入昵称！') {
+                    $('#nickname').val('');
+                }
+            });
+            $('#nickname').blur(function() {
+                if ($('#nickname').val() == '') {
+                    $('#nickname').val('请输入昵称！');
+                }
+            });
+            $('#gb_content').blur(function() {
+                if ($('#gb_content').val() == '') {
+                    $('#gb_content').val('请留下您的宝贵意见，最多200个字。');
+                }
+            });
+            $("#guestbook").submit(function() {
+                if ($('#gb_content').val().length > 200) {
+                    $('#gb_tips').html('您输入的留言信息过长，请删减一些！');
+                    return false;
+                }
+                if ($('#gb_content').val() == '请留下您的宝贵意见，最多200个字。') {
+                    $('#gb_content').select();
+                    $('#gb_tips').html('请输入留言信息！');
+                    return false;
+                }
+                if ($('#nickname').val() == '请输入昵称！') {
+                    $('#nickname').select();
+                    $('#gb_nickname').html('请输入昵称！');
+                    return false;
+                }
+
+            });
+            // #gb_types
+            $("#gb_types li").bind('click',
+                    function(e) {
+                        $("#gb_types li").each(function() {
+                            $(this).removeClass('selected');
+                        });
+                        $(this).addClass('selected');
+                        $("#gb_cid").val($(this).attr('val'));
+                    });
+        });
+    </script>
+
+</head>
+<body>
+{maccms:head}
+<div class="header_bg"></div><!--头部结束-->
+<div class="tab-a navs w1214">
+    <div class="wz fn-left">
+                <span>
+                    您所在的位置：
+                </span>
+        <a href="{maccms:path}" title="{maccms:name}">
+            首页
+        </a>
+        <em>
+            &gt;&gt;
+        </em>
+        <a class="current">
+            网站留言
+        </a>
+    </div>
+</div>
+<div class="new-list">
+    <div class="tab-a list-all w1214">
+        <div class="gb-left">
+            <!-- gb-show-list -->
+            {if-A:{page:datacount}==0}
+            <center><h3> 暂无留言，快来抢沙发吧！</h3></center>
+            {else-A}
+            {maccms:gbook pagesize=10 order=desc by=time}
+            <div class="gb-show-list">
+                <div class="gb-show-l">
+                        <img src="{maccms:path_tpl}images/tx.gif"
+                             title=" qwe">
+                </div>
+                <div class="gb-show-r">
+                    <div class="gb-cont">
+                        <div class="gb-arrow">
+                        </div>
+                        <div class="gb-title">
+                            <h3>
+                                <a>
+                                    [gbook:name]
+                                </a>
+                            </h3>
+                                    <span>
+                                        [gbook:time style=Y-m-d H:i:s]
+                                    </span>
+                        </div>
+                        <div class="gb-txt">
+                            [gbook:content]
+                        </div>
+                        {if-B:!isN("[gbook:reply]")}
+                        <div class="adminhh">
+                            <p>
+                                <span></span>
+                                <a class="current" href="javascript:;">管理员[gbook:replytime style=Y-m-d H:i:s]回复：</a>
+                            </p><p class="con">回复内容：[gbook:reply]</p>
+                            <div class="bottom clearfix" style="visibility: hidden;">
+                            <ul class="fr clearfix">
+                                <li></li>
+                            </ul>
+                        </div>
+                        </div>
+                        {endif-B}
+                    </div>
+                </div>
+
+            </div>
+            {/maccms:gbook}
+            <div class="tab-l uipages" id="long-page">
+                <div class="page">{maccms:pages len=6}</div>
+            </div>
+            {endif-A}
+            <!-- gb-show-list -->
+        </div>
+        <div class="gb-right">
+            <form action="{maccms:path}index.php?m=gbook-save" method="post" name="guestbook"
+                  id="guestbook">
+                <input name="gb_cid" type="hidden" value="{.id}">
+                <div class="gb-right-title">
+                </div>
+                <div class="gb-right-item">
+                    <label class="ui-label">
+                        请输入您的昵称：
+                    </label>
+                    <input name="g_name" id="g_name" type="hidden" value="游客">
+                    <input class="ui-input" name="g_name" id="g_name" type="text" value="请输入昵称！">
+                </div>
+                <div class="gb-right-item">
+                    请勿提交非法信息和广告，违反者我们会将数据提交举报中心，谢谢合作~
+                </div>
+                <div class="gb-right-item" style="padding-bottom:5px;">
+                    <label class="ui-label">
+                        请输入您的留言内容：
+                    </label>
+                            <textarea name="g_content" id="g_content" class="gb_content" onKeyup="MAC.Remaining(this,200,'g_remaining')" onfocus="if(this.value=='请在这里发表您的个人看法，最多200个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多200个字。';};"	>请在这里发表您的个人看法，最多200个字。</textarea>
+                </div>
+                <div class="gb-right-item" style="padding-top:5px;">
+                    <div class="vcodde">
+                        <div class="vcode">
+                            验证码：
+                        </div>
+                        <input class="ui-code" type="text" id="g_code" name="g_code" maxlength="5"
+                               value="">
+                        &nbsp;
+                        <a href="javascript:reloadcode()">
+                            <img src="{maccms:path}inc/common/code.php?a=gbook&s=" alt="看不清楚换一张" name="safecode" border="0"
+                                 align="absbottom" id="g_code_img" onClick="src='{maccms:path}inc/common/code.php?a=gbook&s='+Math.random()">
+                        </a>
+                        <label id="gb_tips">
+                        </label>
+                        <input class="ui-button" type="submit" value="发送留言" id="gb_button">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- // ui-messaqiezidy End -->
+    </div>
+</div>
+<!--底部开始-->
+{maccms:foot}
+<!--底部结束-->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+        try {
+            var s, a, i, j, r, c, l = document.getElementsByTagName("a"),
+                    t = document.createElement("textarea");
+            for (i = 0; l.length - i; i++) {
+                try {
+                    a = l[i].getAttribute("href");
+                    if (a && a.indexOf("/cdn-cgi/l/email-protection") > -1 && (a.length > 28)) {
+                        s = '';
+                        j = 27 + 1 + a.indexOf("/cdn-cgi/l/email-protection");
+                        if (a.length > j) {
+                            r = parseInt(a.substr(j, 2), 16);
+                            for (j += 2; a.length > j && a.substr(j, 1) != 'X'; j += 2) {
+                                c = parseInt(a.substr(j, 2), 16) ^ r;
+                                s += String.fromCharCode(c);
+                            }
+                            j += 1;
+                            s += a.substr(j, a.length - j);
+                        }
+                        t.innerHTML = s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                        l[i].setAttribute("href", "mailto:" + t.value);
+                    }
+                } catch(e) {}
+            }
+        } catch(e) {}
+    })();
+    /* ]]> */
+
+</script>
+</body>
+
+</html>

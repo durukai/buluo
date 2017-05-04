@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>好看的{page:name}-最新{page:name}-经典{page:name}-{page:name}电影推荐-第{page:now}页-{maccms:name}</title>
+<meta name="keywords" content="{page:key}" />
+<meta name="description" content="{page:des}" />
+{maccms:include}
+<script type="text/javascript" src="{maccms:path_tpl}js/global_new.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/dx_movie.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/jcarousellite_1.0.1.js"></script>
+</head>
+<body>
+{maccms:head}
+
+ <div class="slide">
+    	<div class="slide_block">
+        	<a class="lef_butt_top lef_butt" href="#"></a><a class="rig_butt_top rig_butt" href="#"></a>
+            <div class="list_block">
+                <ul id="topMovie">
+{maccms:vod num=7 parent=1 by=time order=desc}
+<li id="903" style="display:block"><a href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><a class="titl" href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a></li>
+{/maccms:vod}
+</ul>
+</div></div></div></div>
+<div class="main">
+<div class="gather_block_01"></div>
+
+<div class="g_box_01">
+<div class="gather_block_01"></div>
+<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg h_bg_07"></h1></div></div>
+<ul class="list_06 " id="movie_tt3_con">
+{maccms:vod num=7 parent=1 level=all order=desc}
+<li><a class="b_a" href="[vod:link]" title="[vod:name]" target="_blank"><em class="gao_qing_i"></em><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=9]</a><div class="f_c"><a>[vod:starring]</a></div></li>
+{/maccms:vod}
+</ul>
+<div class="gather_block_01"></div>
+</div>
+
+
+{maccms:matrix parent=1 table=vod}
+<div class="gather_block_01"></div>
+<div class="g_box_02">
+<div class="left_03">
+<div class="gather_block_01"></div>
+<div class="head_07 head_07_01"><div class="h_div"><h1 class="h_bg11">&nbsp;&nbsp;&nbsp;{maccms:menu type=[matrix:id]}<a href="[menu:link]" title="[matrix:name]">[matrix:name]</a> |{/maccms:menu}</h1></div></div>
+<ul class="list_06" style="width:auto;" id="movie_tt5_con">
+{maccms:vod num=5 type=[matrix:id] order=desc by=time}
+<li><a class="b_a" href="[vod:link]" title="[vod:name]" target="_blank"><img data-original="{maccms:path}images/nopic.gif" src="[vod:pic]" alt="[vod:name]"></a><a class="titl" href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a><div class="f_c"><a>[vod:starring]</a></div></li>
+{/maccms:vod}
+</ul>
+</div>
+<div class="right_03 right_01_01">
+<div class="head_10"><h1>[matrix:name]排行</h1></div>
+<div class="gather_block_01"></div>
+<ul class="list_04 list_04_01 list_04_02">
+{maccms:vod num=3 type=[matrix:id] order=desc by=weekhits}
+<li><i class="orange_bg">[vod:numfill]</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span class="oran">[vod:weekhits]</span></li>
+{/maccms:vod}
+{maccms:vod num=5 type=[matrix:id] start=4 order=desc by=weekhits}
+<li><i>[vod:numjoin]</i><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]<font>[vod:starring]</font></a><span class="oran">[vod:weekhits]</span></li>
+{/maccms:vod}
+</ul>
+</div></div>
+{/maccms:matrix}
+</div>
+<div class="gather_block_01"></div>
+{maccms:foot}
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>基本资料 - 会员中心 -影视部落</title>
+<meta name="keywords" content="免费在线电影"/>
+<meta name="description" content="提供最新最快的影视资讯和在线播放"/>
+<link href="/template/user/css/base.css" type="text/css" rel="stylesheet"/>
+<link href="/template/user/css/i.css?20120915" type="text/css" rel="stylesheet"/>
+<script>var SitePath='/',SiteAid='40',SiteTid='',SiteId='';</script>
+<script src="/js/jquery.js"></script>
+<script src="/js/common.js"></script>
+</head>
+<body>
+<div id="i-header">
+	<div class="layout fn-clear">
+		<div id="i-logo">
+			<a href="/"><img width="157" height="42" src="/template/user/images/ilogo.gif" alt=""/></a>
+		</div>
+		<ul id="i-nav">
+			<li class="i-nav-item"><a class="nav-link" target="_blank" href="/">返回首页</a></li>			
+			<li class="i-nav-item drop-down" id="ubox"><a class="nav-link">dumutou</a></li>
+			<li class="i-nav-item" id="i-logout"><a class="nav-link logoutbt" href="index.php?m=user-logout-flag-main.html" target="_self">退出</a></li>
+		</ul>
+	</div>
+</div>
+<!-- // i-header end -->
+
+
+<div id="content" class="layout">
+	<div class="ui-box ui-qire fn-clear" id="i-box">
+		<div id="i-bar">
+			<h3>会员控制面板</h3>
+			<div id="user-nav">
+				<ul class="user-nav-list fn-clear">  					
+		            <li class="current"><a href="index.php?m=user-index.html"><span class="icon zl-icon">&nbsp;</span>我的资料</a></li>
+					
+					<li><a href="index.php?m=user-fav.html"><span class="icon sc-icon">&nbsp;</span>我的收藏</a></li>
+					<!--<li><a href="#"><span class="icon dy-icon">&nbsp;</span>我的订阅</a></li>-->
+					<li><a href="index.php?m=user-plays.html"><span class="icon pl-icon">&nbsp;</span>我的播放记录</a></li>
+					<li><a href="index.php?m=user-downs.html"><span class="icon bf-icon">&nbsp;</span>我的下载记录</a></li>
+					<li><a href="index.php?m=user-pay.html"><span class="icon dx-icon">&nbsp;</span>充值卡充值</a></li>
+					<li ><a href="index.php?m=user-upgrade.html"><span class="icon gz-icon">&nbsp;</span>升级会员组</a></li>
+					<!--<li><a href="#"><span class="icon fd-icon">&nbsp;</span>我的留言</li>--></a></li>
+				</ul>
+			</div>
+			<!-- 
+			<div class="user-visitors" id="user-visitors">
+				<h3>最近访客</h3>
+				<ul class="visitor-list">
+				</ul>
+			</div>
+		     -->
+		</div>
+		<!-- // i-bar end -->
+		<div class="i-box-cnt" id="i-cnt">
+			<form id="form1" name="form1" method="post" action="" >
+				<div id="i-profile">
+					<div class="ui-title i-tab-nav-box">
+						<ul class="i-tab-nav fn-clear">
+							<li class="current"><a href="index.php?m=user-index.html" >基本资料</a></li>
+							<li class="line"></li>
+							<li><a href="index.php?m=user-info.html" >修改信息</a></li>
+							<li class="line"></li>
+							<li><a href="index.php?m=user-popedom.html" >我的权限</a></li>												
+						</ul>
+					</div>
+					<div class="ui-form">
+						<div class="ui-form-item fn-clear">
+							<label class="ui-label w130">用户名：</label> <p class="ui-label-checkbox">dumutou</p>		
+						</div>
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">所属会员组：</label> <p class="ui-label-checkbox">普通会员</p>
+						</div>
+						
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">计费类型：</label> <p class="ui-label-checkbox">计点</p>
+						</div>
+						<div class="ui-form-item fn-clear">	
+							<label for="nickname" class="ui-label w130">其他限制：</label> <p class="ui-label-checkbox">从  到 </p>
+						</div>
+						
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">QQ号码：</label> <p class="ui-label-checkbox"></p>
+						</div>
+						<div class="ui-form-item fn-clear">	
+							<label for="nickname" class="ui-label w130">Email地址：</label> <p class="ui-label-checkbox"></p>
+						</div>
+
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">注册时间：</label> <p class="ui-label-checkbox">2017-05-18 10:12:05</p>
+						</div>
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">登录IP：</label> <p class="ui-label-checkbox">127.255.255.255</p>
+						</div>
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">登录时间：</label> <p class="ui-label-checkbox">2017-05-18 10:12:13</p>
+						</div>
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">账户积分：</label> <p class="ui-label-checkbox">1</p>
+						</div>
+						<div class="ui-form-item fn-clear">
+							<label for="nickname" class="ui-label w130">推广次数：</label><p> 0</p><label class="ui-label w130">推广链接：</label><input id="url" class="ui-input w300 ui-input-hover" value="http://www.maccms.com/?m=user-tg-uid-1.html" size="70" style="border: 1 solid #000000">
+						</div>
+					</div>
+					<!-- // ui-form End -->
+				</div>
+				<!-- // ui-box End -->
+			</form>
+		</div>
+		<!-- // i-cnt End -->
+	</div>
+	<!-- // maxBox End -->
+</div>
+<!-- // wrap End -->
+<!-- // sign-content end -->
+<div class="footer">
+	<div class="layout">
+		<div class="foot-nav">
+			<a href="/index.php?m=gbook-show.html" target="_blank" title="给我留言">给我留言</a>-<a href="/?m=vod-map.html" target="_blank" title="网站地图">网站地图</a>-<a href="/index.php?m=map-rss.html" target="_blank" title="RSS订阅">RSS订阅</a>-<a href="/index.php?m=map-baidu.html" target="_blank" title="BaiduRSS">BaiduRSS</a>-<a href="/index.php?m=map-google.html" target="_blank" title="GoogleRSS">GoogleRSS</a>
+		</div>
+		<!-- // foot-nav End -->
+		<div class="copyright">
+			<p>
+				本网站提供的最新电视剧和电影资源均系收集于各大视频网站，本网站只提供web页面服务，并不提供影片资源存储，也不参与录制、上传
+			</p>
+			<p>
+				若本站收录的节目无意侵犯了贵司版权，请给网页底部邮箱地址来信，我们会及时处理和回复，谢谢
+			</p>
+			<p>
+				Copyright &copy; 2013-2015 <a class="color" href="http://www.maccms.com">影视部落www.maccms.com</a>
+			</p>
+		</div>
+		<!-- // maxBox End -->
+	</div>
+</div>
+<!-- // footer end -->
+</body>
+</html>

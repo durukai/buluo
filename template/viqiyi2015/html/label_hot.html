@@ -1,0 +1,508 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+	<meta charset="utf-8">
+    <title>搜索排行榜-热门、最新的搜索排行-爱奇艺影视大全</title>
+	<meta name="title" content="搜索排行榜-热门、最新的搜索排行-爱奇艺影视大全" />
+	<meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="{maccms:path_tpl}css/xiaogcc_top.css" />
+    <script type="text/javascript" src="{maccms:path_tpl}js/sea1.2.js"></script>	
+ 
+  </head>
+  <body class="qypage-1180">
+	<div class="page-search">
+    {maccms:head}
+      <div class="site-main">
+        <div class="mt20 clearfix">
+          <div class="top_main" id="block-A" data-block-name="主内容">
+            
+<div class="top_main_inner">
+  <div class="mod_top_listWrap clearfix">
+    <div class="mod_top_list">
+      <div class="list_title clearfix">
+        <h3 class="title">热搜</h3>
+        <a href="#" class="link_more" rseat="819m_gd">更多&gt;</a>
+      </div>
+      <div class="list_sub_title clearfix">
+        <div class="fl">
+          <span>排名</span>
+          <span class="ml5 mr5">|</span>
+          <span>关键词</span>
+        </div>
+        <div class="fr">搜索指数</div>
+      </div>
+      <div>
+        <ul class="rank_list">
+          {maccms:vod num=10 type=all by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+
+        </ul>
+      </div>
+      <div class="mt10">
+        <a href="{maccms:getlink hots.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+      </div>
+    </div>
+    <div class="mod_top_list" data-widget="tab">
+      <div class="list_title clearfix">
+        <h3 class="title">电影</h3>
+        <a href="#" class="link_more" rseat="819m_gd" >更多&gt;</a>
+        <div class="tab_sort">
+          <a href="#" data-elem="tabtitle" data-seq="1" class="link_sort selected" title="全部" rseat="819t_dianying_quanbu">全部</a>
+          <a href="#" data-elem="tabtitle" data-seq="2" class="link_sort" title="喜剧" rseat="819t_dianying_xiju">喜剧</a>
+          <a href="#" data-elem="tabtitle" data-seq="3" class="link_sort" title="动作" rseat="819t_dianying_dongzuo">动作</a>
+          <a href="#" data-elem="tabtitle" data-seq="4" class="link_sort" title="爱情" rseat="819t_dianying_aiqing">爱情</a>
+          <a href="#" data-elem="tabtitle" data-seq="5" class="link_sort" title="惊悚" rseat="819t_dianying_jingsong">惊悚</a>
+        </div>
+      </div>
+      <div class="list_sub_title clearfix">
+        <div class="fl">
+          <span>排名</span>
+          <span class="ml5 mr5">|</span>
+          <span>关键词</span>
+        </div>
+        <div class="fr">搜索指数</div>
+      </div>
+      <div>
+        
+          <div data-elem="tabbody" data-seq="1" style="display: block;">
+            <ul class="rank_list">
+              
+        {maccms:vod num=10 type=1 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+              
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink dyhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+          <div data-elem="tabbody" data-seq="2" style="display: none;">
+            <ul class="rank_list">
+              
+                            
+        {maccms:vod num=10 type=7 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink dyhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+          <div data-elem="tabbody" data-seq="3" style="display: none;">
+            <ul class="rank_list">
+              
+                             
+        {maccms:vod num=10 type=8 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink dyhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+          <div data-elem="tabbody" data-seq="4" style="display: none;">
+            <ul class="rank_list">
+                           
+        {maccms:vod num=10 type=9 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink dyhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+          <div data-elem="tabbody" data-seq="5" style="display: none;">
+            <ul class="rank_list">
+              
+                              
+        {maccms:vod num=10 type=10 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink dyhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+    <div class="mod_top_list" data-widget="tab">
+      <div class="list_title clearfix">
+        <h3 class="title">电视剧</h3>
+        <a href="{maccms:getlink tvhot.html}" class="link_more" rseat="819m_gd">更多&gt;</a>
+        <div class="tab_sort">
+          <a href="#" data-elem="tabtitle" data-seq="1" class="link_sort selected" title="全部" rseat="819t_dianshiju_quanbu">全部</a>
+          <a href="#" data-elem="tabtitle" data-seq="2" class="link_sort" title="国产" rseat="819t_dianshiju_xiju">国产</a>
+          <a href="#" data-elem="tabtitle" data-seq="3" class="link_sort" title="港台" rseat="819t_dianshiju_ouxiang">港台</a>
+          <a href="#" data-elem="tabtitle" data-seq="4" class="link_sort" title="日韩" rseat="819t_dianshiju_jiating">日韩</a>
+          <a href="#" data-elem="tabtitle" data-seq="5" class="link_sort" title="欧美" rseat="819t_dianshiju_guzhuang">欧美</a>
+        </div>
+      </div>
+      <div class="list_sub_title clearfix">
+        <div class="fl">
+          <span>排名</span>
+          <span class="ml5 mr5">|</span>
+          <span>关键词</span>
+        </div>
+        <div class="fr">搜索指数</div>
+      </div>
+      <div>
+        
+          <div data-elem="tabbody" data-seq="1" style="display: block;">
+            <ul class="rank_list">
+              
+                             
+        {maccms:vod num=10 type=12 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink tvhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+          <div data-elem="tabbody" data-seq="2" style="display: none;">
+            <ul class="rank_list">
+              
+                             
+        {maccms:vod num=10 type=13 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink tvhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+          <div data-elem="tabbody" data-seq="3" style="display: none;">
+            <ul class="rank_list">
+              
+                           
+        {maccms:vod num=10 type=14 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink tvhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+          <div data-elem="tabbody" data-seq="4" style="display: none;">
+            <ul class="rank_list">
+              
+                             
+        {maccms:vod num=10 type=15 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink tvhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+    <div class="mod_top_list" data-widget="tab">
+      <div class="list_title clearfix">
+        <h3 class="title">综艺</h3>
+        <a href="{maccms:getlink zyhot.html}" class="link_more" rseat="819m_gd">更多&gt;</a>
+
+      </div>
+      <div class="list_sub_title clearfix">
+        <div class="fl">
+          <span>排名</span>
+          <span class="ml5 mr5">|</span>
+          <span>关键词</span>
+        </div>
+        <div class="fr">搜索指数</div>
+      </div>
+      <div>
+        
+          <div data-elem="tabbody" data-seq="1" style="display: block;">
+            <ul class="rank_list">
+                            
+        {maccms:vod num=10 type=3 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink zyhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+     
+        
+      
+        
+      </div>
+    </div>
+    <div class="mod_top_list" data-widget="tab">
+      <div class="list_title clearfix">
+        <h3 class="title">动漫</h3>
+        <a href="{maccms:getlink dmhot.html}" class="link_more" rseat="819m_gd">更多&gt;</a>
+
+      </div>
+      <div class="list_sub_title clearfix">
+        <div class="fl">
+          <span>排名</span>
+          <span class="ml5 mr5">|</span>
+          <span>关键词</span>
+        </div>
+        <div class="fr">搜索指数</div>
+      </div>
+      <div>
+        
+          <div data-elem="tabbody" data-seq="1" style="display: block;">
+            <ul class="rank_list">
+                            
+        {maccms:vod num=10 type=4 by=hits order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:num]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+              
+            </ul>
+            <div class="mt10">
+              <a href="{maccms:getlink dmhot.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+            </div>
+          </div>
+        
+         
+        
+        
+        
+      </div>
+    </div>
+    
+    <div class="mod_top_list">
+      <div class="list_title clearfix">
+        <h3 class="title">更新</h3>
+        <a href="{maccms:getlink hots.html}" class="link_more" rseat="819m_gd">更多&gt;</a>
+      </div>
+      <div class="list_sub_title clearfix">
+        <div class="fl">
+          <span>排名</span>
+          <span class="ml5 mr5">|</span>
+          <span>关键词</span>
+        </div>
+        <div class="fr">搜索指数</div>
+      </div>
+      <div>
+        <ul class="rank_list">
+          
+                         
+        {maccms:vod num=10 type=all by=time order=desc}
+            <li class="list_item clearfix" >
+              <div class="item_l">
+                <i class="icon_top icon_top-other">[vod:addtime]</i>
+                <a href="[vod:link]" class="item_name" rseat="819k1_resou" target='_blank'>[vod:name]</a>
+              </div>
+              <div class="item_r">
+                <span class="item_num">[vod:hits]</span>
+                <i class="tend tend_up" title="上升"></i>
+              </div>
+            </li>
+          {/maccms:vod}
+        </ul>
+      </div>
+      <div class="mt10">
+        <a href="{maccms:getlink hots.html}" class="link_top50" title="查看TOP50" rseat="819m_tp50">查看TOP 50&gt;&gt;</a>
+      </div>
+    </div>
+    
+ 
+  
+  </div>
+</div>
+          </div>
+          <div class="top_side" id="block-B" data-block-name="左侧导航">
+            
+<ul class="mod_side_nav">
+  
+      <li class="nav_item selected">
+        <a class="link_item" href="{maccms:getlink hot.html}" title="首页" rseat="819c_shouye">
+          <i class="icon_home"></i>
+          <em class="item_title">首页</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+      <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink hots.html}" title="热搜" rseat="819c_resou">
+          <i class="icon_hot"></i>
+          <em class="item_title">热门</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+      <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink dyhot.html}" title="电影" rseat="819c_dianying">
+          <i class="icon_movie"></i>
+          <em class="item_title">电影</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+      <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink tvhot.html}" title="电视剧" rseat="819c_dianshiju">
+          <i class="icon_tv"></i>
+          <em class="item_title">电视剧</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+      <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink zyhot.html}" title="综艺" rseat="819c_zongyi">
+          <i class="icon_variety"></i>
+          <em class="item_title">综艺</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+    
+      <li class="nav_item">
+        <a class="link_item" href="{maccms:getlink dmhot.html}" title="动漫" rseat="819c_dongman">
+          <i class="icon_cartoon"></i>
+          <em class="item_title">动漫</em>
+        </a>
+        <div class="selected_bg"></div>
+      </li>
+
+
+</ul>
+          </div>
+        </div>
+      </div>
+{maccms:foot}
+    </div>
+
+    <script type="text/javascript">
+      Q.projectName = 'qiyiV2'; 
+      Q.load("movLibIndexV2"); 
+    </script>
+    
+ 
+
+					
+  </body>
+  
+</html>
